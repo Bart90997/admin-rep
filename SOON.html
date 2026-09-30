@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li.Fe. Radio — Il sito sta arrivando</title>
+    <meta name="description" content="Il sito di Li.Fe. Radio sta arrivando. Ascolta la diretta live e resta sintonizzato. Stay tuned!">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           Li.Fe. Radio — COMING SOON
+           Base grafica: esempio fornito (pattern mascotte + navy profondo)
+           + player radio + effetti neon leggeri sul testo.
+           ========================================================================== */
+        :root {
+            --white: #FFFFFF;
+            --bg-dark: #012657;
+            --bg-deep: #001a3d;
+            --accent-celeste: #0185C7;
+            --accent-celeste-light: #4db8f0;
+            --accent-red: #FF2A54;
+            --accent-light: rgba(1, 133, 199, 0.1);
+
+            --text-main: #012657;
+            --text-muted: rgba(1, 38, 87, 0.75);
+            --on-dark-muted: rgba(255, 255, 255, 0.6);
+
+            --card-border: 2.5px solid #012657;
+            --radius-main: 20px;
+            --radius-sm: 10px;
+
+            --font-title: 'League Spartan', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.5;
+            min-height: 100vh;
+            position: relative;
+            background-color: var(--bg-deep);
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a { color: inherit; text-decoration: none; transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+        /* ==========================================================================
+           SFONDO — pattern mascotte + velo navy
+           ========================================================================== */
+        .bg-pattern {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            background-image: url('immagini/pattern-seamless.png');
+            background-repeat: repeat;
+            background-size: 620px auto;
+            background-position: center top;
+        }
+        .bg-veil {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(ellipse 80% 55% at 22% 30%, rgba(1, 133, 199, 0.28) 0%, transparent 60%),
+                linear-gradient(180deg, rgba(0, 20, 48, 0.72) 0%, rgba(0, 26, 61, 0.82) 55%, rgba(0, 15, 36, 0.92) 100%);
+        }
+        /* ==========================================================================
+           HERO
+           ========================================================================== */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 66px 40px 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-inner {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 52px;
+            align-items: center;
+        }
+
+        /* --- Colonna testo --- */
+        .hero-text { text-align: left; min-width: 0; }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.76rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent-celeste-light);
+            margin-bottom: 22px;
+        }
+        .kicker .dot {
+            width: 8px; height: 8px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            animation: pulse-dot 1.6s infinite;
+            box-shadow: 0 0 10px var(--accent-red);
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.85); }
+        }
+
+        .headline {
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            color: var(--white);
+            line-height: 0.98;
+            letter-spacing: -0.5px;
+            font-weight: 900;
+            font-size: clamp(2.4rem, 5.4vw, 4.6rem);
+        }
+        .headline .line { display: block; }
+        .headline .accent {
+            color: var(--accent-celeste-light);
+        }
+        .headline .white {
+            color: var(--white);
+        }
+
+        /* STAY TUNED */
+        .stay-tuned {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 26px;
+        }
+        .stay-tuned .rule {
+            width: 54px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-celeste), transparent);
+        }
+        .stay-tuned .text {
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+        .stay-tuned .text .bang { color: var(--accent-red); }
+
+        /* --- Colonna player --- */
+        .hero-player { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
+
+        .player-title {
+            font-family: var(--font-title);
+            font-weight: 900;
+            font-size: 0.82rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .player-title::after {
+            content: "";
+            flex: 1;
+            height: 1.5px;
+            background: linear-gradient(90deg, rgba(1, 133, 199, 0.6), transparent);
+        }
+
+        .player {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border: var(--card-border);
+            border-radius: var(--radius-main);
+            box-shadow: 8px 8px 0px var(--accent-celeste), 0 0 60px rgba(1, 133, 199, 0.35);
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--bg-dark);
+            position: relative;
+        }
+        .player-label {
+            position: absolute;
+            top: -11px;
+            left: 22px;
+            background: var(--accent-red);
+            color: var(--white);
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1.5px solid var(--bg-dark);
+            box-shadow: 0 0 16px rgba(255, 42, 84, 0.6);
+        }
+
+        .play-btn {
+            background: var(--bg-dark);
+            color: var(--white);
+            border: 2.5px solid var(--bg-dark);
+            width: 60px; height: 60px;
+            border-radius: var(--radius-sm);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 0px var(--accent-celeste);
+            transition: all 0.12s ease;
+            flex-shrink: 0;
+        }
+        .play-btn:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px var(--accent-celeste);
+            background: var(--accent-celeste);
+        }
+        .play-btn.playing { background: var(--accent-celeste); }
+
+        .cover {
+            width: 56px; height: 56px;
+            border-radius: var(--radius-sm);
+            border: 2.5px solid var(--bg-dark);
+            background: var(--accent-light);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: var(--bg-dark);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .cover img { width: 100%; height: 100%; object-fit: cover; }
+
+        .track-info {
+            flex: 1;
+            min-width: 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .status {
+            font-family: var(--font-title);
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            display: flex; align-items: center; gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+        .status .live-pulse {
+            width: 7px; height: 7px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-dot 1.4s infinite;
+        }
+        .track-title {
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--bg-dark);
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+            max-width: 100%;
+        }
+        .track-sub {
+            font-family: var(--font-title);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-celeste);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        .eq {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+        .eq span {
+            width: 3.5px;
+            background: var(--accent-celeste);
+            border-radius: 2px;
+            height: 30%;
+        }
+        .eq.active span { animation: eq 0.9s infinite ease-in-out; }
+        .eq.active span:nth-child(1) { animation-delay: 0s; }
+        .eq.active span:nth-child(2) { animation-delay: 0.15s; }
+        .eq.active span:nth-child(3) { animation-delay: 0.3s; }
+        .eq.active span:nth-child(4) { animation-delay: 0.45s; }
+        .eq.active span:nth-child(5) { animation-delay: 0.6s; }
+        @keyframes eq {
+            0%, 100% { height: 25%; }
+            50% { height: 100%; }
+        }
+
+        .volume {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--bg-dark);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .volume input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(1, 38, 87, 0.12);
+            height: 5px;
+            border-radius: 3px;
+            width: 62px;
+            outline: none;
+            border: 1.5px solid var(--bg-dark);
+            cursor: pointer;
+        }
+        .volume input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px; height: 14px;
+            background: var(--bg-dark);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .volume input[type="range"]::-moz-range-thumb {
+            width: 14px; height: 14px;
+            background: var(--bg-dark);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+            margin-top: 22px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 13px 26px;
+            border-radius: var(--radius-sm);
+            border: 2.5px solid var(--bg-dark);
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--accent-red);
+            color: var(--white);
+            border-color: var(--accent-red);
+            box-shadow: 5px 5px 0px rgba(1, 38, 87, 0.85), 0 0 26px rgba(255, 42, 84, 0.45);
+        }
+        .btn-primary:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0px rgba(1, 38, 87, 0.85), 0 0 26px rgba(255, 42, 84, 0.45); }
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+        }
+        .btn-ghost:hover { background: var(--accent-celeste); border-color: var(--accent-celeste); }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .site-footer {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 24px 40px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 5;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .footer-motto {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--on-dark-muted);
+        }
+        .social { display: flex; align-items: center; gap: 10px; }
+        .social a {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1.5px solid rgba(255, 255, 255, 0.22);
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.04);
+            transition: all 0.2s ease;
+        }
+        .social a:hover {
+            background: var(--accent-celeste);
+            border-color: var(--accent-celeste);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(1, 133, 199, 0.6);
+        }
+        .copyright {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            color: var(--on-dark-muted);
+        }
+        .copyright strong { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+
+        /* ==========================================================================
+           RESPONSIVE
+           ========================================================================== */
+        @media (max-width: 980px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+            .hero-text { text-align: left; padding-left: 30px; }
+            .kicker { justify-content: flex-start; }
+            .stay-tuned { justify-content: flex-start; }
+            .hero-player { max-width: 620px; margin: 0 auto; width: 100%; }
+            .actions { justify-content: center; }
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 50px 20px 24px; }
+            .hero-text { padding-left: 28px; }
+            .player { flex-wrap: wrap; justify-content: center; gap: 14px; padding: 16px; }
+            .track-info { flex-basis: 100%; order: 3; text-align: center; align-items: center; }
+            .eq { order: 4; }
+            .volume { order: 5; }
+            .site-footer { flex-direction: column; align-items: flex-start; text-align: left; padding: 22px 20px 26px 28px; }
+        }
+        @media (max-width: 480px) {
+            .kicker { letter-spacing: 3px; font-size: 0.7rem; }
+            .stay-tuned { gap: 12px; }
+            .stay-tuned .rule { width: 34px; }
+            .stay-tuned .text { letter-spacing: 4px; }
+            .play-btn { width: 54px; height: 54px; font-size: 1.25rem; }
+            .cover { width: 50px; height: 50px; }
+            .btn { font-size: 0.82rem; padding: 12px 20px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+    <div class="bg-pattern"></div>
+    <div class="bg-veil"></div>
+
+    <!-- HERO -->
+    <main class="hero">
+        <div class="hero-inner">
+
+            <!-- Colonna testo -->
+            <div class="hero-text">
+                <span class="kicker"><span class="dot"></span> In arrivo</span>
+
+                <h1 class="headline">
+                    <span class="line white">Il sito di</span>
+                    <span class="line accent">Li.Fe. Radio</span>
+                    <span class="line white">sta arrivando!</span>
+                </h1>
+
+                <div class="stay-tuned">
+                    <span class="rule"></span>
+                    <span class="text">Stay Tuned<span class="bang">!</span></span>
+                </div>
+            </div>
+
+            <!-- Colonna player -->
+            <div class="hero-player">
+                <span class="player-title">Player Radio</span>
+
+                <div class="player">
+                    <span class="player-label">Live</span>
+                    <audio id="radioStreaming" src="https://sr14.inmystream.it/stream/scuola/;type=mp3" preload="none" playsinline></audio>
+
+                    <button id="playBtn" class="play-btn" aria-label="Riproduci la diretta">
+                        <i class="fas fa-play"></i>
+                    </button>
+
+                    <div class="cover" id="coverBox">
+                        <i class="fas fa-music"></i>
+                    </div>
+
+                    <div class="track-info">
+                        <span class="status"><span class="live-pulse"></span> <span id="statusLabel">Live on air</span></span>
+                        <span class="track-title" id="trackTitle">Sintonizzazione flusso...</span>
+                        <span class="track-sub" id="trackSub" style="display:none"></span>
+                    </div>
+
+                    <div class="eq" id="equalizer">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+
+                    <div class="volume">
+                        <i class="fas fa-volume-high" id="volumeIcon"></i>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.8" aria-label="Regola volume">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" id="listenBtn">
+                        <i class="fas fa-play"></i> Ascolta live
+                    </button>
+                    <a class="btn btn-ghost" href="https://www.inmystream.app/player2/liferadio.html" target="_blank" rel="noopener">
+                        <i class="fas fa-bolt"></i> Player esterno
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <span class="footer-motto">Musica per chi ascolta ad alto volume!</span>
+        <div class="social">
+            <a href="https://www.instagram.com/liferadio.official" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@li.fe.radio" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/liferadio.official/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <span class="copyright">Copyright &copy; <span id="year"></span> <strong>Li.Fe. Radio</strong></span>
+    </footer>
+
+    <script>
+        (function () {
+            'use strict';
+
+            var STREAM_API = 'https://sr14.inmystream.it:2020/json/stream/scuola?nocache=';
+
+            var audio = document.getElementById('radioStreaming');
+            var playBtn = document.getElementById('playBtn');
+            var listenBtn = document.getElementById('listenBtn');
+            var playIcon = playBtn.querySelector('i');
+            var volumeSlider = document.getElementById('volumeSlider');
+            var volumeIcon = document.getElementById('volumeIcon');
+            var trackTitle = document.getElementById('trackTitle');
+            var trackSub = document.getElementById('trackSub');
+            var statusLabel = document.getElementById('statusLabel');
+            var coverBox = document.getElementById('coverBox');
+            var equalizer = document.getElementById('equalizer');
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            audio.volume = 0.8;
+
+            function setPlayingUI(isPlaying) {
+                if (isPlaying) {
+                    playIcon.className = 'fas fa-pause';
+                    playBtn.classList.add('playing');
+                    equalizer.classList.add('active');
+                } else {
+                    playIcon.className = 'fas fa-play';
+                    playBtn.classList.remove('playing');
+                    equalizer.classList.remove('active');
+                }
+            }
+
+            function togglePlay() {
+                if (audio.paused) {
+                    audio.play().then(function () { setPlayingUI(true); }).catch(function () { setPlayingUI(false); });
+                } else {
+                    audio.pause();
+                    setPlayingUI(false);
+                }
+            }
+
+            playBtn.addEventListener('click', togglePlay);
+            listenBtn.addEventListener('click', togglePlay);
+
+            audio.addEventListener('playing', function () { setPlayingUI(true); });
+            audio.addEventListener('pause', function () { setPlayingUI(false); });
+
+            volumeSlider.addEventListener('input', function (e) {
+                audio.volume = parseFloat(e.target.value);
+                if (audio.volume === 0) {
+                    volumeIcon.className = 'fas fa-volume-xmark';
+                } else if (audio.volume < 0.5) {
+                    volumeIcon.className = 'fas fa-volume-low';
+                } else {
+                    volumeIcon.className = 'fas fa-volume-high';
+                }
+            });
+
+            function startAutoplay() {
+                audio.play().then(function () { setPlayingUI(true); }).catch(function () { setPlayingUI(false); });
+            }
+            window.addEventListener('load', function () { setTimeout(startAutoplay, 800); });
+
+            function fetchMetadata() {
+                fetch(STREAM_API + Date.now(), { cache: 'no-store' })
+                    .then(function (r) { return r.text(); })
+                    .then(function (text) {
+                        var jsonStart = text.indexOf('{');
+                        if (jsonStart < 0) return;
+                        var data;
+                        try { data = JSON.parse(text.slice(jsonStart)); } catch (e) { return; }
+                        var now = (data.nowplaying || data.title || data.song || '').trim();
+                        var cover = data.coverart || data.cover || data.artwork || '';
+                        if (now) {
+                            trackTitle.textContent = now;
+                            statusLabel.textContent = 'Live on air';
+                            trackSub.style.display = 'none';
+                        } else {
+                            trackTitle.textContent = 'Li.Fe. Radio - In Diretta';
+                        }
+                        if (cover) {
+                            coverBox.innerHTML = '<img src="' + cover + '" alt="Copertina">';
+                        } else {
+                            coverBox.innerHTML = '<i class="fas fa-music"></i>';
+                        }
+                    })
+                    .catch(function () {
+                        if (!trackTitle.textContent || trackTitle.textContent === 'Sintonizzazione flusso...') {
+                            trackTitle.textContent = 'Li.Fe. Radio - In Diretta';
+                        }
+                    });
+            }
+
+            fetchMetadata();
+            setInterval(fetchMetadata, 12000);
+        })();
+    </script>
+</body>
+</html>

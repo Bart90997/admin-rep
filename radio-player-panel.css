@@ -1,0 +1,572 @@
+/* ================================================================
+   Li.Fe. Radio — Player Expandable Panel (stile RDS)
+   File: radio-player-panel.css
+   Usato da: index, articolo, notizie, palinsesto, team
+   ================================================================ */
+
+/* ---- Pulsante freccia per aprire/chiudere il pannello ---- */
+.player-expand-btn {
+    background: var(--bg-dark);
+    color: var(--white);
+    border: 2.5px solid var(--bg-dark);
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0px var(--accent-celeste);
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+.player-expand-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--accent-celeste);
+    background: var(--accent-celeste);
+}
+.player-expand-btn i {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.player-expand-btn.open i {
+    transform: rotate(180deg);
+}
+
+/* ---- Pannello a tendina ---- */
+.radio-player-panel {
+    position: fixed;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: calc(100% - 24px);
+    max-width: 760px;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--white);
+    border: 3.5px solid var(--bg-dark);
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 30px rgba(1, 38, 87, 0.25);
+    z-index: 1999;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease,
+                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+.radio-player-panel.open {
+    max-height: 520px;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+/* ---- Header del pannello ---- */
+.rpp-header {
+    background: var(--bg-dark);
+    color: var(--white);
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--accent-celeste);
+}
+.rpp-header-title {
+    font-family: var(--font-title);
+    font-size: 1.15rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.rpp-header-title .live-pulse {
+    width: 10px;
+    height: 10px;
+    background: var(--accent-red);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 1.4s infinite;
+}
+.rpp-close-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.15s ease;
+}
+.rpp-close-btn:hover {
+    background: var(--accent-red);
+    border-color: var(--accent-red);
+}
+
+/* ---- Corpo del pannello (scrollabile) ---- */
+.rpp-body {
+    padding: 20px 22px;
+    max-height: 460px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.rpp-body::-webkit-scrollbar {
+    width: 8px;
+}
+.rpp-body::-webkit-scrollbar-track {
+    background: rgba(1, 38, 87, 0.05);
+    border-radius: 4px;
+}
+.rpp-body::-webkit-scrollbar-thumb {
+    background: var(--accent-celeste);
+    border-radius: 4px;
+}
+
+/* ---- Sezione Speaker (ON AIR) ---- */
+.rpp-speakers-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+.rpp-speaker-card {
+    background: rgba(1, 133, 199, 0.06);
+    border: 2.5px solid var(--bg-dark);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s ease;
+    position: relative;
+    width: 100%;
+    box-shadow: 4px 4px 0px var(--accent-celeste);
+}
+.rpp-speaker-card.on-air {
+    background: var(--bg-dark);
+    color: var(--white);
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.2);
+    z-index: 2;
+}
+.rpp-speaker-info {
+    flex: 1;
+    overflow: hidden;
+    text-align: left;
+}
+.rpp-speaker-label {
+    font-family: var(--font-title);
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-celeste);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: rgba(1, 133, 199, 0.12);
+    margin-bottom: 6px;
+}
+.rpp-speaker-card.on-air .rpp-speaker-label {
+    color: var(--accent-red);
+    background: rgba(255, 42, 84, 0.15);
+}
+.rpp-speaker-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-sm);
+    border: 2.5px solid var(--bg-dark);
+    background: rgba(1, 38, 87, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--bg-dark);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.rpp-speaker-card.on-air .rpp-speaker-avatar {
+    border-color: var(--accent-celeste);
+    background: rgba(1, 133, 199, 0.2);
+}
+.rpp-speaker-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rpp-speaker-name {
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.rpp-speaker-program {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    opacity: 0.85;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.rpp-speaker-empty {
+    font-size: 2rem;
+    opacity: 0.4;
+}
+
+/* ---- Sezione "IN ONDA" (brano attuale) ---- */
+.rpp-section-title {
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--bg-dark);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2.5px solid var(--bg-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.rpp-section-title i {
+    color: var(--accent-celeste);
+    font-size: 1rem;
+}
+.rpp-now-playing {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-dark);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-bottom: 22px;
+    box-shadow: 4px 4px 0px var(--accent-celeste);
+}
+.rpp-now-playing-cover {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-sm);
+    border: 2.5px solid var(--accent-celeste);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: rgba(1, 133, 199, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-celeste);
+    font-size: 1.8rem;
+}
+.rpp-now-playing-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rpp-now-playing-info {
+    flex: 1;
+    overflow: hidden;
+}
+.rpp-now-playing-label {
+    font-family: var(--font-title);
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-red);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+.rpp-now-playing-title {
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* ---- Sezione "ULTIMI BRANI" ---- */
+.rpp-recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.rpp-recent-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(1, 133, 199, 0.05);
+    border: 2px solid rgba(1, 38, 87, 0.15);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    transition: all 0.15s ease;
+}
+.rpp-recent-item:hover {
+    border-color: var(--accent-celeste);
+    background: rgba(1, 133, 199, 0.1);
+    transform: translateX(4px);
+}
+.rpp-recent-cover {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid var(--bg-dark);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: rgba(1, 38, 87, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    font-size: 1.1rem;
+}
+.rpp-recent-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rpp-recent-info {
+    flex: 1;
+    overflow: hidden;
+}
+.rpp-recent-title {
+    font-family: var(--font-title);
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--bg-dark);
+    text-transform: uppercase;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.rpp-recent-time {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent-celeste);
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.rpp-recent-index {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: rgba(1, 38, 87, 0.15);
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+}
+
+/* ---- Loading / Empty states ---- */
+.rpp-loading {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
+.rpp-loading i {
+    font-size: 1.8rem;
+    color: var(--accent-celeste);
+    animation: spin 1.2s linear infinite;
+    display: block;
+    margin-bottom: 12px;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.rpp-empty-text {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+    .radio-player-panel {
+        bottom: 92px;
+        width: calc(100% - 12px);
+        border-width: 3px;
+    }
+    .rpp-body {
+        padding: 14px 14px;
+    }
+    .rpp-speakers-row {
+        gap: 6px;
+    }
+    .rpp-speaker-card {
+        padding: 12px;
+        gap: 12px;
+    }
+    .rpp-speaker-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 1.4rem;
+    }
+    .rpp-speaker-name {
+        font-size: 0.9rem;
+    }
+    .rpp-speaker-program {
+        font-size: 0.68rem;
+    }
+    .rpp-now-playing {
+        padding: 12px;
+        gap: 12px;
+    }
+    .rpp-now-playing-cover {
+        width: 56px;
+        height: 56px;
+    }
+    .rpp-now-playing-title {
+        font-size: 0.9rem;
+    }
+    .rpp-recent-cover {
+        width: 40px;
+        height: 40px;
+    }
+    .player-expand-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .rpp-header {
+        padding: 10px 14px;
+    }
+    .rpp-header-title {
+        font-size: 1rem;
+    }
+}
+
+/* ================================================================
+   PULSANTE EXPAND MOBILE DEDICATO
+   Visibile solo <=768px (sui tablet/telefoni il .player-right-group
+   del player e' nascosto, quindi il pulsante desktop e' irraggiungibile).
+   Posizionato appena sopra il player bar, segue la linea grafica del sito:
+   bordi spessi 2.5px, ombra pop hard, font League Spartan, colori tema.
+   ================================================================ */
+.player-expand-btn-mobile {
+    display: none; /* nascosto su desktop, mostrato via media query sotto */
+}
+
+@media (max-width: 768px) {
+    .player-expand-btn-mobile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        position: fixed;
+        right: 14px;
+        bottom: 100px; /* appena sopra il player bar mobile (92px) */
+        background: var(--bg-dark);
+        color: var(--white);
+        border: 2.5px solid var(--bg-dark);
+        border-radius: var(--radius-sm);
+        padding: 8px 14px 8px 12px;
+        font-family: var(--font-title);
+        font-weight: 900;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        box-shadow: 3px 3px 0px var(--accent-celeste);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        z-index: 2001; /* sopra il player bar (2000) ma sotto il pannello (1999 aperto?) -> uguale al panel */
+        line-height: 1;
+    }
+    .player-expand-btn-mobile i {
+        font-size: 0.8rem;
+        color: var(--accent-red);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .player-expand-btn-mobile .meb-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .player-expand-btn-mobile:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 1px 1px 0px var(--accent-celeste);
+        background: var(--accent-celeste);
+    }
+    .player-expand-btn-mobile:hover i {
+        color: var(--white);
+    }
+    .player-expand-btn-mobile.open {
+        background: var(--accent-red);
+        border-color: var(--accent-red);
+        box-shadow: 2px 2px 0px var(--bg-dark);
+    }
+    .player-expand-btn-mobile.open i {
+        transform: rotate(180deg);
+        color: var(--white);
+    }
+    /* Quando il pannello è aperto su mobile, nascondiamo il pulsante mobile
+       per evitare sovrapposizione (c'è già il close button nell'header del pannello). */
+    .player-expand-btn-mobile.open {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+    }
+}
+
+@media (max-width: 380px) {
+    .player-expand-btn-mobile {
+        padding: 7px 10px;
+        font-size: 0.66rem;
+        right: 10px;
+    }
+}
+
+/* ---- Stato "Nessuno speaker" (fascia oraria senza diretta) ---- */
+.rpp-speaker-card.no-speaker {
+    background: rgba(1, 38, 87, 0.03);
+    border-style: dashed;
+    border-color: rgba(1, 38, 87, 0.25);
+    opacity: 0.85;
+}
+.rpp-speaker-card.no-speaker.on-air {
+    background: rgba(1, 38, 87, 0.06);
+    border-color: rgba(255, 42, 84, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.08);
+}
+.rpp-speaker-card.no-speaker .rpp-speaker-name {
+    color: var(--text-muted);
+    font-style: italic;
+    font-weight: 700;
+    text-transform: none;
+}
+.rpp-speaker-card.no-speaker.on-air .rpp-speaker-name {
+    color: var(--bg-dark);
+}

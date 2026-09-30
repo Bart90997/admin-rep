@@ -1,0 +1,179 @@
+/* ============================================================
+   NEWS TICKER — Notizie del mondo in sovraimpressione
+   Barra fissa in alto sopra l'header, feed RSS da italpress.com
+   Funziona su desktop e mobile
+   ============================================================ */
+
+/* Barra del ticker — posizionata in cima, fissa */
+.news-ticker-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    background: #012657;
+    display: flex;
+    align-items: center;
+    z-index: 1100;
+    overflow: hidden;
+    border-bottom: 2px solid #0185C7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Pallino rosso "LIVE" a sinistra */
+.news-ticker-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    padding: 0 14px 0 16px;
+    height: 100%;
+    background: linear-gradient(90deg, #012657 0%, #012657 100%);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.15);
+    z-index: 2;
+    position: relative;
+}
+
+.news-ticker-live-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff3b3b;
+    flex-shrink: 0;
+    animation: ticker-pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(255, 59, 59, 0.7);
+}
+
+@keyframes ticker-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.news-ticker-label {
+    font-family: var(--font-title, 'Arial Black', sans-serif);
+    font-weight: 900;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* Container scorrevole del testo */
+.news-ticker-viewport {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Track che scorre */
+.news-ticker-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+    padding-left: 20px;
+}
+
+/* Singola notizia */
+.news-ticker-item {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 36px;
+    padding: 0 8px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    max-width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-ticker-item:hover {
+    color: #a8d8f0;
+    text-decoration: underline;
+}
+
+/* Separatore tra notizie */
+.news-ticker-sep {
+    color: #0185C7;
+    font-size: 0.7rem;
+    padding: 0 10px;
+    flex-shrink: 0;
+    line-height: 36px;
+}
+
+/* Gradient mask ai bordi per effetto dissolvenza */
+.news-ticker-viewport::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(90deg, #012657 0%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.news-ticker-viewport::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(270deg, #012657 0%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* === Offset: header spostato sotto il ticker === */
+.main-header {
+    top: 36px !important;
+}
+
+/* === Mobile adjustments === */
+@media (max-width: 600px) {
+    .news-ticker-bar {
+        height: 32px;
+    }
+    .news-ticker-badge {
+        padding: 0 10px 0 12px;
+        gap: 5px;
+    }
+    .news-ticker-live-dot {
+        width: 7px;
+        height: 7px;
+    }
+    .news-ticker-label {
+        font-size: 0.62rem;
+        letter-spacing: 0.8px;
+    }
+    .news-ticker-item {
+        font-size: 0.75rem;
+        padding: 0 6px;
+        line-height: 32px;
+        max-width: 280px;
+    }
+    .news-ticker-sep {
+        font-size: 0.6rem;
+        padding: 0 6px;
+        line-height: 32px;
+    }
+    .news-ticker-viewport::before {
+        width: 14px;
+    }
+    .news-ticker-viewport::after {
+        width: 20px;
+    }
+    /* Header mobile offset */
+    .main-header {
+        top: 32px !important;
+    }
+}

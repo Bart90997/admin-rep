@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Articolo - Li.Fe. Radio</title>
+    <link rel="icon" href="immagini/life.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <link rel="stylesheet" href="news-ticker.css">
+    <link rel="stylesheet" href="radio-player-panel.css">
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --bg-dark: #012657;
+            --bg-deeper: #001433;
+            --accent-celeste: #0185C7;
+            --accent-red: #FF2A54;
+            --accent-light: #D6EDFC;
+            --text-main: #012657;
+            --text-muted: rgba(1, 38, 87, 0.75);
+            --card-border: 2.5px solid #012657;
+            --radius-main: 20px;
+            --radius-sm: 10px;
+            --radius-round: 999px;
+            --pop-shadow: 6px 6px 0px rgba(1, 38, 87, 0.12);
+            --pop-shadow-strong: 8px 8px 0px #012657;
+            --font-title: 'League Spartan', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --article-bg: #0a0a0a;
+            --article-surface: #141414;
+            --article-surface-2: #1c1c1c;
+            --article-text: #e8e8e8;
+            --article-text-dim: rgba(255,255,255,0.55);
+            --article-border: rgba(255,255,255,0.08);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background: var(--article-bg);
+            min-height: 100vh;
+            padding-bottom: 110px;
+            padding-top: 36px;
+            color: var(--article-text);
+        }
+        a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+        .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+        .fluid-bg { display: none; }
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(255,255,255,0.06);
+            padding: 12px 0;
+        }
+        .header-container { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .logo-img { height: 55px; display: block; flex-shrink: 0; }
+        .nav-menu { flex: 1 1 auto; }
+        .nav-menu ul { display: flex; list-style: none; gap: 0; width: 100%; justify-content: space-around; align-items: center; }
+        .nav-menu ul li { flex: 0 0 auto; text-align: center; }
+        .nav-menu ul li a { font-family: var(--font-title); font-weight: 900; font-size: 1.15rem; letter-spacing: 1px; color: rgba(255,255,255,0.8); text-transform: uppercase; white-space: nowrap; padding: 4px 8px; }
+        .nav-menu ul li a:hover, .nav-menu ul li a.active { color: var(--accent-celeste); transform: translateY(-2px); }
+        .header-actions { display: flex; align-items: center; gap: 16px; color: rgba(255,255,255,0.7); font-size: 1.2rem; flex-shrink: 0; }
+        .header-actions a:hover { color: var(--accent-celeste); }
+        .mobile-menu-btn { display: none; background: transparent; border: none; color: rgba(255,255,255,0.8); font-size: 1.55rem; cursor: pointer; }
+        .mobile-nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(1, 38, 87, 0.96);
+            z-index: 2500;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+        .mobile-nav-overlay.active { display: flex; }
+        .mobile-nav-overlay a { color: var(--white); font-family: var(--font-title); font-size: 2rem; font-weight: 900; text-transform: uppercase; }
+        .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: transparent; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
+        .mobile-nav-social { display: flex; gap: 22px; margin-top: 14px; }
+
+        /* ==================== ARTICLE PAGE — RADIO ITALIA STYLE ==================== */
+        .article-shell { padding-top: 90px; padding-bottom: 64px; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.6);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            transition: color 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .back-link i { font-size: 0.8rem; transition: transform 0.2s ease; }
+        .back-link:hover { color: var(--accent-celeste); }
+        .back-link:hover i { transform: translateX(-3px); }
+
+        /* Article Layout — full-width hero, content below */
+        .article-layout {
+            position: relative;
+            background: var(--article-bg);
+        }
+
+        /* Hero Image — full width, prominent */
+        .article-hero-image {
+            width: 100%;
+            min-height: 420px;
+            max-height: 600px;
+            background: var(--article-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.1);
+            font-size: 5rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .article-hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 180px;
+            background: linear-gradient(to top, var(--article-bg) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .article-hero-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            max-height: 600px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Article Content Area */
+        .article-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            margin: -60px auto 0;
+            padding: 0 24px 40px;
+        }
+
+        /* Tag + Date row */
+        .article-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .article-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--white);
+            background: var(--accent-celeste);
+            font-family: var(--font-title);
+            font-weight: 900;
+            font-size: 0.78rem;
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+        .article-tag i { font-size: 0.65rem; }
+        .article-date {
+            font-size: 0.85rem;
+            color: var(--article-text-dim);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .article-date-divider {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Title */
+        .article-title {
+            font-family: var(--font-title);
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            line-height: 1.02;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        /* Lead / Subtitle */
+        .article-lead {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.65);
+            font-weight: 600;
+            margin-bottom: 32px;
+            white-space: pre-line;
+            line-height: 1.55;
+            border-left: 3px solid var(--accent-celeste);
+            padding-left: 18px;
+        }
+
+        /* Body text */
+        .article-body {
+            color: rgba(255,255,255,0.78);
+            font-size: 1.05rem;
+            font-weight: 400;
+            white-space: pre-line;
+            line-height: 1.75;
+        }
+        .article-body p {
+            margin-bottom: 20px;
+        }
+        .article-body p + p { margin-top: 0; }
+        /* Sottotitoli (## nel testo importato) */
+        .article-body h2 {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            margin: 34px 0 14px;
+            line-height: 1.4;
+        }
+        /* Citazioni (> nel testo importato) */
+        .article-body blockquote {
+            margin: 26px 0;
+            padding: 16px 20px;
+            border-left: 3px solid #5fd0f5;
+            background: rgba(95,208,245,0.08);
+            border-radius: 0 12px 12px 0;
+            color: rgba(255,255,255,0.88);
+            font-style: italic;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .article-body blockquote p { margin-bottom: 0; }
+        /* Elenchi (• nel testo importato) */
+        .article-body ul {
+            margin: 20px 0 26px 6px;
+            padding-left: 20px;
+            list-style: none;
+        }
+        .article-body ul li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 6px;
+        }
+        .article-body ul li::before {
+            content: '\2022';
+            color: #5fd0f5;
+            font-weight: 900;
+            position: absolute;
+            left: -14px;
+        }
+
+        /* Actions */
+        .article-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 44px;
+            padding-top: 28px;
+            border-top: 1px solid var(--article-border);
+        }
+        .article-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-round);
+            background: var(--article-surface-2);
+            color: rgba(255,255,255,0.75);
+            padding: 11px 20px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+        .article-action:hover {
+            background: var(--accent-celeste);
+            color: var(--white);
+            border-color: var(--accent-celeste);
+        }
+        .article-action i { font-size: 0.8rem; }
+
+        /* Tags row at bottom (like Radio Italia) */
+        .article-bottom-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid var(--article-border);
+        }
+        .article-bottom-tag {
+            display: inline-block;
+            padding: 7px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-round);
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: rgba(255,255,255,0.45);
+            background: var(--article-surface);
+            transition: all 0.2s ease;
+        }
+        .article-bottom-tag:hover {
+            color: var(--accent-celeste);
+            border-color: var(--accent-celeste);
+            background: rgba(1,133,199,0.08);
+        }
+
+        /* Empty State */
+        .empty-state {
+            background: var(--article-surface);
+            border: 1px solid var(--article-border);
+            border-radius: var(--radius-main);
+            padding: 60px 42px;
+            text-align: center;
+        }
+        .empty-state i { font-size: 3rem; color: var(--accent-celeste); margin-bottom: 14px; display: block; }
+        .empty-state h1 { font-family: var(--font-title); font-size: 3rem; text-transform: uppercase; line-height: .9; color: var(--white); }
+        .empty-state p { color: var(--article-text-dim); font-weight: 500; margin: 12px 0 24px; }
+
+        /* Footer */
+        .main-footer { background: #0a1a35; padding: 70px 0 35px 0; color: rgba(255, 255, 255, 0.7); margin-top: 50px; position: relative; z-index: 2; }
+        .footer-container { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px; align-items: start; }
+        @media(max-width: 768px) { .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; } }
+        .footer-brand { display: flex; flex-direction: column; }
+        .footer-logo { width: 180px; height: auto; margin-bottom: 0; filter: brightness(1); }
+        @media(max-width: 768px) { .footer-logo { margin: 0 auto; } }
+        .footer-nav h4 { font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .footer-nav ul { list-style: none; }
+        .footer-nav ul li { margin-bottom: 12px; }
+        .footer-nav ul li a { font-family: var(--font-title); font-size: 0.95rem; font-weight: 700; color: rgba(255, 255, 255, 0.55); text-transform: uppercase; letter-spacing: 1px; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .footer-nav ul li a:hover { color: var(--accent-celeste); }
+        .footer-contacts h4 { font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .footer-contacts ul { list-style: none; }
+        .footer-contacts ul li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; font-size: 0.92rem; color: rgba(255, 255, 255, 0.6); }
+        .footer-contacts ul li i { color: rgba(255, 255, 255, 0.35); font-size: 1rem; width: 20px; text-align: center; }
+        @media(max-width: 768px) { .footer-contacts ul li { justify-content: center; } }
+        .footer-copy { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px; margin-top: 25px; text-align: center; font-size: 0.85rem; opacity: 0.45; }
+
+        /* INTERFACCIA LIVE PLAYER */
+        .radio-player-bar {
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            height: 110px;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(15px);
+            border-top: 3.5px solid var(--bg-dark);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+        }
+        .player-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .player-left-group { display: flex; align-items: center; gap: 20px; width: 65%; }
+        .control-btn {
+            background: var(--bg-dark);
+            color: var(--white);
+            border: 2.5px solid var(--bg-dark);
+            width: 62px; height: 62px;
+            border-radius: var(--radius-sm);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 0px var(--accent-celeste);
+            transition: all 0.1s ease;
+            flex-shrink: 0;
+        }
+        .control-btn:hover { transform: translateY(2px); box-shadow: 0 2px 0px var(--accent-celeste); background: var(--accent-celeste); }
+        .control-btn.playing { background: var(--accent-celeste); }
+        .speaker-avatar-box {
+            width: 58px; height: 58px;
+            background: var(--accent-light);
+            border: 2.5px solid var(--bg-dark);
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--bg-dark);
+            box-shadow: 3px 3px 0px rgba(1, 38, 87, 0.15);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .speaker-avatar-box img { width: 100%; height: 100%; object-fit: cover; }
+        .player-track-info { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: flex; flex-direction: column; gap: 2px; }
+        .track-status {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            display: flex; align-items: center; gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .live-pulse { width: 8px; height: 8px; background: var(--accent-red); border-radius: 50%; display: inline-block; animation: pulse-dot 1.4s infinite; }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .track-title { font-family: var(--font-title); font-size: 1.35rem; font-weight: 800; color: var(--bg-dark); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; }
+        .track-subtitle { font-size: 0.78rem; font-weight: 700; color: var(--accent-celeste); text-transform: uppercase; letter-spacing: 0.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: opacity 0.4s; }
+        .player-right-group { display: flex; align-items: center; gap: 24px; justify-content: flex-end; width: 35%; }
+        .btn-live-link {
+            background: var(--white);
+            color: var(--bg-dark);
+            border: 2.5px solid var(--bg-dark);
+            border-radius: var(--radius-sm);
+            padding: 10px 18px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 4px 4px 0px var(--accent-celeste);
+            white-space: nowrap;
+        }
+        .btn-live-link:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--accent-celeste); background: var(--accent-light); color: var(--accent-celeste); }
+        .btn-live-link i { color: var(--accent-red); font-size: 0.9rem; }
+        .player-utility { display: flex; align-items: center; gap: 10px; color: var(--bg-dark); font-size: 1.1rem; }
+        .volume-slider { -webkit-appearance: none; appearance: none; background: rgba(1, 38, 87, 0.1); height: 6px; border-radius: 3px; width: 90px; outline: none; border: 1.5px solid var(--bg-dark); }
+        .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 14px; height: 14px; background: var(--bg-dark); border-radius: var(--radius-sm); cursor: pointer; }
+
+        /* Responsive */
+        @media(max-width: 992px) {
+            .nav-menu, .header-actions { display: none; }
+            .mobile-menu-btn { display: block; }
+            .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; } .footer-logo { margin: 0 auto; } .footer-contacts ul li { justify-content: center; }
+        }
+        @media(max-width: 768px) {
+            .player-left-group { width: 100%; }
+            .player-right-group { display: none; }
+            .article-hero-image, .article-hero-image img { min-height: 280px; max-height: 400px; }
+            .article-content { margin-top: -40px; padding: 0 18px 32px; }
+            .article-title { font-size: clamp(1.8rem, 7vw, 2.8rem); letter-spacing: -1px; }
+        }
+        @media(max-width: 600px) {
+            body { padding-bottom: 92px; padding-top: 32px; }
+            .container { padding: 0 16px; }
+            .article-shell { padding-top: 80px; padding-bottom: 34px; }
+            .back-link { margin-bottom: 14px; font-size: 0.8rem; }
+            .article-hero-image, .article-hero-image img {
+                min-height: 220px;
+                max-height: 320px;
+            }
+            .article-hero-image::after { height: 100px; }
+            .article-content {
+                margin-top: -30px;
+                padding: 0 16px 28px;
+            }
+            .article-meta-row { gap: 10px; margin-bottom: 18px; }
+            .article-tag { font-size: 0.7rem; padding: 5px 11px; }
+            .article-date { font-size: 0.78rem; }
+            .article-title {
+                font-size: clamp(1.6rem, 9vw, 2.5rem);
+                line-height: 1.0;
+                letter-spacing: -0.8px;
+                margin-bottom: 18px;
+            }
+            .article-lead {
+                font-size: 0.98rem;
+                line-height: 1.45;
+                padding-left: 14px;
+                border-left-width: 3px;
+                margin-bottom: 24px;
+            }
+            .article-body {
+                font-size: 0.95rem;
+                line-height: 1.65;
+            }
+            .article-actions {
+                gap: 10px;
+                margin-top: 32px;
+                padding-top: 20px;
+            }
+            .article-action {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 16px;
+                font-size: 0.82rem;
+            }
+            .article-bottom-tags { gap: 8px; margin-top: 28px; padding-top: 18px; }
+            .article-bottom-tag { font-size: 0.68rem; padding: 6px 12px; }
+            .radio-player-bar { height: 92px; border-top-width: 3px; }
+            .player-container { padding: 0 14px; }
+            .control-btn { width: 58px; height: 58px; font-size: 1.4rem; border-radius: 16px; }
+            .speaker-avatar-box { width: 48px; height: 48px; font-size: 1.3rem; }
+            .track-title { font-size: 1.08rem; }
+            .track-status { font-size: 0.78rem; }
+            .track-subtitle { font-size: 0.82rem; }
+            .player-left-group { gap: 14px; }
+            .main-footer { padding: 45px 0 25px 0; margin-top: 30px; }
+            .footer-logo { width: 150px; }
+            .footer-nav h4, .footer-contacts h4 { font-size: 1rem; letter-spacing: 1.5px; margin-bottom: 16px; }
+            .footer-nav ul li { margin-bottom: 10px; }
+            .footer-nav ul li a { font-size: 0.9rem; }
+            .footer-contacts ul li { font-size: 0.85rem; gap: 10px; }
+            .footer-copy { font-size: 0.78rem; padding-top: 20px; margin-top: 20px; }
+        }
+
+        .logo-link { display: flex; align-items: center; }
+        .header-actions .divider { opacity: 0.3; }
+        .search-overlay { position: fixed; inset: 0; background: rgba(1,38,87,0.96); z-index: 3000; display: none; flex-direction: column; align-items: center; padding-top: 100px; }
+        .search-overlay.active { display: flex; }
+        .search-overlay-input { width: min(600px, 88vw); padding: 16px 24px; font-family: var(--font-title); font-size: 1.5rem; font-weight: 700; border: 3px solid var(--accent-celeste); border-radius: var(--radius-main); background: rgba(255,255,255,.95); color: var(--bg-dark); outline: none; }
+        .search-overlay-input::placeholder { color: rgba(1,38,87,.35); }
+        .search-results-list { width: min(600px, 88vw); margin-top: 24px; max-height: 50vh; overflow-y: auto; }
+        .search-result-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-bottom: 2px solid rgba(255,255,255,.1); text-decoration: none; color: var(--white); transition: background .12s ease; }
+        .search-result-item:hover { background: rgba(255,255,255,.08); }
+        .search-result-icon { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 1.1rem; }
+        .search-result-icon.article { background: var(--accent-celeste); color: var(--white); }
+        .search-result-icon.podcast { background: var(--accent-red); color: var(--white); }
+        .search-result-title { font-family: var(--font-title); font-weight: 800; font-size: 1rem; }
+        .search-result-tag { font-size: .7rem; color: var(--accent-celeste); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .search-overlay-hint { color: rgba(255,255,255,.35); font-size: .85rem; margin-top: 18px; }
+        .search-overlay-close { position: absolute; top: 24px; right: 24px; background: transparent; border: 2px solid rgba(255,255,255,.25); border-radius: 999px; width: 48px; height: 48px; display: grid; place-items: center; color: var(--white); font-size: 1.3rem; cursor: pointer; }
+        .search-overlay-close:hover { border-color: var(--accent-celeste); color: var(--accent-celeste); }
+        @media(max-width:768px) { .header-actions .divider { display: none; } }
+        .mobile-nav-search-link { display: flex; align-items: center; justify-content: center; gap: 14px; color: rgba(255,255,255,0.85); font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; padding: 14px 0; cursor: pointer; transition: color .2s, transform .2s; border: none; background: transparent; text-align: center; text-decoration: none; }
+        .mobile-nav-search-link:hover, .mobile-nav-search-link:active { color: var(--accent-celeste); transform: translateX(6px); }
+        .mobile-nav-search-link i { font-size: 1.3rem; }
+
+        /* ── ARTICOLO LIGHT THEME (default is dark, light is the toggle) ── */
+        [data-theme="light"] {
+            --article-bg: #f5f8fb;
+            --article-surface: #ffffff;
+            --article-surface-2: #e8f0f8;
+            --article-text: #012657;
+            --article-text-dim: rgba(1,38,87,0.55);
+            --article-border: rgba(1,38,87,0.1);
+            --card-border: 2.5px solid #012657;
+            --pop-shadow: 6px 6px 0px rgba(1,38,87,0.12);
+            --pop-shadow-strong: 8px 8px 0px #012657;
+            --text-main: #012657;
+            --text-muted: rgba(1,38,87,0.75);
+        }
+        [data-theme="light"] body {
+            background: var(--article-bg);
+            color: var(--article-text);
+        }
+        [data-theme="light"] .fluid-bg { display: block; background: linear-gradient(180deg, #f5f8fb 0%, #e0eef8 40%, #d6edfc 100%); }
+        [data-theme="light"] .main-header {
+            background: rgba(255,255,255,0.92) !important;
+            border-bottom-color: rgba(1,38,87,0.1) !important;
+        }
+        [data-theme="light"] .nav-menu a { color: #012657; }
+        [data-theme="light"] .nav-menu a:hover,
+        [data-theme="light"] .nav-menu a.active { color: var(--accent-celeste); }
+        [data-theme="light"] .header-actions,
+        [data-theme="light"] .header-actions a { color: #012657; }
+        [data-theme="light"] .mobile-menu-btn { color: #012657; }
+        [data-theme="light"] .mobile-nav-overlay {
+            background: rgba(255,255,255,0.97) !important;
+        }
+        [data-theme="light"] .mobile-nav-overlay a { color: #012657; }
+        [data-theme="light"] .mobile-nav-close { color: #012657; }
+        [data-theme="light"] .article-hero-image::after {
+            background: linear-gradient(to top, #f5f8fb 0%, rgba(245,248,251,0.3) 40%, transparent 100%) !important;
+        }
+        [data-theme="light"] .article-content {
+            background: var(--article-surface);
+            border-color: var(--article-border);
+        }
+        [data-theme="light"] .article-meta-row { color: var(--article-text-dim); }
+        [data-theme="light"] .article-content h1,
+        [data-theme="light"] .article-content h2,
+        [data-theme="light"] .article-content h3 { color: var(--article-text); }
+        [data-theme="light"] .article-content p { color: rgba(1,38,87,0.8); }
+
+        /* ── Light theme: sottotitolo ben visibile ── */
+        [data-theme="light"] .article-lead {
+            color: rgba(1,38,87,0.85) !important;
+            border-left-color: var(--accent-celeste);
+        }
+
+        /* ── Light theme: bottoni interattivi ben visibili ── */
+        [data-theme="light"] .article-action {
+            border-color: rgba(1,38,87,0.2) !important;
+            background: #e8f0f8 !important;
+            color: #012657 !important;
+        }
+        [data-theme="light"] .article-action:hover {
+            background: var(--accent-celeste) !important;
+            color: var(--white) !important;
+            border-color: var(--accent-celeste) !important;
+        }
+
+        /* ── Light theme: back link visibile ── */
+        [data-theme="light"] .back-link {
+            color: rgba(1,38,87,0.6) !important;
+        }
+        [data-theme="light"] .back-link:hover {
+            color: var(--accent-celeste) !important;
+        }
+
+        /* ── Light theme: data e meta visibili ── */
+        [data-theme="light"] .article-date {
+            color: rgba(1,38,87,0.55) !important;
+        }
+        [data-theme="light"] .article-date-divider {
+            background: rgba(1,38,87,0.25) !important;
+        }
+
+        /* ── Light theme: body text visibile ── */
+        [data-theme="light"] .article-body {
+            color: rgba(1,38,87,0.82) !important;
+        }
+        [data-theme="light"] .article-body h2 {
+            color: rgba(1,38,87,0.95) !important;
+        }
+        [data-theme="light"] .article-body blockquote {
+            background: rgba(1,38,87,0.06) !important;
+            border-left-color: #0a67c2 !important;
+            color: rgba(1,38,87,0.9) !important;
+        }
+
+        /* ── Light theme: tag pills in fondo visibili ── */
+        [data-theme="light"] .article-bottom-tag {
+            background: #e8f0f8 !important;
+            color: rgba(1,38,87,0.7) !important;
+            border-color: rgba(1,38,87,0.15) !important;
+        }
+        [data-theme="light"] .article-bottom-tag:hover {
+            color: var(--accent-celeste) !important;
+            border-color: var(--accent-celeste) !important;
+            background: rgba(1,133,199,0.08) !important;
+        }
+
+        [data-theme="light"] .article-actions { border-top-color: var(--article-border); }
+        [data-theme="light"] .article-action-pill {
+            border-color: var(--article-border);
+            color: var(--article-text);
+        }
+        [data-theme="light"] .article-action-pill:hover {
+            border-color: var(--accent-celeste);
+            color: var(--accent-celeste);
+            background: rgba(1,133,199,0.06);
+        }
+        [data-theme="light"] .article-bottom-tags { border-top-color: var(--article-border); }
+        [data-theme="light"] .tag-pill {
+            background: var(--article-surface-2);
+            color: var(--article-text);
+            border-color: var(--article-border);
+        }
+        [data-theme="light"] .empty-state {
+            background: var(--article-surface);
+            border-color: var(--article-border);
+        }
+        [data-theme="light"] .empty-state h1 { color: #012657 !important; }
+        [data-theme="light"] .empty-state p { color: rgba(1,38,87,0.6) !important; }
+        [data-theme="light"] .empty-state .article-action {
+            border-color: rgba(1,38,87,0.2) !important;
+            background: #e8f0f8 !important;
+            color: #012657 !important;
+        }
+        [data-theme="light"] .empty-state .article-action:hover {
+            background: var(--accent-celeste) !important;
+            color: var(--white) !important;
+            border-color: var(--accent-celeste) !important;
+        }
+        [data-theme="light"] .search-overlay {
+            background: rgba(245,248,251,0.97) !important;
+        }
+        [data-theme="light"] .search-overlay-input {
+            background: rgba(255,255,255,0.9) !important;
+            color: #012657 !important;
+            border-color: rgba(1,38,87,0.15) !important;
+        }
+        [data-theme="light"] .search-overlay-hint { color: rgba(1,38,87,0.4); }
+        [data-theme="light"] .search-overlay-close {
+            border-color: rgba(1,38,87,0.2) !important;
+            color: #012657 !important;
+        }
+        [data-theme="light"] .player-bar {
+            background: rgba(255,255,255,0.95) !important;
+            border-top-color: rgba(1,38,87,0.1) !important;
+        }
+        [data-theme="light"] .track-title { color: #012657 !important; }
+        [data-theme="light"] .track-artist { color: rgba(1,38,87,0.6) !important; }
+
+        /* Theme toggle button for articolo dark default */
+        .theme-toggle-btn { color: rgba(255,255,255,0.7); }
+        [data-theme="light"] .theme-toggle-btn { color: #012657; }
+
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+<script src="data-source.js"></script>
+</head>
+<body>
+    <!-- NEWS TICKER — Notizie del mondo in sovraimpressione (italpress.com) -->
+    <div class="news-ticker-bar" id="newsTickerBar">
+        <div class="news-ticker-badge">
+            <span class="news-ticker-live-dot"></span>
+            <span class="news-ticker-label">NOTIZIE</span>
+        </div>
+        <div class="news-ticker-viewport">
+            <div class="news-ticker-track" id="newsTickerTrack"></div>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="index.html" class="logo-link"><img src="immagini/2.png" alt="Li.Fe. Radio Logo" class="logo-img"></a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="notizie.html" class="active">NEWS</a></li>
+                    <li><a href="palinsesto.html">PALINSESTO</a></li>
+                    <li><a href="team.html">TEAM</a></li>
+                    <li><a href="index.html#rivedi">RI-LIVE</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://www.instagram.com/liferadio.official" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@li.fe.radio" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/liferadio.official/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <span class="divider">/</span>
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Tema chiaro"><i class="fas fa-sun"></i></button>
+                <a href="#" aria-label="Cerca" id="searchToggleBtn"><i class="fas fa-search"></i></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-xmark"></i></button>
+        <a href="index.html" onclick="closeMobileNav()">HOME</a>
+        <a href="notizie.html" onclick="closeMobileNav()">NEWS</a>
+        <a href="palinsesto.html" onclick="closeMobileNav()">PALINSESTO</a>
+        <a href="team.html" onclick="closeMobileNav()">TEAM</a>
+        <a href="index.html#rivedi" onclick="closeMobileNav()">RI-LIVE</a>
+        <button class="mobile-nav-search-link" id="mobileNavSearchBtn"><i class="fas fa-magnifying-glass"></i> CERCA</button>
+        <div class="mobile-nav-social">
+            <a href="https://www.instagram.com/liferadio.official" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@li.fe.radio" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/liferadio.official/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="search-overlay-close" id="searchCloseBtn" aria-label="Chiudi ricerca"><i class="fas fa-xmark"></i></button>
+        <input type="text" class="search-overlay-input" id="searchInput" placeholder="Cerca articoli, podcast..." autocomplete="off">
+        <div class="search-results-list" id="searchResults"></div>
+        <span class="search-overlay-hint">Premi ESC per chiudere</span>
+    </div>
+    <main class="article-shell">
+        <div class="container">
+            <a href="notizie.html" class="back-link"><i class="fas fa-arrow-left"></i> Torna alle news</a>
+            <div id="articleMount" class="empty-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <h1>Caricamento articolo</h1>
+                <p>Sto recuperando il contenuto dalla redazione.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <div class="footer-brand">
+                <img src="immagini/1.png" alt="Li.Fe. Radio" class="footer-logo">
+            </div>
+            <div class="footer-nav">
+                <h4>Navigazione</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="notizie.html">News</a></li>
+                    <li><a href="index.html#social-feed">Social</a></li>
+                    <li><a href="index.html#rivedi">Ri-live</a></li>
+                    <li><a href="index.html#podcast">Podcast</a></li>
+                    <li><a href="palinsesto.html">Palinsesto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacts">
+                <h4>Contatti</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> radiolife00@gmail.com</li>
+                    <li><i class="fas fa-envelope"></i> liferadio@liceofermiaversa.edu.it</li>
+                    <li><a href="https://www.instagram.com/liferadio.official" target="_blank" style="color:inherit;text-decoration:none;"><i class="fab fa-instagram"></i> @liferadio.official</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Via Enrico Fermi 5, Aversa (CE)</li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Li.Fe. Radio - Tutti i diritti sono riservati agli studenti del Liceo Fermi.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- RADIO PLAYER BAR -->
+    <footer class="radio-player-bar">
+        <div class="player-container">
+            <div class="player-left-group">
+                <audio id="radioStreaming" src="https://sr14.inmystream.it/stream/scuola/;type=mp3" autoplay playsinline></audio>
+                <button id="playBtn" class="control-btn" aria-label="Riproduci Radio Live">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="speaker-avatar-box" id="speakerBox">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="player-track-info">
+                    <span class="track-status">
+                        <span class="live-pulse"></span> <span id="trackStatusLabel">LIVE ON AIR</span>
+                    </span>
+                    <h4 class="track-title" id="currentTrack">Sintonizzazione flusso...</h4>
+                    <span class="track-subtitle" id="currentProgram" style="display:none"></span>
+                </div>
+            </div>
+            <div class="player-right-group">
+                <a href="https://www.inmystream.app/player2/liferadio.html" target="_blank" class="btn-live-link"><i class="fas fa-bolt"></i> LIVE RADIO</a>
+                <div class="player-utility">
+                    <i class="fas fa-volume-high" id="volumeIcon"></i>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.8" class="volume-slider" aria-label="Regola Volume">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function openMobileNav() { document.getElementById('mobileNav').classList.add('active'); }
+        function closeMobileNav() { document.getElementById('mobileNav').classList.remove('active'); }
+        document.addEventListener('DOMContentLoaded', function() {
+            var closeBtn = document.getElementById('mobileNavClose');
+            if (closeBtn) closeBtn.addEventListener('click', closeMobileNav);
+        });
+
+        const audio = document.getElementById('radioStreaming');
+        const playBtn = document.getElementById('playBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const playIcon = playBtn.querySelector('i');
+        const trackTitleElement = document.getElementById('currentTrack');
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playIcon.className = 'fas fa-pause';
+                playBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playIcon.className = 'fas fa-play';
+                playBtn.classList.remove('playing');
+            }
+        }
+        playBtn.addEventListener('click', togglePlay);
+        audio.volume = 0.8;
+        volumeSlider.addEventListener('input', (e) => { audio.volume = e.target.value; });
+        function startAutoplayRadio() {
+            if (!audio) return;
+            audio.play()
+                .then(() => { playIcon.className = 'fas fa-pause'; playBtn.classList.add('playing'); })
+                .catch(() => { playIcon.className = 'fas fa-play'; playBtn.classList.remove('playing'); });
+        }
+        window.addEventListener('load', () => setTimeout(startAutoplayRadio, 900));
+        // Stream metadata from JSON API + Speaker/Program cycling
+        const speakerBox = document.getElementById('speakerBox');
+        const trackStatusLabel = document.getElementById('trackStatusLabel');
+        const currentProgram = document.getElementById('currentProgram');
+
+        let speakerData = { name: '', program: '', img: '', active: false };
+        let lastSongTitle = '';
+        let lastCoverArt = '';
+        let showSpeakerPhase = false;
+        const SPEAKER_CYCLE_MS = 120000;
+
+        function parseMetadataPayload(text) {
+            const jsonStart = text.indexOf('{');
+            if (jsonStart < 0) return null;
+            return JSON.parse(text.slice(jsonStart));
+        }
+        function caricaMetadati() {
+            if (!trackTitleElement || !speakerBox) return;
+            fetch('https://sr14.inmystream.it:2020/json/stream/scuola?nocache=' + Date.now(), { cache: 'no-store' })
+                .then(r => r.text())
+                .then(parseMetadataPayload)
+                .then(data => {
+                    const nowPlaying = data && (data.nowplaying || data.title || data.song);
+                    const coverArt = data && (data.coverart || data.cover || data.artwork);
+                    lastSongTitle = nowPlaying && nowPlaying.trim() ? nowPlaying : 'Li.Fe. Radio - Enjoy Your Culture';
+                    lastCoverArt = coverArt || '';
+                    if (!showSpeakerPhase) {
+                        displaySong();
+                    }
+                })
+                .catch(() => {
+                    lastSongTitle = 'Li.Fe. Radio - In Diretta streaming';
+                    if (!showSpeakerPhase) displaySong();
+                });
+        }
+
+        function displaySong() {
+            trackTitleElement.textContent = lastSongTitle || 'Li.Fe. Radio - Enjoy Your Culture';
+            if (trackStatusLabel) trackStatusLabel.textContent = 'LIVE ON AIR';
+            if (currentProgram) currentProgram.style.display = 'none';
+            if (lastCoverArt) {
+                speakerBox.innerHTML = '<img src="' + lastCoverArt + '" alt="Cover">';
+            } else {
+                speakerBox.innerHTML = '<i class="fas fa-music"></i>';
+            }
+        }
+
+        function displaySpeaker() {
+            if (!speakerData.active || !speakerData.name) {
+                displaySong();
+                return;
+            }
+            trackTitleElement.textContent = speakerData.name;
+            if (trackStatusLabel) trackStatusLabel.textContent = 'IN ONDA';
+            if (currentProgram) {
+                currentProgram.textContent = speakerData.program;
+                currentProgram.style.display = speakerData.program ? 'inline' : 'none';
+            }
+            if (speakerData.img) {
+                speakerBox.innerHTML = '<img src="' + speakerData.img + '?v=' + Date.now() + '" alt="' + speakerData.name + '">';
+            } else {
+                speakerBox.innerHTML = '<i class="fas fa-radio"></i>';
+            }
+        }
+
+        function startSpeakerCycle() {
+            setInterval(() => {
+                if (!speakerData.active) return;
+                showSpeakerPhase = !showSpeakerPhase;
+                if (showSpeakerPhase) {
+                    displaySpeaker();
+                } else {
+                    displaySong();
+                }
+            }, SPEAKER_CYCLE_MS);
+        }
+        // DISABLED: moved to radio-player-panel.js // startSpeakerCycle();
+
+        // DISABLED: moved to radio-player-panel.js // caricaMetadati();
+        // DISABLED: moved to radio-player-panel.js // setInterval(caricaMetadati, 10000);
+
+        (function loadSpeakerData() {
+            fetch('content.json?v=' + Date.now(), { cache: 'no-store' })
+                .then(r => r.json())
+                .then(data => {
+                    const vals = data.values || {};
+                    const imgs = data.images || {};
+                    speakerData.name = vals['speaker-name'] || '';
+                    speakerData.program = vals['speaker-program'] || '';
+                    speakerData.img = imgs['speaker-img'] || '';
+                    speakerData.active = vals['speaker-active'] === '1' && speakerData.name.trim() !== '';
+                })
+                .catch(() => {});
+            setInterval(loadSpeakerData, 60000);
+        })();
+
+        /* ==================== ARTICLE RENDERER ==================== */
+        (function() {
+            const CONTENT_URL = 'content.json?v=' + Date.now();
+            const mount = document.getElementById('articleMount');
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || '';
+
+            function escapeHtml(value) {
+                return String(value || '').replace(/[&<>"]/g, function(char) {
+                    return ({ '&': '&', '<': '<', '>': '>', '"': '"' })[char];
+                });
+            }
+            /* Renderizza un blocco di testo: i prefissi ## , > e • diventano
+               rispettivamente sottotitolo, citazione ed elenco puntato.
+               Il testo arriva dall'archivio notizie (import All Music Italia) */
+            function paragraphs(value) {
+                const text = String(value || '').trim();
+                if (!text) return '<p>Approfondimento in aggiornamento dalla redazione di Li.Fe. Radio.</p>';
+                const blocks = text.split(/\n{2,}/).filter(b => b.trim() !== '');
+                let html = '';
+                let listItems = [];
+                const flushList = function() {
+                    if (listItems.length) {
+                        html += '<ul>' + listItems.map(li => '<li>' + escapeHtml(li) + '</li>').join('') + '</ul>';
+                        listItems = [];
+                    }
+                };
+                blocks.forEach(function(b) {
+                    const t = b.trim();
+                    if (t.indexOf('## ') === 0) {
+                        flushList();
+                        html += '<h2>' + escapeHtml(t.replace(/^##\s+/, '')) + '</h2>';
+                    } else if (t.indexOf('> ') === 0) {
+                        flushList();
+                        const quote = t.split(/\n/).map(function(l) {
+                            return '<p>' + escapeHtml(l.replace(/^>\s?/, '')) + '</p>';
+                        }).join('');
+                        html += '<blockquote>' + quote + '</blockquote>';
+                    } else if (t.indexOf('• ') === 0 || t.indexOf('- ') === 0) {
+                        t.split(/\n/).forEach(function(l) {
+                            const lt = l.trim();
+                            if (lt.indexOf('• ') === 0 || lt.indexOf('- ') === 0) listItems.push(lt.replace(/^[•\-]\s+/, ''));
+                        });
+                    } else {
+                        flushList();
+                        html += '<p>' + escapeHtml(t) + '</p>';
+                    }
+                });
+                flushList();
+                return html;
+            }
+
+            /* Build tag pills from article tag words */
+            function buildTagPills(tagText) {
+                if (!tagText) return '';
+                const words = tagText.split(/[\s,;]+/).filter(w => w.length > 2);
+                if (words.length === 0) return '';
+                return '<div class="article-bottom-tags">' +
+                    words.map(w => '<span class="article-bottom-tag">' + escapeHtml(w) + '</span>').join('') +
+                    '</div>';
+            }
+
+            /* Articoli della redazione da content.json (id legacy article-N) */
+            function buildArticles(payload) {
+                const fields = (payload && payload.fields) || {};
+                const images = payload && payload.images && !Array.isArray(payload.images) ? payload.images : {};
+                const articles = [];
+                const nums = Object.keys(fields)
+                    .map(k => (k.match(/^article(\d+)-title$/) || [])[1])
+                    .filter(Boolean)
+                    .map(Number)
+                    .sort((a, b) => a - b);
+                nums.forEach(i => {
+                    const title = fields['article' + i + '-title'];
+                    if (title) {
+                        articles.push({
+                            id: 'article-' + i,
+                            tag: fields['article' + i + '-tag'] || 'News',
+                            title,
+                            desc: fields['article' + i + '-desc'] || '',
+                            date: fields['article' + i + '-date'] || '',
+                            full: fields['article' + i + '-full'] || fields['article' + i + '-desc'] || '',
+                            img: images['article' + i + '-img'] || '',
+                            author: '',
+                            icon: 'fas fa-newspaper'
+                        });
+                    }
+                });
+                return articles;
+            }
+
+            function renderMissing() {
+                mount.className = 'empty-state';
+                mount.innerHTML = '<i class="fas fa-circle-exclamation"></i><h1>Articolo non trovato</h1><p>La news richiesta non \u00e8 disponibile oppure il link non \u00e8 corretto.</p><a class="article-action" href="notizie.html"><i class="fas fa-arrow-left"></i> Torna alle news</a>';
+            }
+
+            function renderArticle(article) {
+                document.title = article.title + ' - Li.Fe. Radio';
+                /* Fallback: se la foto manca o non si carica, mostra il logo Li.Fe. Radio */
+                const imgFallback = "this.onerror=null;this.src='immagini/life.png';this.style.objectFit='contain';this.style.background='#0a1628';";
+                const imageHtml = article.img
+                    ? '<img src="' + escapeHtml(article.img) + '?v=' + Date.now() + '" alt="' + escapeHtml(article.title) + '" onerror="' + imgFallback + '">'
+                    : '<img src="immagini/life.png" alt="Li.Fe. Radio" style="object-fit:contain;background:#0a1628;">';
+
+                /* Build meta row: tag + divider + date + author */
+                let metaRow = '<div class="article-meta-row">';
+                metaRow += '<span class="article-tag"><i class="fas fa-tag"></i> ' + escapeHtml(article.tag) + '</span>';
+                if (article.date) {
+                    metaRow += '<span class="article-date-divider"></span>';
+                    metaRow += '<span class="article-date">' + escapeHtml(article.date) + '</span>';
+                }
+                /* Autore rimosso su richiesta del titolare del sito */
+                metaRow += '</div>';
+
+                mount.className = 'article-layout';
+                mount.innerHTML =
+                    '<div class="article-hero-image">' + imageHtml + '</div>' +
+                    '<article class="article-content">' +
+                    metaRow +
+                    '<h1 class="article-title">' + escapeHtml(article.title) + '</h1>' +
+                    (article.desc ? '<div class="article-lead">' + escapeHtml(article.desc) + '</div>' : '') +
+                    '<div class="article-body">' + paragraphs(article.full) + '</div>' +
+                    '<div class="article-actions">' +
+                        '<a class="article-action" href="notizie.html"><i class="fas fa-arrow-left"></i> Tutte le news</a>' +
+                        '<a class="article-action" href="index.html#play"><i class="fas fa-radio"></i> Ascolta la radio</a>' +
+                        (article.url ? '<a class="article-action" href="' + escapeHtml(article.url) + '" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Fonte originale</a>' : '') +
+                    '</div>' +
+                    buildTagPills(article.tag) +
+                    '</article>';
+            }
+
+            /* Percorso: id tipo "article-N" (redazione, in content.json) oppure
+               id archivio "ami-..." / "ri-N" (archivio cumulativo notizie).
+
+               IMPORTANTE: il sito è ora ospitato su un server che NON esegue PHP
+               (liferadio.liceofermiaversa.edu.it). Per questo l'articolo viene letto
+               dal file STATICO news-archive.json, che contiene il testo completo.
+               Se la notizia non fosse presente nel file statico si prova comunque
+               l'endpoint PHP api/get-news.php (utile su hosting con PHP, es. InfinityFree). */
+            function renderArchiveNews(n) {
+                renderArticle({
+                    id: n.id,
+                    tag: n.tag || 'MUSICA',
+                    title: n.title || '',
+                    desc: n.desc || '',
+                    date: n.dateFull || n.date || '',
+                    full: n.full || n.desc || '',
+                    img: n.img || '',
+                    author: n.author || '',
+                    url: n.url || '',
+                    icon: 'fas fa-newspaper'
+                });
+            }
+
+            function loadArchiveFromPhp() {
+                fetch('api/get-news.php?id=' + encodeURIComponent(id), { cache: 'no-store' })
+                    .then(r => r.ok ? r.json() : null)
+                    .then(data => {
+                        if (data && data.success && data.news) renderArchiveNews(data.news);
+                        else renderMissing();
+                    })
+                    .catch(renderMissing);
+            }
+
+            function loadArchiveNews() {
+                /* 1) File statico (funziona anche senza PHP) */
+                fetch('news-archive.json', { cache: 'no-store' })
+                    .then(r => r.ok ? r.json() : null)
+                    .then(archive => {
+                        const list = (archive && archive.news && Array.isArray(archive.news)) ? archive.news : [];
+                        const n = list.find(item => item && item.id === id);
+                        if (n) { renderArchiveNews(n); return; }
+                        /* 2) Fallback PHP (hosting con PHP, es. InfinityFree) */
+                        loadArchiveFromPhp();
+                    })
+                    .catch(loadArchiveFromPhp);
+            }
+
+            function loadAndRender() {
+                if (id.indexOf('article-') === 0) {
+                    /* Articolo redazionale legacy da content.json */
+                    fetch(CONTENT_URL, { cache: 'no-store' })
+                        .then(r => r.ok ? r.json() : null)
+                        .then(payload => {
+                            const article = buildArticles(payload).find(item => item.id === id);
+                            if (article) { renderArticle(article); return; }
+                            renderMissing();
+                        })
+                        .catch(err => {
+                            console.warn('Impossibile caricare content.json', err);
+                            mount.className = 'empty-state';
+                            mount.innerHTML = '<i class="fas fa-triangle-exclamation"></i><h1>Errore caricamento</h1><p>Non riesco a leggere i contenuti. Controlla la connessione e riprova.</p><a class="article-action" href="notizie.html"><i class="fas fa-arrow-left"></i> Torna alle news</a>';
+                        });
+                } else {
+                    /* Notizia dell'archivio: leggo prima il JSON statico */
+                    loadArchiveNews();
+                }
+            }
+            loadAndRender();
+})();
+    </script>
+
+<script>
+        /* ── Search overlay ── */
+        const searchToggleBtn = document.getElementById('searchToggleBtn');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const searchCloseBtn = document.getElementById('searchCloseBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        let searchIndex = [];
+        let debounceTimer = null;
+
+        function openSearch() { searchOverlay.classList.add('active'); setTimeout(() => searchInput.focus(), 100); }
+        function closeSearch() { searchOverlay.classList.remove('active'); searchInput.value = ''; searchResults.innerHTML = ''; }
+
+        const mobileNavSearchBtn = document.getElementById('mobileNavSearchBtn');
+        if (mobileNavSearchBtn) mobileNavSearchBtn.addEventListener('click', function() { if (typeof closeMobileNav === 'function') closeMobileNav(); setTimeout(openSearch, 250); });
+
+        if (searchToggleBtn) searchToggleBtn.addEventListener('click', function(e) { e.preventDefault(); openSearch(); });
+        if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
+
+        function buildSearchIndex(archiveData, contentData) {
+            searchIndex = [];
+            /* Notizie dell'archivio cumulativo (import All Music Italia) */
+            const list = (archiveData && archiveData.news && Array.isArray(archiveData.news)) ? archiveData.news : [];
+            list.forEach(n => {
+                if (n.id && n.title) searchIndex.push({id:n.id, title:n.title, desc:n.desc||'', tag:n.tag||'MUSICA', type:'article'});
+            });
+            /* Articoli redazionali da content.json */
+            const fields = (contentData && contentData.fields) || {};
+            Object.keys(fields).map(k => (k.match(/^article(\d+)-title$/)||[])[1]).filter(Boolean).map(Number).sort((a,b)=>a-b).forEach(i => {
+                const t = fields['article'+i+'-title'];
+                const src = fields['article'+i+'-source'] || 'custom';
+                if(t && src !== 'radioitalia' && src !== 'rockol') searchIndex.push({id:'article-'+i, title:t, desc:fields['article'+i+'-desc']||'', tag:fields['article'+i+'-tag']||'News', type:'article'});
+            });
+            for (let i=1;i<=6;i++) {
+                const t = fields['pod'+i+'-title']; if(t) searchIndex.push({id:'pod-'+i, title:t, desc:fields['pod'+i+'-desc']||'', tag:fields['pod'+i+'-type']||'Podcast', type:'podcast'});
+            }
+        }
+
+        Promise.all([
+            fetch('news-archive-light.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),
+            fetch('content.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+        ]).then(([arch, cont]) => buildSearchIndex(arch, cont));
+
+        function doSearch(query) {
+            if (!query || query.length < 2) { searchResults.innerHTML = ''; return; }
+            const q = query.toLowerCase();
+            const matches = searchIndex.filter(item => item.title.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.tag.toLowerCase().includes(q));
+            if (!matches.length) { searchResults.innerHTML = '<div style="color:rgba(255,255,255,.5);padding:16px;">Nessun risultato per "'+query+'"</div>'; return; }
+            searchResults.innerHTML = matches.map(item => {
+                const iconClass = item.type === 'podcast' ? 'podcast' : 'article';
+                const iconFA = item.type === 'podcast' ? 'fas fa-headphones' : 'far fa-newspaper';
+                const href = item.type === 'podcast' ? 'index.html#podcast' : 'articolo.html?id='+item.id;
+                return '<a class="search-result-item" href="'+href+'"><div class="search-result-icon '+iconClass+'"><i class="'+iconFA+'"></i></div><div><div class="search-result-title">'+item.title+'</div><div class="search-result-tag">'+item.tag+'</div></div></a>';
+            }).join('');
+        }
+
+        if (searchInput) searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => doSearch(searchInput.value.trim()), 200);
+        });
+</script>
+
+    <!-- DARK THEME TOGGLE (articolo: default is dark, toggle goes light) -->
+    <script>
+    (function(){
+        const KEY = 'liferadio-theme';
+        const btn = document.getElementById('themeToggleBtn');
+        const logo = document.querySelector('.logo-img');
+        const logoDark = 'immagini/2.png';
+        const logoLight = 'immagini/1.png';
+
+        function setTheme(dark){
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            if(btn) btn.innerHTML = dark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            if(logo) logo.src = dark ? logoLight : logoDark;
+            try{ localStorage.setItem(KEY, dark ? 'dark' : 'light'); }catch(e){}
+        }
+
+        var saved = null;
+        try{ saved = localStorage.getItem(KEY); }catch(e){}
+        if(saved === 'light') setTheme(false);
+        else setTheme(true);
+
+        if(btn) btn.addEventListener('click', function(){
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            setTheme(!isDark);
+        });
+    })();
+    </script>
+    <!-- News Ticker Script -->
+    <script src="news-ticker.js"></script>
+    <script src="radio-player-panel.js"></script>
+</body>
+</html>

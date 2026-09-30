@@ -1,0 +1,3627 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Li.Fe. Radio - Enjoy Your Culture</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <link rel="stylesheet" href="news-ticker.css">
+    <link rel="stylesheet" href="radio-player-panel.css">
+
+    <style>
+/* LOADER OVERLAY */
+.loader-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #012657;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99999;
+    transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.7s ease;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+}
+
+.loader-logo {
+    width: 300px;
+    height: auto;
+    animation: pulse-logo 2.5s infinite ease-in-out;
+    filter: drop-shadow(0 0 40px rgba(1, 133, 199, 0.35));
+}
+
+.loader-bar-container {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.loader-bar-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+}
+
+.loader-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #0a3a7a, #0d4fa3, #0a3a7a);
+    background-size: 200% 100%;
+    border-radius: 5px;
+    animation: bar-shimmer 1.5s infinite linear;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 14px rgba(1, 133, 199, 0.6);
+}
+
+.loader-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.loader-percentage {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+.loader-motto {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+@keyframes pulse-logo {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.04); opacity: 0.85; }
+}
+
+@keyframes bar-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.loader-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .loader-logo { width: 180px; }
+    .loader-bar-container { width: 260px; }
+    .loader-percentage { font-size: 2rem; }
+    .loader-motto { font-size: 0.75rem; letter-spacing: 1.5px; }
+}
+
+        /* ==========================================================================
+           TAVOLOZZA COLORI E DESIGN DA RADIO NAZIONALE GENERAZIONE Z
+           ========================================================================== */
+        :root {
+            --white: #FFFFFF;               
+            --bg-dark: #012657;
+            --accent-celeste: #0185C7;
+            --accent-red: #FF2A54;
+            --accent-light: rgba(1, 133, 199, 0.1);
+            
+            --text-main: #012657;           
+            --text-muted: rgba(1, 38, 87, 0.75); 
+            
+            --card-border: 2.5px solid #012657; 
+            --radius-main: 20px;
+            --radius-sm: 10px;
+            --radius-round: 50%;
+            
+            --pop-shadow: 6px 6px 0px rgba(1, 38, 87, 0.12);
+            --pop-shadow-strong: 8px 8px 0px #012657;
+            
+            --font-title: 'League Spartan', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* Reset Strutturale */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.5;
+            padding-bottom: 140px;
+            padding-top: 36px;
+            position: relative;
+            background-color: var(--white);
+            width: 100%;
+        }
+
+        /* SFONDO FLUIDO GENERATIVO */
+        .fluid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -2;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FC 40%, #D6EDFC 100%);
+            overflow: hidden;
+        }
+        .blur-ball {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.52;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .ball-1 { top: 25%; right: -10%; width: 500px; height: 500px; background: var(--accent-celeste); animation: drift 15s infinite alternate ease-in-out; }
+        .ball-2 { bottom: -10%; left: -5%; width: 600px; height: 600px; background: #A2DBFF; animation: drift 20s infinite alternate-reverse ease-in-out; }
+        .ball-3 { top: 60%; right: 15%; width: 400px; height: 400px; background: rgba(1, 38, 87, 0.25); animation: drift 18s infinite alternate ease-in-out; }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, -60px) scale(1.15); }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Banner Pubblicitari */
+        .adv-banner-top, .adv-banner-bottom {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 25px 0;
+            position: relative;
+            z-index: 2;
+        }
+        .adv-placeholder {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border: var(--card-border);
+            color: var(--text-muted);
+            padding: 12px 24px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            box-shadow: 4px 4px 0px rgba(1, 38, 87, 0.1);
+        }
+
+        /* ELEMENTI MULTIMEDIALI FLUTTUANTI */
+        @keyframes bounce-float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(8deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes orbit-float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-10px, 15px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        .floating-element { position: absolute; color: rgba(1, 133, 199, 0.16); font-size: 5rem; z-index: -1; pointer-events: none; }
+        .fe-1 { top: 180px; left: 2%; animation: bounce-float 7s ease-in-out infinite; }
+        .fe-2 { top: 750px; right: 3%; animation: orbit-float 6s ease-in-out infinite; font-size: 6rem; }
+        .fe-3 { top: 1400px; left: 4%; animation: bounce-float 8s ease-in-out infinite; }
+        .fe-4 { top: 2100px; right: 4%; animation: orbit-float 9s ease-in-out infinite; }
+        .fe-5 { top: 2800px; left: 2%; animation: bounce-float 6.5s ease-in-out infinite; }
+
+        /* HEADER */
+        .main-header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 3px solid var(--bg-dark);
+            padding: 12px 0;
+        }
+        .header-container { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        
+        .logo-img { 
+            height: 80px;
+            width: auto;
+            object-fit: contain; 
+            display: block;
+            flex-shrink: 0;
+        }
+        .nav-menu { flex: 1 1 auto; }
+        .nav-menu ul { display: flex; list-style: none; gap: 0; width: 100%; justify-content: space-around; }
+        .nav-menu ul li { flex: 0 0 auto; text-align: center; }
+        .nav-menu ul li a { font-family: var(--font-title); font-weight: 900; font-size: 1.25rem; letter-spacing: 1px; color: var(--bg-dark); text-transform: uppercase; white-space: nowrap; padding: 4px 8px; }
+        .nav-menu ul li a:hover, .nav-menu ul li a.active { color: var(--accent-celeste); transform: translateY(-2px); }
+        .header-actions { display: flex; align-items: center; gap: 18px; color: var(--bg-dark); font-size: 1.25rem; flex-shrink: 0; }
+        .header-actions a:hover { color: var(--accent-celeste); transform: scale(1.2) rotate(8deg); }
+        .header-actions .divider { opacity: 0.3; }
+        @media (max-width: 992px) { .nav-menu { display: none; } }
+
+        /* ==========================================================================
+           HERO NEWS TICKER — Radio Italia Style
+           ========================================================================== */
+        .hero-news-ticker {
+            position: relative;
+            background: var(--bg-dark);
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* Logo bar */
+        .hero-ticker-logo-bar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 32px;
+            background: linear-gradient(180deg, rgba(1,38,87,0.92) 0%, rgba(1,38,87,0) 100%);
+        }
+        .hero-ticker-logo-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .hero-ticker-logo-img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+        .hero-ticker-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-celeste);
+            color: var(--white);
+            padding: 5px 14px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .btn-ticker-live {
+            font-size: 0.85rem;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+        }
+        .btn-ticker-live:hover {
+            box-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+        }
+
+        /* Viewport & Track */
+        .hero-ticker-viewport {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 16/8;
+            min-height: 480px;
+            max-height: 700px;
+        }
+        .hero-ticker-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+            touch-action: pan-y;
+        }
+
+        /* Individual Slide */
+        .hero-ticker-slide {
+            position: relative;
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Background image */
+        .hero-slide-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center 30%;
+            background-color: #081e40;
+            background-repeat: no-repeat;
+            transition: transform 8s ease-out;
+        }
+        .hero-slide-bg-link { position: absolute; inset: 0; z-index: 1; display: block; }
+        .hero-slide-bg-link .hero-slide-bg { position: absolute; inset: 0; }
+        .hero-ticker-slide.active .hero-slide-bg {
+            transform: scale(1.06);
+        }
+        .hero-slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(1, 38, 87, 0.88) 0%,
+                rgba(1, 38, 87, 0.55) 40%,
+                rgba(1, 133, 199, 0.18) 70%,
+                rgba(0, 0, 0, 0.15) 100%
+            );
+        }
+
+        /* Slide Content */
+        .hero-slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 50px 60px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(0deg, rgba(1,38,87,0.75) 0%, transparent 100%);
+        }
+        .hero-slide-tag {
+            display: inline-block;
+            background: var(--accent-celeste);
+            color: var(--white);
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 16px;
+            width: fit-content;
+            border: 1.5px solid rgba(255,255,255,0.25);
+        }
+        .hero-slide-title {
+            font-family: var(--font-title);
+            font-size: clamp(1.8rem, 4.2vw, 3.4rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.05;
+            margin-bottom: 14px;
+            max-width: 720px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+        }
+        .hero-slide-desc {
+            font-family: var(--font-body);
+            font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+            color: rgba(255,255,255,0.82);
+            line-height: 1.55;
+            max-width: 560px;
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+        .btn-hero-slide {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-celeste);
+            color: var(--white);
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 13px 26px;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2.5px solid var(--white);
+            box-shadow: 0 4px 20px rgba(1,133,199,0.4);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            width: fit-content;
+        }
+        .btn-hero-slide:hover {
+            background: var(--white);
+            color: var(--bg-dark);
+            border-color: var(--bg-dark);
+            transform: translateY(2px);
+        }
+
+        /* Controls */
+        .hero-ticker-controls {
+            position: absolute;
+            bottom: 22px;
+            right: 32px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .hero-ticker-arrow {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5);
+            background: rgba(1,38,87,0.5);
+            backdrop-filter: blur(8px);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+        .hero-ticker-arrow:hover {
+            background: var(--accent-celeste);
+            border-color: var(--white);
+            transform: scale(1.08);
+        }
+        .hero-ticker-dots {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .hero-ticker-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            padding: 0;
+        }
+        .hero-ticker-dot.active {
+            background: var(--accent-celeste);
+            border-color: var(--white);
+            transform: scale(1.25);
+            box-shadow: 0 0 8px rgba(1,133,199,0.6);
+        }
+
+        /* Progress bar */
+        .hero-ticker-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: rgba(255,255,255,0.08);
+            z-index: 20;
+        }
+        .hero-ticker-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-celeste), #00b4ff);
+            border-radius: 0 2px 2px 0;
+            transition: width 0.1s linear;
+        }
+
+        /* Responsive: Tablet */
+        @media (max-width: 992px) {
+            .hero-ticker-logo-bar { padding: 14px 24px; }
+            .hero-ticker-logo-img { height: 40px; }
+            .hero-ticker-viewport { min-height: 400px; aspect-ratio: 16/8; }
+            .hero-slide-content { padding: 36px 36px 60px; }
+        }
+
+        /* Responsive: Mobile */
+        @media (max-width: 600px) {
+            .hero-ticker-logo-bar { padding: 12px 18px; }
+            .hero-ticker-logo-img { display: none; }
+            .hero-ticker-badge { display: none !important; }
+            .btn-ticker-live { display: none !important; }
+            .hero-ticker-viewport { min-height: 340px; aspect-ratio: 3/4; max-height: none; }
+            .hero-slide-bg { background-position: center 25%; }
+            .hero-slide-content { padding: 24px 18px 46px; align-items: center; text-align: center; pointer-events: none; background: linear-gradient(0deg, rgba(1,38,87,0.78) 0%, rgba(1,38,87,0.1) 55%, transparent 100%); }
+            .hero-slide-tag { margin-left: auto; margin-right: auto; }
+            .hero-slide-title { font-size: 1.6rem; text-align: center; max-width: 100%; }
+            .hero-slide-desc { font-size: 0.88rem; margin-bottom: 16px; margin-left: auto; margin-right: auto; }
+            .btn-hero-slide { display: none !important; }
+            .hero-ticker-controls { bottom: 16px; right: auto; left: 50%; transform: translateX(-50%); gap: 0; }
+            .hero-ticker-arrow { display: none !important; }
+            .hero-ticker-dots { gap: 10px; }
+            .hero-ticker-dot { width: 11px; height: 11px; border-width: 2px; }
+            .hero-ticker-dot.active { width: 26px; border-radius: 999px; }
+        }
+
+        @media (max-width: 380px) {
+            .hero-slide-title { font-size: 1.35rem; }
+        }
+
+        /* Stili dei Pulsanti (Globali) */
+        .btn {
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: var(--card-border);
+            box-shadow: 4px 4px 0px var(--bg-dark);
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .btn-primary { background: var(--accent-celeste); color: var(--white); }
+        .btn-primary:hover { background: var(--bg-dark); transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--bg-dark); }
+        .btn-secondary { background: var(--white); color: var(--bg-dark); }
+        .btn-secondary:hover { background: var(--accent-light); transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--bg-dark); }
+
+        .wuu-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-dark);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        /* BENTO GRID SECTIONS */
+        .grid-section { padding: 50px 0; position: relative; overflow: visible; }
+        .section-header { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin-bottom: 30px; border-bottom: none; padding-bottom: 0; gap: 6px; }
+        .section-header h2 { font-family: var(--font-title); font-size: 2rem; font-weight: 900; color: var(--bg-dark); text-transform: uppercase; white-space: nowrap; }
+        .view-all { font-family: var(--font-title); font-weight: 700; color: var(--accent-celeste); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .news-main-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; }
+        .wuu-card { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(8px); border: var(--card-border); border-radius: var(--radius-main); overflow: visible; display: flex; flex-direction: column; box-shadow: var(--pop-shadow); transition: transform 0.15s ease, box-shadow 0.15s ease; transform-style: preserve-3d; will-change: transform; }
+        .news-img-placeholder { height: 270px; background: rgba(1, 133, 199, 0.05); display: flex; align-items: center; justify-content: center; font-size: 4.5rem; color: rgba(1, 38, 87, 0.12); border-bottom: 2.5px solid var(--bg-dark); overflow: hidden; position: relative; border-radius: var(--radius-main) var(--radius-main) 0 0; }
+        .wuu-card .news-content { border-radius: 0 0 var(--radius-main) var(--radius-main); }
+        .ig-post-card .ig-footer { border-radius: 0 0 var(--radius-main) var(--radius-main); }
+        .program-card .card-image-wrapper { border-radius: var(--radius-main) var(--radius-main) 0 0; overflow: hidden; }
+        .program-card .card-info { border-radius: 0 0 var(--radius-main) var(--radius-main); }
+        .news-img-placeholder img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+        .news-content { padding: 26px; }
+        .news-tag { color: var(--white); background: var(--accent-celeste); font-family: var(--font-title); font-weight: 800; font-size: 0.85rem; margin-bottom: 14px; padding: 5px 14px; border-radius: var(--radius-sm); display: inline-block; text-transform: uppercase; border: 1.5px solid var(--bg-dark); }
+        .wuu-card h3 { font-family: var(--font-title); font-size: 1.9rem; line-height: 1.15; margin-bottom: 12px; color: var(--bg-dark); text-transform: uppercase; }
+        .news-side-column { display: flex; flex-direction: column; gap: 22px; }
+        .card-small { flex-direction: row; align-items: center; }
+        .news-img-placeholder-small { width: 115px; height: 115px; background: rgba(1, 38, 87, 0.04); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: rgba(1, 38, 87, 0.12); border-right: 2.5px solid var(--bg-dark); overflow: hidden; position: relative; }
+        .news-img-placeholder-small img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+        .card-small h4 { font-family: var(--font-title); font-size: 1.4rem; color: var(--bg-dark); text-transform: uppercase; padding: 0 15px; }
+        @media(max-width: 992px) { .news-main-grid { grid-template-columns: 1fr; } }
+
+        /* ULTIME NEWS – 3-COLUMN GRID */
+        .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .news-grid-card {
+            position: relative; border-radius: var(--radius-main); overflow: hidden;
+            aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end;
+            cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: var(--pop-shadow); border: var(--card-border);
+        }
+        .news-grid-card:hover { transform: translateY(-6px); box-shadow: 8px 8px 0 var(--accent-celeste); }
+        .news-grid-card a { position: absolute; inset: 0; z-index: 5; color: inherit; text-decoration: none; }
+        .news-grid-bg { position: absolute; inset: 0; background: rgba(1,38,87,0.08); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: rgba(1,38,87,0.10); overflow: hidden; }
+        .news-grid-bg img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+        .news-grid-bg.has-image { background: transparent; }
+        .news-grid-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(1,38,87,0.85) 0%, rgba(1,38,87,0.35) 40%, transparent 70%); z-index: 1; }
+        .news-grid-content { position: relative; z-index: 2; padding: 28px; color: var(--white); }
+        .news-grid-tag {
+            display: inline-block; background: var(--accent-celeste); color: var(--white);
+            font-family: var(--font-title); font-weight: 800; font-size: 0.8rem;
+            padding: 5px 14px; border-radius: var(--radius-sm); text-transform: uppercase;
+            margin-bottom: 12px; border: 1.5px solid rgba(255,255,255,0.25);
+        }
+        .news-grid-content h3 {
+            font-family: var(--font-title); font-size: 1.55rem; line-height: 1.1;
+            color: var(--white); text-transform: uppercase; margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+        .news-grid-date {
+            font-family: var(--font-title); font-weight: 700; font-size: 0.85rem;
+            color: rgba(255,255,255,0.7); text-transform: uppercase;
+        }
+        /* NEWS: Desktop grid, Mobile carousel */
+        .news-carousel-arrow { display: none !important; }
+        
+        @media(max-width: 600px) {
+            #news .touch-carousel-shell .news-grid {
+                display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
+                padding: 3px 4px 18px 4px; margin: 0; scrollbar-width: none;
+            }
+            #news .touch-carousel-shell .news-grid::-webkit-scrollbar { display: none; }
+            #news .touch-carousel-shell .news-grid > * { flex: 0 0 76vw; max-width: 315px; scroll-snap-align: start; }
+            #news .touch-carousel-shell .news-grid .news-grid-card { aspect-ratio: 3/4; }
+            .news-carousel-arrow { display: none !important; }
+        }
+
+        @media(max-width: 992px) {
+            .news-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+            .news-grid-card { aspect-ratio: 4/3; }
+            .news-grid-content h3 { font-size: 1.25rem; }
+        }
+
+        /* INSTAGRAM SOCIAL WALL */
+        .instagram-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        @media (max-width: 900px) { .instagram-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .instagram-grid { grid-template-columns: 1fr; } }
+        /* Hide Instagram carousel arrows on desktop (grid layout already shows all) */
+        @media (min-width: 769px) {
+            #social-feed .touch-carousel-shell .carousel-arrow { display: none !important; }
+        }
+
+        .ig-embed-wrapper { min-width: 0; overflow: hidden; border-radius: var(--radius-main); }
+        .ig-embed-wrapper .instagram-media { margin: 0 auto !important; min-width: 0 !important; max-width: 100% !important; width: 100% !important; }
+        .ig-post-card { background: var(--white); border: var(--card-border); border-radius: var(--radius-main); overflow: visible; box-shadow: var(--pop-shadow); display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; transform-style: preserve-3d; will-change: transform; }
+        .ig-header { display: flex; align-items: center; justify-content: space-between; padding: 14px; border-bottom: 2px solid var(--bg-dark); }
+        .ig-profile { display: flex; align-items: center; gap: 10px; }
+        .ig-avatar { width: 32px; height: 32px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.85rem; }
+        .ig-username { font-weight: 700; font-size: 0.9rem; font-family: var(--font-body); color: var(--bg-dark); }
+        .ig-media-mock { position: relative; padding-top: 100%; background: #EBF5FC; border-bottom: 2px solid var(--bg-dark); display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: var(--radius-main) var(--radius-main) 0 0; }
+        .ig-media-mock img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .ig-media-mock.has-image .ig-media-content { opacity: 0; transition: opacity 0.25s; }
+        .ig-media-mock.has-image:hover .ig-media-content { opacity: 1; background: rgba(1,38,87,0.55); color: var(--white); }
+        .ig-media-mock.has-image:hover .ig-media-content span { color: var(--white); }
+        .ig-media-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--accent-celeste); font-size: 3.5rem; padding: 20px; text-align: center; z-index: 2; transition: opacity 0.25s, background 0.25s; }
+        .ig-post-link { text-decoration: none; color: inherit; cursor: pointer; }
+        .ig-media-content span { font-family: var(--font-title); font-size: 1.6rem; font-weight: 900; color: var(--bg-dark); margin-top: 10px; text-transform: uppercase; line-height: 1.1; }
+        .ig-footer { padding: 15px; display: flex; flex-direction: column; gap: 8px; }
+        .ig-actions { display: flex; gap: 14px; font-size: 1.25rem; color: var(--bg-dark); }
+        .ig-actions i:hover { color: #ff2a54; cursor: pointer; }
+        .ig-likes { font-weight: 700; font-size: 0.85rem; }
+        .ig-caption { font-size: 0.85rem; line-height: 1.3; color: var(--text-muted); }
+        .ig-caption strong { color: var(--bg-dark); margin-right: 4px; }
+
+        /* PODCAST CARDS */
+        .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        @media(max-width: 768px) { .cards-grid { grid-template-columns: 1fr; } }
+        .program-card { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(8px); border: var(--card-border); border-radius: var(--radius-main); overflow: visible; box-shadow: var(--pop-shadow); transition: transform 0.15s ease, box-shadow 0.15s ease; will-change: transform; }
+        /* PODCAST SPLIT CARD — Horizontal scroll layout */
+        .podcast-split-card { display: flex; align-items: stretch; background: var(--bg-dark); border: 3px solid var(--bg-dark); border-radius: var(--radius-main); overflow: hidden; box-shadow: var(--pop-shadow); min-width: 320px; max-width: 380px; height: 180px; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; flex-shrink: 0; }
+        .podcast-split-card:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--accent-celeste); }
+        .podcast-cover-side { flex: 0 0 180px; width: 180px; height: 180px; position: relative; overflow: hidden; background: rgba(1,38,87,.12); border-right: 3px solid var(--accent-celeste); }
+        .podcast-cover-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .podcast-cover-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; color: rgba(255,255,255,.18); background: linear-gradient(135deg, var(--bg-dark), #083b76); }
+        .podcast-cover-badge { position: absolute; top: 10px; left: 10px; padding: 4px 10px; font-family: var(--font-title); font-weight: 800; font-size: .7rem; border-radius: var(--radius-sm); color: var(--white); background: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; }
+        .podcast-text-side { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 18px 20px; min-width: 0; }
+        .podcast-text-side .pod-type { font-family: var(--font-title); font-weight: 800; font-size: .72rem; color: var(--accent-celeste); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+        .podcast-text-side h3 { font-family: var(--font-title); font-size: 1.2rem; font-weight: 900; color: var(--white); text-transform: uppercase; margin: 0 0 10px; line-height: 1.15; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .podcast-text-side .pod-ep { font-family: var(--font-title); font-weight: 700; font-size: .85rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .5px; }
+        .podcast-text-side .pod-ep .pod-ep-num { color: var(--accent-celeste); font-weight: 900; }
+        @media(max-width:600px) { .podcast-split-card { min-width: 260px; max-width: 290px; height: 150px; } .podcast-cover-side { flex: 0 0 130px; width: 130px; height: 150px; } .podcast-text-side { padding: 12px 14px; } .podcast-text-side h3 { font-size: 1rem; } }
+        .card-image-wrapper { position: relative; padding-top: 56.25%; background: rgba(1, 38, 87, 0.04); border-bottom: 2.5px solid var(--bg-dark); }
+        .card-image-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; color: rgba(1, 38, 87, 0.1); }
+        .card-badge { position: absolute; top: 14px; left: 14px; padding: 5px 12px; font-family: var(--font-title); font-weight: 800; font-size: 0.8rem; border-radius: var(--radius-sm); color: var(--white); background: var(--bg-dark); text-transform: uppercase; }
+        .card-info { padding: 22px; }
+        .card-info h3 { font-family: var(--font-title); font-size: 1.5rem; margin-bottom: 8px; color: var(--bg-dark); text-transform: uppercase; }
+
+        /* ==== REPLICHE: CARD CON PLAYER INLINE ==== */
+        .podcast-split-card { flex-wrap: wrap; height: auto; min-height: 180px; }
+        .podcast-split-card .podcast-cover-side { height: auto; align-self: stretch; }
+        .podcast-split-card .podcast-cover-side img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .podcast-split-card .podcast-cover-placeholder { position: absolute; inset: 0; }
+        .podcast-split-card .podcast-text-side { flex: 1 1 0; min-width: 0; }
+        .podcast-inline-player { flex: 1 1 100%; width: 100%; box-sizing: border-box; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+        .podcast-inline-player.active { max-height: 120px; padding: 12px 16px 14px; border-top: 2px solid var(--accent-celeste); background: rgba(255,255,255,.05); }
+        .podcast-play-btn { align-self: flex-start; margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 2px solid var(--accent-celeste); border-radius: 999px; background: var(--accent-celeste); color: var(--white); font-family: var(--font-title); font-weight: 800; text-transform: uppercase; font-size: .78rem; letter-spacing: .5px; cursor: pointer; transition: filter .12s ease, transform .1s ease; }
+        .podcast-play-btn:hover { filter: brightness(1.08); }
+        .podcast-play-btn:active { transform: scale(.96); }
+        .podcast-no-ep { align-self: flex-start; margin-top: 12px; display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border: 2px dashed rgba(255,255,255,.3); border-radius: 999px; color: rgba(255,255,255,.55); font-family: var(--font-title); font-weight: 800; text-transform: uppercase; font-size: .72rem; }
+
+        /* ==== CUSTOM AUDIO PLAYER ==== */
+        .lf-player { display: flex; align-items: center; gap: 12px; width: 100%; }
+        .lf-player audio { display: none; }
+        .lf-player .lf-play { flex: none; width: 42px; height: 42px; border-radius: 999px; border: none; background: var(--accent-red); color: #fff; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: filter .12s ease, transform .1s ease; }
+        .lf-player .lf-play:hover { filter: brightness(1.1); }
+        .lf-player .lf-play:active { transform: scale(.93); }
+        .lf-player .lf-body { flex: 1 1 auto; min-width: 0; }
+        .lf-player .lf-bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,.22); cursor: pointer; position: relative; overflow: hidden; }
+        .lf-player .lf-fill { height: 100%; width: 0%; background: var(--accent-celeste); border-radius: 999px; }
+        .lf-player .lf-times { display: flex; justify-content: space-between; font-size: .68rem; font-weight: 800; margin-top: 5px; color: rgba(255,255,255,.72); font-family: var(--font-title); letter-spacing: .5px; }
+
+        /* PALINSESTO / CLASSIFICHE */
+        .two-columns-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 25px 0; }
+        @media(max-width: 850px) { .two-columns-layout { grid-template-columns: 1fr; } }
+        .wuu-panel { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(8px); border: var(--card-border); border-radius: var(--radius-main); padding: 12px; box-shadow: var(--pop-shadow); }
+        .schedule-row, .ranking-row { display: flex; align-items: center; padding: 16px; border-bottom: 2px dashed rgba(1, 38, 87, 0.15); gap: 16px; }
+        .schedule-row:last-child, .ranking-row:last-child { border-bottom: none; }
+        .schedule-day { background: var(--bg-dark); width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-family: var(--font-title); font-weight: 800; color: var(--white); }
+        .schedule-time { font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; color: var(--accent-celeste); }
+        .schedule-details h4, .rank-details h4 { font-family: var(--font-title); font-size: 1.25rem; color: var(--bg-dark); text-transform: uppercase; }
+        .schedule-details p, .rank-details p { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+        .rank-number { font-family: var(--font-title); font-size: 2.2rem; font-weight: 900; width: 38px; text-align: center; color: var(--bg-dark); }
+        .ranking-row:nth-child(1) .rank-number { color: var(--accent-celeste); }
+        .rank-details { flex-grow: 1; }
+        .rank-up { color: #2e7d32; } .rank-stable { color: #78909c; } .rank-down { color: #c62828; }
+
+
+
+        /* SEZIONI EDITORIALI AGGIUNTIVE */
+        .editorial-kicker { font-family: var(--font-title); font-weight: 900; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1.4px; font-size: 0.82rem; margin-bottom: 8px; display: inline-flex; gap: 7px; align-items: center; }
+        .blog-grid { display: grid; grid-template-columns: 1.1fr repeat(2, 0.95fr); gap: 28px; }
+        .blog-card { min-height: 100%; }
+        .blog-card.featured { grid-row: span 2; }
+        .blog-card .news-img-placeholder { height: 220px; }
+        .blog-card.featured .news-img-placeholder { height: 360px; }
+        .blog-meta { font-size: 0.78rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; display: block; }
+        .podcast-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+        .mini-action { display:inline-flex; align-items:center; gap:7px; padding:9px 12px; border:2px solid var(--bg-dark); border-radius: var(--radius-sm); color:var(--bg-dark); font-family:var(--font-title); font-weight:800; text-transform:uppercase; font-size:.78rem; background:var(--white); box-shadow:3px 3px 0 var(--accent-celeste); }
+        .palinsesto-editorial { display:grid; grid-template-columns:.85fr 1.15fr; gap:32px; padding:25px 0; }
+        .pal-photo { position:relative; min-height:420px; background:rgba(255,255,255,.75); border:var(--card-border); border-radius:var(--radius-main); box-shadow:var(--pop-shadow); overflow:hidden; display:flex; align-items:center; justify-content:center; color:rgba(1,38,87,.15); font-size:5rem; padding:24px; }
+        .pal-photo > i { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; opacity:.7; }
+        .calendar-photo-days { position:relative; z-index:2; width:100%; align-self:stretch; display:grid; grid-template-columns:repeat(7, minmax(34px, 1fr)); gap:10px; align-content:start; }
+        .calendar-photo-days-title { grid-column:1 / -1; font-family:var(--font-title); font-weight:900; color:var(--accent-red); text-transform:uppercase; font-size:.86rem; letter-spacing:1px; margin-bottom:4px; text-align:left; }
+        .calendar-days { display:block; margin-bottom:16px; }
+        .calendar-shell { display:grid; grid-template-columns:minmax(0,1fr) .92fr; gap:18px; align-items:start; }
+        .calendar-day-number { min-height:42px; border:2px solid rgba(1,38,87,.22); background:rgba(255,255,255,.88); border-radius:12px; display:flex; align-items:center; justify-content:center; font-family:var(--font-title); font-weight:900; font-size:1rem; color:var(--bg-dark); cursor:pointer; transition:.12s; position:relative; }
+        .calendar-day-number.has-events::after { content:''; position:absolute; right:6px; bottom:6px; width:7px; height:7px; border-radius:999px; background:var(--accent-red); border:1px solid var(--bg-dark); }
+        .calendar-day-number.active, .calendar-day-number:hover { background:var(--accent-celeste); color:var(--white); border-color:var(--bg-dark); transform:none; box-shadow:none; }
+        .calendar-main-area { min-width:0; }
+        .month-selector { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin-bottom:14px; }
+        .month-btn { border:2px solid var(--bg-dark); background:var(--white); border-radius:12px; padding:9px 6px; font-family:var(--font-title); font-weight:800; color:var(--bg-dark); cursor:pointer; text-transform:uppercase; }
+        .month-btn.active { background:var(--accent-celeste); color:var(--white); box-shadow:3px 3px 0 var(--bg-dark); }
+        .month-title { font-family:var(--font-title); font-size:1.75rem; color:var(--bg-dark); text-transform:uppercase; margin:4px 0 12px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+        .month-title span { font-size:.9rem; color:var(--text-muted); letter-spacing:1px; }
+        .calendar-weekdays { display:grid; grid-template-columns:repeat(7,1fr); gap:7px; margin-bottom:7px; }
+        .weekday-label { text-align:center; font-family:var(--font-title); font-weight:900; color:var(--text-muted); font-size:.78rem; text-transform:uppercase; padding:10px 4px; border:2px dashed rgba(1,38,87,.15); border-radius:10px; background:rgba(255,255,255,.42); }
+        .calendar-info-box { border:2px solid rgba(1,38,87,.14); border-radius:var(--radius-main); background:rgba(255,255,255,.58); padding:16px; color:var(--text-muted); font-weight:700; line-height:1.45; }
+        .calendar-info-box strong { display:block; font-family:var(--font-title); font-size:1.15rem; color:var(--bg-dark); text-transform:uppercase; margin-bottom:6px; }
+        .day-panel-title { font-family:var(--font-title); font-size:1.65rem; color:var(--bg-dark); text-transform:uppercase; padding:16px; border-bottom:2px dashed rgba(1,38,87,.15); }
+        .selected-date-label { display:block; color:var(--accent-celeste); font-size:.95rem; margin-top:4px; }
+        .empty-day { padding:22px; color:var(--text-muted); font-weight:700; }
+        .day-events-panel { border:2px solid rgba(1,38,87,.12); border-radius:var(--radius-main); background:rgba(255,255,255,.62); overflow:hidden; }
+
+        /* RIVEDI – WATCH AGAIN SECTION */
+        .rivedi-section {
+            position: relative; padding: 60px 0; overflow: hidden;
+            background: linear-gradient(135deg, #012657 0%, #083b76 25%, #0185C7 55%, #a8d8f0 80%, #FFFFFF 100%);
+        }
+        .rivedi-section::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: radial-gradient(ellipse at 25% 15%, rgba(1,133,199,0.3) 0%, transparent 55%),
+                        radial-gradient(ellipse at 75% 85%, rgba(168,216,240,0.2) 0%, transparent 50%);
+        }
+        .rivedi-section .container { position: relative; z-index: 1; }
+        .rivedi-section .section-header { border-bottom: none; }
+        .rivedi-section .section-header h2 { color: var(--white); text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+        .rivedi-section .view-all { color: rgba(255,255,255,0.85); }
+        .rivedi-section .section-header::after { content:none; }
+        /* ── Rivedi Deck-of-Cards Carousel (desktop) ── */
+        .rivedi-deck-viewport {
+            position: relative;
+            max-width: 580px;
+            margin: 0 auto;
+            perspective: 900px;
+        }
+        .rivedi-deck-stage {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+        }
+        .rivedi-deck-card {
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-main);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.55s cubic-bezier(.4,0,.2,1), opacity 0.55s ease, box-shadow 0.55s ease;
+            box-shadow: 0 8px 36px rgba(0,0,0,0.4), 0 0 0 2px rgba(255,255,255,0.1);
+            transform-origin: center center;
+        }
+        .rivedi-deck-card.active {
+            transform: translateZ(0) scale(1);
+            opacity: 1;
+            z-index: 3;
+        }
+        .rivedi-deck-card.peek-next {
+            transform: translateX(5%) translateY(3%) scale(0.93);
+            opacity: 0.7;
+            z-index: 2;
+            filter: brightness(0.7);
+        }
+        .rivedi-deck-card.peek-prev {
+            transform: translateX(-5%) translateY(3%) scale(0.93);
+            opacity: 0.7;
+            z-index: 2;
+            filter: brightness(0.7);
+        }
+        .rivedi-deck-card.hidden-card {
+            transform: scale(0.85) translateY(6%);
+            opacity: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .rivedi-deck-card a { position: absolute; inset: 0; z-index: 5; color: inherit; text-decoration: none; display: block; }
+        .rivedi-deck-card-bg { position: absolute; inset: 0; background: rgba(60,15,90,0.15); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: rgba(255,255,255,0.15); overflow: hidden; }
+        .rivedi-deck-card-bg img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+        .rivedi-deck-card-bg.has-image { background: transparent; }
+        .rivedi-deck-card-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(1,38,87,0.85) 0%, rgba(1,38,87,0.35) 35%, rgba(1,38,87,0.08) 60%, transparent 80%); z-index: 1; }
+        .rivedi-deck-card-content { position: relative; z-index: 2; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; color: var(--white); }
+        .rivedi-deck-card-label {
+            display: inline-block; font-family: var(--font-title); font-weight: 900; font-size: 1.5rem;
+            text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+        .rivedi-deck-card-subtitle {
+            font-family: var(--font-title); font-weight: 700; font-size: 0.95rem;
+            color: rgba(255,255,255,0.75); text-transform: uppercase; margin-bottom: 12px;
+        }
+        .rivedi-deck-card-indicator {
+            display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-title);
+            font-weight: 800; font-size: 0.85rem; text-transform: uppercase;
+            background: rgba(255,255,255,0.18); backdrop-filter: blur(6px);
+            padding: 7px 16px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.2);
+            color: var(--white);
+        }
+        .rivedi-deck-card-indicator i { font-size: 0.95rem; }
+
+        /* Deck navigation arrows */
+        .rivedi-deck-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.12);
+            color: var(--white);
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: grid; place-items: center;
+            z-index: 10;
+            transition: border-color 0.2s, background 0.2s;
+            backdrop-filter: blur(4px);
+        }
+        .rivedi-deck-nav:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.22); }
+        .rivedi-deck-nav.prev { left: -54px; }
+        .rivedi-deck-nav.next { right: -54px; }
+
+        /* Deck dots */
+        .rivedi-deck-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 22px;
+        }
+        .rivedi-deck-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5);
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.25s, border-color 0.25s, transform 0.25s;
+        }
+        .rivedi-deck-dot.active {
+            background: var(--white);
+            border-color: var(--white);
+            transform: scale(1.15);
+        }
+        .rivedi-deck-dot:hover { border-color: rgba(255,255,255,0.8); }
+
+        /* ================= NEW LIFE HIT - COVERFLOW ================= */
+        .newlifehit-section {
+            position: relative; padding: 56px 0 64px; overflow: hidden;
+            background: linear-gradient(135deg, #012657 0%, #083b76 30%, #0185C7 65%, #a8d8f0 90%, #FFFFFF 100%);
+        }
+        .newlifehit-section::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(1,133,199,0.28) 0%, transparent 55%),
+                        radial-gradient(ellipse at 70% 80%, rgba(168,216,240,0.18) 0%, transparent 50%);
+        }
+        .newlifehit-section .container { position: relative; z-index: 1; }
+        .nlh-section-header { border-bottom: none; margin-bottom: 36px; }
+        .nlh-section-header h2 {
+            color: var(--white); text-shadow: 0 2px 14px rgba(0,0,0,0.35);
+            font-size: 2.6rem; letter-spacing: 2px;
+        }
+        .nlh-section-header::after { content: none; }
+
+        /* Effetto neon leggero blu chiaro sulla scritta "DISCO LIFE" - versione chiara (light) */
+        html:not([data-theme="dark"]) .nlh-section-header h2,
+        [data-theme="light"] .nlh-section-header h2 {
+            color: var(--white);
+            text-shadow:
+                0 2px 14px rgba(0,0,0,0.30),
+                0 0 6px rgba(1,133,199,0.95),
+                0 0 14px rgba(1,133,199,0.75),
+                0 0 26px rgba(1,133,199,0.55),
+                0 0 42px rgba(1,133,199,0.35),
+                0 0 60px rgba(1,133,199,0.22);
+        }
+        /* Neon leggero anche sul titolo del brano attivo - versione chiara */
+        html:not([data-theme="dark"]) .nlh-title,
+        [data-theme="light"] .nlh-title {
+            text-shadow:
+                0 2px 12px rgba(0,0,0,0.45),
+                0 0 6px rgba(1,133,199,0.85),
+                0 0 14px rgba(1,133,199,0.55),
+                0 0 24px rgba(1,133,199,0.35);
+        }
+
+        /* Viewport con prospettiva 3D per effetto depth-of-field */
+        .nlh-carousel-viewport {
+            position: relative; max-width: 760px; margin: 0 auto;
+            perspective: 1100px;
+            touch-action: pan-y; /* permette lo scroll verticale della pagina su mobile */
+        }
+        /* Stage che contiene tutte le card sovrapposte */
+        .nlh-carousel-stage {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            transform-style: preserve-3d;
+            touch-action: pan-y; /* non intercetta lo scroll verticale, solo swipe orizzontale via JS */
+        }
+
+        /* Singola card coverflow */
+        .nlh-card {
+            position: absolute;
+            top: 0; left: 50%;
+            width: 300px; height: 300px;
+            margin-left: -150px;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transform-origin: center center;
+            transition:
+                transform 0.7s cubic-bezier(.22,1,.36,1),
+                opacity 0.7s cubic-bezier(.22,1,.36,1),
+                filter 0.7s cubic-bezier(.22,1,.36,1),
+                box-shadow 0.7s ease;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+            background: rgba(1,38,87,0.35);
+            display: flex; align-items: center; justify-content: center;
+            will-change: transform, opacity, filter;
+        }
+
+        /* Card centrale attiva: grande, in focus, alta nitidezza */
+        .nlh-card.active {
+            transform: translateZ(0) scale(1) rotateY(0deg);
+            opacity: 1;
+            z-index: 5;
+            filter: blur(0) brightness(1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 0 3px rgba(255,255,255,0.18);
+        }
+        /* Card laterale destra: rimpicciolita, sfocata, retrocessa */
+        .nlh-card.peek-next {
+            transform: translateX(48%) translateZ(-180px) scale(0.78) rotateY(-22deg);
+            opacity: 0.55;
+            z-index: 3;
+            filter: blur(4px) brightness(0.6);
+        }
+        /* Card laterale sinistra: rimpicciolita, sfocata, retrocessa */
+        .nlh-card.peek-prev {
+            transform: translateX(-48%) translateZ(-180px) scale(0.78) rotateY(22deg);
+            opacity: 0.55;
+            z-index: 3;
+            filter: blur(4px) brightness(0.6);
+        }
+        /* Card nascoste: completamente fuori vista */
+        .nlh-card.hidden-card {
+            transform: translateX(0) translateZ(-320px) scale(0.6) rotateY(0deg);
+            opacity: 0;
+            z-index: 0;
+            filter: blur(10px) brightness(0.3);
+            pointer-events: none;
+        }
+
+        /* Immagine di copertina con bordi puliti */
+        .nlh-card-cover {
+            position: absolute; inset: 0; overflow: hidden;
+            border-radius: 16px;
+        }
+        .nlh-card-cover img {
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: 16px;
+        }
+        .nlh-card-placeholder {
+            font-size: 4rem; color: rgba(255,255,255,0.25);
+        }
+
+        /* Blocco testo sotto la card: titolo maiuscolo bold + descrizione */
+        .nlh-text-block {
+            position: relative;
+            max-width: 460px;
+            margin: 28px auto 0;
+            text-align: center;
+            min-height: 90px;
+            transition: opacity 0.5s cubic-bezier(.22,1,.36,1), transform 0.5s cubic-bezier(.22,1,.36,1);
+        }
+        .nlh-text-block.fading {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        .nlh-title {
+            font-family: var(--font-title); font-weight: 900; font-size: 1.6rem;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--white);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+            margin-bottom: 8px; line-height: 1.2;
+        }
+        .nlh-desc {
+            font-family: var(--font-body); font-weight: 500; font-size: 0.95rem;
+            color: rgba(255,255,255,0.78);
+            line-height: 1.5;
+            max-width: 380px; margin: 0 auto;
+        }
+
+        /* Frecce di navigazione circolari minimali */
+        .nlh-nav {
+            position: absolute; top: 150px;
+            width: 48px; height: 48px; border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.12);
+            color: var(--white); font-size: 1rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            backdrop-filter: blur(8px);
+            transition: background 0.25s, transform 0.2s, border-color 0.25s;
+            z-index: 10;
+        }
+        .nlh-nav.prev { left: -10px; }
+        .nlh-nav.next { right: -10px; }
+        .nlh-nav:hover {
+            background: rgba(255,255,255,0.28);
+            border-color: var(--white);
+            transform: scale(1.08);
+        }
+        .nlh-nav:active { transform: scale(0.96); }
+
+        /* Indicatori a punti */
+        .nlh-dots { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
+        .nlh-dot {
+            width: 11px; height: 11px; border-radius: 50%; cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.5); background: transparent;
+            transition: all 0.3s; padding: 0;
+        }
+        .nlh-dot.active { background: var(--white); border-color: var(--white); transform: scale(1.2); }
+        .nlh-dot:hover { border-color: var(--white); }
+
+        /* Placeholder quando non ci sono canzoni */
+        .nlh-empty {
+            width: 100%; text-align: center; color: rgba(255,255,255,0.7);
+            font-family: var(--font-title); font-weight: 800; font-size: 1.1rem;
+            padding: 40px 20px; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        @media(max-width: 992px) {
+            .nlh-card { width: 260px; height: 260px; margin-left: -130px; }
+            .nlh-carousel-stage { height: 360px; }
+            .nlh-nav { top: 130px; }
+            .nlh-section-header h2 { font-size: 2.1rem; }
+            .nlh-title { font-size: 1.4rem; }
+        }
+        @media(max-width: 600px) {
+            .newlifehit-section { padding: 40px 0 48px; }
+            .nlh-card { width: 220px; height: 220px; margin-left: -110px; }
+            .nlh-carousel-stage { height: 300px; }
+            .nlh-nav { top: 110px; width: 40px; height: 40px; font-size: 0.85rem; }
+            .nlh-nav.prev { left: 4px; }
+            .nlh-nav.next { right: 4px; }
+            .nlh-card.peek-next { transform: translateX(40%) translateZ(-160px) scale(0.7) rotateY(-22deg); }
+            .nlh-card.peek-prev { transform: translateX(-40%) translateZ(-160px) scale(0.7) rotateY(22deg); }
+            .nlh-title { font-size: 1.2rem; letter-spacing: 1.5px; }
+            .nlh-desc { font-size: 0.85rem; }
+            .nlh-section-header h2 { font-size: 1.7rem; }
+            .nlh-dots { margin-top: 18px; gap: 8px; }
+        }
+
+        @media(max-width: 992px) {
+            .rivedi-deck-viewport { max-width: 480px; }
+            .rivedi-deck-card-label { font-size: 1.3rem; }
+            .rivedi-deck-card-content { padding: 22px; }
+            .rivedi-deck-nav { width: 36px; height: 36px; font-size: 0.8rem; }
+            .rivedi-deck-nav.prev { left: -46px; }
+            .rivedi-deck-nav.next { right: -46px; }
+        }
+        @media(max-width: 600px) {
+            .rivedi-section { padding: 36px 0; overflow-x: clip; overflow-y: visible; }
+            .rivedi-deck-viewport { max-width: 280px; }
+            .rivedi-deck-stage { aspect-ratio: 4/3; }
+            .rivedi-deck-card-content { padding: 14px; }
+            .rivedi-deck-card-label { font-size: 1rem; letter-spacing: 0.5px; }
+            .rivedi-deck-card-subtitle { font-size: 0.78rem; }
+            .rivedi-deck-card-indicator { font-size: 0.72rem; padding: 5px 10px; }
+            .rivedi-deck-nav { width: 38px; height: 38px; font-size: 0.85rem; }
+            .rivedi-deck-nav.prev { left: -2px; }
+            .rivedi-deck-nav.next { right: -2px; }
+            .rivedi-deck-dots { margin-top: 18px; gap: 8px; }
+            .rivedi-deck-dot { width: 9px; height: 9px; }
+        }
+        @media(max-width:992px){ .blog-grid, .palinsesto-editorial, .calendar-shell{ grid-template-columns:1fr; } .month-selector{ grid-template-columns:repeat(4,1fr); } .calendar-photo-days{ grid-template-columns:repeat(7, minmax(30px, 1fr)); } .calendar-shell .day-events-panel{ grid-column:auto; } }
+        @media(max-width:768px){
+        }
+        @media(max-width:560px){ .month-selector{ grid-template-columns:repeat(2,1fr); } .calendar-photo-days{ grid-template-columns:repeat(5, minmax(30px, 1fr)); gap:7px; } .calendar-day-number{ min-height:34px; border-radius:9px; font-size:.9rem; } .calendar-weekdays{ gap:4px; } .weekday-label{ font-size:.66rem; padding:8px 2px; } .blog-card.featured .news-img-placeholder{ height:240px; } }
+
+        /* Spotify Integration */
+        .spotify-embed-mock { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: var(--card-border); border-radius: var(--radius-main); padding: 26px; display: flex; align-items: center; gap: 22px; box-shadow: 6px 6px 0px #1db954; transition: transform 0.15s ease, box-shadow 0.15s ease; transform-style: preserve-3d; will-change: transform; }
+        @media(max-width: 600px) { .spotify-embed-mock { flex-direction: column; text-align: center; } }
+        .spotify-icon { font-size: 3.8rem; color: #1db954; }
+        .spotify-embed-mock h4 { font-family: var(--font-title); font-size: 1.6rem; color: var(--bg-dark); text-transform: uppercase; }
+        .btn-spotify-action { background: #1db954; color: var(--white); padding: 14px 28px; border-radius: var(--radius-sm); font-family: var(--font-title); font-weight: 800; margin-left: auto; border: 2.5px solid #012657; box-shadow: 4px 4px 0px #012657; }
+        @media(max-width: 600px) { .btn-spotify-action { margin-left: 0; } }
+        .btn-spotify-action:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #012657; }
+
+        /* FOOTER */
+        .main-footer { background: #0a1a35; padding: 70px 0 35px 0; color: rgba(255, 255, 255, 0.7); margin-top: 50px; position: relative; z-index: 2; }
+        .footer-container { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px; align-items: start; }
+        @media(max-width: 768px) { .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; } }
+
+        .footer-brand { display: flex; flex-direction: column; }
+        .footer-logo { width: 180px; height: auto; margin-bottom: 0; filter: brightness(1); }
+        @media(max-width: 768px) { .footer-logo { margin: 0 auto; } }
+
+        .footer-nav h4 { font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .footer-nav ul { list-style: none; }
+        .footer-nav ul li { margin-bottom: 12px; }
+        .footer-nav ul li a { font-family: var(--font-title); font-size: 0.95rem; font-weight: 700; color: rgba(255, 255, 255, 0.55); text-transform: uppercase; letter-spacing: 1px; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .footer-nav ul li a:hover { color: var(--accent-celeste); }
+
+        .footer-contacts h4 { font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .footer-contacts ul { list-style: none; }
+        .footer-contacts ul li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; font-size: 0.92rem; color: rgba(255, 255, 255, 0.6); }
+        .footer-contacts ul li i { color: rgba(255, 255, 255, 0.35); font-size: 1rem; width: 20px; text-align: center; }
+        @media(max-width: 768px) { .footer-contacts ul li { justify-content: center; } }
+
+        .footer-copy { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px; margin-top: 25px; text-align: center; font-size: 0.85rem; opacity: 0.45; }
+
+        /* COOKIE BANNER — dark card, rounded, two buttons */
+        .cookie-pop-banner {
+            position: fixed;
+            bottom: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 440px;
+            background: var(--bg-dark);
+            border: 2.5px solid rgba(255,255,255,0.12);
+            border-radius: 24px;
+            padding: 32px 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 0 9999px rgba(0,0,0,0.4);
+            z-index: 9999;
+            text-align: left;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .cookie-pop-banner.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-50%) translateY(20px);
+        }
+        .cookie-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .cookie-emoji { font-size: 2rem; display: inline-block; }
+        .cookie-pop-banner h3 { font-family: var(--font-title); font-size: 1.5rem; color: var(--white); text-transform: none; font-weight: 900; }
+        .cookie-pop-banner p { font-size: 0.92rem; color: rgba(255,255,255,0.65); font-weight: 400; line-height: 1.55; margin-bottom: 24px; }
+        .cookie-pop-banner p a { color: var(--accent-celeste); text-decoration: underline; text-underline-offset: 2px; }
+        .cookie-buttons { display: flex; gap: 12px; }
+        .btn-cookie-reject {
+            flex: 1;
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .btn-cookie-reject:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+        .btn-cookie-accept {
+            flex: 1;
+            background: var(--accent-celeste);
+            color: var(--white);
+            border: none;
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            text-transform: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .btn-cookie-accept:hover { background: #0098e0; transform: translateY(-1px); }
+        @media (max-width: 480px) {
+            .cookie-pop-banner { left: 12px; right: 12px; max-width: none; transform: none; bottom: 80px; width: auto; }
+            .cookie-pop-banner.hidden { transform: translateY(20px); }
+        }
+
+
+        /* INTERFACCIA LIVE PLAYER */
+        .radio-player-bar {
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            height: 110px;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(15px);
+            border-top: 3.5px solid var(--bg-dark);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+        }
+
+        .player-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .player-left-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 65%;
+        }
+
+        .control-btn {
+            background: var(--bg-dark);
+            color: var(--white);
+            border: 2.5px solid var(--bg-dark);
+            width: 62px; height: 62px;
+            border-radius: var(--radius-sm);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 0px var(--accent-celeste);
+            transition: all 0.1s ease;
+            flex-shrink: 0;
+        }
+        .control-btn:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px var(--accent-celeste);
+            background: var(--accent-celeste);
+        }
+        .control-btn.playing { background: var(--accent-celeste); }
+
+        .speaker-avatar-box {
+            width: 58px; height: 58px;
+            background: var(--accent-light);
+            border: 2.5px solid var(--bg-dark);
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--bg-dark);
+            box-shadow: 3px 3px 0px rgba(1, 38, 87, 0.15);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .speaker-avatar-box img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        .player-track-info {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .track-status {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            display: flex; align-items: center; gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .live-pulse {
+            width: 8px; height: 8px;
+            background: var(--accent-red);
+            border-radius: 50%; display: inline-block;
+            animation: pulse-dot 1.4s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .track-title {
+            font-family: var(--font-title);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--bg-dark);
+            text-transform: uppercase;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .track-subtitle {
+            font-family: var(--font-title);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-celeste);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transition: opacity 0.4s;
+        }
+
+        .player-right-group {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            justify-content: flex-end;
+            width: 35%;
+        }
+
+        .btn-live-link {
+            background: var(--white);
+            color: var(--bg-dark);
+            border: 2.5px solid var(--bg-dark);
+            border-radius: var(--radius-sm);
+            padding: 10px 18px;
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 4px 4px 0px var(--accent-celeste);
+            white-space: nowrap;
+        }
+        .btn-live-link:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--accent-celeste);
+            background: var(--accent-light);
+            color: var(--accent-celeste);
+        }
+        .btn-live-link i { color: var(--accent-red); font-size: 0.9rem; }
+
+        .player-utility { display: flex; align-items: center; gap: 10px; color: var(--bg-dark); font-size: 1.1rem; }
+        .volume-slider { -webkit-appearance: none; appearance: none; background: rgba(1, 38, 87, 0.1); height: 6px; border-radius: 3px; width: 90px; outline: none; border: 1.5px solid var(--bg-dark); }
+        .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 14px; height: 14px; background: var(--bg-dark); border-radius: var(--radius-sm); cursor: pointer; }
+
+        @media(max-width: 768px) {
+            .player-left-group { width: 100%; }
+            .player-right-group { display: none; }
+        }
+        @media(max-width: 600px) {
+            .radio-player-bar { height: 92px; border-top-width: 3px; }
+            .player-container { padding: 0 14px; }
+            .control-btn { width: 58px; height: 58px; font-size: 1.4rem; border-radius: 16px; }
+            .speaker-avatar-box { width: 48px; height: 48px; font-size: 1.3rem; }
+            .track-title { font-size: 1.08rem; }
+            .track-status { font-size: 0.78rem; }
+            .track-subtitle { font-size: 0.82rem; }
+            .player-left-group { gap: 14px; }
+            body { padding-bottom: 92px; padding-top: 32px; }
+        }
+
+        /* COUNTER STATS SECTION */
+        .counter-section {
+            position: relative;
+            background: var(--bg-dark);
+            padding: 90px 0;
+            overflow: hidden;
+            margin: 50px 0;
+        }
+
+        .counter-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-title);
+            font-size: 12rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+            pointer-events: none;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            user-select: none;
+        }
+
+        .counter-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .counter-badge span {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 22px;
+            border-radius: 30px;
+        }
+        .counter-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-celeste);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .counter-title {
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin-bottom: 55px;
+            line-height: 1.15;
+            position: relative;
+            z-index: 2;
+        }
+        .counter-title .title-white {
+            color: #FFFFFF;
+            display: block;
+        }
+        .counter-title .title-accent {
+            color: var(--accent-celeste);
+            font-style: italic;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .counter-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 0;
+            text-align: center;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            overflow: visible;
+            position: relative;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+
+        .counter-card-accent {
+            width: 100%;
+            height: 3px;
+            background: var(--accent-celeste);
+            box-shadow: 0 0 12px rgba(1, 133, 199, 0.5);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .counter-card-icon {
+            margin-top: 22px;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .counter-card-body {
+            padding: 10px 20px 32px;
+        }
+
+        .counter-number {
+            font-family: var(--font-title);
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .counter-label {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @media (max-width: 900px) {
+            .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+            .counter-watermark { font-size: 6rem; }
+            .counter-title { font-size: 2.4rem; }
+            .counter-number { font-size: 3rem; }
+        }
+        @media (max-width: 500px) {
+            .counter-grid { grid-template-columns: 1fr; }
+            .counter-watermark { font-size: 4rem; }
+            .counter-title { font-size: 2rem; }
+        }
+
+        /* ==================== MOBILE OPTIMIZATION ==================== */
+        @media (max-width: 600px) {
+            /* Global */
+            .container { padding: 0 16px; }
+            .grid-section { padding: 30px 0; }
+
+            /* Header */
+            .main-header { padding: 8px 0; border-bottom-width: 2.5px; }
+            .logo-img { height: 50px; }
+            .header-actions { gap: 10px; font-size: 1.05rem; }
+            .header-actions .divider { display: none; }
+            .header-actions a[aria-label="Cerca"] { display: none; }
+            .floating-element { display: none; }
+            .adv-banner-top, .adv-banner-bottom { padding: 8px 0; }
+            .adv-placeholder { font-size: 0.6rem; padding: 8px 12px; letter-spacing: 0.5px; border-width: 1.5px; }
+
+            /* Hero Ticker */
+            .hero-news-ticker { margin-bottom: 0; }
+            .hero-ticker-viewport { min-height: 300px; aspect-ratio: 3/4; max-height: none; }
+            .hero-slide-content { padding: 24px 18px 46px; align-items: center; text-align: center; }
+            .hero-slide-tag { margin-left: auto; margin-right: auto; }
+            .hero-slide-title { font-size: 1.5rem; text-align: center; max-width: 100%; }
+            .hero-slide-desc { font-size: 0.85rem; margin-bottom: 14px; margin-left: auto; margin-right: auto; }
+            .btn-hero-slide { display: none !important; }
+            .hero-slide-content { pointer-events: none; background: linear-gradient(0deg, rgba(1,38,87,0.78) 0%, rgba(1,38,87,0.1) 55%, transparent 100%); }
+            .hero-ticker-controls { bottom: 16px; right: auto; left: 50%; transform: translateX(-50%); gap: 0; }
+            .hero-ticker-arrow { display: none !important; }
+            .hero-ticker-dots { gap: 10px; }
+            .hero-ticker-dot { width: 11px; height: 11px; border-width: 2px; }
+            .hero-ticker-dot.active { width: 26px; border-radius: 999px; }
+            .btn { font-size: 0.95rem; padding: 14px 20px; border-radius: 14px; }
+            .wuu-badge { font-size: 0.75rem; padding: 5px 10px; }
+
+            /* Section Headers */
+            .section-header { flex-direction: column; align-items: center; gap: 4px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: none; }
+            .section-header h2 { font-size: 1.6rem; letter-spacing: -0.5px; }
+            .view-all { font-size: 0.85rem; color: var(--white); }
+
+            /* News Cards */
+            .news-img-placeholder { height: 200px; }
+            .news-content { padding: 18px; }
+            .wuu-card { border-radius: 16px; border-width: 2px; }
+            .wuu-card .news-img-placeholder { border-radius: 16px 16px 0 0; }
+            .wuu-card .news-content { border-radius: 0 0 16px 16px; }
+            .wuu-card h3 { font-size: 1.35rem; line-height: 1.2; }
+            .wuu-card p { font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); }
+            .card-small { flex-direction: column; align-items: stretch; }
+            .news-img-placeholder-small { width: 100%; height: 160px; border-right: none; border-bottom: 2px solid var(--bg-dark); }
+            .card-small h4 { font-size: 1.15rem; padding: 14px; }
+            .news-tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 8px; }
+            .news-grid-content h3 { font-size: 1rem; }
+
+            /* Instagram */
+            .ig-post-card { border-radius: 16px; border-width: 2px; }
+            .ig-media-mock { border-radius: 16px 16px 0 0; }
+            .ig-post-card .ig-footer { border-radius: 0 0 16px 16px; }
+            .ig-media-content span { font-size: 1.1rem; }
+            .ig-header { padding: 12px; }
+            .ig-footer { padding: 12px; }
+
+            /* Podcast Cards */
+            .program-card { border-radius: 16px; border-width: 2px; }
+            .program-card .card-image-wrapper { border-radius: 16px 16px 0 0; }
+            .program-card .card-info { border-radius: 0 0 16px 16px; }
+            .card-info { padding: 16px; }
+            .card-info h3 { font-size: 1.15rem; }
+            .card-info p { font-size: 0.88rem; line-height: 1.45; }
+
+            /* Palinsesto / Classifica */
+            .two-columns-layout { gap: 20px; padding: 15px 0; }
+            .wuu-panel { border-radius: 16px; border-width: 2px; padding: 8px; }
+            .schedule-row, .ranking-row { padding: 12px; gap: 12px; }
+            .schedule-day { width: 38px; height: 38px; font-size: 0.8rem; border-radius: 10px; }
+            .schedule-time { font-size: 1.05rem; }
+            .schedule-details h4, .rank-details h4 { font-size: 1.05rem; }
+            .schedule-details p, .rank-details p { font-size: 0.82rem; }
+            .rank-number { font-size: 1.8rem; width: 30px; }
+
+            /* Spotify */
+            .spotify-embed-mock { padding: 20px 16px; gap: 14px; border-radius: 16px; border-width: 2px; }
+            .spotify-icon { font-size: 2.8rem; }
+            .spotify-embed-mock h4 { font-size: 1.15rem; }
+            .spotify-embed-mock p { font-size: 0.88rem; line-height: 1.45; }
+            .btn-spotify-action { padding: 14px 20px; font-size: 0.9rem; border-radius: 14px; width: 100%; text-align: center; justify-content: center; display: flex; }
+
+            /* Counter */
+            .counter-section { padding: 50px 0; margin: 30px 0; }
+            .counter-badge span { font-size: 0.7rem; padding: 6px 14px; letter-spacing: 2px; }
+            .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .counter-card { border-radius: 14px; }
+            .counter-card-accent { border-radius: 14px 14px 0 0; }
+            .counter-card-body { padding: 10px 14px 22px; }
+            .counter-number { font-size: 2.5rem; }
+            .counter-label { font-size: 0.7rem; letter-spacing: 2px; }
+
+            /* Footer */
+            .main-footer { padding: 45px 0 25px 0; margin-top: 30px; }
+            .footer-logo { width: 150px; }
+            .footer-nav h4, .footer-contacts h4 { font-size: 1rem; letter-spacing: 1.5px; margin-bottom: 16px; }
+            .footer-nav ul li { margin-bottom: 10px; }
+            .footer-nav ul li a { font-size: 0.9rem; }
+            .footer-contacts ul li { font-size: 0.85rem; gap: 10px; }
+            .footer-copy { font-size: 0.78rem; padding-top: 20px; margin-top: 20px; }
+
+            /* Adv Banner */
+            .adv-banner-top, .adv-banner-bottom { padding: 10px; }
+            .adv-placeholder { font-size: 0.65rem; padding: 10px; letter-spacing: 1px; }
+
+            /* Cookie Banner */
+            .cookie-pop-banner { padding: 24px 20px; }
+            .cookie-pop-banner h3 { font-size: 1.2rem; }
+            .cookie-buttons { flex-direction: column; }
+        }
+
+        /* Extra small screens (< 380px) */
+        @media (max-width: 380px) {
+            .hero-title { font-size: 1.8rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-header h2 { font-size: 1.3rem; }
+            .counter-title { font-size: 1.6rem; }
+            .counter-number { font-size: 2.4rem; }
+            .logo-img { height: 45px; }
+            .header-actions { gap: 8px; font-size: 1rem; }
+        }
+
+        /* Mobile hamburger menu button — horizontal lines icon, top-right */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--bg-dark);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 10001;
+        }
+        @media (max-width: 992px) {
+            .mobile-menu-btn { display: block; }
+        }
+        /* Slide-in side menu backdrop */
+        .mobile-nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(1, 38, 87, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s cubic-bezier(.22,1,.36,1), visibility 0.4s;
+        }
+        .mobile-nav-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* Slide-in side panel (from the right) */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0; right: 0; bottom: 0;
+            width: 82%;
+            max-width: 360px;
+            background: linear-gradient(180deg, #012657 0%, #013a80 100%);
+            z-index: 10000;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 6px;
+            padding: 90px 32px 32px;
+            transform: translateX(100%);
+            transition: transform 0.45s cubic-bezier(.22,1,.36,1);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.4);
+            overflow-y: auto;
+        }
+        .mobile-nav-overlay.active {
+            transform: translateX(0);
+            display: flex;
+        }
+        .mobile-nav-overlay a {
+            font-family: var(--font-title);
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            width: 100%;
+        }
+        .mobile-nav-overlay a:hover, .mobile-nav-overlay a:active {
+            color: var(--accent-celeste);
+            padding-left: 8px;
+        }
+        .mobile-nav-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .mobile-nav-close:hover { border-color: var(--accent-celeste); color: var(--accent-celeste); }
+        /* Social icons at the bottom of the slide-in menu */
+        .mobile-nav-social {
+            margin-top: auto;
+            padding-top: 30px;
+            display: flex;
+            gap: 22px;
+            width: 100%;
+            justify-content: flex-start;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+        }
+        .mobile-nav-social a {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.6);
+            border: none;
+            padding: 0;
+            width: auto;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .mobile-nav-social a:hover { color: var(--accent-celeste); transform: scale(1.2); }
+    
+
+        /* ==================== MOBILE + TOUCH CAROUSEL REFINEMENT ==================== */
+        .touch-carousel-shell { position: relative; isolation: isolate; padding: 12px 0; }
+        .touch-carousel-track { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        /* Touch carousel dots indicator (NEWS, Instagram, Repliche) */
+        .touch-carousel-dots { display: none; }
+        .touch-carousel-dot {
+            width: 9px; height: 9px; border-radius: 50%;
+            border: 2px solid var(--bg-dark); background: transparent;
+            cursor: pointer; transition: background .25s, border-color .25s, transform .25s;
+            padding: 0; flex-shrink: 0;
+        }
+        .touch-carousel-dot.active {
+            background: var(--accent-celeste); border-color: var(--bg-dark);
+            transform: scale(1.15);
+        }
+        .carousel-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px;
+            border-radius: 999px; border: 2px solid var(--bg-dark); background: rgba(255,255,255,.94);
+            color: var(--bg-dark); display: grid; place-items: center; cursor: pointer; z-index: 20;
+            box-shadow: 4px 4px 0 var(--accent-celeste); transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .carousel-arrow.prev { left: -14px; }
+        .carousel-arrow.next { right: -14px; }
+        .carousel-arrow:hover { transform: translateY(-50%) translate(2px,2px); box-shadow: 2px 2px 0 var(--accent-celeste); }
+        .instagram-grid.touch-carousel-track, .cards-grid.touch-carousel-track {
+            display: flex; gap: 22px; overflow-x: auto; overflow-y: visible; scroll-snap-type: x mandatory;
+            padding: 6px 6px 24px; scrollbar-width: none;
+        }
+        .instagram-grid.touch-carousel-track::-webkit-scrollbar, .cards-grid.touch-carousel-track::-webkit-scrollbar { display: none; }
+        .instagram-grid.touch-carousel-track > *, .cards-grid.touch-carousel-track > * { flex: 0 0 min(360px, 88vw); scroll-snap-align: start; }
+        #podcast .cards-grid.touch-carousel-track > * { flex: 0 0 380px; }
+        .program-card, .ig-post-card, .wuu-card { min-height: 0; }
+        .program-card .card-info p, .wuu-card .news-content p, .ig-caption {
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .program-card .card-image-wrapper { padding-top: 52%; }
+        #palinsesto .pal-photo, #palinsesto .wuu-panel, #palinsesto .calendar-day-number, #palinsesto .calendar-weekday-button {
+            transform: none !important; transition: background .12s ease, color .12s ease, border-color .12s ease; transform-style: flat !important;
+        }
+        .calendar-weekday-button {
+            min-height: 46px; border: 2px solid rgba(1,38,87,.24); background: rgba(255,255,255,.92); border-radius: 14px;
+            display:flex; align-items:center; justify-content:center; font-family:var(--font-title); font-weight:900; text-transform:uppercase;
+            color:var(--bg-dark); cursor:pointer; position:relative;
+        }
+        .calendar-weekday-button.has-events::after { content:''; position:absolute; right:8px; bottom:8px; width:7px; height:7px; border-radius:999px; background:var(--accent-red); border:1px solid var(--bg-dark); }
+        .calendar-weekday-button.active, .calendar-weekday-button:hover { background:var(--accent-celeste); color:var(--white); border-color:var(--bg-dark); }
+        .mobile-week-strip { grid-column: 1 / -1; display:grid; grid-template-columns: repeat(7, minmax(38px, 1fr)); gap:8px; }
+        @media (max-width: 600px) {
+            body { background: linear-gradient(180deg, #012657 0%, #083b76 18%, #f4fbff 42%, #ffffff 100%); }
+            .container { padding-left: 18px; padding-right: 18px; max-width: 100%; overflow-x: hidden; }
+            .grid-section { padding: 36px 0; overflow-x: clip; overflow-y: visible; }
+            .section-header { align-items: center; margin-left: 0; margin-right: 0; padding: 0 2px 14px; border-bottom: 0; gap: 4px; }
+            .section-header h2 { font-size: clamp(1.4rem, 7vw, 2rem); line-height: 1; letter-spacing: -0.5px; }
+            .section-header::after { content:none; }
+            .view-all { font-size: 0.7rem; color: var(--white); }
+            .carousel-arrow { display: none !important; }
+            .touch-carousel-track { -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+            .instagram-grid.touch-carousel-track, .cards-grid.touch-carousel-track { gap: 14px; padding: 3px 4px 18px 4px; margin: 0; }
+            .instagram-grid.touch-carousel-track > *, .cards-grid.touch-carousel-track > * { flex-basis: 76vw; max-width: 315px; }
+            #podcast .cards-grid.touch-carousel-track > * { flex-basis: 78vw; max-width: 290px; }
+            .ig-media-mock { min-height: 165px; }
+            .ig-header, .ig-footer { padding: 11px; }
+            .ig-caption { font-size: .82rem; -webkit-line-clamp: 2; }
+            .card-info { padding: 14px; }
+            .card-info h3 { font-size: 1.08rem; line-height: 1.05; }
+            .program-card .card-info p { -webkit-line-clamp: 2; }
+            .podcast-actions { gap: 8px; }
+            /* Show dots indicators on mobile for NEWS, Instagram, Repliche carousels */
+            .touch-carousel-dots { display: flex; justify-content: center; gap: 9px; margin-top: 4px; padding: 0 4px; }
+            .touch-carousel-dot { width: 9px; height: 9px; }
+            .mini-action { padding: 8px 10px; font-size: .78rem; }
+            #palinsesto .palinsesto-editorial { gap: 14px; }
+            #palinsesto .pal-photo { min-height: auto; padding: 14px; font-size: 0; }
+            #palinsesto .pal-photo > i { display:none; }
+            .calendar-photo-days { display:block; }
+            .calendar-photo-days-title { text-align:left; color:var(--bg-dark); margin-bottom:10px; font-size:.78rem; }
+            .mobile-week-strip { grid-template-columns: repeat(7, minmax(34px, 1fr)); gap: 6px; }
+            .calendar-weekday-button { min-height: 42px; border-radius: 12px; font-size: .78rem; }
+            .month-selector, .month-title, .calendar-main-area .calendar-weekdays.mobile-only-weekdays { display:none !important; }
+            .calendar-shell.mobile-calendar-shell { display:block; }
+            .calendar-info-box { padding: 13px; font-size: .86rem; }
+            .day-panel-title { font-size: 1.35rem; line-height: .95; }
+            .selected-date-label { font-size: .72rem; margin-top: 5px; }
+        }
+
+        /* SEARCH OVERLAY */
+        .search-overlay { position: fixed; inset: 0; background: rgba(1,38,87,0.96); z-index: 3000; display: none; flex-direction: column; align-items: center; padding-top: 100px; }
+        .search-overlay.active { display: flex; }
+        .search-overlay-input { width: min(600px, 88vw); padding: 16px 24px; font-family: var(--font-title); font-size: 1.5rem; font-weight: 700; border: 3px solid var(--accent-celeste); border-radius: var(--radius-main); background: rgba(255,255,255,.95); color: var(--bg-dark); outline: none; }
+        .search-overlay-input::placeholder { color: rgba(1,38,87,.35); }
+        .search-results-list { width: min(600px, 88vw); margin-top: 24px; max-height: 50vh; overflow-y: auto; }
+        .search-result-item { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); text-decoration: none; color: var(--white); transition: background .15s; }
+        .search-result-item:hover { background: rgba(255,255,255,.06); }
+        .search-result-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 1.1rem; flex-shrink: 0; }
+        .search-result-icon.article { background: var(--accent-celeste); color: var(--white); }
+        .search-result-icon.podcast { background: var(--accent-red); color: var(--white); }
+        .search-result-title { font-family: var(--font-title); font-weight: 700; font-size: 1.05rem; }
+        .search-result-tag { font-size: .78rem; color: var(--accent-celeste); text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
+        .search-overlay-hint { color: rgba(255,255,255,.35); font-size: .85rem; margin-top: 18px; }
+        .search-overlay-close { position: absolute; top: 24px; right: 24px; background: transparent; border: 2px solid rgba(255,255,255,.25); border-radius: 999px; width: 48px; height: 48px; display: grid; place-items: center; color: var(--white); font-size: 1.3rem; cursor: pointer; }
+        .search-overlay-close:hover { border-color: var(--accent-celeste); color: var(--accent-celeste); }
+        @media(max-width:768px) { .header-actions .divider { display: none; } .header-actions a[aria-label="Cerca"] { display: none; } .header-actions a[aria-label="Instagram"], .header-actions a[aria-label="TikTok"], .header-actions a[aria-label="YouTube"], .header-actions a[aria-label="Facebook"] { display: none; } }
+        /* Mobile: search link inside hamburger menu */
+        .mobile-nav-search-link { display: flex; align-items: center; justify-content: center; gap: 14px; color: rgba(255,255,255,0.85); font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; padding: 14px 0; cursor: pointer; transition: color .2s, transform .2s; border: none; background: transparent; text-align: center; }
+        .mobile-nav-search-link:hover, .mobile-nav-search-link:active { color: var(--accent-celeste); transform: translateX(6px); }
+        .mobile-nav-search-link i { font-size: 1.3rem; }
+
+    </style>
+<script src="data-source.js"></script>
+</head>
+<body>
+
+    <!-- NEWS TICKER — Notizie del mondo in sovraimpressione (italpress.com) -->
+    <div class="news-ticker-bar" id="newsTickerBar">
+        <div class="news-ticker-badge">
+            <span class="news-ticker-live-dot"></span>
+            <span class="news-ticker-label">NOTIZIE</span>
+        </div>
+        <div class="news-ticker-viewport">
+            <div class="news-ticker-track" id="newsTickerTrack"></div>
+        </div>
+    </div>
+
+    <!-- LOADER -->
+    <div class="loader-overlay" id="loader">
+        <div class="loader-content">
+            <img src="immagini/life.png" alt="Li.Fe. Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar-track">
+                    <div class="loader-bar-fill" id="loaderBarFill"></div>
+                </div>
+                <div class="loader-text-group">
+                    <span class="loader-percentage" id="loaderPercentage">0%</span>
+                    <span class="loader-motto">MUSICA PER CHI ASCOLTA AD ALTO VOLUME!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fluid-bg">
+        <div class="blur-ball ball-1"></div>
+        <div class="blur-ball ball-2"></div>
+        <div class="blur-ball ball-3"></div>
+    </div>
+
+    <i class="fas fa-headphones floating-element fe-1"></i>
+    <i class="fas fa-microphone-lines floating-element fe-2"></i>
+    <i class="fas fa-radio floating-element fe-3"></i>
+    <i class="fas fa-music floating-element fe-4"></i>
+    <i class="fas fa-volume-high floating-element fe-5"></i>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="#" class="logo-link">
+                <img src="immagini/2.png" alt="Li.Fe. Radio Logo" class="logo-img">
+            </a>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#" class="active">HOME</a></li>
+                    <li><a href="notizie.html">NEWS</a></li>
+                    <li><a href="palinsesto.html">PALINSESTO</a></li>
+                    <li><a href="#podcast">REPLICHE</a></li>
+                    <li><a href="team.html">TEAM</a></li>
+                    <li><a href="#rivedi">RI-LIVE</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://www.instagram.com/liferadio.official" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@li.fe.radio" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/liferadio.official/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <span class="divider">/</span>
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Tema scuro"><i class="fas fa-moon"></i></button>
+                <a href="#" aria-label="Cerca" id="searchToggleBtn"><i class="fas fa-search"></i></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAV — slide-in side menu -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-xmark"></i></button>
+        <a href="#" onclick="closeMobileNav()">HOME</a>
+        <a href="notizie.html" onclick="closeMobileNav()">NEWS</a>
+        <a href="palinsesto.html" onclick="closeMobileNav()">PALINSESTO</a>
+        <a href="#podcast" onclick="closeMobileNav()">REPLICHE</a>
+        <a href="team.html" onclick="closeMobileNav()">TEAM</a>
+        <a href="#rivedi" onclick="closeMobileNav()">RI-LIVE</a>
+        <button class="mobile-nav-search-link" id="mobileNavSearchBtn"><i class="fas fa-magnifying-glass"></i> CERCA</button>
+        <div class="mobile-nav-social">
+            <a href="https://www.instagram.com/liferadio.official" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@li.fe.radio" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/liferadio.official/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="search-overlay-close" id="searchCloseBtn" aria-label="Chiudi ricerca"><i class="fas fa-xmark"></i></button>
+        <input type="text" class="search-overlay-input" id="searchInput" placeholder="Cerca articoli, podcast..." autocomplete="off">
+        <div class="search-results-list" id="searchResults"></div>
+        <span class="search-overlay-hint">Premi ESC per chiudere</span>
+    </div>
+
+    <main class="content-wrapper">
+        
+        <div class="adv-banner-top">
+            <div class="adv-placeholder">LICEO FERMI NEWS - PARTNER EDITORIALE REDAZIONE</div>
+        </div>
+
+        <!-- HERO NEWS TICKER — Radio Italia Style -->
+        <section class="hero-news-ticker" id="heroNewsTicker">
+            <div class="hero-ticker-logo-bar">
+                <div class="hero-ticker-logo-left">
+                    <img src="immagini/2.png" alt="Li.Fe. Radio" class="hero-ticker-logo-img">
+                    <span class="hero-ticker-badge"><i class="fas fa-bolt-lightning"></i> THE HIT STATION</span>
+                </div>
+                <div class="hero-ticker-right">
+                    <a href="#play" class="btn btn-primary btn-ticker-live" id="heroPlayAnchor"><i class="fas fa-play"></i> ASCOLTA LIVE</a>
+                </div>
+            </div>
+
+            <div class="hero-ticker-viewport">
+                <div class="hero-ticker-track" id="heroTickerTrack">
+                    <!-- Slide 1 -->
+                    <div class="hero-ticker-slide active" data-slide="0">
+                        <div class="hero-slide-bg" data-edit-img="hero1-img">
+                            <div class="hero-slide-overlay"></div>
+                        </div>
+                        <div class="hero-slide-content">
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="hero-ticker-slide" data-slide="1">
+                        <div class="hero-slide-bg" data-edit-img="hero2-img">
+                            <div class="hero-slide-overlay"></div>
+                        </div>
+                        <div class="hero-slide-content">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="hero-ticker-slide" data-slide="2">
+                        <div class="hero-slide-bg" data-edit-img="hero3-img">
+                            <div class="hero-slide-overlay"></div>
+                        </div>
+                        <div class="hero-slide-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="hero-ticker-controls">
+                <button class="hero-ticker-arrow hero-ticker-prev" type="button" aria-label="Notizia precedente"><i class="fas fa-chevron-left"></i></button>
+                <div class="hero-ticker-dots" id="heroTickerDots"></div>
+                <button class="hero-ticker-arrow hero-ticker-next" type="button" aria-label="Notizia successiva"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="hero-ticker-progress">
+                <div class="hero-ticker-progress-fill" id="heroTickerProgressFill"></div>
+            </div>
+        </section>
+
+        <section id="news" class="container grid-section">
+            <div class="section-header">
+                <h2>NEWS</h2>
+                <a href="notizie.html" class="view-all">Vedi tutte</a>
+            </div>
+            <div class="touch-carousel-shell" data-carousel="news">
+                <button class="carousel-arrow prev news-carousel-arrow" type="button" aria-label="Notizia precedente"><i class="fas fa-chevron-left"></i></button>
+                <div class="news-grid touch-carousel-track" id="newsGrid"></div>
+                <button class="carousel-arrow next news-carousel-arrow" type="button" aria-label="Notizia successiva"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="touch-carousel-dots" id="newsCarouselDots"></div>
+        </section>
+
+        <!-- COUNTER STATS SECTION -->
+        <section class="counter-section" id="counter-stats">
+            <div class="counter-watermark">LI.FE. RADIO</div>
+            <div class="container">
+                <div class="counter-badge">
+                    <span><span class="counter-badge-dot"></span>&ensp;L'IMPATTO CHE CREIAMO</span>
+                </div>
+                <h2 class="counter-title">
+                    <span class="title-white">LI.FE. RADIO QUALIT&Agrave; NON</span>
+                    <span class="title-accent">STOP.</span>
+                </h2>
+                <div class="counter-grid">
+                    <div class="counter-card">
+                        <div class="counter-card-accent"></div>
+                        <div class="counter-card-icon"><i class="fas fa-diamond"></i></div>
+                        <div class="counter-card-body">
+                            <div class="counter-number"><span class="counter-value" data-target="20">0</span>+</div>
+                            <div class="counter-label">Collaborazioni</div>
+                        </div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-card-accent"></div>
+                        <div class="counter-card-icon"><i class="fas fa-diamond"></i></div>
+                        <div class="counter-card-body">
+                            <div class="counter-number"><span class="counter-value" data-target="30">0</span>+</div>
+                            <div class="counter-label">Team Persone</div>
+                        </div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-card-accent"></div>
+                        <div class="counter-card-icon"><i class="fas fa-diamond"></i></div>
+                        <div class="counter-card-body">
+                            <div class="counter-number"><span class="counter-value" data-target="360">0</span>+</div>
+                            <div class="counter-label">Hit al Giorno</div>
+                        </div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-card-accent"></div>
+                        <div class="counter-card-icon"><i class="fas fa-diamond"></i></div>
+                        <div class="counter-card-body">
+                            <div class="counter-number"><span class="counter-value" data-target="250">0</span>+</div>
+                            <div class="counter-label">Interazioni al Giorno</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="social-feed" class="container grid-section">
+            <div class="section-header">
+                <h2>INSTAGRAM</h2>
+                <a href="https://www.instagram.com/liferadio.official" target="_blank" class="view-all">Seguici</a>
+            </div>
+
+            <div class="touch-carousel-shell" data-carousel="instagram" aria-label="Post Instagram in scorrimento">
+                <button class="carousel-arrow prev" type="button" aria-label="Post precedente"><i class="fas fa-chevron-left"></i></button>
+                <div class="instagram-grid touch-carousel-track">
+                <a href="https://www.instagram.com/p/DX6YyW5jJmP/" target="_blank" class="ig-post-card ig-post-link">
+                    <div class="ig-header">
+                        <div class="ig-profile">
+                            <div class="ig-avatar"><i class="fab fa-instagram"></i></div>
+                            <span class="ig-username">liferadio.official</span>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </div>
+                    <div class="ig-media-mock" data-edit-img="ig1-img">
+                        <div class="ig-media-content">
+                            <i class="fab fa-instagram" style="font-size:3rem;"></i>
+                            <span>APRI SU INSTAGRAM</span>
+                        </div>
+                    </div>
+                    <div class="ig-footer">
+                        <div class="ig-actions">
+                            <i class="far fa-heart"></i>
+                            <i class="far fa-comment"></i>
+                            <i class="far fa-paper-plane"></i>
+                        </div>
+                        <div class="ig-caption"><strong>liferadio.official</strong> Guarda il post completo su Instagram</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DWZUvkmDHq1/" target="_blank" class="ig-post-card ig-post-link">
+                    <div class="ig-header">
+                        <div class="ig-profile">
+                            <div class="ig-avatar"><i class="fab fa-instagram"></i></div>
+                            <span class="ig-username">liferadio.official</span>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </div>
+                    <div class="ig-media-mock" data-edit-img="ig2-img">
+                        <div class="ig-media-content">
+                            <i class="fab fa-instagram" style="font-size:3rem;"></i>
+                            <span>APRI SU INSTAGRAM</span>
+                        </div>
+                    </div>
+                    <div class="ig-footer">
+                        <div class="ig-actions">
+                            <i class="far fa-heart"></i>
+                            <i class="far fa-comment"></i>
+                            <i class="far fa-paper-plane"></i>
+                        </div>
+                        <div class="ig-caption"><strong>liferadio.official</strong> Guarda il post completo su Instagram</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DRh1jZHjH4k/" target="_blank" class="ig-post-card ig-post-link">
+                    <div class="ig-header">
+                        <div class="ig-profile">
+                            <div class="ig-avatar"><i class="fab fa-instagram"></i></div>
+                            <span class="ig-username">liferadio.official</span>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </div>
+                    <div class="ig-media-mock" data-edit-img="ig3-img">
+                        <div class="ig-media-content">
+                            <i class="fab fa-instagram" style="font-size:3rem;"></i>
+                            <span>APRI SU INSTAGRAM</span>
+                        </div>
+                    </div>
+                    <div class="ig-footer">
+                        <div class="ig-actions">
+                            <i class="far fa-heart"></i>
+                            <i class="far fa-comment"></i>
+                            <i class="far fa-paper-plane"></i>
+                        </div>
+                        <div class="ig-caption"><strong>liferadio.official</strong> Guarda il post completo su Instagram</div>
+                    </div>
+                </a>
+            </div>
+                <button class="carousel-arrow next" type="button" aria-label="Post successivo"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="touch-carousel-dots" id="igCarouselDots"></div>
+        </section>
+
+
+
+        <section id="rivedi" class="rivedi-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>RI-LIVE</h2>
+                    <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank" class="view-all">Vedi tutti</a>
+                </div>
+                <div class="rivedi-deck-viewport" id="rivediDeckViewport">
+                    <button class="rivedi-deck-nav prev" type="button" aria-label="Contenuto precedente"><i class="fas fa-chevron-left"></i></button>
+                    <div class="rivedi-deck-stage" id="rivediDeckStage"></div>
+                    <button class="rivedi-deck-nav next" type="button" aria-label="Contenuto successivo"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="rivedi-deck-dots" id="rivediDeckDots"></div>
+            </div>
+        </section>
+
+        <section id="podcast" class="container grid-section">
+            <div class="section-header">
+                <h2>REPLICHE</h2>
+                <a href="palinsesto.html" class="view-all">Archivio</a>
+            </div>
+            <div class="touch-carousel-shell" data-carousel="podcast" aria-label="Repliche e interviste in scorrimento">
+                <button class="carousel-arrow prev" type="button" aria-label="Contenuto precedente"><i class="fas fa-chevron-left"></i></button>
+                <div class="cards-grid touch-carousel-track" id="podcastGrid"></div>
+                <button class="carousel-arrow next" type="button" aria-label="Contenuto successivo"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="touch-carousel-dots" id="podcastCarouselDots"></div>
+        </section>
+
+        <section id="palinsesto" class="container grid-section">
+            <div class="section-header">
+                <h2>PALINSESTO</h2>
+                <a href="palinsesto.html" class="view-all">Vai alla pagina</a>
+            </div>
+            <div class="palinsesto-editorial">
+                <div class="pal-photo" data-edit-img="pal-main-img"><i class="fas fa-calendar-days"></i><div class="calendar-photo-days" id="calendarPhotoDays"></div></div>
+                <div class="wuu-panel">
+                    <div class="calendar-days" id="calendarDays"></div>
+                    <div id="dayPrograms"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW LIFE HIT - Coverflow (non in menu) -->
+        <section id="newlifehit" class="newlifehit-section">
+            <div class="container">
+                <div class="section-header nlh-section-header">
+                    <h2>DISCO LIFE</h2>
+                </div>
+                <div class="nlh-carousel-viewport" id="nlhViewport">
+                    <button class="nlh-nav prev" type="button" aria-label="Brano precedente"><i class="fas fa-chevron-left"></i></button>
+                    <div class="nlh-carousel-stage" id="nlhStage"></div>
+                    <button class="nlh-nav next" type="button" aria-label="Brano successivo"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="nlh-text-block" id="nlhTextBlock">
+                    <h3 class="nlh-title" id="nlhActiveTitle"></h3>
+                    <p class="nlh-desc" id="nlhActiveDesc"></p>
+                </div>
+                <div class="nlh-dots" id="nlhDots"></div>
+            </div>
+        </section>
+
+        <div class="container two-columns-layout">
+            <section class="ranking-section">
+                <div class="section-header"><h2>TOP 3 FERMI</h2></div>
+                <div class="ranking-container wuu-panel">
+                    <div class="ranking-row"><span class="rank-number">1</span><div class="rank-details"><h4 data-edit="rank1-title">Nome Canzone Hit</h4><p data-edit="rank1-artist">Artista Principale</p></div><i class="fas fa-arrow-trend-up rank-up"></i></div>
+                    <div class="ranking-row"><span class="rank-number">2</span><div class="rank-details"><h4 data-edit="rank2-title">Brano Pop Local</h4><p data-edit="rank2-artist">Studente Emergente</p></div><i class="fas fa-minus rank-stable"></i></div>
+                    <div class="ranking-row"><span class="rank-number">3</span><div class="rank-details"><h4 data-edit="rank3-title">Indie Track Fermi</h4><p data-edit="rank3-artist">Band del Liceo</p></div><i class="fas fa-arrow-trend-down rank-down"></i></div>
+                </div>
+            </section>
+        </div>
+
+        <section class="container grid-section">
+            <div class="spotify-wrapper">
+                <div class="spotify-embed-mock">
+                    <i class="fab fa-spotify spotify-icon"></i>
+                    <div>
+                        <h4>Ascolta i nostri contenuti inediti</h4>
+                        <p>Tutte le interviste realizzate per la community del Liceo Fermi .</p>
+                    </div>
+                    <a href="https://open.spotify.com/playlist/37i9dQZEVXbIQnj7RRhdSX?si=O36Lox22S1Gr1CSe_rcjpg" target="_blank" class="btn btn-spotify-action">Apri su Spotify</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="adv-banner-bottom">
+        <div class="adv-placeholder">SPAZIO EDITORIALE COLLABORATIVO INTERNO</div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <div class="footer-brand">
+                <img src="immagini/1.png" alt="Li.Fe. Radio" class="footer-logo">
+            </div>
+            <div class="footer-nav">
+                <h4>Navigazione</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#social-feed">Social</a></li>
+                    <li><a href="#rivedi">Ri-live</a></li>
+                    <li><a href="palinsesto.html">Palinsesto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacts">
+                <h4>Contatti</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> radiolife00@gmail.com</li>
+                    <li><i class="fas fa-envelope"></i> liferadio@liceofermiaversa.edu.it</li>
+                    <li><a href="https://www.instagram.com/liferadio.official" target="_blank" style="color:inherit;text-decoration:none;"><i class="fab fa-instagram"></i> @liferadio.official</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Via Enrico Fermi 5, Aversa (CE)</li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Li.Fe. Radio - Tutti i diritti sono riservati agli studenti del Liceo Fermi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE BANNER -->
+    <div class="cookie-pop-banner" id="cookieBanner">
+        <div class="cookie-header">
+            <span class="cookie-emoji">&#127850;</span>
+            <h3>Utilizziamo i cookie</h3>
+        </div>
+        <p>Questo sito utilizza cookie tecnici necessari e, previo tuo consenso, cookie analitici per migliorare la tua esperienza. Puoi leggere la nostra <a href="#">Cookie Policy</a> e la <a href="#">Privacy Policy</a> per maggiori informazioni.</p>
+        <div class="cookie-buttons">
+            <button class="btn-cookie-reject" id="rejectCookiesBtn">Rifiuta</button>
+            <button class="btn-cookie-accept" id="acceptCookiesBtn">Accetta tutti</button>
+        </div>
+    </div>
+
+    <!-- RADIO PLAYER BAR -->
+    <footer class="radio-player-bar">
+        <div class="player-container">
+            
+            <div class="player-left-group">
+                <audio id="radioStreaming" src="https://sr14.inmystream.it/stream/scuola/;type=mp3" autoplay playsinline></audio>
+                <button id="playBtn" class="control-btn" aria-label="Riproduci Radio Live">
+                    <i class="fas fa-play"></i>
+                </button>
+
+                <div class="speaker-avatar-box" id="speakerBox">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+
+                <div class="player-track-info">
+                    <span class="track-status">
+                        <span class="live-pulse"></span> <span id="trackStatusLabel">LIVE ON AIR</span>
+                    </span>
+                    <h4 class="track-title" id="currentTrack">Sintonizzazione flusso...</h4>
+                    <span class="track-subtitle" id="currentProgram" style="display:none"></span>
+                </div>
+            </div>
+
+            <div class="player-right-group">
+                <a href="https://www.inmystream.app/player2/liferadio.html" target="_blank" class="btn-live-link">
+                    <i class="fas fa-bolt"></i> LIVE RADIO
+                </a>
+
+                <div class="player-utility">
+                    <i class="fas fa-volume-high" id="volumeIcon"></i>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.8" class="volume-slider" aria-label="Regola Volume">
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <script>
+        const audio = document.getElementById('radioStreaming');
+        const playBtn = document.getElementById('playBtn');
+        const heroPlayAnchor = document.getElementById('heroPlayAnchor');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const playIcon = playBtn.querySelector('i');
+        const trackTitleElement = document.getElementById('currentTrack');
+        
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+
+        // Cookie consent: presente nella home, opzionale in questa pagina.
+        if (cookieBanner && localStorage.getItem('lifeRadioCookiesAccepted')) {
+            cookieBanner.classList.add('hidden');
+        }
+
+        if (cookieBanner && acceptCookiesBtn) {
+            acceptCookiesBtn.addEventListener('click', () => {
+                cookieBanner.classList.add('hidden');
+                localStorage.setItem('lifeRadioCookiesAccepted', 'true');
+            });
+            const rejectCookiesBtn = document.getElementById('rejectCookiesBtn');
+            if (rejectCookiesBtn) {
+                rejectCookiesBtn.addEventListener('click', () => {
+                    cookieBanner.classList.add('hidden');
+                    localStorage.setItem('lifeRadioCookiesAccepted', 'rejected');
+                });
+            }
+        }
+
+        // Player controls
+        function togglePlay() {
+            if (audio.paused) {
+                document.querySelectorAll('.lf-player audio').forEach(function(a){ try { a.pause(); } catch(e){} });
+                audio.play();
+                playIcon.className = 'fas fa-pause';
+                playBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playIcon.className = 'fas fa-play';
+                playBtn.classList.remove('playing');
+            }
+        }
+
+        playBtn.addEventListener('click', togglePlay);
+        if (heroPlayAnchor) {
+            heroPlayAnchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                togglePlay();
+            });
+        }
+
+        // Volume
+        audio.volume = 0.8;
+
+        // Autoplay: tenta l'avvio automatico del player live.
+        // Se il browser lo blocca, il pulsante resta disponibile.
+        function startAutoplayRadio() {
+            if (!audio) return;
+            audio.play()
+                .then(() => {
+                    playIcon.className = 'fas fa-pause';
+                    playBtn.classList.add('playing');
+                })
+                .catch(() => {
+                    playIcon.className = 'fas fa-play';
+                    playBtn.classList.remove('playing');
+                });
+        }
+        window.addEventListener('load', () => setTimeout(startAutoplayRadio, 900));
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value;
+        });
+
+        // Stream metadata from JSON API + Speaker/Program cycling
+        const speakerBox = document.getElementById('speakerBox');
+        const trackStatusLabel = document.getElementById('trackStatusLabel');
+        const currentProgram = document.getElementById('currentProgram');
+        
+        // Speaker state (loaded from content.json)
+        let speakerData = { name: '', program: '', img: '', active: false };
+        let lastSongTitle = '';
+        let lastCoverArt = '';
+        let showSpeakerPhase = false; // toggles every ~2 min
+        const SPEAKER_CYCLE_MS = 120000; // 2 minutes
+
+        function parseMetadataPayload(text) {
+            const jsonStart = text.indexOf('{');
+            if (jsonStart < 0) return null;
+            return JSON.parse(text.slice(jsonStart));
+        }
+        function caricaMetadati() {
+            if (!trackTitleElement || !speakerBox) return;
+            fetch('https://sr14.inmystream.it:2020/json/stream/scuola?nocache=' + Date.now(), { cache: 'no-store' })
+                .then(r => r.text())
+                .then(parseMetadataPayload)
+                .then(data => {
+                    const nowPlaying = data && (data.nowplaying || data.title || data.song);
+                    const coverArt = data && (data.coverart || data.cover || data.artwork);
+                    lastSongTitle = nowPlaying && nowPlaying.trim() ? nowPlaying : 'Li.Fe. Radio - Enjoy Your Culture';
+                    lastCoverArt = coverArt || '';
+                    // Only update display if we're in song phase (not showing speaker)
+                    if (!showSpeakerPhase) {
+                        displaySong();
+                    }
+                })
+                .catch(() => {
+                    lastSongTitle = 'Li.Fe. Radio - In Diretta streaming';
+                    if (!showSpeakerPhase) displaySong();
+                });
+        }
+
+        function displaySong() {
+            trackTitleElement.textContent = lastSongTitle || 'Li.Fe. Radio - Enjoy Your Culture';
+            if (trackStatusLabel) trackStatusLabel.textContent = 'LIVE ON AIR';
+            if (currentProgram) currentProgram.style.display = 'none';
+            if (lastCoverArt) {
+                speakerBox.innerHTML = '<img src="' + lastCoverArt + '" alt="Cover">';
+            } else {
+                speakerBox.innerHTML = '<i class="fas fa-music"></i>';
+            }
+        }
+
+        function displaySpeaker() {
+            if (!speakerData.active || !speakerData.name) {
+                displaySong();
+                return;
+            }
+            trackTitleElement.textContent = speakerData.name;
+            if (trackStatusLabel) trackStatusLabel.textContent = 'IN ONDA';
+            if (currentProgram) {
+                currentProgram.textContent = speakerData.program;
+                currentProgram.style.display = speakerData.program ? 'inline' : 'none';
+            }
+            if (speakerData.img) {
+                speakerBox.innerHTML = '<img src="' + speakerData.img + '?v=' + Date.now() + '" alt="' + speakerData.name + '">';
+            } else {
+                speakerBox.innerHTML = '<i class="fas fa-radio"></i>';
+            }
+        }
+
+        // Speaker/program cycling timer
+        function startSpeakerCycle() {
+            setInterval(() => {
+                if (!speakerData.active) return;
+                showSpeakerPhase = !showSpeakerPhase;
+                if (showSpeakerPhase) {
+                    displaySpeaker();
+                } else {
+                    displaySong();
+                }
+            }, SPEAKER_CYCLE_MS);
+        }
+        // DISABLED: moved to radio-player-panel.js // startSpeakerCycle();
+
+        // DISABLED: moved to radio-player-panel.js // caricaMetadati();
+        // DISABLED: moved to radio-player-panel.js // setInterval(caricaMetadati, 10000);
+
+        // Counter animation on scroll
+        (function() {
+            const counters = document.querySelectorAll('.counter-value');
+            let animated = false;
+
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const steps = 60;
+                    const stepTime = duration / steps;
+                    let current = 0;
+                    const increment = target / steps;
+
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
+                    }, stepTime);
+                });
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        animateCounters();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            const section = document.getElementById('counter-stats');
+            if (section) observer.observe(section);
+        })();
+
+        // Loader with percentage progress bar + slide-up fade-out
+        // Includes 5-second timeout fallback: if the loader hasn't completed
+        // within 5 seconds (stuck at a percentage due to slow/failed resources),
+        // it is force-removed and the homepage is shown.
+        (function() {
+            const loader = document.getElementById('loader');
+            const barFill = document.getElementById('loaderBarFill');
+            const percentText = document.getElementById('loaderPercentage');
+            let progress = 0;
+            let loaderDone = false;
+
+            function hideLoader() {
+                if (loaderDone) return;
+                loaderDone = true;
+                loader.classList.add('loader-hidden');
+                // Remove from DOM after the CSS transition completes
+                setTimeout(() => { if (loader && loader.parentNode) loader.parentNode.removeChild(loader); }, 700);
+            }
+
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 8) + 2;
+                if (progress > 95) progress = 95;
+                barFill.style.width = progress + '%';
+                percentText.textContent = progress + '%';
+            }, 120);
+
+            window.addEventListener('load', () => {
+                clearInterval(interval);
+                // Animate smoothly to 100%
+                let current = progress;
+                const finishInterval = setInterval(() => {
+                    current += 1;
+                    if (current >= 100) {
+                        current = 100;
+                        clearInterval(finishInterval);
+                        barFill.style.width = '100%';
+                        percentText.textContent = '100%';
+                        // Slide up + fade out after brief pause
+                        setTimeout(hideLoader, 600);
+                    } else {
+                        barFill.style.width = current + '%';
+                        percentText.textContent = current + '%';
+                    }
+                }, 20);
+            });
+
+            // 5-second safety timeout: if the loader is still visible after 5s,
+            // force-complete the progress bar and hide the loader.
+            setTimeout(() => {
+                if (!loaderDone) {
+                    clearInterval(interval);
+                    if (barFill) barFill.style.width = '100%';
+                    if (percentText) percentText.textContent = '100%';
+                    setTimeout(hideLoader, 300);
+                }
+            }, 5000);
+        })();
+        // Hero News Ticker — Auto-scroll with touch support
+        (function() {
+            // Use AbortController for clean listener management
+            let abortController = null;
+            let autoPlayInterval = null;
+            let progressInterval = null;
+
+            window.initHeroTicker = function() {
+                // Destroy previous instance if any
+                destroyHeroTicker();
+
+                const ticker = document.getElementById('heroTickerTrack');
+                const dotsContainer = document.getElementById('heroTickerDots');
+                const progressFill = document.getElementById('heroTickerProgressFill');
+                if (!ticker) return;
+
+                const slides = ticker.querySelectorAll('.hero-ticker-slide');
+                const totalSlides = slides.length;
+                if (totalSlides === 0) return;
+
+                abortController = new AbortController();
+                const signal = abortController.signal;
+                let currentSlide = 0;
+                const AUTO_PLAY_DURATION = 6000;
+                let progressStart = 0;
+
+                // Clear existing dots and rebuild
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'hero-ticker-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Vai alla notizia ' + (i + 1));
+                    dot.addEventListener('click', () => goToSlide(i), { signal });
+                    dotsContainer.appendChild(dot);
+                }
+
+                function goToSlide(index) {
+                    currentSlide = ((index % totalSlides) + totalSlides) % totalSlides;
+                    ticker.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+                    slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
+                    dotsContainer.querySelectorAll('.hero-ticker-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+                    resetProgress();
+                }
+
+                function nextSlide() { goToSlide(currentSlide + 1); }
+                function prevSlide() { goToSlide(currentSlide - 1); }
+
+                // Arrow buttons
+                const prevBtn = document.querySelector('.hero-ticker-prev');
+                const nextBtn = document.querySelector('.hero-ticker-next');
+                if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); restartAutoPlay(); }, { signal });
+                if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); restartAutoPlay(); }, { signal });
+
+                // Progress bar
+                function resetProgress() {
+                    progressStart = Date.now();
+                    if (progressFill) progressFill.style.width = '0%';
+                }
+
+                function updateProgress() {
+                    if (!progressFill) return;
+                    const elapsed = Date.now() - progressStart;
+                    progressFill.style.width = Math.min((elapsed / AUTO_PLAY_DURATION) * 100, 100) + '%';
+                }
+
+                // Auto-play
+                function startAutoPlay() {
+                    stopAutoPlay();
+                    resetProgress();
+                    progressInterval = setInterval(updateProgress, 50);
+                    autoPlayInterval = setInterval(nextSlide, AUTO_PLAY_DURATION);
+                }
+
+                function stopAutoPlay() {
+                    if (autoPlayInterval) clearInterval(autoPlayInterval);
+                    if (progressInterval) clearInterval(progressInterval);
+                    autoPlayInterval = null;
+                    progressInterval = null;
+                }
+
+                function restartAutoPlay() {
+                    stopAutoPlay();
+                    startAutoPlay();
+                }
+
+                // Touch / swipe support
+                const viewport = ticker.closest('.hero-ticker-viewport');
+                let touchStartX = 0;
+                if (viewport) {
+                    viewport.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                        stopAutoPlay();
+                    }, { passive: true, signal });
+                    viewport.addEventListener('touchend', (e) => {
+                        const diff = touchStartX - e.changedTouches[0].screenX;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) nextSlide(); else prevSlide();
+                        }
+                        restartAutoPlay();
+                    }, { passive: true, signal });
+                }
+
+                // Pause on hover
+                const heroSection = document.getElementById('heroNewsTicker');
+                if (heroSection) {
+                    heroSection.addEventListener('mouseenter', stopAutoPlay, { signal });
+                    heroSection.addEventListener('mouseleave', startAutoPlay, { signal });
+                }
+
+                // Initialize first slide and start auto-play
+                goToSlide(0);
+                startAutoPlay();
+            };
+
+            function destroyHeroTicker() {
+                if (abortController) {
+                    abortController.abort();
+                    abortController = null;
+                }
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                if (progressInterval) clearInterval(progressInterval);
+                autoPlayInterval = null;
+                progressInterval = null;
+            }
+
+            // Expose destroy globally too
+            window.destroyHeroTicker = destroyHeroTicker;
+
+            // Initial call
+            window.initHeroTicker();
+        })();
+
+        // 3D Tilt effect on cards (except hero-bento-box)
+        (function() {
+            const tiltCards = document.querySelectorAll('.wuu-card, .ig-post-card, .program-card, .counter-card, .spotify-embed-mock');
+            const maxTilt = 12;
+
+            tiltCards.forEach(card => {
+                if (card.closest('#palinsesto')) return;
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateY = ((x - centerX) / centerX) * maxTilt;
+                    card.style.transform = 'perspective(800px) rotateY(' + rotateY + 'deg) scale3d(1.03, 1.03, 1.03)';
+                    card.style.boxShadow = (rotateY * -1) + 'px 8px 25px rgba(0,0,0,0.2)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    card.style.boxShadow = '';
+                });
+
+                // Touch support
+                card.addEventListener('touchmove', (e) => {
+                    const touch = e.touches[0];
+                    const rect = card.getBoundingClientRect();
+                    const x = touch.clientX - rect.left;
+                    const centerX = rect.width / 2;
+                    const rotateY = ((x - centerX) / centerX) * maxTilt;
+                    card.style.transform = 'perspective(800px) rotateY(' + rotateY + 'deg) scale3d(1.03, 1.03, 1.03)';
+                    card.style.boxShadow = (rotateY * -1) + 'px 8px 25px rgba(0,0,0,0.2)';
+                }, { passive: true });
+
+                card.addEventListener('touchend', () => {
+                    card.style.transform = '';
+                    card.style.boxShadow = '';
+                });
+            });
+        })();
+        // Mobile nav menu — slide-in side panel
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileNavBackdrop').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function openMobileNav() {
+            document.getElementById('mobileNav').classList.add('active');
+            document.getElementById('mobileNavBackdrop').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        document.getElementById('mobileMenuBtn').addEventListener('click', openMobileNav);
+        document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+        document.getElementById('mobileNavBackdrop').addEventListener('click', closeMobileNav);
+
+
+        // Touch/mouse horizontal carousel controls
+        function setupTouchCarousels(root = document) {
+            root.querySelectorAll('.touch-carousel-shell').forEach(shell => {
+                const track = shell.querySelector('.touch-carousel-track');
+                const prev = shell.querySelector('.carousel-arrow.prev');
+                const next = shell.querySelector('.carousel-arrow.next');
+                if (!track || shell.dataset.carouselReady === 'true') return;
+                shell.dataset.carouselReady = 'true';
+                const scrollAmount = () => Math.max(260, Math.floor(track.clientWidth * 0.78));
+                if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+                if (next) next.addEventListener('click', () => track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+            });
+        }
+        setupTouchCarousels();
+
+        // ── Touch carousel dots indicator (NEWS, Instagram, Repliche) ──
+        function setupTouchCarouselDots() {
+            const dotConfig = [
+                { shellSelector: '[data-carousel="news"]',     dotsId: 'newsCarouselDots' },
+                { shellSelector: '[data-carousel="instagram"]', dotsId: 'igCarouselDots' },
+                { shellSelector: '[data-carousel="podcast"]',   dotsId: 'podcastCarouselDots' }
+            ];
+            dotConfig.forEach(cfg => {
+                const shell = document.querySelector(cfg.shellSelector);
+                const dotsContainer = document.getElementById(cfg.dotsId);
+                if (!shell || !dotsContainer) return;
+                const track = shell.querySelector('.touch-carousel-track');
+                if (!track) return;
+
+                function buildDots() {
+                    const items = track.children;
+                    const count = items.length;
+                    if (count <= 1) { dotsContainer.innerHTML = ''; return; }
+                    dotsContainer.innerHTML = '';
+                    for (let i = 0; i < count; i++) {
+                        const dot = document.createElement('button');
+                        dot.type = 'button';
+                        dot.className = 'touch-carousel-dot' + (i === 0 ? ' active' : '');
+                        dot.setAttribute('aria-label', 'Elemento ' + (i + 1));
+                        dot.addEventListener('click', function() {
+                            items[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                        });
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+
+                function updateActiveDot() {
+                    const items = track.children;
+                    const count = items.length;
+                    if (count <= 1) return;
+                    let activeIdx = 0;
+                    let minDist = Infinity;
+                    for (let i = 0; i < count; i++) {
+                        const rect = items[i].getBoundingClientRect();
+                        const trackRect = track.getBoundingClientRect();
+                        const dist = Math.abs(rect.left - trackRect.left);
+                        if (dist < minDist) { minDist = dist; activeIdx = i; }
+                    }
+                    const dots = dotsContainer.querySelectorAll('.touch-carousel-dot');
+                    dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+                }
+
+                buildDots();
+                track.addEventListener('scroll', updateActiveDot, { passive: true });
+                window.addEventListener('resize', updateActiveDot, { passive: true });
+                // Rebuild dots if track content changes (e.g. JS-rendered items)
+                const observer = new MutationObserver(function() { buildDots(); updateActiveDot(); });
+                observer.observe(track, { childList: true });
+            });
+        }
+        // Run after DOM ready and after dynamic content is rendered
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupTouchCarouselDots);
+        } else {
+            setupTouchCarouselDots();
+        }
+        // Also run after a short delay to catch JS-rendered content
+        setTimeout(setupTouchCarouselDots, 800);
+
+
+        // ── New Life Hit - Coverflow Carousel ──
+        let nlhIndex = 0;
+        let nlhItems = [];
+        let nlhReady = false;
+        function initNewLifeHitCarousel() {
+            const viewport = document.getElementById('nlhViewport');
+            const stage = document.getElementById('nlhStage');
+            const dots = document.getElementById('nlhDots');
+            if (!viewport || !stage) return;
+            const cards = stage.querySelectorAll('.nlh-card');
+            const total = cards.length;
+            if (total === 0) return;
+
+            const titleEl = document.getElementById('nlhActiveTitle');
+            const descEl = document.getElementById('nlhActiveDesc');
+            const textBlock = document.getElementById('nlhTextBlock');
+
+            function showCard(idx) {
+                nlhIndex = ((idx % total) + total) % total;
+                cards.forEach((card, i) => {
+                    card.classList.remove('active','peek-next','peek-prev','hidden-card');
+                    if (i === nlhIndex) card.classList.add('active');
+                    else if (i === (nlhIndex + 1) % total) card.classList.add('peek-next');
+                    else if (i === (nlhIndex - 1 + total) % total) card.classList.add('peek-prev');
+                    else card.classList.add('hidden-card');
+                });
+                // Sync text block with fade transition
+                if (textBlock && nlhItems[nlhIndex]) {
+                    textBlock.classList.add('fading');
+                    setTimeout(() => {
+                        if (titleEl) titleEl.textContent = nlhItems[nlhIndex].title;
+                        if (descEl) descEl.textContent = nlhItems[nlhIndex].desc;
+                        textBlock.classList.remove('fading');
+                    }, 250);
+                }
+                if (dots) {
+                    dots.querySelectorAll('.nlh-dot').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === nlhIndex);
+                    });
+                }
+            }
+
+            if (nlhReady) { showCard(nlhIndex); return; }
+            nlhReady = true;
+            showCard(0);
+
+            const prevBtn = viewport.querySelector('.nlh-nav.prev');
+            const nextBtn = viewport.querySelector('.nlh-nav.next');
+            if (prevBtn) prevBtn.addEventListener('click', () => showCard(nlhIndex - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => showCard(nlhIndex + 1));
+            if (dots) dots.querySelectorAll('.nlh-dot').forEach(dot => {
+                dot.addEventListener('click', () => showCard(parseInt(dot.getAttribute('data-nlh-dot'), 10)));
+            });
+
+            // Click on side cards to bring them to center
+            cards.forEach((card, i) => {
+                card.addEventListener('click', () => {
+                    if (card.classList.contains('active')) return;
+                    showCard(i);
+                });
+            });
+
+            // Swipe support on mobile
+            // Traccia sia X che Y: cambia card SOLO se lo swipe è prevalentemente orizzontale,
+            // così lo scroll verticale della pagina non viene "catturato" dalla sezione Disco Life.
+            let startX = 0, startY = 0, diffX = 0, diffY = 0, decided = false;
+            stage.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                diffX = 0; diffY = 0; decided = false;
+            }, { passive: true });
+            stage.addEventListener('touchmove', e => {
+                diffX = e.touches[0].clientX - startX;
+                diffY = e.touches[0].clientY - startY;
+                // Decide una sola volta la direzione dominante nei primi movimenti
+                if (!decided && (Math.abs(diffX) > 8 || Math.abs(diffY) > 8)) {
+                    decided = true;
+                    // Se il gesto è prevalentemente verticale, ignora del tutto (lascia scorrere la pagina)
+                    if (Math.abs(diffY) > Math.abs(diffX)) {
+                        diffX = 0;
+                    }
+                }
+            }, { passive: true });
+            stage.addEventListener('touchend', () => {
+                if (Math.abs(diffX) > 50) {
+                    if (diffX < 0) showCard(nlhIndex + 1);
+                    else showCard(nlhIndex - 1);
+                }
+                diffX = 0; diffY = 0; decided = false;
+            });
+
+            // Keyboard navigation
+            viewport.setAttribute('tabindex', '0');
+            viewport.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft') showCard(nlhIndex - 1);
+                else if (e.key === 'ArrowRight') showCard(nlhIndex + 1);
+            });
+        }
+
+        // ── Rivedi Deck-of-Cards Carousel ──
+        let rivediDeckIndex = 0;
+        let rivediDeckReady = false;
+        function initRivediDeck() {
+            const stage = document.getElementById('rivediDeckStage');
+            const dots = document.getElementById('rivediDeckDots');
+            const viewport = document.getElementById('rivediDeckViewport');
+            if (!stage) return;
+            const cards = stage.querySelectorAll('.rivedi-deck-card');
+            const total = cards.length;
+            if (total === 0) return;
+
+            function showCard(idx) {
+                rivediDeckIndex = ((idx % total) + total) % total;
+                cards.forEach((card, i) => {
+                    card.classList.remove('active','peek-next','peek-prev','hidden-card');
+                    if (i === rivediDeckIndex) card.classList.add('active');
+                    else if (i === (rivediDeckIndex + 1) % total) card.classList.add('peek-next');
+                    else if (i === (rivediDeckIndex - 1 + total) % total) card.classList.add('peek-prev');
+                    else card.classList.add('hidden-card');
+                });
+                if (dots) {
+                    dots.querySelectorAll('.rivedi-deck-dot').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === rivediDeckIndex);
+                    });
+                }
+            }
+
+            if (rivediDeckReady) { showCard(rivediDeckIndex); return; }
+            rivediDeckReady = true;
+            showCard(0);
+
+            const prevBtn = viewport.querySelector('.rivedi-deck-nav.prev');
+            const nextBtn = viewport.querySelector('.rivedi-deck-nav.next');
+            if (prevBtn) prevBtn.addEventListener('click', () => showCard(rivediDeckIndex - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => showCard(rivediDeckIndex + 1));
+            if (dots) dots.querySelectorAll('.rivedi-deck-dot').forEach(dot => {
+                dot.addEventListener('click', () => showCard(parseInt(dot.dataset.rvDot, 10)));
+            });
+
+            // Swipe support on mobile
+            let startX = 0, diffX = 0;
+            stage.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+            stage.addEventListener('touchmove', e => { diffX = e.touches[0].clientX - startX; }, { passive: true });
+            stage.addEventListener('touchend', () => {
+                if (Math.abs(diffX) > 50) {
+                    if (diffX < 0) showCard(rivediDeckIndex + 1);
+                    else showCard(rivediDeckIndex - 1);
+                }
+                diffX = 0;
+            });
+        }
+        initRivediDeck();
+
+        // Load saved edits from server content.json (InfinityFree)
+        (function() {
+            const CONTENT_URL = 'content.json?v=' + Date.now();
+
+            function applyContent(payload) {
+                if (!payload) return;
+                const data = payload.fields || {};
+                const imgs = payload.images || {};
+
+                Object.keys(data).forEach(key => {
+                    const el = document.querySelector('[data-edit="' + key + '"]');
+                    if (el) el.textContent = data[key];
+                });
+
+                const igGrid = document.querySelector('.instagram-grid');
+                if (igGrid) {
+                    ['ig1', 'ig2', 'ig3'].forEach((prefix, i) => {
+                        const embedCode = data[prefix + '-embed'];
+                        const link = data[prefix + '-link'];
+                        const card = igGrid.children[i];
+                        if (!card) return;
+                        if (embedCode && embedCode.trim()) {
+                            const wrapper = document.createElement('div');
+                            wrapper.className = 'ig-embed-wrapper';
+                            wrapper.innerHTML = embedCode;
+                            igGrid.replaceChild(wrapper, card);
+                        } else if (link && link.trim() && card.tagName === 'A') {
+                            card.href = link.trim();
+                        }
+                    });
+                    if (data['ig1-embed'] || data['ig2-embed'] || data['ig3-embed']) {
+                        const s = document.createElement('script');
+                        s.async = true;
+                        s.src = '//www.instagram.com/embed.js';
+                        document.body.appendChild(s);
+                    }
+                }
+
+
+                function val(k, fallback='') { return data[k] || fallback; }
+                /* Fallback: senza foto mostra il logo Li.Fe. Radio invece del vuoto */
+                function img(k) {
+                    if (imgs[k]) {
+                        return '<img src="' + imgs[k] + '?v=' + Date.now() + '" alt="Li.Fe. Radio" '
+                             + 'onerror="this.onerror=null;this.src=\'immagini/life.png\';this.style.objectFit=\'contain\';this.style.background=\'#0a1628\';">';
+                    }
+                    return '<img src="immagini/life.png" alt="Li.Fe. Radio" style="object-fit:contain;background:#0a1628;">';
+                }
+                function safeUrl(u) { return u && u.trim() ? u.trim() : '#'; }
+
+                /* ==== CUSTOM AUDIO PLAYER (condiviso) ==== */
+                function lfFmtTime(s) { if (!isFinite(s) || s < 0) s = 0; const m = Math.floor(s / 60); const sec = Math.floor(s % 60); return m + ':' + (sec < 10 ? '0' : '') + sec; }
+                function lfBuildPlayer(src) {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'lf-player';
+                    wrap.innerHTML = '<button type="button" class="lf-play" aria-label="Riproduci"><i class="fas fa-play"></i></button>'
+                        + '<div class="lf-body"><div class="lf-bar"><div class="lf-fill"></div></div>'
+                        + '<div class="lf-times"><span class="lf-cur">0:00</span><span class="lf-dur">0:00</span></div></div>'
+                        + '<audio preload="metadata" src="' + src + '"></audio>';
+                    const audio = wrap.querySelector('audio');
+                    const btn = wrap.querySelector('.lf-play');
+                    const bar = wrap.querySelector('.lf-bar');
+                    const fill = wrap.querySelector('.lf-fill');
+                    const cur = wrap.querySelector('.lf-cur');
+                    const dur = wrap.querySelector('.lf-dur');
+                    let seeking = false;
+                    function icon(p) { btn.innerHTML = '<i class="fas fa-' + (p ? 'pause' : 'play') + '"></i>'; }
+                    btn.addEventListener('click', function () { if (audio.paused) audio.play().catch(function () {}); else audio.pause(); });
+                    audio.addEventListener('play', function () { icon(true); wrap.classList.add('is-playing'); });
+                    audio.addEventListener('pause', function () { icon(false); wrap.classList.remove('is-playing'); });
+                    audio.addEventListener('ended', function () { icon(false); wrap.classList.remove('is-playing'); });
+                    audio.addEventListener('loadedmetadata', function () { dur.textContent = lfFmtTime(audio.duration); });
+                    audio.addEventListener('timeupdate', function () { if (!seeking && audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%'; cur.textContent = lfFmtTime(audio.currentTime); });
+                    function seek(clientX) { const r = bar.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (clientX - r.left) / r.width)); if (audio.duration) { audio.currentTime = p * audio.duration; fill.style.width = (p * 100) + '%'; } }
+                    bar.addEventListener('click', function (e) { seek(e.clientX); });
+                    bar.addEventListener('touchstart', function (e) { seeking = true; seek(e.touches[0].clientX); }, { passive: true });
+                    bar.addEventListener('touchmove', function (e) { seek(e.touches[0].clientX); }, { passive: true });
+                    bar.addEventListener('touchend', function () { seeking = false; });
+                    return { el: wrap, audio: audio };
+                }
+                /* Ferma la radio live (player in basso) quando parte una puntata */
+                function lfStopLiveRadio() {
+                    const live = document.getElementById('radioStreaming');
+                    if (live && !live.paused) {
+                        live.pause();
+                        const pb = document.getElementById('playBtn');
+                        if (pb) { const ic = pb.querySelector('i'); if (ic) ic.className = 'fas fa-play'; pb.classList.remove('playing'); }
+                    }
+                }
+
+                function renderHeroTicker() {
+                    const heroTrack = document.getElementById('heroTickerTrack');
+                    if (!heroTrack) return;
+                    const heroItems = [];
+                    for (let i = 1; i <= 5; i++) {
+                        const title = val('hero' + i + '-title', '');
+                        if (!title && i > 3) continue;
+                        heroItems.push({
+                            tag: val('hero' + i + '-tag', i === 1 ? 'IN EVIDENZA' : (i === 2 ? 'STUDENTS LIFE' : 'DIRETTE REDAZIONE')),
+                            title: title || (i === 1 ? 'Notizia in arrivo' : (i === 2 ? 'Notizia in arrivo' : 'Notizia in arrivo')),
+                            desc: val('hero' + i + '-desc', ''),
+                            imgKey: 'hero' + i + '-img',
+                            link: val('hero' + i + '-link', 'articolo.html?id=hero-news-' + i)
+                        });
+                    }
+                    heroTrack.innerHTML = heroItems.map((item, idx) => 
+                        '<div class="hero-ticker-slide" data-slide="' + idx + '">' +
+                        '<a href="' + safeUrl(item.link) + '" class="hero-slide-bg-link" aria-label="' + (item.title||'Notizia in evidenza') + '">' +
+                        '<div class="hero-slide-bg" data-edit-img="' + item.imgKey + '" style="overflow:hidden;">' +
+                        '<div class="hero-slide-overlay"></div>' +
+                        '</div>' +
+                        '</a>' +
+                        '<div class="hero-slide-content">' +
+                        '<span class="hero-slide-tag">' + item.tag + '</span>' +
+                        '<h2 class="hero-slide-title">' + item.title + '</h2>' +
+                        '<p class="hero-slide-desc">' + item.desc + '</p>' +
+                        '<a href="' + safeUrl(item.link) + '" class="btn btn-hero-slide">SCOPRI DI PIÙ <i class="fas fa-arrow-right-long"></i></a>' +
+                        '</div></div>'
+                    ).join('');
+                    // Reinitialize the ticker JS after DOM update
+                    if (typeof window.initHeroTicker === 'function') window.initHeroTicker();
+                }
+                renderHeroTicker();
+
+                function renderNewsGrid() {
+                    const grid = document.getElementById('newsGrid');
+                    if (!grid) return;
+                    const items = [];
+                    for (let i = 1; i <= 3; i++) {
+                        const title = val('news' + i + '-title', i === 1 ? 'Notizia in arrivo' : (i === 2 ? 'Notizia in arrivo' : 'Notizia in arrivo'));
+                        const link = val('news' + i + '-link', 'articolo.html?id=home-news-' + i);
+                        items.push({
+                            id: link.split('id=')[1] || ('home-news-' + i),
+                            link,
+                            tag: val('news' + i + '-tag', i === 1 ? 'ESCLUSIVE' : (i === 2 ? 'STUDENTS LIFE' : 'DIRETTE Redazione')),
+                            title,
+                            imgKey: 'news' + i + '-img',
+                            icon: i === 1 ? 'fas fa-radio' : (i === 2 ? 'fas fa-radio' : 'fas fa-radio'),
+                            date: val('news' + i + '-date', i === 1 ? '29 giu' : (i === 2 ? '28 giu' : '27 giu'))
+                        });
+                    }
+                    grid.innerHTML = items.map(item =>
+                        '<article class="news-grid-card">' +
+                        '<a href="' + safeUrl(item.link) + '"></a>' +
+                        '<div class="news-grid-bg" data-edit-img="' + item.imgKey + '">' + (img(item.imgKey) || '<i class="' + item.icon + '"></i>') + '</div>' +
+                        '<div class="news-grid-overlay"></div>' +
+                        '<div class="news-grid-content">' +
+                        '<span class="news-grid-tag">' + item.tag + '</span>' +
+                        '<h3>' + item.title + '</h3>' +
+                        '<span class="news-grid-date">' + item.date + '</span>' +
+                        '</div></article>'
+                    ).join('');
+                }
+                renderNewsGrid();
+
+                function renderNewLifeHit() {
+                    const stage = document.getElementById('nlhStage');
+                    const dots = document.getElementById('nlhDots');
+                    if (!stage) return;
+                    const items = [];
+                    for (let i = 1; i <= 5; i++) {
+                        const title = val('nlh'+i+'-title', '');
+                        const desc = val('nlh'+i+'-desc', '');
+                        const cover = img('nlh'+i+'-img');
+                        if (!title && !cover) continue;
+                        items.push({
+                            title: title || 'NEW HIT',
+                            desc: desc || '',
+                            cover: cover,
+                            hasImg: !!imgs['nlh'+i+'-img']
+                        });
+                    }
+                    nlhItems = items;
+                    nlhReady = false;
+                    if (!items.length) {
+                        stage.innerHTML = '<div class="nlh-empty">Nessuna canzone configurata. Aggiungile dal pannello admin.</div>';
+                        if (dots) dots.innerHTML = '';
+                        return;
+                    }
+                    stage.innerHTML = items.map((item, idx) =>
+                        '<div class="nlh-card' + (idx === 0 ? ' active' : '') + '" data-nlh-index="' + idx + '">' +
+                            '<div class="nlh-card-cover" data-edit-img="nlh' + (idx+1) + '-img">' +
+                                (item.cover || '<i class="fas fa-music nlh-card-placeholder"></i>') +
+                            '</div>' +
+                        '</div>'
+                    ).join('');
+                    // dots
+                    if (dots) {
+                        dots.innerHTML = items.map((item, idx) =>
+                            '<button class="nlh-dot' + (idx === 0 ? ' active' : '') + '" data-nlh-dot="' + idx + '" type="button" aria-label="Brano ' + (idx+1) + '"></button>'
+                        ).join('');
+                    }
+                    // Set initial text block content
+                    const titleEl = document.getElementById('nlhActiveTitle');
+                    const descEl = document.getElementById('nlhActiveDesc');
+                    if (titleEl) titleEl.textContent = items[0].title;
+                    if (descEl) descEl.textContent = items[0].desc;
+                    initNewLifeHitCarousel();
+                }
+                renderNewLifeHit();
+
+                const podcastGrid = document.getElementById('podcastGrid');
+                if (podcastGrid) {
+                    const progCards = [];
+                    for (let n = 1; n <= 20; n++) {
+                        const progName = val('program' + n + '-name', '');
+                        if (!progName) continue;
+                        const coverImg = imgs['program' + n + '-img'];
+                        const coverHTML = '<div class="podcast-cover-placeholder"><i class="fas fa-microphone-lines"></i></div>'
+                            + (coverImg ? '<img src="' + coverImg + '?v=' + Date.now() + '" alt="" onerror="this.remove();">' : '');
+                        let eps = [];
+                        try { eps = JSON.parse(val('program' + n + '-episodes', '[]')) || []; } catch (e) { eps = []; }
+                        const latest = eps.length ? eps.slice().sort((a, b) => (b.uploadedAt || 0) - (a.uploadedAt || 0))[0] : null;
+                        const epLabel = latest ? ('Ultima puntata' + (latest.title ? ' &middot; ' + latest.title : '')) : 'Nessuna puntata disponibile';
+                        const action = latest
+                            ? '<button type="button" class="podcast-play-btn" data-play-program="' + n + '"><i class="fas fa-play"></i> Ascolta</button>'
+                            : '<span class="podcast-no-ep">In arrivo</span>';
+                        progCards.push('<div class="podcast-split-card" data-program-card="' + n + '" data-edit-img="program' + n + '-img">'
+                            + '<div class="podcast-cover-side">' + coverHTML + '<span class="podcast-cover-badge">PROGRAMMA</span></div>'
+                            + '<div class="podcast-text-side"><span class="pod-type"><i class="fas fa-wave-square"></i> REPLICA</span><h3>' + progName + '</h3><span class="pod-ep">' + epLabel + '</span>' + action + '</div>'
+                            + '<div class="podcast-inline-player" data-player-for="' + n + '"></div>'
+                            + '</div>');
+                    }
+                    podcastGrid.innerHTML = progCards.join('') || '<div style="opacity:.6;padding:10px;">Nessun programma configurato. Aggiungili dal pannello admin.</div>';
+                    podcastGrid.querySelectorAll('[data-play-program]').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            const n = btn.getAttribute('data-play-program');
+                            const card = podcastGrid.querySelector('[data-program-card="' + n + '"]');
+                            const holder = card.querySelector('[data-player-for="' + n + '"]');
+                            /* Ferma gli altri player */
+                            podcastGrid.querySelectorAll('.lf-player').forEach(p => {
+                                if (!holder.contains(p)) { const a = p.querySelector('audio'); if (a) a.pause(); }
+                            });
+                            let player = holder.querySelector('.lf-player');
+                            if (!player) {
+                                let eps = [];
+                                try { eps = JSON.parse(val('program' + n + '-episodes', '[]')) || []; } catch (e) { eps = []; }
+                                const latest = eps.slice().sort((a, b) => (b.uploadedAt || 0) - (a.uploadedAt || 0))[0];
+                                if (!latest) return;
+                                const built = lfBuildPlayer(latest.file);
+                                holder.appendChild(built.el);
+                                player = built.el;
+                                built.audio.addEventListener('play', () => { btn.innerHTML = '<i class="fas fa-pause"></i> Ascolta'; });
+                                built.audio.addEventListener('pause', () => { btn.innerHTML = '<i class="fas fa-play"></i> Ascolta'; });
+                                built.audio.addEventListener('ended', () => { btn.innerHTML = '<i class="fas fa-play"></i> Ascolta'; });
+                            }
+                            holder.classList.add('active');
+                            card.classList.add('is-playing');
+                            const audio = player.querySelector('audio');
+                            if (audio.paused) { lfStopLiveRadio(); audio.play().catch(() => {}); } else audio.pause();
+                        });
+                    });
+                }
+
+                const monthNames = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+                const shortDays = ['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
+                const longDays = ['LUNEDÌ','MARTEDÌ','MERCOLEDÌ','GIOVEDÌ','VENERDÌ','SABATO','DOMENICA'];
+                const today = new Date();
+                let selectedMonth = today.getMonth();
+                let selectedDay = today.getDate();
+                const selectedYear = today.getFullYear();
+                const calendarDays = document.getElementById('calendarDays');
+                const calendarPhotoDays = document.getElementById('calendarPhotoDays');
+                const dayPrograms = document.getElementById('dayPrograms');
+                function normDayName(s) { return (s || '').toString().trim().toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+                function dayNameForDate(dayNum) {
+                    const jsDay = new Date(selectedYear, selectedMonth, dayNum).getDay();
+                    return longDays[jsDay === 0 ? 6 : jsDay - 1];
+                }
+                function eventsForWeekday(dayName) {
+                    const rows = [];
+                    const dayNorm = normDayName(dayName).slice(0,3);
+                    for (let n=1;n<=12;n++) {
+                        const itemDay = normDayName(val('pal'+n+'-day',''));
+                        if (itemDay.startsWith(dayNorm)) rows.push('<div class="schedule-row"><div class="schedule-day">'+dayName.slice(0,3)+'</div><div class="schedule-time">'+val('pal'+n+'-time','--:--')+'</div><div class="schedule-details"><h4>'+val('pal'+n+'-title','Programma')+'</h4><p>'+val('pal'+n+'-sub','Redazione Li.Fe. Radio')+'</p></div></div>');
+                    }
+                    return rows;
+                }
+                function renderEvents(dayNum) {
+                    if (!dayPrograms) return;
+                    const dayName = dayNameForDate(dayNum);
+                    const rows = eventsForWeekday(dayName);
+                    dayPrograms.classList.add('day-events-panel');
+                    dayPrograms.innerHTML = '<h3 class="day-panel-title">'+dayName+'<span class="selected-date-label">'+dayNum+' '+monthNames[selectedMonth]+' '+selectedYear+'</span></h3>' + (rows.join('') || '<div class="empty-day">Nessun evento inserito da admin per questa giornata.</div>');
+                    document.querySelectorAll('.calendar-day-number').forEach(c => c.classList.toggle('active', parseInt(c.dataset.day || '0', 10) === dayNum));
+                }
+                function renderCalendar() {
+                    if (!calendarDays || !calendarPhotoDays) return;
+                    const isMobileCalendar = window.matchMedia('(max-width: 600px)').matches;
+                    const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
+                    if (selectedDay > daysInMonth) selectedDay = daysInMonth;
+                    if (isMobileCalendar) {
+                        const weekdayButtons = shortDays.map((d, i) => {
+                            const longName = longDays[i];
+                            const rows = eventsForWeekday(longName);
+                            return '<button class="calendar-weekday-button'+(i===0?' active':'')+(rows.length?' has-events':'')+'" data-weekday="'+i+'">'+d+'</button>';
+                        }).join('');
+                        calendarPhotoDays.innerHTML = '<div class="calendar-photo-days-title">Settimana</div><div class="mobile-week-strip">'+weekdayButtons+'</div>';
+                        calendarDays.innerHTML = '<div class="calendar-shell mobile-calendar-shell"><div class="calendar-main-area"><div class="calendar-weekdays mobile-only-weekdays">'+shortDays.map(d=>'<div class="weekday-label">'+d+'</div>').join('')+'</div><div class="calendar-info-box"><strong>Palinsesto settimanale</strong>Scegli un giorno della settimana: su mobile non mostriamo mesi o numeri, solo i giorni.</div></div></div>';
+                        calendarDays.querySelector('.calendar-shell').appendChild(dayPrograms);
+                        calendarPhotoDays.querySelectorAll('.calendar-weekday-button').forEach(b => b.addEventListener('click', () => {
+                            const idx = parseInt(b.dataset.weekday, 10);
+                            document.querySelectorAll('.calendar-weekday-button').forEach(x => x.classList.remove('active'));
+                            b.classList.add('active');
+                            const rows = eventsForWeekday(longDays[idx]);
+                            dayPrograms.classList.add('day-events-panel');
+                            dayPrograms.innerHTML = '<h3 class="day-panel-title">'+longDays[idx]+'<span class="selected-date-label">Palinsesto settimanale</span></h3>' + (rows.join('') || '<div class="empty-day">Nessun evento inserito da admin per questa giornata.</div>');
+                        }));
+                        const firstWithEvents = calendarPhotoDays.querySelector('.calendar-weekday-button.has-events') || calendarPhotoDays.querySelector('.calendar-weekday-button');
+                        if (firstWithEvents) firstWithEvents.click();
+                        return;
+                    }
+                    const dayNumbers = Array.from({length: daysInMonth}, (_, i) => {
+                        const d = i + 1;
+                        const hasEvents = eventsForWeekday(dayNameForDate(d)).length ? ' has-events' : '';
+                        return '<button class="calendar-day-number'+hasEvents+(d===selectedDay?' active':'')+'" data-day="'+d+'">'+d+'</button>';
+                    }).join('');
+                    calendarPhotoDays.innerHTML = '<div class="calendar-photo-days-title">Giorni del mese</div>' + dayNumbers;
+                    calendarDays.innerHTML = '<div class="month-selector">'+monthNames.map((m,i)=>'<button class="month-btn '+(i===selectedMonth?'active':'')+'" data-month="'+i+'">'+m.slice(0,3)+'</button>').join('')+'</div><div class="calendar-shell"><div class="calendar-main-area"><div class="month-title">'+monthNames[selectedMonth]+' <span>'+selectedYear+'</span></div><div class="calendar-weekdays">'+shortDays.map(d=>'<div class="weekday-label">'+d+'</div>').join('')+'</div><div class="calendar-info-box"><strong>Seleziona un giorno</strong>I numeri del mese sono nel riquadro calendario a sinistra; mesi e giorni della settimana restano separati in questa area.</div></div></div>';
+                    calendarDays.querySelector('.calendar-shell').appendChild(dayPrograms);
+                    calendarDays.querySelectorAll('.month-btn').forEach(b => b.addEventListener('click', () => { selectedMonth = parseInt(b.dataset.month, 10); selectedDay = 1; renderCalendar(); renderEvents(selectedDay); }));
+                    calendarPhotoDays.querySelectorAll('.calendar-day-number').forEach(b => b.addEventListener('click', () => { selectedDay = parseInt(b.dataset.day, 10); renderEvents(selectedDay); }));
+                    renderEvents(selectedDay);
+                }
+                renderCalendar();
+
+                const rivediStage = document.getElementById('rivediDeckStage');
+                const rivediDots = document.getElementById('rivediDeckDots');
+                if (rivediStage) {
+                    const rvItems = [1,2,3].map(n => {
+                        const type = val('rv'+n+'-type', n===1?'VIDEO':(n===2?'FOTO':'VIDEO'));
+                        const typeIcon = type === 'FOTO' ? 'fas fa-camera' : 'fas fa-play';
+                        const typeLabel = type === 'FOTO' ? (val('rv'+n+'-count','67')+' FOTO') : 'VIDEO';
+                        return '<div class="rivedi-deck-card" data-rv-index="'+(n-1)+'">' +
+                            '<a href="'+safeUrl(val('rv'+n+'-link','https://www.youtube.com/@Li.Fe.Radio.Official'))+'" target="_blank"></a>' +
+                            '<div class="rivedi-deck-card-bg" data-edit-img="rv'+n+'-img">'+(img('rv'+n+'-img') || '<i class="'+typeIcon+'"></i>')+'</div>' +
+                            '<div class="rivedi-deck-card-overlay"></div>' +
+                            '<div class="rivedi-deck-card-content">' +
+                            '<span class="rivedi-deck-card-label">'+val('rv'+n+'-label','IL CONCERTO')+'</span>' +
+                            '<span class="rivedi-deck-card-subtitle">'+val('rv'+n+'-subtitle','RILIVE PALERMO 2026')+'</span>' +
+                            '<span class="rivedi-deck-card-indicator"><i class="'+typeIcon+'"></i> '+typeLabel+'</span>' +
+                            '</div></div>';
+                    });
+                    rivediStage.innerHTML = rvItems.join('');
+                    if (rivediDots) {
+                        rivediDots.innerHTML = [1,2,3].map(n =>
+                            '<button class="rivedi-deck-dot'+(n===1?' active':'')+'" data-rv-dot="'+(n-1)+'" type="button" aria-label="Card '+n+'"></button>'
+                        ).join('');
+                    }
+                    initRivediDeck();
+                }
+
+                setupTouchCarousels();
+
+                Object.keys(imgs).forEach(key => {
+                    const el = document.querySelector('[data-edit-img="' + key + '"]');
+                    if (el && imgs[key]) {
+                        if (el.classList.contains('hero-slide-bg')) {
+                            el.style.backgroundImage = 'url(' + imgs[key] + '?v=' + Date.now() + ')';
+                            el.classList.add('has-image');
+                            /* background-image non ha onerror: se l'immagine non
+                               esiste/carica, metto il logo Li.Fe. Radio come sfondo */
+                            (function(elB, srcB) {
+                                const probe = new Image();
+                                probe.onerror = function() {
+                                    elB.style.backgroundImage = 'url(immagini/life.png)';
+                                    elB.style.backgroundSize = 'contain';
+                                    elB.style.backgroundRepeat = 'no-repeat';
+                                    elB.style.backgroundPosition = 'center';
+                                    elB.style.backgroundColor = '#0a1628';
+                                };
+                                probe.src = srcB;
+                            })(el, imgs[key] + '?v=' + Date.now());
+                        } else if (el.classList.contains('news-grid-bg') || el.classList.contains('rivedi-card-bg') || el.classList.contains('rivedi-deck-card-bg')) {
+                            el.innerHTML = '';
+                            const img = document.createElement('img');
+                            img.src = imgs[key] + '?v=' + Date.now();
+                            img.alt = 'Li.Fe. Radio';
+                            img.onerror = function() { this.onerror=null; this.src='immagini/life.png'; this.style.objectFit='contain'; this.style.background='#0a1628'; };
+                            el.appendChild(img);
+                            el.classList.add('has-image');
+                        } else {
+                            el.innerHTML = '';
+                            const img = document.createElement('img');
+                            img.src = imgs[key] + '?v=' + Date.now();
+                            img.alt = 'Li.Fe. Radio';
+                            img.onerror = function() { this.onerror=null; this.src='immagini/life.png'; this.style.objectFit='contain'; this.style.background='#0a1628'; };
+                            el.appendChild(img);
+                            el.classList.add('has-image');
+                        }
+                    }
+                });
+
+                /* Hero slide senza foto: sfondo col logo Li.Fe. Radio (fallback) */
+                document.querySelectorAll('.hero-slide-bg').forEach(function(el) {
+                    if (!el.classList.contains('has-image')) {
+                        el.style.backgroundImage = 'url(immagini/life.png)';
+                        el.style.backgroundSize = 'contain';
+                        el.style.backgroundRepeat = 'no-repeat';
+                        el.style.backgroundPosition = 'center';
+                        el.style.backgroundColor = '#0a1628';
+                    }
+                });
+
+            // Load speaker/program data for player cycling
+            const spName = val('speaker-name', '');
+            const spProgram = val('speaker-program', '');
+            const spActive = val('speaker-active', '');
+            const spImg = imgs['speaker-img'] || '';
+            if (typeof speakerData !== 'undefined') {
+                speakerData.name = spName;
+                speakerData.program = spProgram;
+                speakerData.img = spImg;
+                speakerData.active = spActive === '1' && spName.trim() !== '';
+            }
+
+        } // end applyContent
+
+        /* Carica content.json + archivio notizie (news-archive-light.json).
+           Se in content.json mancano le notizie in evidenza (hero1-3/news1-3,
+           ad esempio dopo la pulizia dei 2 mesi), la home si auto-riempie
+           con le ultime notizie importate da All Music Italia. */
+        Promise.all([
+            fetch(CONTENT_URL, { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+            fetch('news-archive-light.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
+        ]).then(([content, archive]) => {
+            if (content && archive && archive.news && archive.news.length) {
+                const f = content.fields || (content.fields = {});
+                const im = content.images || (content.images = {});
+                /* Non duplicare in homepage le notizie già messe in evidenza */
+                const usedIds = [];
+                for (let i = 1; i <= 3; i++) {
+                    const hl = (f['hero' + i + '-link'] || '').split('id=')[1] || '';
+                    const nl = (f['news' + i + '-link'] || '').split('id=')[1] || '';
+                    if (hl) usedIds.push(hl);
+                    if (nl) usedIds.push(nl);
+                }
+                const latest = archive.news.filter(n => usedIds.indexOf(n.id) === -1).slice(0, 6);
+                let ptr = 0;
+                /* HERO slider (hero1-3): riempi solo gli slot vuoti */
+                for (let i = 1; i <= 3 && ptr < latest.length; i++) {
+                    if (f['hero' + i + '-title']) continue;
+                    const n = latest[ptr++];
+                    f['hero' + i + '-title'] = n.title || '';
+                    f['hero' + i + '-tag']   = n.tag || 'NEWS';
+                    f['hero' + i + '-desc']  = n.desc || '';
+                    f['hero' + i + '-link']  = 'articolo.html?id=' + n.id;
+                    if (n.img && !im['hero' + i + '-img']) im['hero' + i + '-img'] = n.img;
+                }
+                /* NEWS home grid (news1-3): riempi solo gli slot vuoti */
+                for (let i = 1; i <= 3 && ptr < latest.length; i++) {
+                    if (f['news' + i + '-title']) continue;
+                    const n = latest[ptr++];
+                    f['news' + i + '-title'] = n.title || '';
+                    f['news' + i + '-tag']   = n.tag || 'NEWS';
+                    f['news' + i + '-desc']  = n.desc || '';
+                    f['news' + i + '-date']  = n.date || '';
+                    f['news' + i + '-link']  = 'articolo.html?id=' + n.id;
+                    if (n.img && !im['news' + i + '-img']) im['news' + i + '-img'] = n.img;
+                }
+            }
+            applyContent(content);
+        }).catch(err => console.warn('Impossibile caricare content.json', err));
+        })();
+    </script>
+
+    <script>
+    // Search overlay functionality
+    (function() {
+        const searchToggleBtn = document.getElementById('searchToggleBtn');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const searchCloseBtn = document.getElementById('searchCloseBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        let searchIndex = [];
+        let debounceTimer = null;
+
+        function openSearch() { searchOverlay.classList.add('active'); setTimeout(() => searchInput.focus(), 100); }
+        function closeSearch() { searchOverlay.classList.remove('active'); searchInput.value = ''; searchResults.innerHTML = ''; }
+
+        // Mobile hamburger search link
+        const mobileNavSearchBtn = document.getElementById('mobileNavSearchBtn');
+        if (mobileNavSearchBtn) mobileNavSearchBtn.addEventListener('click', function() { if (typeof closeMobileNav === 'function') closeMobileNav(); setTimeout(openSearch, 250); });
+
+        if (searchToggleBtn) searchToggleBtn.addEventListener('click', function(e) { e.preventDefault(); openSearch(); });
+        if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
+
+        function buildSearchIndex(data) {
+            const fields = (data && data.fields) || {};
+            searchIndex = [];
+            // Unified articleN format only (no more home-news-N / blog-N to avoid duplicates)
+            Object.keys(fields).map(k => (k.match(/^article(\d+)-title$/)||[])[1]).filter(Boolean).map(Number).sort((a,b)=>a-b).forEach(i => {
+                const t = fields['article'+i+'-title']; if(t) searchIndex.push({id:'article-'+i, title:t, desc:fields['article'+i+'-desc']||'', tag:fields['article'+i+'-tag']||'News', type:'article'});
+            });
+            for (let i=1;i<=6;i++) {
+                const t = fields['pod'+i+'-title']; if(t) searchIndex.push({id:'pod-'+i, title:t, desc:fields['pod'+i+'-desc']||'', tag:fields['pod'+i+'-type']||'Podcast', type:'podcast'});
+            }
+        }
+
+        fetch('content.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(buildSearchIndex).catch(()=>{});
+
+        function doSearch(query) {
+            if (!query || query.length < 2) { searchResults.innerHTML = ''; return; }
+            const q = query.toLowerCase();
+            const matches = searchIndex.filter(item => item.title.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.tag.toLowerCase().includes(q));
+            if (!matches.length) { searchResults.innerHTML = '<div style="color:rgba(255,255,255,.5);padding:16px;">Nessun risultato per "'+query+'"</div>'; return; }
+            searchResults.innerHTML = matches.map(item => {
+                const iconClass = item.type === 'podcast' ? 'podcast' : 'article';
+                const iconFA = item.type === 'podcast' ? 'fas fa-headphones' : 'far fa-newspaper';
+                const href = item.type === 'podcast' ? 'index.html#podcast' : 'articolo.html?id='+item.id;
+                return '<a class="search-result-item" href="'+href+'"><div class="search-result-icon '+iconClass+'"><i class="'+iconFA+'"></i></div><div><div class="search-result-title">'+item.title+'</div><div class="search-result-tag">'+item.tag+'</div></div></a>';
+            }).join('');
+        }
+
+        if (searchInput) searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => doSearch(this.value.trim()), 250);
+        });
+    })();
+    </script>
+
+    <!-- DARK THEME TOGGLE -->
+    <script>
+    (function(){
+        const KEY = 'liferadio-theme';
+        const btn = document.getElementById('themeToggleBtn');
+        const logo = document.querySelector('.logo-img');
+        const logoDark = 'immagini/2.png';
+        const logoLight = 'immagini/1.png';
+
+        function setTheme(dark){
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            if(btn) btn.innerHTML = dark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            if(logo) logo.src = dark ? logoLight : logoDark;
+            try{ localStorage.setItem(KEY, dark ? 'dark' : 'light'); }catch(e){}
+        }
+
+        // init from storage
+        var saved = null;
+        try{ saved = localStorage.getItem(KEY); }catch(e){}
+        if(saved === 'dark') setTheme(true);
+
+        if(btn) btn.addEventListener('click', function(){
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            setTheme(!isDark);
+        });
+    })();
+    </script>
+    <!-- News Ticker Script -->
+    <script src="news-ticker.js"></script>
+    <script src="radio-player-panel.js"></script>
+</body>
+</html>

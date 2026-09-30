@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Palinsesto - Li.Fe. Radio</title>
+    <link rel="icon" href="immagini/life.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <link rel="stylesheet" href="news-ticker.css">
+    <link rel="stylesheet" href="radio-player-panel.css">
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --bg-dark: #012657;
+            --accent-celeste: #0185C7;
+            --accent-red: #FF2A54;
+            --accent-light: #E8F6FF;
+            --text-main: #012657;
+            --text-muted: rgba(1, 38, 87, 0.75);
+            --card-border: 2.5px solid #012657;
+            --radius-main: 20px;
+            --radius-sm: 10px;
+            --radius-round: 50%;
+            --pop-shadow: 6px 6px 0px rgba(1, 38, 87, 0.12);
+            --pop-shadow-strong: 8px 8px 0px #012657;
+            --font-title: 'League Spartan', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--text-main); overflow-x: hidden; line-height: 1.5; background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FC 45%, #D6EDFC 100%); min-height: 100vh; padding-bottom: 110px; padding-top: 36px; }
+        a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .fluid-bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+        .blur-ball { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; mix-blend-mode: multiply; }
+        .ball-1 { top: 18%; right: -10%; width: 520px; height: 520px; background: var(--accent-celeste); }
+        .ball-2 { bottom: -12%; left: -8%; width: 620px; height: 620px; background: #A2DBFF; }
+        .ball-3 { top: 55%; right: 18%; width: 380px; height: 380px; background: rgba(1, 38, 87, 0.22); }
+        .main-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.88); backdrop-filter: blur(15px); border-bottom: 3px solid var(--bg-dark); padding: 12px 0; }
+        .header-container { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .logo-img { height: 55px; display: block; flex-shrink: 0; }
+        .nav-menu { flex: 1 1 auto; }
+        .nav-menu ul { display: flex; list-style: none; gap: 0; width: 100%; justify-content: space-around; align-items: center; }
+        .nav-menu ul li { flex: 0 0 auto; text-align: center; }
+        .nav-menu ul li a { font-family: var(--font-title); font-weight: 900; font-size: 1.15rem; letter-spacing: 1px; color: var(--bg-dark); text-transform: uppercase; white-space: nowrap; padding: 4px 8px; }
+        .nav-menu ul li a:hover, .nav-menu ul li a.active { color: var(--accent-celeste); transform: translateY(-2px); }
+        .header-actions { display: flex; align-items: center; gap: 16px; color: var(--bg-dark); font-size: 1.2rem; flex-shrink: 0; }
+        .header-actions a:hover { color: var(--accent-celeste); }
+        .mobile-menu-btn { display: none; background: transparent; border: none; color: var(--bg-dark); font-size: 1.55rem; cursor: pointer; z-index: 10001; }
+        /* Slide-in side menu backdrop */
+        .mobile-nav-backdrop { position: fixed; inset: 0; background: rgba(1, 38, 87, 0.5); backdrop-filter: blur(4px); z-index: 9999; opacity: 0; visibility: hidden; transition: opacity 0.4s cubic-bezier(.22,1,.36,1), visibility 0.4s; }
+        .mobile-nav-backdrop.active { opacity: 1; visibility: visible; }
+        /* Slide-in side panel (from the right) */
+        .mobile-nav-overlay { position: fixed; top: 0; right: 0; bottom: 0; width: 82%; max-width: 360px; background: linear-gradient(180deg, #012657 0%, #013a80 100%); z-index: 10000; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px; padding: 90px 32px 32px; transform: translateX(100%); transition: transform 0.45s cubic-bezier(.22,1,.36,1); box-shadow: -10px 0 40px rgba(0,0,0,0.4); overflow-y: auto; }
+        .mobile-nav-overlay.active { transform: translateX(0); }
+        .mobile-nav-overlay a { color: var(--white); font-family: var(--font-title); font-size: 1.55rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; transition: color 0.2s, padding-left 0.2s; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); width: 100%; }
+        .mobile-nav-overlay a:hover, .mobile-nav-overlay a:active { color: var(--accent-celeste); padding-left: 8px; }
+        .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: transparent; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; width: 44px; height: 44px; display: grid; place-items: center; color: var(--white); font-size: 1.3rem; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+        .mobile-nav-close:hover { border-color: var(--accent-celeste); color: var(--accent-celeste); }
+        .mobile-nav-social { margin-top: auto; padding-top: 24px; display: flex; gap: 22px; width: 100%; justify-content: flex-start; border-top: 1px solid rgba(255,255,255,0.1); }
+        .mobile-nav-social a { font-size: 1.4rem; color: rgba(255,255,255,0.6); border: none; padding: 0; width: auto; transition: color 0.2s, transform 0.2s; }
+        .mobile-nav-social a:hover { color: var(--accent-celeste); transform: scale(1.2); }
+        .page-hero { padding: 155px 0 42px; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-dark); color: var(--white); font-family: var(--font-title); font-weight: 900; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 2px; padding: 9px 15px; border-radius: 999px; margin-bottom: 18px; box-shadow: 4px 4px 0 rgba(1,38,87,0.14); }
+        .page-title { font-family: var(--font-title); font-size: clamp(3rem, 8vw, 7rem); line-height: 0.86; font-weight: 900; letter-spacing: -3px; text-transform: uppercase; max-width: 900px; }
+        .page-title span { color: var(--accent-celeste); }
+        .page-desc { max-width: 760px; margin-top: 22px; font-size: 1.1rem; color: var(--text-muted); font-weight: 600; }
+        .articles-toolbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin: 18px 0 30px; }
+        .articles-count { font-family: var(--font-title); font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); }
+        .back-home { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: var(--card-border); border-radius: var(--radius-sm); padding: 10px 16px; font-family: var(--font-title); font-weight: 900; text-transform: uppercase; box-shadow: var(--pop-shadow); }
+        .back-home:hover { transform: translateY(-2px); box-shadow: var(--pop-shadow-strong); }
+        .articles-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; padding-bottom: 80px; }
+        .article-card { background: rgba(255,255,255,0.88); border: var(--card-border); border-radius: var(--radius-main); overflow: hidden; box-shadow: var(--pop-shadow); display: flex; flex-direction: column; min-height: 100%; }
+        .article-card:hover { transform: translateY(-4px); box-shadow: var(--pop-shadow-strong); }
+        .article-image { height: 210px; border-bottom: var(--card-border); background: rgba(1, 133, 199, 0.08); display: flex; align-items: center; justify-content: center; color: rgba(1,38,87,0.16); font-size: 4rem; overflow: hidden; position: relative; }
+        .article-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .article-body { padding: 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+        .article-tag { align-self: flex-start; color: var(--white); background: var(--accent-celeste); font-family: var(--font-title); font-weight: 900; font-size: 0.78rem; padding: 5px 12px; border-radius: var(--radius-sm); text-transform: uppercase; border: 1.5px solid var(--bg-dark); letter-spacing: 0.5px; }
+        .article-card h2 { font-family: var(--font-title); font-size: 1.7rem; line-height: 0.98; font-weight: 900; letter-spacing: -0.6px; text-transform: uppercase; }
+        .article-card p { color: var(--text-muted); font-weight: 600; white-space: pre-line; }
+        .article-read-more { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-title); font-weight: 900; text-transform: uppercase; color: var(--accent-celeste); }
+        .empty-state { grid-column: 1 / -1; background: rgba(255,255,255,0.9); border: var(--card-border); border-radius: var(--radius-main); padding: 40px; text-align: center; box-shadow: var(--pop-shadow); }
+        .empty-state i { font-size: 3rem; color: var(--accent-celeste); margin-bottom: 14px; }
+        .empty-state h2 { font-family: var(--font-title); font-size: 2rem; text-transform: uppercase; }
+        .empty-state p { color: var(--text-muted); font-weight: 600; margin-top: 8px; }
+        .main-footer { background: #0a1a35; padding: 70px 0 35px 0; color: rgba(255, 255, 255, 0.7); margin-top: 50px; position: relative; z-index: 2; }
+        .footer-container { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px; align-items: start; }
+        @media(max-width: 768px) { .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; } }
+        .footer-brand { display: flex; flex-direction: column; }
+        .footer-logo { width: 180px; height: auto; margin-bottom: 0; filter: brightness(1); }
+        @media(max-width: 768px) { .footer-logo { margin: 0 auto; } }
+        .footer-nav h4 { font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .footer-nav ul { list-style: none; }
+        .footer-nav ul li { margin-bottom: 12px; }
+        .footer-nav ul li a { font-family: var(--font-title); font-size: 0.95rem; font-weight: 700; color: rgba(255, 255, 255, 0.55); text-transform: uppercase; letter-spacing: 1px; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .footer-nav ul li a:hover { color: var(--accent-celeste); }
+        .footer-contacts h4 { font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .footer-contacts ul { list-style: none; }
+        .footer-contacts ul li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; font-size: 0.92rem; color: rgba(255, 255, 255, 0.6); }
+        .footer-contacts ul li i { color: rgba(255, 255, 255, 0.35); font-size: 1rem; width: 20px; text-align: center; }
+        @media(max-width: 768px) { .footer-contacts ul li { justify-content: center; } }
+        .footer-copy { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px; margin-top: 25px; text-align: center; font-size: 0.85rem; opacity: 0.45; }
+        .radio-player-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 110px; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(15px); border-top: 3.5px solid var(--bg-dark); z-index: 2000; display: flex; align-items: center; }
+        .player-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .player-left-group { display: flex; align-items: center; gap: 20px; width: 65%; }
+        .control-btn { background: var(--bg-dark); color: var(--white); border: 2.5px solid var(--bg-dark); width: 62px; height: 62px; border-radius: var(--radius-sm); font-size: 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 0px var(--accent-celeste); transition: all 0.1s ease; flex-shrink: 0; }
+        .control-btn:hover { transform: translateY(2px); box-shadow: 0 2px 0px var(--accent-celeste); background: var(--accent-celeste); }
+        .control-btn.playing { background: var(--accent-celeste); }
+        .speaker-avatar-box { width: 58px; height: 58px; background: var(--accent-light); border: 2.5px solid var(--bg-dark); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--bg-dark); box-shadow: 3px 3px 0px rgba(1, 38, 87, 0.15); overflow: hidden; flex-shrink: 0; }
+        .player-track-info { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: flex; flex-direction: column; gap: 2px; }
+        .track-status { font-family: var(--font-title); font-size: 0.85rem; font-weight: 800; color: var(--accent-red); display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .live-pulse { width: 8px; height: 8px; background: var(--accent-red); border-radius: 50%; display: inline-block; animation: pulse-dot 1.4s infinite; }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .track-title { font-family: var(--font-title); font-size: 1.35rem; font-weight: 800; color: var(--bg-dark); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; }
+        .track-subtitle { font-size: 0.78rem; font-weight: 700; color: var(--accent-celeste); text-transform: uppercase; letter-spacing: 0.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: opacity 0.4s; }
+        .player-right-group { display: flex; align-items: center; gap: 24px; justify-content: flex-end; width: 35%; }
+        .btn-live-link { background: var(--white); color: var(--bg-dark); border: 2.5px solid var(--bg-dark); border-radius: var(--radius-sm); padding: 10px 18px; font-family: var(--font-title); font-weight: 800; font-size: 0.95rem; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; box-shadow: 4px 4px 0px var(--accent-celeste); white-space: nowrap; }
+        .btn-live-link:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--accent-celeste); background: var(--accent-light); color: var(--accent-celeste); }
+        .btn-live-link i { color: var(--accent-red); font-size: 0.9rem; }
+        .player-utility { display: flex; align-items: center; gap: 10px; color: var(--bg-dark); font-size: 1.1rem; }
+        .volume-slider { -webkit-appearance: none; appearance: none; background: rgba(1, 38, 87, 0.1); height: 6px; border-radius: 3px; width: 90px; outline: none; border: 1.5px solid var(--bg-dark); }
+        .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 14px; height: 14px; background: var(--bg-dark); border-radius: var(--radius-sm); cursor: pointer; }
+        @media(max-width: 980px) { .articles-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nav-menu ul li a { font-size: 1rem; } }
+        @media(max-width: 768px) { .nav-menu { display: none; } .mobile-menu-btn { display: block; } .articles-grid { grid-template-columns: 1fr; } .articles-toolbar { flex-direction: column; align-items: flex-start; } .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; } .footer-logo { margin: 0 auto; } .footer-contacts ul li { justify-content: center; } .player-left-group { width: 100%; } .player-right-group { display: none; } }
+        @media(max-width: 600px) { body { padding-bottom: 92px; padding-top: 32px; } .container { padding: 0 16px; } .page-hero { padding-top: 125px; } .radio-player-bar { height: 92px; border-top-width: 3px; } .player-container { padding: 0 14px; } .control-btn { width: 58px; height: 58px; font-size: 1.4rem; border-radius: 16px; } .speaker-avatar-box { width: 48px; height: 48px; font-size: 1.3rem; } .track-title { font-size: 1.08rem; } .track-status { font-size: 0.78rem; } .track-subtitle { font-size: 0.82rem; } .player-left-group { gap: 14px; } }
+
+        /* SEARCH OVERLAY */
+        .search-overlay { position: fixed; inset: 0; background: rgba(1,38,87,0.96); z-index: 3000; display: none; flex-direction: column; align-items: center; padding-top: 100px; }
+        .search-overlay.active { display: flex; }
+        .search-overlay-input { width: min(600px, 88vw); padding: 16px 24px; font-family: var(--font-title); font-size: 1.5rem; font-weight: 700; border: 3px solid var(--accent-celeste); border-radius: var(--radius-main); background: rgba(255,255,255,.95); color: var(--bg-dark); outline: none; }
+        .search-overlay-input::placeholder { color: rgba(1,38,87,.35); }
+        .search-results-list { width: min(600px, 88vw); margin-top: 24px; max-height: 50vh; overflow-y: auto; }
+        .search-result-item { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); text-decoration: none; color: var(--white); transition: background .15s; }
+        .search-result-item:hover { background: rgba(255,255,255,.06); }
+        .search-result-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 1.1rem; flex-shrink: 0; }
+        .search-result-icon.article { background: var(--accent-celeste); color: var(--white); }
+        .search-result-icon.podcast { background: var(--accent-red); color: var(--white); }
+        .search-result-title { font-family: var(--font-title); font-weight: 700; font-size: 1.05rem; }
+        .search-result-tag { font-size: .78rem; color: var(--accent-celeste); text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
+        .search-overlay-hint { color: rgba(255,255,255,.35); font-size: .85rem; margin-top: 18px; }
+        .search-overlay-close { position: absolute; top: 24px; right: 24px; background: transparent; border: 2px solid rgba(255,255,255,.25); border-radius: 999px; width: 48px; height: 48px; display: grid; place-items: center; color: var(--white); font-size: 1.3rem; cursor: pointer; }
+        .search-overlay-close:hover { border-color: var(--accent-celeste); color: var(--accent-celeste); }
+        @media(max-width:768px) { .header-actions .divider { display: none; } .header-actions a[aria-label="Cerca"] { display: none; } .header-actions a[aria-label="Instagram"], .header-actions a[aria-label="TikTok"], .header-actions a[aria-label="YouTube"], .header-actions a[aria-label="Facebook"] { display: none; } }
+        .mobile-nav-search-link { display: flex; align-items: center; justify-content: center; gap: 14px; color: rgba(255,255,255,0.85); font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; padding: 14px 0; cursor: pointer; transition: color .2s, transform .2s; border: none; background: transparent; text-align: center; text-decoration: none; }
+        .mobile-nav-search-link:hover, .mobile-nav-search-link:active { color: var(--accent-celeste); transform: translateX(6px); }
+        .mobile-nav-search-link i { font-size: 1.3rem; }
+            /* ==== CALENDARIO PALINSESTO (stile index) ==== */
+        .wuu-panel { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(8px); border: var(--card-border); border-radius: var(--radius-main); padding: 12px; box-shadow: var(--pop-shadow); }
+        .schedule-row, .ranking-row { display: flex; align-items: center; padding: 16px; border-bottom: 2px dashed rgba(1, 38, 87, 0.15); gap: 16px; }
+        .schedule-row:last-child, .ranking-row:last-child { border-bottom: none; }
+        .schedule-day { background: var(--bg-dark); width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-family: var(--font-title); font-weight: 800; color: var(--white); }
+        .schedule-time { font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; color: var(--accent-celeste); }
+        .schedule-details h4, .rank-details h4 { font-family: var(--font-title); font-size: 1.25rem; color: var(--bg-dark); text-transform: uppercase; }
+        .schedule-details p, .rank-details p { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+        .rank-number { font-family: var(--font-title); font-size: 2.2rem; font-weight: 900; width: 38px; text-align: center; color: var(--bg-dark); }
+        .ranking-row:nth-child(1) .rank-number { color: var(--accent-celeste); }
+        .rank-details { flex-grow: 1; }
+        .rank-up { color: #2e7d32; } .rank-stable { color: #78909c; } .rank-down { color: #c62828; }
+
+
+
+        /* SEZIONI EDITORIALI AGGIUNTIVE */
+        .editorial-kicker { font-family: var(--font-title); font-weight: 900; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1.4px; font-size: 0.82rem; margin-bottom: 8px; display: inline-flex; gap: 7px; align-items: center; }
+        .blog-grid { display: grid; grid-template-columns: 1.1fr repeat(2, 0.95fr); gap: 28px; }
+        .blog-card { min-height: 100%; }
+        .blog-card.featured { grid-row: span 2; }
+        .blog-card .news-img-placeholder { height: 220px; }
+        .blog-card.featured .news-img-placeholder { height: 360px; }
+        .blog-meta { font-size: 0.78rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; display: block; }
+        .podcast-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+        .mini-action { display:inline-flex; align-items:center; gap:7px; padding:9px 12px; border:2px solid var(--bg-dark); border-radius: var(--radius-sm); color:var(--bg-dark); font-family:var(--font-title); font-weight:800; text-transform:uppercase; font-size:.78rem; background:var(--white); box-shadow:3px 3px 0 var(--accent-celeste); }
+        .palinsesto-editorial { display:grid; grid-template-columns:.85fr 1.15fr; gap:32px; padding:25px 0; }
+        .pal-photo { position:relative; min-height:420px; background:rgba(255,255,255,.75); border:var(--card-border); border-radius:var(--radius-main); box-shadow:var(--pop-shadow); overflow:hidden; display:flex; align-items:center; justify-content:center; color:rgba(1,38,87,.15); font-size:5rem; padding:24px; }
+        .pal-photo > i { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; opacity:.7; }
+        .calendar-photo-days { position:relative; z-index:2; width:100%; align-self:stretch; display:grid; grid-template-columns:repeat(7, minmax(34px, 1fr)); gap:10px; align-content:start; }
+        .calendar-photo-days-title { grid-column:1 / -1; font-family:var(--font-title); font-weight:900; color:var(--accent-red); text-transform:uppercase; font-size:.86rem; letter-spacing:1px; margin-bottom:4px; text-align:left; }
+        .calendar-days { display:block; margin-bottom:16px; }
+        .calendar-shell { display:grid; grid-template-columns:minmax(0,1fr) .92fr; gap:18px; align-items:start; }
+        .calendar-day-number { min-height:42px; border:2px solid rgba(1,38,87,.22); background:rgba(255,255,255,.88); border-radius:12px; display:flex; align-items:center; justify-content:center; font-family:var(--font-title); font-weight:900; font-size:1rem; color:var(--bg-dark); cursor:pointer; transition:.12s; position:relative; }
+        .calendar-day-number.has-events::after { content:''; position:absolute; right:6px; bottom:6px; width:7px; height:7px; border-radius:999px; background:var(--accent-red); border:1px solid var(--bg-dark); }
+        .calendar-day-number.active, .calendar-day-number:hover { background:var(--accent-celeste); color:var(--white); border-color:var(--bg-dark); transform:none; box-shadow:none; }
+        .calendar-main-area { min-width:0; }
+        .month-selector { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin-bottom:14px; }
+        .month-btn { border:2px solid var(--bg-dark); background:var(--white); border-radius:12px; padding:9px 6px; font-family:var(--font-title); font-weight:800; color:var(--bg-dark); cursor:pointer; text-transform:uppercase; }
+        .month-btn.active { background:var(--accent-celeste); color:var(--white); box-shadow:3px 3px 0 var(--bg-dark); }
+        .month-title { font-family:var(--font-title); font-size:1.75rem; color:var(--bg-dark); text-transform:uppercase; margin:4px 0 12px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+        .month-title span { font-size:.9rem; color:var(--text-muted); letter-spacing:1px; }
+        .calendar-weekdays { display:grid; grid-template-columns:repeat(7,1fr); gap:7px; margin-bottom:7px; }
+        .weekday-label { text-align:center; font-family:var(--font-title); font-weight:900; color:var(--text-muted); font-size:.78rem; text-transform:uppercase; padding:10px 4px; border:2px dashed rgba(1,38,87,.15); border-radius:10px; background:rgba(255,255,255,.42); }
+        .calendar-info-box { border:2px solid rgba(1,38,87,.14); border-radius:var(--radius-main); background:rgba(255,255,255,.58); padding:16px; color:var(--text-muted); font-weight:700; line-height:1.45; }
+        .calendar-info-box strong { display:block; font-family:var(--font-title); font-size:1.15rem; color:var(--bg-dark); text-transform:uppercase; margin-bottom:6px; }
+        .day-panel-title { font-family:var(--font-title); font-size:1.65rem; color:var(--bg-dark); text-transform:uppercase; padding:16px; border-bottom:2px dashed rgba(1,38,87,.15); }
+        .selected-date-label { display:block; color:var(--accent-celeste); font-size:.95rem; margin-top:4px; }
+        .empty-day { padding:22px; color:var(--text-muted); font-weight:700; }
+        .day-events-panel { border:2px solid rgba(1,38,87,.12); border-radius:var(--radius-main); background:rgba(255,255,255,.62); overflow:hidden; }
+        .calendar-weekday-button { min-height: 46px; border: 2px solid rgba(1,38,87,.24); background: rgba(255,255,255,.92); border-radius: 14px; display:flex; align-items:center; justify-content:center; font-family:var(--font-title); font-weight:900; text-transform:uppercase; color:var(--bg-dark); cursor:pointer; position:relative; }
+        .calendar-weekday-button.has-events::after { content:''; position:absolute; right:8px; bottom:8px; width:7px; height:7px; border-radius:999px; background:var(--accent-red); border:1px solid var(--bg-dark); }
+        .calendar-weekday-button.active, .calendar-weekday-button:hover { background:var(--accent-celeste); color:var(--white); border-color:var(--bg-dark); }
+        .mobile-week-strip { grid-column: 1 / -1; display:grid; grid-template-columns: repeat(7, minmax(38px, 1fr)); gap:8px; }
+        @media(max-width:992px){ .palinsesto-editorial, .calendar-shell { grid-template-columns:1fr; } .month-selector{ grid-template-columns:repeat(4,1fr); } .calendar-photo-days{ grid-template-columns:repeat(7, minmax(30px, 1fr)); } .calendar-shell .day-events-panel{ grid-column:auto; } }
+        @media(max-width:600px){
+            .palinsesto-editorial { gap:14px; }
+            .pal-photo { min-height:auto; padding:14px; font-size:0; }
+            .pal-photo > i { display:none; }
+            .calendar-photo-days { display:block; }
+            .calendar-photo-days-title { text-align:left; color:var(--bg-dark); margin-bottom:10px; font-size:.78rem; }
+            .mobile-week-strip { grid-template-columns: repeat(7, minmax(34px, 1fr)); gap: 6px; }
+            .calendar-weekday-button { min-height: 42px; border-radius: 12px; font-size: .78rem; }
+            .month-selector, .month-title, .calendar-main-area .calendar-weekdays.mobile-only-weekdays { display:none !important; }
+            .calendar-shell.mobile-calendar-shell { display:block; }
+            .calendar-info-box { padding: 13px; font-size: .86rem; }
+            .day-panel-title { font-size: 1.35rem; line-height: .95; }
+            .selected-date-label { font-size: .72rem; margin-top: 5px; }
+            .month-selector{ grid-template-columns:repeat(2,1fr); }
+            .calendar-photo-days{ grid-template-columns:repeat(5, minmax(30px, 1fr)); gap:7px; }
+            .calendar-day-number{ min-height:34px; border-radius:9px; font-size:.9rem; }
+            .calendar-weekdays{ gap:4px; }
+            .weekday-label{ font-size:.66rem; padding:8px 2px; }
+        }
+
+        /* ==== ARCHIVIO PROGRAMMI & PUNTATE ==== */
+        .program-archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 24px; padding: 10px 0 40px; }
+        @media(max-width: 700px){ .program-archive-grid { grid-template-columns: 1fr; } }
+        .program-archive-card { background: rgba(255,255,255,.75); border: var(--card-border); border-radius: var(--radius-main); box-shadow: var(--pop-shadow); overflow: hidden; }
+        .program-archive-head { display: flex; gap: 16px; padding: 16px; align-items: center; }
+        .program-archive-cover { flex: 0 0 110px; width: 110px; height: 110px; border-radius: 14px; overflow: hidden; background: linear-gradient(135deg, var(--bg-dark), #083b76); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.35); font-size: 2.2rem; }
+        .program-archive-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .program-archive-info { min-width: 0; }
+        .program-archive-info .article-tag { display: inline-block; margin-bottom: 12px; }
+        .program-archive-info h2 { font-family: var(--font-title); font-size: 1.5rem; color: var(--bg-dark); text-transform: uppercase; line-height: 1.05; margin: 0 0 6px; }
+        .program-archive-info p { color: var(--text-muted); font-size: .9rem; font-weight: 500; }
+        .program-episodes { border-top: 2px dashed rgba(1,38,87,.15); padding: 14px 16px 18px; }
+        .program-episodes h3 { font-family: var(--font-title); font-size: 1.05rem; color: var(--accent-celeste); text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .program-episodes-list { list-style: none; margin: 0; padding: 0; }
+        .program-episode-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px dashed rgba(1,38,87,.12); flex-wrap: wrap; }
+        .program-episode-row:last-child { border-bottom: none; }
+        .ep-play-btn { flex: none; width: 38px; height: 38px; border-radius: 999px; border: none; background: var(--accent-red); color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: .95rem; }
+        .ep-play-btn:hover { filter: brightness(1.1); }
+        .ep-meta { flex: 1 1 160px; min-width: 0; display: flex; align-items: center; gap: 8px; }
+        .ep-name { font-family: var(--font-title); font-weight: 700; color: var(--bg-dark); text-transform: uppercase; font-size: .92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .ep-latest { flex: none; font-size: .62rem; font-weight: 800; letter-spacing: .5px; background: var(--accent-celeste); color: var(--white); padding: 3px 7px; border-radius: 999px; text-transform: uppercase; }
+        .ep-player-holder { flex: 1 1 100%; }
+        .ep-player-holder:empty { display: none; }
+        .ep-player-holder .lf-player { margin-top: 10px; }
+        .ep-empty { color: var(--text-muted); font-weight: 600; font-size: .9rem; padding: 6px 0; }
+
+        /* ==== CUSTOM AUDIO PLAYER ==== */
+        .lf-player { display: flex; align-items: center; gap: 12px; width: 100%; }
+        .lf-player audio { display: none; }
+        .lf-player .lf-play { flex: none; width: 42px; height: 42px; border-radius: 999px; border: none; background: var(--accent-red); color: #fff; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: filter .12s ease, transform .1s ease; }
+        .lf-player .lf-play:hover { filter: brightness(1.1); }
+        .lf-player .lf-play:active { transform: scale(.93); }
+        .lf-player.lf-no-btn .lf-play { display: none; }
+        .lf-player .lf-body { flex: 1 1 auto; min-width: 0; }
+        .lf-player .lf-bar { height: 8px; border-radius: 999px; background: rgba(1,38,87,.15); cursor: pointer; position: relative; overflow: hidden; }
+        .lf-player .lf-fill { height: 100%; width: 0%; background: var(--accent-celeste); border-radius: 999px; }
+        .lf-player .lf-times { display: flex; justify-content: space-between; font-size: .68rem; font-weight: 800; margin-top: 5px; color: var(--text-muted); font-family: var(--font-title); letter-spacing: .5px; }
+        .program-episode-row.playing { background: rgba(56,182,255,.08); border-radius: 10px; }
+
+</style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+<script src="data-source.js"></script>
+</head>
+<body>
+    <!-- NEWS TICKER — Notizie del mondo in sovraimpressione (italpress.com) -->
+    <div class="news-ticker-bar" id="newsTickerBar">
+        <div class="news-ticker-badge">
+            <span class="news-ticker-live-dot"></span>
+            <span class="news-ticker-label">NOTIZIE</span>
+        </div>
+        <div class="news-ticker-viewport">
+            <div class="news-ticker-track" id="newsTickerTrack"></div>
+        </div>
+    </div>
+    <div class="fluid-bg"><div class="blur-ball ball-1"></div><div class="blur-ball ball-2"></div><div class="blur-ball ball-3"></div></div>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="index.html" class="logo-link"><img src="immagini/2.png" alt="Li.Fe. Radio Logo" class="logo-img"></a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="notizie.html">NEWS</a></li>
+                    <li><a href="palinsesto.html" class="active">PALINSESTO</a></li>
+                    <li><a href="team.html">TEAM</a></li>
+                    <li><a href="index.html#rivedi">RI-LIVE</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://www.instagram.com/liferadio.official" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@li.fe.radio" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/liferadio.official/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <span class="divider">/</span>
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Tema scuro"><i class="fas fa-moon"></i></button>
+                <a href="#" aria-label="Cerca" id="searchToggleBtn"><i class="fas fa-search"></i></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-xmark"></i></button>
+        <a href="index.html" onclick="closeMobileNav()">HOME</a>
+        <a href="notizie.html" onclick="closeMobileNav()">NEWS</a>
+        <a href="palinsesto.html" onclick="closeMobileNav()">PALINSESTO</a>
+        <a href="team.html" onclick="closeMobileNav()">TEAM</a>
+        <a href="index.html#rivedi" onclick="closeMobileNav()">RI-LIVE</a>
+        <button class="mobile-nav-search-link" id="mobileNavSearchBtn"><i class="fas fa-magnifying-glass"></i> CERCA</button>
+        <div class="mobile-nav-social">
+            <a href="https://www.instagram.com/liferadio.official" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@li.fe.radio" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Li.Fe.Radio.Official" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/liferadio.official/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="search-overlay-close" id="searchCloseBtn" aria-label="Chiudi ricerca"><i class="fas fa-xmark"></i></button>
+        <input type="text" class="search-overlay-input" id="searchInput" placeholder="Cerca articoli, podcast..." autocomplete="off">
+        <div class="search-results-list" id="searchResults"></div>
+        <span class="search-overlay-hint">Premi ESC per chiudere</span>
+    </div>
+
+    <main>
+        <section class="page-hero container">
+            <div class="eyebrow"><i class="fas fa-calendar-days"></i> Programmazione Radio</div>
+            <h1 class="page-title">Il nostro <span>Palinsesto</span></h1>
+            <p class="page-desc">Tutti i programmi, le rubriche e gli spazi audio di Li.Fe. Radio.</p>
+        </section>
+
+        <section class="container">
+            <div class="section-header" style="margin-top:6px;"><h2>REPLICHE ON DEMAND</h2></div>
+            <div class="articles-toolbar">
+                <div class="articles-count" id="programCount">Programmi e puntate on demand</div>
+                <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Torna alla home</a>
+            </div>
+            <div class="program-archive-grid" id="palinsestoGrid"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <div class="footer-brand">
+                <img src="immagini/1.png" alt="Li.Fe. Radio" class="footer-logo">
+            </div>
+            <div class="footer-nav">
+                <h4>Navigazione</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="notizie.html">News</a></li>
+                    <li><a href="index.html#social-feed">Social</a></li>
+                    <li><a href="index.html#rivedi">Ri-live</a></li>
+                    <li><a href="index.html#podcast">Podcast</a></li>
+                    <li><a href="palinsesto.html">Palinsesto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacts">
+                <h4>Contatti</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> radiolife00@gmail.com</li>
+                    <li><i class="fas fa-envelope"></i> liferadio@liceofermiaversa.edu.it</li>
+                    <li><a href="https://www.instagram.com/liferadio.official" target="_blank" style="color:inherit;text-decoration:none;"><i class="fab fa-instagram"></i> @liferadio.official</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Via Enrico Fermi 5, Aversa (CE)</li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Li.Fe. Radio - Tutti i diritti sono riservati agli studenti del Liceo Fermi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="radio-player-bar">
+        <div class="player-container">
+            <div class="player-left-group">
+                <audio id="radioStreaming" src="https://sr14.inmystream.it/stream/scuola/;type=mp3"></audio>
+                <button id="playBtn" class="control-btn" aria-label="Riproduci Radio Live"><i class="fas fa-play"></i></button>
+                <div class="speaker-avatar-box" id="speakerBox"><i class="fas fa-user-tie"></i></div>
+                <div class="player-track-info"><span class="track-status">
+                        <span class="live-pulse"></span> <span id="trackStatusLabel">LIVE ON AIR</span>
+                    </span><h4 class="track-title" id="currentTrack">Sintonizzazione flusso...</h4>
+                    <span class="track-subtitle" id="currentProgram" style="display:none"></span></div>
+            </div>
+            <div class="player-right-group">
+                <a href="https://www.inmystream.app/player2/liferadio.html" target="_blank" class="btn-live-link"><i class="fas fa-bolt"></i> LIVE RADIO</a>
+                <div class="player-utility"><i class="fas fa-volume-high" id="volumeIcon"></i><input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.8" class="volume-slider" aria-label="Regola Volume"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const CONTENT_URL = 'content.json?v=' + Date.now();
+        const audio = document.getElementById('radioStreaming');
+        const playBtn = document.getElementById('playBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const currentTrack = document.getElementById('currentTrack');
+        const volumeIcon = document.getElementById('volumeIcon');
+        const speakerBox = document.getElementById('speakerBox');
+        const trackStatusLabel = document.getElementById('trackStatusLabel');
+        const currentProgram = document.getElementById('currentProgram');
+
+        // Speaker state (loaded from content.json)
+        let speakerData = { name: '', program: '', img: '', active: false };
+        let lastSongTitle = '';
+        let lastCoverArt = '';
+        let showSpeakerPhase = false;
+        const SPEAKER_CYCLE_MS = 120000; // 2 minutes
+
+        let isPlaying = false;
+        if (audio) audio.volume = 0.8;
+        if (playBtn) playBtn.addEventListener('click', async () => {
+            try {
+                if (!isPlaying) {
+                    document.querySelectorAll('.lf-player audio').forEach(function(a){ try { a.pause(); } catch(e){} });
+                    await audio.play();
+                    isPlaying = true;
+                    playBtn.classList.add('playing');
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    // DISABLED: moved to radio-player-panel.js // caricaMetadati();
+                } else {
+                    audio.pause();
+                    isPlaying = false;
+                    playBtn.classList.remove('playing');
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            } catch (err) { currentTrack.textContent = 'Apri LIVE RADIO per ascoltare'; }
+        });
+        if (volumeSlider) volumeSlider.addEventListener('input', e => { audio.volume = e.target.value; volumeIcon.className = audio.volume == 0 ? 'fas fa-volume-xmark' : audio.volume < 0.5 ? 'fas fa-volume-low' : 'fas fa-volume-high'; });
+
+        function parseMetadataPayload(text) {
+            const jsonStart = text.indexOf('{');
+            if (jsonStart < 0) return null;
+            return JSON.parse(text.slice(jsonStart));
+        }
+        function caricaMetadati() {
+            if (!currentTrack) return;
+            fetch('https://sr14.inmystream.it:2020/json/stream/scuola?nocache=' + Date.now(), { cache: 'no-store' })
+                .then(r => r.text())
+                .then(parseMetadataPayload)
+                .then(data => {
+                    const nowPlaying = data && (data.nowplaying || data.title || data.song);
+                    const coverArt = data && (data.coverart || data.cover || data.artwork);
+                    lastSongTitle = nowPlaying && nowPlaying.trim() ? nowPlaying : 'Li.Fe. Radio - Enjoy Your Culture';
+                    lastCoverArt = coverArt || '';
+                    if (!showSpeakerPhase) {
+                        displaySong();
+                    }
+                })
+                .catch(() => {
+                    lastSongTitle = 'Li.Fe. Radio - In Diretta streaming';
+                    if (!showSpeakerPhase) displaySong();
+                });
+        }
+
+        function displaySong() {
+            currentTrack.textContent = lastSongTitle || 'Li.Fe. Radio - Enjoy Your Culture';
+            if (trackStatusLabel) trackStatusLabel.textContent = 'LIVE ON AIR';
+            if (currentProgram) currentProgram.style.display = 'none';
+            if (lastCoverArt) {
+                speakerBox.innerHTML = '<img src="' + lastCoverArt + '" alt="Cover">';
+            } else {
+                speakerBox.innerHTML = '<i class="fas fa-music"></i>';
+            }
+        }
+
+        function displaySpeaker() {
+            if (!speakerData.active || !speakerData.name) {
+                displaySong();
+                return;
+            }
+            currentTrack.textContent = speakerData.name;
+            if (trackStatusLabel) trackStatusLabel.textContent = 'IN ONDA';
+            if (currentProgram) {
+                currentProgram.textContent = speakerData.program;
+                currentProgram.style.display = speakerData.program ? 'inline' : 'none';
+            }
+            if (speakerData.img) {
+                speakerBox.innerHTML = '<img src="' + speakerData.img + '?v=' + Date.now() + '" alt="' + speakerData.name + '">';
+            } else {
+                speakerBox.innerHTML = '<i class="fas fa-microphone-lines"></i>';
+            }
+        }
+
+        function startSpeakerCycle() {
+            setInterval(() => {
+                if (!speakerData.active) return;
+                showSpeakerPhase = !showSpeakerPhase;
+                if (showSpeakerPhase) {
+                    displaySpeaker();
+                } else {
+                    displaySong();
+                }
+            }, SPEAKER_CYCLE_MS);
+        }
+        // DISABLED: moved to radio-player-panel.js // startSpeakerCycle();
+
+        // DISABLED: moved to radio-player-panel.js // caricaMetadati();
+        // DISABLED: moved to radio-player-panel.js // setInterval(caricaMetadati, 10000);
+
+        // Load speaker data from content.json
+        (function loadSpeakerData() {
+            fetch('content.json?v=' + Date.now(), { cache: 'no-store' })
+                .then(r => r.json())
+                .then(data => {
+                    const vals = data.values || {};
+                    const imgs = data.images || {};
+                    speakerData.name = vals['speaker-name'] || '';
+                    speakerData.program = vals['speaker-program'] || '';
+                    speakerData.img = imgs['speaker-img'] || '';
+                    speakerData.active = vals['speaker-active'] === '1' && speakerData.name.trim() !== '';
+                })
+                .catch(() => {});
+            setInterval(loadSpeakerData, 60000);
+        })();
+        function closeMobileNav(){ document.getElementById('mobileNav').classList.remove('active'); }
+        document.getElementById('mobileMenuBtn')?.addEventListener('click', () => document.getElementById('mobileNav').classList.add('active'));
+        document.getElementById('mobileNavClose')?.addEventListener('click', closeMobileNav);
+        function safeUrl(url) { return url && String(url).trim() ? String(url).trim() : '#'; }
+        function escapeHtml(text) { return String(text || '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+        function applyContent(payload) {
+            const fields = payload && payload.fields ? payload.fields : {};
+            const imgs = payload && payload.images && !Array.isArray(payload.images) ? payload.images : {};
+            const val = (k, fallback) => fields[k] || fallback;
+
+            /* Sfondo foto palinsesto */
+            const palPhoto = document.querySelector('.pal-photo');
+            if (palPhoto && imgs['pal-main-img']) {
+                palPhoto.style.backgroundImage = 'url(' + imgs['pal-main-img'] + '?v=' + Date.now() + ')';
+                palPhoto.style.backgroundSize = 'cover';
+                palPhoto.style.backgroundPosition = 'center';
+            }
+
+            renderProgramArchive(fields, imgs);
+        }
+
+        /* ===== CUSTOM AUDIO PLAYER (condiviso) ===== */
+        function lfFmtTime(s) { if (!isFinite(s) || s < 0) s = 0; const m = Math.floor(s / 60); const sec = Math.floor(s % 60); return m + ':' + (sec < 10 ? '0' : '') + sec; }
+        function lfBuildPlayer(src, opts) {
+            opts = opts || {};
+            const wrap = document.createElement('div');
+            wrap.className = 'lf-player' + (opts.hidePlay ? ' lf-no-btn' : '');
+            wrap.innerHTML = '<button type="button" class="lf-play" aria-label="Riproduci"><i class="fas fa-play"></i></button>'
+                + '<div class="lf-body"><div class="lf-bar"><div class="lf-fill"></div></div>'
+                + '<div class="lf-times"><span class="lf-cur">0:00</span><span class="lf-dur">0:00</span></div></div>'
+                + '<audio preload="metadata" src="' + src + '"></audio>';
+            const audio = wrap.querySelector('audio');
+            const btn = wrap.querySelector('.lf-play');
+            const bar = wrap.querySelector('.lf-bar');
+            const fill = wrap.querySelector('.lf-fill');
+            const cur = wrap.querySelector('.lf-cur');
+            const dur = wrap.querySelector('.lf-dur');
+            let seeking = false;
+            function icon(p) { btn.innerHTML = '<i class="fas fa-' + (p ? 'pause' : 'play') + '"></i>'; }
+            btn.addEventListener('click', function () { if (audio.paused) audio.play().catch(function () {}); else audio.pause(); });
+            audio.addEventListener('play', function () { icon(true); wrap.classList.add('is-playing'); });
+            audio.addEventListener('pause', function () { icon(false); wrap.classList.remove('is-playing'); });
+            audio.addEventListener('ended', function () { icon(false); wrap.classList.remove('is-playing'); });
+            audio.addEventListener('loadedmetadata', function () { dur.textContent = lfFmtTime(audio.duration); });
+            audio.addEventListener('timeupdate', function () { if (!seeking && audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%'; cur.textContent = lfFmtTime(audio.currentTime); });
+            function seek(clientX) { const r = bar.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (clientX - r.left) / r.width)); if (audio.duration) { audio.currentTime = p * audio.duration; fill.style.width = (p * 100) + '%'; } }
+            bar.addEventListener('click', function (e) { seek(e.clientX); });
+            bar.addEventListener('touchstart', function (e) { seeking = true; seek(e.touches[0].clientX); }, { passive: true });
+            bar.addEventListener('touchmove', function (e) { seek(e.touches[0].clientX); }, { passive: true });
+            bar.addEventListener('touchend', function () { seeking = false; });
+            return { el: wrap, audio: audio };
+        }
+        /* Ferma la radio live (player in basso) quando parte una puntata */
+        function lfStopLiveRadio() {
+            const live = document.getElementById('radioStreaming');
+            if (live && !live.paused) {
+                live.pause();
+                isPlaying = false;
+                if (playBtn) { playBtn.classList.remove('playing'); playBtn.innerHTML = '<i class="fas fa-play"></i>'; }
+            }
+        }
+
+        /* ===== ARCHIVIO PROGRAMMI & PUNTATE ===== */
+        function renderProgramArchive(fields, imgs) {
+            const grid = document.getElementById('palinsestoGrid');
+            if (!grid) return;
+            const cards = [];
+            for (let n = 1; n <= 20; n++) {
+                const name = fields['program' + n + '-name'];
+                if (!name) continue;
+                const desc = fields['program' + n + '-desc'] || '';
+                const imgUrl = imgs['program' + n + '-img'] || '';
+                let eps = [];
+                try { eps = JSON.parse(fields['program' + n + '-episodes'] || '[]') || []; } catch (e) { eps = []; }
+                eps = eps.slice().sort((a, b) => (b.uploadedAt || 0) - (a.uploadedAt || 0));
+                const cover = imgUrl ? '<img src="' + imgUrl + '?v=' + Date.now() + '" alt="' + escapeHtml(name) + '">' : '<i class="fas fa-microphone-lines"></i>';
+                const epRows = eps.length ? eps.map((ep, idx) => {
+                    const title = escapeHtml(ep.title || ('Puntata ' + (eps.length - idx)));
+                    return '<li class="program-episode-row">'
+                        + '<button type="button" class="ep-play-btn" data-ep-file="' + escapeHtml(ep.file) + '"><i class="fas fa-play"></i></button>'
+                        + '<div class="ep-meta"><span class="ep-name">' + title + '</span>' + (idx === 0 ? '<span class="ep-latest">ULTIMA</span>' : '') + '</div>'
+                        + '<div class="ep-player-holder"></div>'
+                        + '</li>';
+                }).join('') : '<li class="ep-empty">Nessuna puntata disponibile.</li>';
+                cards.push('<article class="program-archive-card">'
+                    + '<div class="program-archive-head">'
+                    + '<div class="program-archive-cover">' + cover + '</div>'
+                    + '<div class="program-archive-info"><span class="article-tag">PROGRAMMA</span><h2>' + escapeHtml(name) + '</h2>' + (desc ? '<p>' + escapeHtml(desc) + '</p>' : '') + '</div>'
+                    + '</div>'
+                    + '<div class="program-episodes"><h3><i class="fas fa-headphones"></i> Puntate (' + eps.length + ')</h3><ul class="program-episodes-list">' + epRows + '</ul></div>'
+                    + '</article>');
+            }
+            grid.innerHTML = cards.join('') || '<div style="opacity:.6;padding:10px;">Nessun programma configurato. Aggiungili dal pannello admin.</div>';
+            grid.querySelectorAll('.ep-play-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const row = btn.closest('.program-episode-row');
+                    const holder = row.querySelector('.ep-player-holder');
+                    const file = btn.getAttribute('data-ep-file');
+                    /* Ferma gli altri player */
+                    grid.querySelectorAll('.lf-player').forEach(p => {
+                        if (!holder.contains(p)) { const a = p.querySelector('audio'); if (a) a.pause(); }
+                    });
+                    let player = holder.querySelector('.lf-player');
+                    if (!player) {
+                        const built = lfBuildPlayer(file, { hidePlay: true });
+                        holder.appendChild(built.el);
+                        player = built.el;
+                        built.audio.addEventListener('play', () => { btn.innerHTML = '<i class="fas fa-pause"></i>'; row.classList.add('playing'); });
+                        built.audio.addEventListener('pause', () => { btn.innerHTML = '<i class="fas fa-play"></i>'; row.classList.remove('playing'); });
+                        built.audio.addEventListener('ended', () => { btn.innerHTML = '<i class="fas fa-play"></i>'; row.classList.remove('playing'); });
+                    }
+                    const audio = player.querySelector('audio');
+                    if (audio.paused) { lfStopLiveRadio(); audio.play().catch(() => {}); } else audio.pause();
+                });
+            });
+        }
+
+        /* ===== CALENDARIO SETTIMANALE ===== */
+        function renderCalendar(fields, val) {
+            const monthNames = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+            const shortDays = ['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
+            const longDays = ['LUNED\u00cc','MARTED\u00cc','MERCOLED\u00cc','GIOVED\u00cc','VENERD\u00cc','SABATO','DOMENICA'];
+            const today = new Date();
+            let selectedMonth = today.getMonth();
+            let selectedDay = today.getDate();
+            const selectedYear = today.getFullYear();
+            const calendarDays = document.getElementById('calendarDays');
+            const calendarPhotoDays = document.getElementById('calendarPhotoDays');
+            const dayPrograms = document.getElementById('dayPrograms');
+            if (!calendarDays || !calendarPhotoDays || !dayPrograms) return;
+
+            function normDayName(s) { return (s || '').toString().trim().toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+            function dayNameForDate(dayNum) { const jsDay = new Date(selectedYear, selectedMonth, dayNum).getDay(); return longDays[jsDay === 0 ? 6 : jsDay - 1]; }
+            function eventsForWeekday(dayName) {
+                const rows = [];
+                const dayNorm = normDayName(dayName).slice(0, 3);
+                for (let n = 1; n <= 12; n++) {
+                    const itemDay = normDayName(val('pal' + n + '-day', ''));
+                    if (itemDay.startsWith(dayNorm)) rows.push('<div class="schedule-row"><div class="schedule-day">' + dayName.slice(0, 3) + '</div><div class="schedule-time">' + val('pal' + n + '-time', '--:--') + '</div><div class="schedule-details"><h4>' + val('pal' + n + '-title', 'Programma') + '</h4><p>' + val('pal' + n + '-sub', 'Redazione Li.Fe. Radio') + '</p></div></div>');
+                }
+                return rows;
+            }
+            function renderEvents(dayNum) {
+                const dayName = dayNameForDate(dayNum);
+                const rows = eventsForWeekday(dayName);
+                dayPrograms.classList.add('day-events-panel');
+                dayPrograms.innerHTML = '<h3 class="day-panel-title">' + dayName + '<span class="selected-date-label">' + dayNum + ' ' + monthNames[selectedMonth] + ' ' + selectedYear + '</span></h3>' + (rows.join('') || '<div class="empty-day">Nessun evento inserito da admin per questa giornata.</div>');
+                document.querySelectorAll('.calendar-day-number').forEach(c => c.classList.toggle('active', parseInt(c.dataset.day || '0', 10) === dayNum));
+            }
+            function renderCalendarInner() {
+                const isMobileCalendar = window.matchMedia('(max-width: 600px)').matches;
+                const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
+                if (selectedDay > daysInMonth) selectedDay = daysInMonth;
+                if (isMobileCalendar) {
+                    const weekdayButtons = shortDays.map((d, i) => {
+                        const rows = eventsForWeekday(longDays[i]);
+                        return '<button class="calendar-weekday-button' + (i === 0 ? ' active' : '') + (rows.length ? ' has-events' : '') + '" data-weekday="' + i + '">' + d + '</button>';
+                    }).join('');
+                    calendarPhotoDays.innerHTML = '<div class="calendar-photo-days-title">Settimana</div><div class="mobile-week-strip">' + weekdayButtons + '</div>';
+                    calendarDays.innerHTML = '<div class="calendar-shell mobile-calendar-shell"><div class="calendar-main-area"><div class="calendar-weekdays mobile-only-weekdays">' + shortDays.map(d => '<div class="weekday-label">' + d + '</div>').join('') + '</div><div class="calendar-info-box"><strong>Palinsesto settimanale</strong>Scegli un giorno della settimana.</div></div></div>';
+                    calendarDays.querySelector('.calendar-shell').appendChild(dayPrograms);
+                    calendarPhotoDays.querySelectorAll('.calendar-weekday-button').forEach(b => b.addEventListener('click', () => {
+                        const idx = parseInt(b.dataset.weekday, 10);
+                        document.querySelectorAll('.calendar-weekday-button').forEach(x => x.classList.remove('active'));
+                        b.classList.add('active');
+                        const rows = eventsForWeekday(longDays[idx]);
+                        dayPrograms.classList.add('day-events-panel');
+                        dayPrograms.innerHTML = '<h3 class="day-panel-title">' + longDays[idx] + '<span class="selected-date-label">Palinsesto settimanale</span></h3>' + (rows.join('') || '<div class="empty-day">Nessun evento inserito da admin per questa giornata.</div>');
+                    }));
+                    const firstWithEvents = calendarPhotoDays.querySelector('.calendar-weekday-button.has-events') || calendarPhotoDays.querySelector('.calendar-weekday-button');
+                    if (firstWithEvents) firstWithEvents.click();
+                    return;
+                }
+                const dayNumbers = Array.from({ length: daysInMonth }, (_, i) => {
+                    const d = i + 1;
+                    const hasEvents = eventsForWeekday(dayNameForDate(d)).length ? ' has-events' : '';
+                    return '<button class="calendar-day-number' + hasEvents + (d === selectedDay ? ' active' : '') + '" data-day="' + d + '">' + d + '</button>';
+                }).join('');
+                calendarPhotoDays.innerHTML = '<div class="calendar-photo-days-title">Giorni del mese</div>' + dayNumbers;
+                calendarDays.innerHTML = '<div class="month-selector">' + monthNames.map((m, i) => '<button class="month-btn ' + (i === selectedMonth ? 'active' : '') + '" data-month="' + i + '">' + m.slice(0, 3) + '</button>').join('') + '</div><div class="calendar-shell"><div class="calendar-main-area"><div class="month-title">' + monthNames[selectedMonth] + ' <span>' + selectedYear + '</span></div><div class="calendar-weekdays">' + shortDays.map(d => '<div class="weekday-label">' + d + '</div>').join('') + '</div><div class="calendar-info-box"><strong>Seleziona un giorno</strong>I numeri del mese sono nel riquadro calendario a sinistra.</div></div></div>';
+                calendarDays.querySelector('.calendar-shell').appendChild(dayPrograms);
+                calendarDays.querySelectorAll('.month-btn').forEach(b => b.addEventListener('click', () => { selectedMonth = parseInt(b.dataset.month, 10); selectedDay = 1; renderCalendarInner(); renderEvents(selectedDay); }));
+                calendarPhotoDays.querySelectorAll('.calendar-day-number').forEach(b => b.addEventListener('click', () => { selectedDay = parseInt(b.dataset.day, 10); renderEvents(selectedDay); }));
+                renderEvents(selectedDay);
+            }
+            renderCalendarInner();
+        }
+
+        fetch(CONTENT_URL, { cache: 'no-store' }).then(r => r.ok ? r.json() : {fields:{},images:{}}).then(applyContent).catch(() => applyContent({fields:{},images:{}}));
+    </script>
+
+    <script>
+    // Search overlay functionality
+    (function() {
+        const searchToggleBtn = document.getElementById('searchToggleBtn');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const searchCloseBtn = document.getElementById('searchCloseBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        let searchIndex = [];
+        let debounceTimer = null;
+
+        function openSearch() { searchOverlay.classList.add('active'); setTimeout(() => searchInput.focus(), 100); }
+        function closeSearch() { searchOverlay.classList.remove('active'); searchInput.value = ''; searchResults.innerHTML = ''; }
+
+        const mobileNavSearchBtn = document.getElementById('mobileNavSearchBtn');
+        if (mobileNavSearchBtn) mobileNavSearchBtn.addEventListener('click', function() { if (typeof closeMobileNav === 'function') closeMobileNav(); setTimeout(openSearch, 250); });
+
+        if (searchToggleBtn) searchToggleBtn.addEventListener('click', function(e) { e.preventDefault(); openSearch(); });
+        if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearch);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
+
+        function buildSearchIndex(data) {
+            const fields = (data && data.fields) || {};
+            searchIndex = [];
+            for (let i=1;i<=3;i++) {
+                const t = fields['news'+i+'-title']; if(t) searchIndex.push({id:'home-news-'+i, title:t, desc:fields['news'+i+'-desc']||'', tag:fields['news'+i+'-tag']||'News', type:'article'});
+            }
+            for (let i=1;i<=5;i++) {
+                const t = fields['blog'+i+'-title']; if(t) searchIndex.push({id:'blog-'+i, title:t, desc:fields['blog'+i+'-text']||'', tag:fields['blog'+i+'-tag']||'Blog', type:'article'});
+            }
+            Object.keys(fields).map(k => (k.match(/^article(\d+)-title$/)||[])[1]).filter(Boolean).map(Number).sort((a,b)=>a-b).forEach(i => {
+                const t = fields['article'+i+'-title']; if(t) searchIndex.push({id:'article-'+i, title:t, desc:fields['article'+i+'-desc']||'', tag:fields['article'+i+'-tag']||'News', type:'article'});
+            });
+            for (let i=1;i<=20;i++) {
+                const t = fields['program'+i+'-name']; if(t) searchIndex.push({id:'program-'+i, title:t, desc:fields['program'+i+'-desc']||'', tag:'Replica', type:'podcast'});
+            }
+        }
+
+        fetch('content.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(buildSearchIndex).catch(()=>{});
+
+        function doSearch(query) {
+            if (!query || query.length < 2) { searchResults.innerHTML = ''; return; }
+            const q = query.toLowerCase();
+            const matches = searchIndex.filter(item => item.title.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.tag.toLowerCase().includes(q));
+            if (!matches.length) { searchResults.innerHTML = '<div style="color:rgba(255,255,255,.5);padding:16px;">Nessun risultato per "'+query+'"</div>'; return; }
+            searchResults.innerHTML = matches.map(item => {
+                const iconClass = item.type === 'podcast' ? 'podcast' : 'article';
+                const iconFA = item.type === 'podcast' ? 'fas fa-headphones' : 'far fa-newspaper';
+                const href = item.type === 'podcast' ? 'index.html#podcast' : 'articolo.html?id='+item.id;
+                return '<a class="search-result-item" href="'+href+'"><div class="search-result-icon '+iconClass+'"><i class="'+iconFA+'"></i></div><div><div class="search-result-title">'+item.title+'</div><div class="search-result-tag">'+item.tag+'</div></div></a>';
+            }).join('');
+        }
+
+        if (searchInput) searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => doSearch(this.value.trim()), 250);
+        });
+    })();
+    </script>
+
+    <!-- DARK THEME TOGGLE -->
+    <script>
+    (function(){
+        const KEY = 'liferadio-theme';
+        const btn = document.getElementById('themeToggleBtn');
+        const logo = document.querySelector('.logo-img');
+        const logoDark = 'immagini/2.png';
+        const logoLight = 'immagini/1.png';
+
+        function setTheme(dark){
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            if(btn) btn.innerHTML = dark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            if(logo) logo.src = dark ? logoLight : logoDark;
+            try{ localStorage.setItem(KEY, dark ? 'dark' : 'light'); }catch(e){}
+        }
+
+        var saved = null;
+        try{ saved = localStorage.getItem(KEY); }catch(e){}
+        if(saved === 'dark') setTheme(true);
+
+        if(btn) btn.addEventListener('click', function(){
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            setTheme(!isDark);
+        });
+    })();
+    </script>
+    <!-- News Ticker Script -->
+    <script src="news-ticker.js"></script>
+    <script src="radio-player-panel.js"></script>
+</body>
+</html>
