@@ -1,99 +1,145 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Li.Fe. Radio - Pannello Admin</title>
+<title>Li.Fe. Radio — Pannello Admin</title>
 <style>
-:root{--bg:#0a1628;--panel:#101f38;--panel2:#16294a;--line:#22406e;--txt:#e8f0fb;--muted:#8fa9cc;--blue:#2b7fff;--ok:#22c55e;--err:#ef4444}
+:root{--bg:#0a1628;--panel:#101f38;--panel2:#16294a;--line:#22406e;--txt:#e8f0fb;--muted:#8fa9cc;--blue:#2b7fff;--ok:#22c55e;--err:#ef4444;--warn:#f59e0b}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt)}
-header{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,#0a1628,#12294a);border-bottom:1px solid var(--line);padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-header h1{font-size:18px;margin:0}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,#0a1628,#12294a);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+header h1{font-size:17px;margin:0;white-space:nowrap}
 .conn{font-size:12px;padding:4px 10px;border-radius:20px;background:#1b2f52;color:var(--muted)}
 .conn.ok{background:rgba(34,197,94,.15);color:#7ee2a8}
 .conn.err{background:rgba(239,68,68,.15);color:#ff9b9b}
 #dirtyBadge{display:none;background:rgba(245,158,11,.2);color:#fcd34d;font-size:12px;padding:4px 10px;border-radius:20px}
 .spacer{flex:1}
-.btn{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:600;cursor:pointer}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;line-height:1}
 .btn:hover{filter:brightness(1.1)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
 .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
 .btn.danger{background:var(--err)}
-.btn.small{padding:5px 9px;font-size:12px}
-main{max-width:1100px;margin:0 auto;padding:20px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
-.card h2{margin:0 0 12px;font-size:15px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.btn.ok{background:var(--ok)}
+.btn.small{padding:6px 10px;font-size:12px}
+main{max-width:1080px;margin:0 auto;padding:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 10px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
 label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
-input[type=text],input[type=password],textarea{width:100%;background:#0d1c33;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:8px 10px;font-size:13px;font-family:inherit}
+input[type=text],input[type=password],input[type=number],textarea,select{width:100%;background:#0d1c33;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:8px 10px;font-size:13px;font-family:inherit}
 textarea{resize:vertical}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.tab{background:#0d1c33;border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:20px;cursor:pointer;font-size:13px}
-.tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.tabpane{display:none}
-.tabpane.active{display:block}
-.group{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:12px}
-.group h3{margin:0 0 10px;font-size:13px;color:#9fc2f0;text-transform:uppercase;letter-spacing:.5px}
-.row{display:grid;grid-template-columns:220px 1fr;gap:10px;align-items:start;margin-bottom:8px}
-.row label{margin:0;padding-top:8px;color:var(--txt);font-size:12px}
-.imgcard{display:flex;align-items:center;gap:12px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px}
-.imgcard img{width:70px;height:50px;object-fit:cover;border-radius:6px;background:#0a1628}
-.imgcard .noimg{width:70px;height:50px;display:flex;align-items:center;justify-content:center;background:#0a1628;border-radius:6px;color:var(--muted);font-size:11px}
-.imginfo{flex:1;min-width:0}
-.imginfo b{display:block;font-size:13px}
-.imginfo span{display:block;font-size:11px;color:var(--muted);word-break:break-all}
-.slot{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
-.slot b{color:#9fc2f0;width:60px}
-.slot-title{flex:1;font-size:13px}
-.slot-empty{flex:1;color:var(--muted);font-size:13px;font-style:italic}
+select{cursor:pointer}
+.hint{font-size:12px;color:var(--muted);margin:6px 0 0;line-height:1.5}
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 14px}
+.toolbar .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.toolbar .spacer{flex:1}
+/* ---- Sezioni richiudibili ---- */
+.section{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.section-header{display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;user-select:none;background:var(--panel2)}
+.section-header:hover{background:#1a3055}
+.section-header .ico{font-size:18px;width:22px;text-align:center}
+.section-header h2{margin:0;font-size:15px;flex:1}
+.section-header .chev{transition:transform .2s;color:var(--muted);font-size:13px}
+.section.collapsed .section-body{display:none}
+.section.collapsed .chev{transform:rotate(-90deg)}
+.section-body{padding:14px 16px 18px}
+.section-hint{font-size:12.5px;color:#b7cdec;background:rgba(43,127,255,.10);border:1px solid rgba(43,127,255,.28);border-radius:8px;padding:10px 12px;margin-bottom:14px;line-height:1.55}
+/* ---- Card interna ---- */
+.acard{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:12px}
+.acard-title{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#bcd6f7;margin-bottom:10px}
+.acard-title .num{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:6px;background:var(--blue);color:#fff;font-size:12px}
+.acard-title .grow{flex:1}
+.field{margin-bottom:9px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field-row .field{margin-bottom:9px}
+/* ---- Immagini ---- */
+.imgup{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px}
+.imgup .prev{width:110px;height:78px;flex:none;border-radius:8px;overflow:hidden;background:#0a1628;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.imgup .prev img{width:100%;height:100%;object-fit:cover;display:block}
+.imgup .prev .noimg{color:var(--muted);font-size:11px;text-align:center;padding:4px}
+.imgup .side{flex:1;min-width:180px}
+.imgup .side .path{font-size:11px;color:var(--muted);word-break:break-all;margin-top:4px}
+.filebtn{display:inline-flex;align-items:center;gap:6px;background:#0d1c33;border:1px dashed var(--line);color:var(--txt);border-radius:8px;padding:8px 12px;font-size:12.5px;cursor:pointer}
+.filebtn:hover{border-color:var(--blue)}
+.filebtn input{display:none}
+/* ---- Puntate audio ---- */
+.ep-block{border-top:1px dashed var(--line);margin-top:10px;padding-top:10px}
+.ep-block>label{font-weight:700;color:#bcd6f7;font-size:12.5px;margin-bottom:8px}
+.ep-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:rgba(0,0,0,.18);border-radius:8px;padding:8px;margin-bottom:8px}
+.ep-row .ep-title{flex:1 1 180px;min-width:140px}
+.ep-row .ep-file{flex:1 1 170px;font-size:12px;color:var(--txt)}
+.ep-row .ep-status{flex:1 1 100%;font-size:11px;color:var(--muted);word-break:break-all}
+.ep-row .ep-play{background:#1b2f52;border:1px solid var(--line);color:var(--txt);border-radius:6px;padding:6px 9px;cursor:pointer}
+.ep-empty{color:var(--muted);font-size:12px;font-style:italic;padding:4px 0}
+/* ---- Toggle ---- */
+.toggle{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.18);border-radius:8px;padding:10px 12px}
+.switch{position:relative;width:48px;height:26px;flex:none}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;inset:0;background:#3a4a63;border-radius:26px;transition:.2s}
+.slider:before{content:"";position:absolute;height:20px;width:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.switch input:checked+.slider{background:var(--ok)}
+.switch input:checked+.slider:before{transform:translateX(22px)}
+.toggle .tlabel{font-size:13px}
+.toggle .tstate{font-size:12px;color:var(--muted)}
+/* ---- Archivio ---- */
 .newsrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
 .newsrow .nt{flex:1;font-size:13px;min-width:0}
 .newsrow .nt b{color:#9fc2f0;margin-right:6px;font-size:11px}
-.newsrow .na{display:flex;gap:6px;flex:none}
+.newsrow .na{display:flex;gap:6px;flex:none;flex-wrap:wrap}
 .archive-info{color:var(--muted);font-size:12px;margin-bottom:10px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:#12294a;border:1px solid var(--line);color:#fff;padding:12px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:.3s;z-index:100;max-width:90vw}
+/* ---- Toast ---- */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:#12294a;border:1px solid var(--line);color:#fff;padding:12px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:.3s;z-index:100;max-width:90vw;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.ok{border-color:var(--ok)}
 .toast.err{border-color:var(--err)}
-.hint{font-size:12px;color:var(--muted);margin-top:6px}
+.badge-lock{font-size:11px;color:var(--muted)}
+@media(max-width:560px){.field-row{grid-template-columns:1fr}header h1{font-size:15px}}
 </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
 <header>
-<h1>Li.Fe. Radio - Admin</h1>
+<h1>🎙️ Li.Fe. Radio — Pannello di controllo</h1>
 <span id="connState" class="conn">Non connesso</span>
-<span id="dirtyBadge">Modifiche non salvate</span>
+<span id="dirtyBadge">● Modifiche non salvate</span>
 <span class="spacer"></span>
-<button id="btnReload" class="btn ghost">Ricarica</button>
-<button id="btnSave" class="btn">Salva su GitHub</button>
+<a class="btn ghost" id="btnView" href="index.html" target="_blank" rel="noopener">👁️ Vedi sito</a>
+<button id="btnReload" class="btn ghost">↻ Ricarica</button>
+<button id="btnSave" class="btn">💾 Salva su GitHub</button>
 </header>
 <main>
-<div class="card">
-<h2>Connessione al repository GitHub</h2>
-<div class="grid">
-<div><label>Proprietario (owner)</label><input type="text" id="ghOwner" placeholder="es. liferadio"></div>
-<div><label>Repository</label><input type="text" id="ghRepo" placeholder="es. sito-liferadio"></div>
+
+<!-- ===================== CONNESSIONE ===================== -->
+<div class="card" id="connCard">
+<h2>🔌 Connessione al tuo spazio GitHub</h2>
+<p class="hint">Il pannello salva i contenuti direttamente nel tuo repository GitHub (senza PHP e senza FTP). Inserisci qui i dati una sola volta: resteranno memorizzati in questo browser.</p>
+<div class="grid" style="margin-top:12px">
+<div><label>Proprietario GitHub (owner)</label><input type="text" id="ghOwner" placeholder="es. Bart90997"></div>
+<div><label>Nome repository</label><input type="text" id="ghRepo" placeholder="es. admin-rep"></div>
 <div><label>Branch</label><input type="text" id="ghBranch" placeholder="main" value="main"></div>
 <div><label>Token GitHub (PAT)</label><input type="password" id="ghToken" placeholder="github_pat_..."></div>
 </div>
-<div style="margin-top:12px"><button id="btnConnect" class="btn">Connetti e carica</button></div>
-<p class="hint">Il token resta solo nel tuo browser. Usa un fine-grained token con permesso "Contents: Read and write" su questo repository.</p>
-</div>
-<div class="tabs">
-<div class="tab active" data-pane="fields">Contenuti</div>
-<div class="tab" data-pane="images">Immagini</div>
-<div class="tab" data-pane="featured">In evidenza</div>
-<div class="tab" data-pane="archive">Archivio notizie</div>
-</div>
-<div id="pane-fields" class="tabpane active"><div id="fieldsWrap"></div></div>
-<div id="pane-images" class="tabpane"><div id="imagesWrap"></div></div>
-<div id="pane-featured" class="tabpane"><div id="featuredWrap"></div></div>
-<div id="pane-archive" class="tabpane">
-<div class="card">
-<input type="text" id="archiveSearch" placeholder="Cerca una notizia...">
-<div id="archiveWrap" style="margin-top:12px"></div>
+<div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+<button id="btnConnect" class="btn">🔗 Connetti e carica i contenuti</button>
+<span class="hint" style="margin:0">Il token resta solo nel tuo browser. Usa un fine-grained token con permesso “Contents: Read and write”.</span>
 </div>
 </div>
+
+<!-- ===================== TOOLBAR ===================== -->
+<div class="toolbar">
+<span class="lbl">Gestione sezioni</span>
+<button id="btnExpandAll" class="btn small ghost">⤢ Espandi tutto</button>
+<button id="btnCollapseAll" class="btn small ghost">⤡ Comprimi tutto</button>
+<span class="spacer"></span>
+<span class="hint" id="saveHint" style="margin:0"></span>
+</div>
+
+<!-- ===================== SEZIONI (generate da admin-app.js) ===================== -->
+<div id="sectionsWrap">
+<div class="card"><p class="hint" style="margin:0">👆 Connettiti a GitHub per caricare e modificare i contenuti del sito.</p></div>
+</div>
+
 </main>
 <div id="toast" class="toast"></div>
 <script src="admin-app.js"></script>
