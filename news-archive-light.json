@@ -1,7 +1,29 @@
 {
-  "updatedAt": "2026-10-01T16:20:08.776Z",
-  "count": 141,
+  "updatedAt": "2026-10-01T16:50:31.347Z",
+  "count": 144,
   "news": [
+    {
+      "id": "ami-suno-sanremo-2027-divieto-intelligenza-artificiale",
+      "source": "allmusicitalia",
+      "title": "Avvocato, se uso Suno e poi risuono tutto, chi lo dice a Stefano De Martino? Il caso Sanremo",
+      "tag": "DILLO ALL'AVVOCATO",
+      "date": "01 ott",
+      "dateFull": "1 Ottobre 2026",
+      "iso": "2026-10-01T17:30:49+02:00",
+      "desc": "Il regolamento di Sanremo 2027 vieta l’intelligenza artificiale quando sostituisce il contributo creativo umano, e un producer ha già trovato cinque modi per aggirarlo. Il rischio, secondo l’avvocato…",
+      "img": "uploads/allmusicitalia-c4b93f5772-1790873429-1.png"
+    },
+    {
+      "id": "ami-crytical-senza-titolo-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Crytical presenta Senza Titolo: lontano dai social per tornare a sentire le cose",
+      "tag": "MUSICA",
+      "date": "01 ott",
+      "dateFull": "1 Ottobre 2026",
+      "iso": "2026-10-01T17:20:44+02:00",
+      "desc": "Crytical pubblica Senza Titolo, il nuovo singolo, che sarà disponibile ovunque dalle 00:00 di venerdì 2 ottobre 2026. A presentarlo è un messaggio dell’artista sui social, in cui parla della perdita…",
+      "img": "uploads/allmusicitalia-80df429035-1790873429-2.jpg"
+    },
     {
       "id": "ami-raf-live-2026-date-biglietti",
       "source": "allmusicitalia",
@@ -177,6 +199,28 @@
       "iso": "2026-09-30T06:31:31+02:00",
       "desc": "Ho pensato a Sparky l’altro giorno quando, felice per aver ascoltato il nuovo album di Anna Castiglia, La paura in tasca, e il nuovo singolo di Emma Nolde, SIAMO IN TANTI, in qualche modo inorgoglito…",
       "img": "uploads/allmusicitalia-3f03ae1d58-1790863602-8.jpg"
+    },
+    {
+      "id": "ami-flaco-g-the-goldfather-gdeluxe",
+      "source": "allmusicitalia",
+      "title": "Flaco G chiude il cerchio con The Goldfather Gdeluxe prima del Fabrique",
+      "tag": "MUSICA",
+      "date": "30 set",
+      "dateFull": "30 Settembre 2026",
+      "iso": "2026-09-30T06:26:39+02:00",
+      "desc": "Flaco G pubblica venerdì 2 ottobre THE GOLDFATHER GDELUXE (Atlantic Records Italy/Warner Music Italy), la repack di THE GOLDFATHER uscito lo scorso maggio. Il progetto aggiunge nuovi brani all’album,…",
+      "img": "uploads/allmusicitalia-e225bb11fd-1790873430-3.jpg"
+    },
+    {
+      "id": "ami-semstenn-dvd-sexy-toys-tracce",
+      "source": "allmusicitalia",
+      "title": "Sem&Stènn, DVD SEXY TOYS: il nuovo album traccia per traccia",
+      "tag": "NUOVO ALBUM",
+      "date": "30 set",
+      "dateFull": "30 Settembre 2026",
+      "iso": "2026-09-30T06:09:27+02:00",
+      "desc": "Sem&Stènn, DVD SEXY TOYS traccia per traccia. Il duo elettropop torna il 2 ottobre con DVD SEXY TOYS, un nuovo progetto discografico che fonde dance-pop anni 2000, sonorità techno e cultura queer.…",
+      "img": "uploads/allmusicitalia-9399ce59dd-1790873430-4.jpg"
     },
     {
       "id": "ami-geolier-deluxe-tutto-e-possibile",
@@ -1541,17 +1585,6 @@
       "iso": "2026-09-01T18:55:04+02:00",
       "desc": "Benji & Fede pubblicano Quando viaggi da sola, il loro sesto album in studio, per Warner Records/Warner Music Italy. Il disco arriva dopo il ritorno del duo, segnato nel 2024 dal quinto album Rewind.",
       "img": "uploads/allmusicitalia-71811d4175-1789034882-6.jpg"
-    },
-    {
-      "id": "ami-anna-castiglia-niente-di-me-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Anna Castiglia, Niente di me: il significato del brano",
-      "tag": "NUOVO SINGOLO",
-      "date": "01 set",
-      "dateFull": "1 Settembre 2026",
-      "iso": "2026-09-01T16:44:14+02:00",
-      "desc": "Anna Castiglia annuncia Niente di me, il nuovo singolo in uscita venerdì 4 settembre per Numero Uno/Sony Music Italy. È il secondo estratto da La paura in tasca, il suo secondo album in arrivo il 25…",
-      "img": "uploads/allmusicitalia-7468094f43-1789121120-5.jpg"
     }
   ]
 }
