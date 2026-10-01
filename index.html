@@ -1914,8 +1914,48 @@
         .mobile-nav-search-link:hover, .mobile-nav-search-link:active { color: var(--accent-celeste); transform: translateX(6px); }
         .mobile-nav-search-link i { font-size: 1.3rem; }
 
+        /* ============================================================
+           ANIMAZIONI DI INGRESSO
+           1) NEWS: le 3 card partono impilate come un mazzo di carte
+              e poi si aprono/scatterano nelle loro posizioni.
+           2) COUNTER + INSTAGRAM: comparsa leggera (fade + slide).
+           Tutto rispetta "prefers-reduced-motion".
+           ============================================================ */
+
+        /* --- NEWS: effetto mazzo di carte --- */
+        #newsGrid.deck-stack .news-grid-card {
+            transform: translateX(var(--deck-x, 0px)) translateY(var(--deck-y, 0px)) rotate(var(--deck-rot, 0deg)) scale(0.94);
+            transition: none !important;
+            box-shadow: var(--pop-shadow);
+        }
+        #newsGrid.deck-open .news-grid-card {
+            transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+            transition: transform 1s cubic-bezier(0.16, 0.84, 0.24, 1) !important;
+            transition-delay: var(--deck-delay, 0ms) !important;
+        }
+
+        /* --- COUNTER + INSTAGRAM: comparsa leggera --- */
+        .reveal-pending { opacity: 0; transform: translateY(26px); }
+        .reveal-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 0.84, 0.24, 1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #newsGrid.deck-stack .news-grid-card,
+            #newsGrid.deck-open .news-grid-card,
+            .reveal-pending,
+            .reveal-in {
+                transform: none !important;
+                opacity: 1 !important;
+                transition: none !important;
+                transition-delay: 0ms !important;
+            }
+        }
+
     </style>
-<script src="data-source.js"></script>
+<script src="data-source.js?v=4"></script>
 </head>
 <body>
 
@@ -2220,6 +2260,155 @@
             </div>
             <div class="touch-carousel-dots" id="igCarouselDots"></div>
         </section>
+
+        <script>
+        /* ============================================================
+           ANIMAZIONI DI INGRESSO
+           1) NEWS: le 3 card partono impilate come un mazzo di carte e
+              poi si aprono ("si distruggono") nelle loro posizioni.
+           2) COUNTER + INSTAGRAM: comparsa leggera (fade + slide) allo scroll.
+           Tutto rispetta "prefers-reduced-motion".
+           ============================================================ */
+        (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) return;
+
+            /* ---------- 1) NEWS: effetto mazzo di carte ---------- */
+            (function () {
+                var grid = document.getElementById('newsGrid');
+                if (!grid) return;
+                var stacked = false, opened = false, loaderGone = false;
+                var loaderEl = document.getElementById('loader');
+
+                function loaderIsGone() {
+                    if (!loaderEl) return true;
+                    if (loaderEl.classList.contains('loader-hidden')) return true;
+                    if (!document.body.contains(loaderEl)) return true;
+                    return false;
+                }
+
+                function tryStack() {
+                    if (stacked) return;
+                    var cards = Array.prototype.slice.call(grid.querySelectorAll('.news-grid-card'));
+                    if (cards.length < 2) return;
+                    if (getComputedStyle(grid).display === 'flex') return; /* carosello mobile: niente mazzo */
+                    var rects = cards.map(function (c) { return c.getBoundingClientRect(); });
+                    var top0 = Math.round(rects[0].top);
+                    var sameRow = rects.every(function (r) { return Math.abs(Math.round(r.top) - top0) < 8; });
+                    if (!sameRow) return;               /* layout a 2 colonne / carosello: niente mazzo */
+                    if (rects[0].width < 140) return;   /* schermi piccoli: niente mazzo */
+                    var cIdx = Math.floor(cards.length / 2);
+                    var cx = rects[cIdx].left + rects[cIdx].width / 2;
+                    var cy = rects[cIdx].top + rects[cIdx].height / 2;
+                    cards.forEach(function (card, i) {
+                        var r = rects[i];
+                        var dx = cx - (r.left + r.width / 2);
+                        var dy = cy - (r.top + r.height / 2);
+                        var rot = (i - cIdx) * 5;
+                        card.style.setProperty('--deck-x', dx.toFixed(1) + 'px');
+                        card.style.setProperty('--deck-y', dy.toFixed(1) + 'px');
+                        card.style.setProperty('--deck-rot', rot + 'deg');
+                        card.style.setProperty('--deck-delay', (i * 100) + 'ms');
+                        card.style.zIndex = String(i + 1);
+                    });
+                    grid.classList.add('deck-stack');
+                    stacked = true;
+                    maybeOpen();
+                }
+
+                /* apre il mazzo solo quando lo splash e' sparito E le card sono a schermo */
+                function maybeOpen() {
+                    if (opened || !stacked || !loaderGone) return;
+                    if (!gridOnScreen()) return;
+                    opened = true;
+                    requestAnimationFrame(function () {
+                        requestAnimationFrame(function () {
+                            grid.classList.remove('deck-stack');
+                            grid.classList.add('deck-open');
+                            setTimeout(function () {
+                                grid.classList.remove('deck-open');
+                                Array.prototype.forEach.call(grid.querySelectorAll('.news-grid-card'), function (c) {
+                                    c.style.zIndex = '';
+                                    c.style.removeProperty('--deck-delay');
+                                });
+                            }, 1400);
+                        });
+                    });
+                }
+
+                /* impila appena le card esistono (dietro lo splash) */
+                if ('MutationObserver' in window) {
+                    var mo = new MutationObserver(function () { tryStack(); });
+                    mo.observe(grid, { childList: true });
+                }
+                tryStack();
+                setTimeout(tryStack, 400);
+                setTimeout(tryStack, 1200);
+
+                /* il mazzo si apre quando e' davvero a schermo (e lo splash e' sparito) */
+                function gridOnScreen() {
+                    var r = grid.getBoundingClientRect();
+                    return r.top < window.innerHeight * 0.92 && r.bottom > 0;
+                }
+                window.addEventListener('scroll', maybeOpen, { passive: true });
+                window.addEventListener('resize', maybeOpen, { passive: true });
+
+                /* lo splash e' sparito? */
+                window.addEventListener('liferadio:loader-hidden', function () {
+                    loaderGone = true;
+                    maybeOpen();
+                }, { once: true });
+
+                var poll = setInterval(function () {
+                    if (loaderIsGone()) { loaderGone = true; clearInterval(poll); maybeOpen(); }
+                }, 200);
+
+                /* rete di sicurezza */
+                setTimeout(function () { clearInterval(poll); loaderGone = true; maybeOpen(); }, 12000);
+            })();
+
+            /* ---------- 2) COMPARSA LEGGERA (counter + instagram) ---------- */
+            (function () {
+                var groups = [
+                    { container: '.counter-grid', card: '.counter-card' },
+                    { container: '.instagram-grid', card: '.ig-post-card' }
+                ];
+                groups.forEach(function (g) {
+                    var container = document.querySelector(g.container);
+                    if (!container) return;
+                    var cards = Array.prototype.slice.call(container.querySelectorAll(g.card));
+                    if (!cards.length) return;
+                    cards.forEach(function (c) { c.classList.add('reveal-pending'); });
+
+                    var done = false;
+                    function reveal() {
+                        if (done) return;
+                        done = true;
+                        cards.forEach(function (c, i) {
+                            setTimeout(function () {
+                                c.classList.add('reveal-in');
+                                setTimeout(function () {
+                                    c.classList.remove('reveal-pending');
+                                    c.classList.remove('reveal-in');
+                                }, 850);
+                            }, i * 90);
+                        });
+                    }
+
+                    if ('IntersectionObserver' in window) {
+                        var obs = new IntersectionObserver(function (entries) {
+                            entries.forEach(function (e) {
+                                if (e.isIntersecting) { reveal(); obs.disconnect(); }
+                            });
+                        }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+                        obs.observe(container);
+                    } else {
+                        reveal();
+                    }
+                });
+            })();
+        })();
+        </script>
 
 
 
@@ -2608,6 +2797,7 @@
                 if (loaderDone) return;
                 loaderDone = true;
                 loader.classList.add('loader-hidden');
+                try { window.dispatchEvent(new Event('liferadio:loader-hidden')); } catch (e) {}
                 // Remove from DOM after the CSS transition completes
                 setTimeout(() => { if (loader && loader.parentNode) loader.parentNode.removeChild(loader); }, 700);
             }
