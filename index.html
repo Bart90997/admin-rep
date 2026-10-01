@@ -1916,25 +1916,31 @@
 
         /* ============================================================
            ANIMAZIONI DI INGRESSO
-           1) NEWS: le 3 card partono impilate come un mazzo di carte
+           1) NEWS: le card partono impilate come un mazzo di carte
               e poi si aprono/scatterano nelle loro posizioni.
-           2) COUNTER + INSTAGRAM: comparsa leggera (fade + slide).
+              Attivo su desktop (griglia) E su mobile (carosello).
+           2) INSTAGRAM: stesso effetto "mazzo di carte" SOLO su mobile.
+           3) COUNTER: comparsa leggera (fade + slide).
            Tutto rispetta "prefers-reduced-motion".
            ============================================================ */
 
-        /* --- NEWS: effetto mazzo di carte --- */
-        #newsGrid.deck-stack .news-grid-card {
+        /* --- EFFETTO MAZZO DI CARTE (deck) ---
+           NEWS: attivo su desktop (griglia) E su mobile (carosello).
+           INSTAGRAM: attivo SOLO su mobile (carosello).
+           Le card partono impilate al centro e si aprono a cascata. */
+        .deck-grid.deck-stack > * {
             transform: translateX(var(--deck-x, 0px)) translateY(var(--deck-y, 0px)) rotate(var(--deck-rot, 0deg)) scale(0.94);
             transition: none !important;
             box-shadow: var(--pop-shadow);
+            transform-origin: center center;
         }
-        #newsGrid.deck-open .news-grid-card {
+        .deck-grid.deck-open > * {
             transform: translateX(0) translateY(0) rotate(0deg) scale(1);
             transition: transform 1s cubic-bezier(0.16, 0.84, 0.24, 1) !important;
             transition-delay: var(--deck-delay, 0ms) !important;
         }
 
-        /* --- COUNTER + INSTAGRAM: comparsa leggera --- */
+        /* --- COUNTER + INSTAGRAM (desktop): comparsa leggera --- */
         .reveal-pending { opacity: 0; transform: translateY(26px); }
         .reveal-in {
             opacity: 1;
@@ -1943,8 +1949,8 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            #newsGrid.deck-stack .news-grid-card,
-            #newsGrid.deck-open .news-grid-card,
+            .deck-grid.deck-stack > *,
+            .deck-grid.deck-open > *,
             .reveal-pending,
             .reveal-in {
                 transform: none !important;
@@ -2264,18 +2270,25 @@
         <script>
         /* ============================================================
            ANIMAZIONI DI INGRESSO
-           1) NEWS: le 3 card partono impilate come un mazzo di carte e
-              poi si aprono ("si distruggono") nelle loro posizioni.
-           2) COUNTER + INSTAGRAM: comparsa leggera (fade + slide) allo scroll.
+           1) NEWS: le card partono impilate come un mazzo di carte e
+              poi si aprono nelle loro posizioni (desktop + mobile).
+           2) INSTAGRAM: stesso effetto "mazzo di carte" solo su mobile.
+           3) COUNTER: comparsa leggera (fade + slide) allo scroll.
            Tutto rispetta "prefers-reduced-motion".
            ============================================================ */
         (function () {
             var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (reduce) return;
 
-            /* ---------- 1) NEWS: effetto mazzo di carte ---------- */
-            (function () {
-                var grid = document.getElementById('newsGrid');
+            /* ============================================================
+               EFFETTO "MAZZO DI CARTE" (deck) — riutilizzabile
+               - NEWS: attivo su desktop (griglia) E su mobile (carosello).
+               - INSTAGRAM: attivo SOLO su mobile (carosello) -> carouselOnly.
+               Le card partono impilate al centro e poi si aprono/scatterano
+               nelle loro posizioni con un ritardo a cascata.
+               ============================================================ */
+            function setupDeck(grid, cardSel, opts) {
+                opts = opts || {};
                 if (!grid) return;
                 var stacked = false, opened = false, loaderGone = false;
                 var loaderEl = document.getElementById('loader');
@@ -2287,20 +2300,41 @@
                     return false;
                 }
 
+                function cards() {
+                    return Array.prototype.slice.call(grid.querySelectorAll(cardSel));
+                }
+
                 function tryStack() {
                     if (stacked) return;
-                    var cards = Array.prototype.slice.call(grid.querySelectorAll('.news-grid-card'));
-                    if (cards.length < 2) return;
-                    if (getComputedStyle(grid).display === 'flex') return; /* carosello mobile: niente mazzo */
-                    var rects = cards.map(function (c) { return c.getBoundingClientRect(); });
+                    var list = cards();
+                    if (list.length < 2) return;
+
+                    var flex = getComputedStyle(grid).display === 'flex';
+                    /* Il carosello "mobile" e' un contenitore flex che scorre
+                       davvero in orizzontale (le card non ci stanno tutte). */
+                    var isCarousel = flex && grid.scrollWidth > grid.clientWidth + 8;
+                    if (opts.carouselOnly && !isCarousel) return;   /* Instagram: solo carosello mobile */
+
+                    var rects = list.map(function (c) { return c.getBoundingClientRect(); });
                     var top0 = Math.round(rects[0].top);
                     var sameRow = rects.every(function (r) { return Math.abs(Math.round(r.top) - top0) < 8; });
-                    if (!sameRow) return;               /* layout a 2 colonne / carosello: niente mazzo */
-                    if (rects[0].width < 140) return;   /* schermi piccoli: niente mazzo */
-                    var cIdx = Math.floor(cards.length / 2);
-                    var cx = rects[cIdx].left + rects[cIdx].width / 2;
-                    var cy = rects[cIdx].top + rects[cIdx].height / 2;
-                    cards.forEach(function (card, i) {
+                    if (!sameRow) return;                 /* layout a 2 colonne: niente mazzo */
+                    if (rects[0].width < 120) return;     /* schermi minuscoli: niente mazzo */
+
+                    var cIdx = Math.floor(list.length / 2);
+                    var cx, cy;
+                    if (flex) {
+                        /* Carosello mobile: il mazzo si forma al centro dell'area visibile */
+                        var gr = grid.getBoundingClientRect();
+                        cx = gr.left + grid.clientWidth / 2;
+                        cy = rects[cIdx].top + rects[cIdx].height / 2;
+                    } else {
+                        /* Griglia desktop: il mazzo si forma sulla card centrale */
+                        cx = rects[cIdx].left + rects[cIdx].width / 2;
+                        cy = rects[cIdx].top + rects[cIdx].height / 2;
+                    }
+
+                    list.forEach(function (card, i) {
                         var r = rects[i];
                         var dx = cx - (r.left + r.width / 2);
                         var dy = cy - (r.top + r.height / 2);
@@ -2311,7 +2345,7 @@
                         card.style.setProperty('--deck-delay', (i * 100) + 'ms');
                         card.style.zIndex = String(i + 1);
                     });
-                    grid.classList.add('deck-stack');
+                    grid.classList.add('deck-grid', 'deck-stack');
                     stacked = true;
                     maybeOpen();
                 }
@@ -2327,7 +2361,7 @@
                             grid.classList.add('deck-open');
                             setTimeout(function () {
                                 grid.classList.remove('deck-open');
-                                Array.prototype.forEach.call(grid.querySelectorAll('.news-grid-card'), function (c) {
+                                cards().forEach(function (c) {
                                     c.style.zIndex = '';
                                     c.style.removeProperty('--deck-delay');
                                 });
@@ -2365,17 +2399,28 @@
 
                 /* rete di sicurezza */
                 setTimeout(function () { clearInterval(poll); loaderGone = true; maybeOpen(); }, 12000);
-            })();
+            }
 
-            /* ---------- 2) COMPARSA LEGGERA (counter + instagram) ---------- */
+            /* 1) NEWS: mazzo di carte su desktop E mobile */
+            setupDeck(document.getElementById('newsGrid'), '.news-grid-card', {});
+
+            /* 2) INSTAGRAM: mazzo di carte SOLO su mobile (carosello) */
+            setupDeck(document.querySelector('.instagram-grid'), '.ig-post-card', { carouselOnly: true });
+
+            /* ---------- 3) COMPARSA LEGGERA (counter + instagram su desktop) ---------- */
             (function () {
                 var groups = [
                     { container: '.counter-grid', card: '.counter-card' },
-                    { container: '.instagram-grid', card: '.ig-post-card' }
+                    { container: '.instagram-grid', card: '.ig-post-card', desktopOnly: true }
                 ];
                 groups.forEach(function (g) {
                     var container = document.querySelector(g.container);
                     if (!container) return;
+                    /* Instagram su mobile (carosello) usa il "mazzo di carte": niente fade */
+                    if (g.desktopOnly) {
+                        var cs = getComputedStyle(container);
+                        if (cs.display === 'flex' && container.scrollWidth > container.clientWidth + 8) return;
+                    }
                     var cards = Array.prototype.slice.call(container.querySelectorAll(g.card));
                     if (!cards.length) return;
                     cards.forEach(function (c) { c.classList.add('reveal-pending'); });
