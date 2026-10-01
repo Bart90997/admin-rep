@@ -1,7 +1,18 @@
 {
-  "updatedAt": "2026-10-01T13:50:54.050Z",
-  "count": 133,
+  "updatedAt": "2026-10-01T14:06:43.284Z",
+  "count": 141,
   "news": [
+    {
+      "id": "ami-raf-live-2026-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Raf rinvia INFINITO – PALASPORT al 2027: le nuove date",
+      "tag": "TOUR",
+      "date": "01 ott",
+      "dateFull": "1 Ottobre 2026",
+      "iso": "2026-10-01T16:00:52+02:00",
+      "desc": "Raf rinvia all’autunno 2027 i tre concerti di INFINITO – PALASPORT inizialmente previsti nell’ottobre 2026. L’artista dovrà sottoporsi a un nuovo intervento alla faringe e osservare il successivo…",
+      "img": "uploads/allmusicitalia-64da5e7c87-1790863599-1.jpg"
+    },
     {
       "id": "ami-tiromancino-nuvole-testo-significato",
       "source": "allmusicitalia",
@@ -89,6 +100,83 @@
       "iso": "2026-10-01T10:04:12+02:00",
       "desc": "Sanremo 2001 si è chiuso il 3 marzo con la vittoria di Elisa tra i Campioni con Luce (tramonti a nord est). Il cinquantunesimo Festival, iniziato il 26 febbraio, si è svolto al Teatro Ariston di…",
       "img": "uploads/allmusicitalia-904844fde5-1790862653-8.jpg"
+    },
+    {
+      "id": "ami-davide-boosta-dileo-pianorama",
+      "source": "allmusicitalia",
+      "title": "Davide “Boosta” Dileo trasforma il pianoforte in un paesaggio con “PIANORAMA”",
+      "tag": "MUSICA",
+      "date": "01 ott",
+      "dateFull": "1 Ottobre 2026",
+      "iso": "2026-10-01T07:30:42+02:00",
+      "desc": "Davide “Boosta” Dileo, co-fondatore e tastierista dei Subsonica, pubblica il nuovo album strumentale PIANORAMA. L’opera, disponibile dal 9 ottobre 2026 in vinile e digitale per l’etichetta Torino…",
+      "img": "uploads/allmusicitalia-6e11fdf33a-1790863599-2.jpg"
+    },
+    {
+      "id": "ami-management-del-dolore-post-operatorio-tutto-passa",
+      "source": "allmusicitalia",
+      "title": "Management del Dolore Post-Operatorio, “Tutto passa” tra traffico, finanza e disincanto",
+      "tag": "MUSICA",
+      "date": "01 ott",
+      "dateFull": "1 Ottobre 2026",
+      "iso": "2026-10-01T07:21:50+02:00",
+      "desc": "Management del Dolore Post-Operatorio tornano con un brano che mette al centro il tempo e l’idea della fine, osservando una città bloccata tra traffico, banche e fallimenti collettivi. Il nuovo…",
+      "img": "uploads/allmusicitalia-dd460c375c-1790863600-3.png"
+    },
+    {
+      "id": "ami-zero-assoluto-concerti-2027-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Zero Assoluto, concerti rinviati al 2027: nuove date a Milano e Roma",
+      "tag": "TOUR",
+      "date": "30 set",
+      "dateFull": "30 Settembre 2026",
+      "iso": "2026-09-30T21:30:42+02:00",
+      "desc": "Gli Zero Assoluto spostano al 2027 i due concerti nei palazzetti inizialmente previsti per l’autunno 2026. Matteo Maffucci e Thomas De Gasperi saranno all’Unipol Forum di Assago il 21 aprile 2027 e…",
+      "img": "uploads/allmusicitalia-95bd564320-1790863601-4.jpg"
+    },
+    {
+      "id": "ami-cover-del-mese-settembre-prima-copertina",
+      "source": "allmusicitalia",
+      "title": "Settembre apre la Cover del mese: la voce di una generazione fragile ma determinata",
+      "tag": "MUSICA",
+      "date": "30 set",
+      "dateFull": "30 Settembre 2026",
+      "iso": "2026-09-30T20:17:22+02:00",
+      "desc": "Settembre è l’artista della prima Cover del mese di All Music Italia. Il numero #01, datato settembre 2026, inaugura la nostra rivista digitale mensile: ogni mese un artista in copertina, da…",
+      "img": "uploads/allmusicitalia-35223f2a56-1790863601-5.jpg"
+    },
+    {
+      "id": "ami-kid-yugi-post-mortem-deluxe-logos-fumetto",
+      "source": "allmusicitalia",
+      "title": "Kid Yugi, dopo il funerale l’autopsia: il 30 ottobre esce Anche gli eroi muoiono POST MORTEM",
+      "tag": "MUSICA",
+      "date": "30 set",
+      "dateFull": "30 Settembre 2026",
+      "iso": "2026-09-30T15:33:33+02:00",
+      "desc": "Kid Yugi pubblica il 30 ottobre Anche gli eroi muoiono POST MORTEM, la versione deluxe dell’album uscito a gennaio, con nuove tracce inedite, in digitale e in formato fisico per EMI Records…",
+      "img": "uploads/allmusicitalia-a4a227de29-1790863601-6.jpg"
+    },
+    {
+      "id": "ami-sangiovanni-tutto-bene-grazie",
+      "source": "allmusicitalia",
+      "title": "sangiovanni, dal “non riesco più a fingere che vada tutto bene” a TUTTO BENE GRAZIE",
+      "tag": "MUSICA",
+      "date": "30 set",
+      "dateFull": "30 Settembre 2026",
+      "iso": "2026-09-30T13:02:20+02:00",
+      "desc": "sangiovanni annuncia il nuovo album TUTTO BENE GRAZIE, in uscita venerdì 13 novembre per Sugar Music. Il disco è stato anticipato da ti ho cercata (felicità), il singolo uscito venerdì 25 settembre…",
+      "img": "uploads/allmusicitalia-6e9498add9-1790863602-7.jpg"
+    },
+    {
+      "id": "ami-cantautrici-italiane-tartaruga-sparky",
+      "source": "allmusicitalia",
+      "title": "Sparky e il carapace: la mia tartaruga e le cantautrici italiane che crescono",
+      "tag": "LA VERSIONE DI MONINA",
+      "date": "30 set",
+      "dateFull": "30 Settembre 2026",
+      "iso": "2026-09-30T06:31:31+02:00",
+      "desc": "Ho pensato a Sparky l’altro giorno quando, felice per aver ascoltato il nuovo album di Anna Castiglia, La paura in tasca, e il nuovo singolo di Emma Nolde, SIAMO IN TANTI, in qualche modo inorgoglito…",
+      "img": "uploads/allmusicitalia-3f03ae1d58-1790863602-8.jpg"
     },
     {
       "id": "ami-geolier-deluxe-tutto-e-possibile",
