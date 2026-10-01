@@ -1916,31 +1916,36 @@
 
         /* ============================================================
            ANIMAZIONI DI INGRESSO
-           1) NEWS: le card partono impilate come un mazzo di carte
+           1) NEWS: le 3 card partono impilate come un mazzo di carte
               e poi si aprono/scatterano nelle loro posizioni.
-              Attivo su desktop (griglia) E su mobile (carosello).
-           2) INSTAGRAM: stesso effetto "mazzo di carte" SOLO su mobile.
-           3) COUNTER: comparsa leggera (fade + slide).
+           2) COUNTER + INSTAGRAM: comparsa leggera (fade + slide).
            Tutto rispetta "prefers-reduced-motion".
            ============================================================ */
 
-        /* --- EFFETTO MAZZO DI CARTE (deck) ---
-           NEWS: attivo su desktop (griglia) E su mobile (carosello).
-           INSTAGRAM: attivo SOLO su mobile (carosello).
-           Le card partono impilate al centro e si aprono a cascata. */
-        .deck-grid.deck-stack > * {
+        /* --- NEWS: effetto mazzo di carte --- */
+        #newsGrid.deck-stack .news-grid-card {
             transform: translateX(var(--deck-x, 0px)) translateY(var(--deck-y, 0px)) rotate(var(--deck-rot, 0deg)) scale(0.94);
             transition: none !important;
             box-shadow: var(--pop-shadow);
-            transform-origin: center center;
         }
-        .deck-grid.deck-open > * {
+        #newsGrid.deck-open .news-grid-card {
             transform: translateX(0) translateY(0) rotate(0deg) scale(1);
             transition: transform 1s cubic-bezier(0.16, 0.84, 0.24, 1) !important;
             transition-delay: var(--deck-delay, 0ms) !important;
         }
 
-        /* --- COUNTER + INSTAGRAM (desktop): comparsa leggera --- */
+        /* --- NEWS mobile/tablet: le card entrano da destra --- */
+        #newsGrid .news-grid-card.news-slide-pending { opacity: 0; transform: translateX(58px) scale(0.97); }
+        #newsGrid .news-grid-card.news-slide-in {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+            transition: opacity 0.6s ease, transform 0.65s cubic-bezier(0.16, 0.84, 0.24, 1);
+        }
+        #newsGrid .news-grid-card:nth-child(1).news-slide-in { transition-delay: 0ms; }
+        #newsGrid .news-grid-card:nth-child(2).news-slide-in { transition-delay: 130ms; }
+        #newsGrid .news-grid-card:nth-child(3).news-slide-in { transition-delay: 260ms; }
+
+        /* --- COUNTER + INSTAGRAM: comparsa leggera --- */
         .reveal-pending { opacity: 0; transform: translateY(26px); }
         .reveal-in {
             opacity: 1;
@@ -1949,8 +1954,10 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .deck-grid.deck-stack > *,
-            .deck-grid.deck-open > *,
+            #newsGrid.deck-stack .news-grid-card,
+            #newsGrid.deck-open .news-grid-card,
+            #newsGrid .news-grid-card.news-slide-pending,
+            #newsGrid .news-grid-card.news-slide-in,
             .reveal-pending,
             .reveal-in {
                 transform: none !important;
@@ -2270,26 +2277,22 @@
         <script>
         /* ============================================================
            ANIMAZIONI DI INGRESSO
-           1) NEWS: le card partono impilate come un mazzo di carte e
-              poi si aprono nelle loro posizioni (desktop + mobile).
-           2) INSTAGRAM: stesso effetto "mazzo di carte" solo su mobile.
-           3) COUNTER: comparsa leggera (fade + slide) allo scroll.
+           1) NEWS: le 3 card partono impilate come un mazzo di carte e
+              poi si aprono ("si distruggono") nelle loro posizioni.
+           2) COUNTER + INSTAGRAM: comparsa leggera (fade + slide) allo scroll.
            Tutto rispetta "prefers-reduced-motion".
            ============================================================ */
         (function () {
             var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (reduce) return;
 
-            /* ============================================================
-               EFFETTO "MAZZO DI CARTE" (deck) — riutilizzabile
-               - NEWS: attivo su desktop (griglia) E su mobile (carosello).
-               - INSTAGRAM: attivo SOLO su mobile (carosello) -> carouselOnly.
-               Le card partono impilate al centro e poi si aprono/scatterano
-               nelle loro posizioni con un ritardo a cascata.
-               ============================================================ */
-            function setupDeck(grid, cardSel, opts) {
-                opts = opts || {};
+            /* ---------- 1) NEWS ----------
+               DESKTOP (3 card in fila): effetto "mazzo di carte".
+               MOBILE/TABLET (carosello o 2 colonne): le card entrano da destra. */
+            (function () {
+                var grid = document.getElementById('newsGrid');
                 if (!grid) return;
+                var mode = null;                 /* 'deck' | 'slide' */
                 var stacked = false, opened = false, loaderGone = false;
                 var loaderEl = document.getElementById('loader');
 
@@ -2299,128 +2302,116 @@
                     if (!document.body.contains(loaderEl)) return true;
                     return false;
                 }
-
-                function cards() {
-                    return Array.prototype.slice.call(grid.querySelectorAll(cardSel));
-                }
-
-                function tryStack() {
-                    if (stacked) return;
-                    var list = cards();
-                    if (list.length < 2) return;
-
-                    var flex = getComputedStyle(grid).display === 'flex';
-                    /* Il carosello "mobile" e' un contenitore flex che scorre
-                       davvero in orizzontale (le card non ci stanno tutte). */
-                    var isCarousel = flex && grid.scrollWidth > grid.clientWidth + 8;
-                    if (opts.carouselOnly && !isCarousel) return;   /* Instagram: solo carosello mobile */
-
-                    var rects = list.map(function (c) { return c.getBoundingClientRect(); });
-                    var top0 = Math.round(rects[0].top);
-                    var sameRow = rects.every(function (r) { return Math.abs(Math.round(r.top) - top0) < 8; });
-                    if (!sameRow) return;                 /* layout a 2 colonne: niente mazzo */
-                    if (rects[0].width < 120) return;     /* schermi minuscoli: niente mazzo */
-
-                    var cIdx = Math.floor(list.length / 2);
-                    var cx, cy;
-                    if (flex) {
-                        /* Carosello mobile: il mazzo si forma al centro dell'area visibile */
-                        var gr = grid.getBoundingClientRect();
-                        cx = gr.left + grid.clientWidth / 2;
-                        cy = rects[cIdx].top + rects[cIdx].height / 2;
-                    } else {
-                        /* Griglia desktop: il mazzo si forma sulla card centrale */
-                        cx = rects[cIdx].left + rects[cIdx].width / 2;
-                        cy = rects[cIdx].top + rects[cIdx].height / 2;
-                    }
-
-                    list.forEach(function (card, i) {
-                        var r = rects[i];
-                        var dx = cx - (r.left + r.width / 2);
-                        var dy = cy - (r.top + r.height / 2);
-                        var rot = (i - cIdx) * 5;
-                        card.style.setProperty('--deck-x', dx.toFixed(1) + 'px');
-                        card.style.setProperty('--deck-y', dy.toFixed(1) + 'px');
-                        card.style.setProperty('--deck-rot', rot + 'deg');
-                        card.style.setProperty('--deck-delay', (i * 100) + 'ms');
-                        card.style.zIndex = String(i + 1);
-                    });
-                    grid.classList.add('deck-grid', 'deck-stack');
-                    stacked = true;
-                    maybeOpen();
-                }
-
-                /* apre il mazzo solo quando lo splash e' sparito E le card sono a schermo */
-                function maybeOpen() {
-                    if (opened || !stacked || !loaderGone) return;
-                    if (!gridOnScreen()) return;
-                    opened = true;
-                    requestAnimationFrame(function () {
-                        requestAnimationFrame(function () {
-                            grid.classList.remove('deck-stack');
-                            grid.classList.add('deck-open');
-                            setTimeout(function () {
-                                grid.classList.remove('deck-open');
-                                cards().forEach(function (c) {
-                                    c.style.zIndex = '';
-                                    c.style.removeProperty('--deck-delay');
-                                });
-                            }, 1400);
-                        });
-                    });
-                }
-
-                /* impila appena le card esistono (dietro lo splash) */
-                if ('MutationObserver' in window) {
-                    var mo = new MutationObserver(function () { tryStack(); });
-                    mo.observe(grid, { childList: true });
-                }
-                tryStack();
-                setTimeout(tryStack, 400);
-                setTimeout(tryStack, 1200);
-
-                /* il mazzo si apre quando e' davvero a schermo (e lo splash e' sparito) */
                 function gridOnScreen() {
                     var r = grid.getBoundingClientRect();
                     return r.top < window.innerHeight * 0.92 && r.bottom > 0;
                 }
-                window.addEventListener('scroll', maybeOpen, { passive: true });
-                window.addEventListener('resize', maybeOpen, { passive: true });
+                function getCards() {
+                    return Array.prototype.slice.call(grid.querySelectorAll('.news-grid-card'));
+                }
+
+                /* decide UNA volta quale animazione usare, in base al layout reale */
+                function decide() {
+                    if (mode) return;
+                    var cards = getCards();
+                    if (cards.length < 2) return;
+                    /* carosello mobile: la griglia diventa flex */
+                    if (getComputedStyle(grid).display === 'flex') { mode = 'slide'; armSlide(cards); return; }
+                    var rects = cards.map(function (c) { return c.getBoundingClientRect(); });
+                    var top0 = Math.round(rects[0].top);
+                    var sameRow = rects.every(function (r) { return Math.abs(Math.round(r.top) - top0) < 8; });
+                    if (!sameRow || rects[0].width < 140) { mode = 'slide'; armSlide(cards); return; }
+                    mode = 'deck'; armDeck(cards, rects);
+                }
+
+                /* ---- DESKTOP: mazzo di carte ---- */
+                function armDeck(cards, rects) {
+                    var cIdx = Math.floor(cards.length / 2);
+                    var cx = rects[cIdx].left + rects[cIdx].width / 2;
+                    var cy = rects[cIdx].top + rects[cIdx].height / 2;
+                    cards.forEach(function (card, i) {
+                        var r = rects[i];
+                        card.style.setProperty('--deck-x', (cx - (r.left + r.width / 2)).toFixed(1) + 'px');
+                        card.style.setProperty('--deck-y', (cy - (r.top + r.height / 2)).toFixed(1) + 'px');
+                        card.style.setProperty('--deck-rot', ((i - cIdx) * 5) + 'deg');
+                        card.style.setProperty('--deck-delay', (i * 100) + 'ms');
+                        card.style.zIndex = String(i + 1);
+                    });
+                    grid.classList.add('deck-stack');
+                    stacked = true;
+                    maybeRun();
+                }
+                function openDeck() {
+                    grid.classList.remove('deck-stack');
+                    grid.classList.add('deck-open');
+                    setTimeout(function () {
+                        grid.classList.remove('deck-open');
+                        getCards().forEach(function (c) {
+                            c.style.zIndex = '';
+                            c.style.removeProperty('--deck-delay');
+                        });
+                    }, 1400);
+                }
+
+                /* ---- MOBILE/TABLET: le card entrano da destra ---- */
+                function armSlide(cards) {
+                    cards.forEach(function (card) { card.classList.add('news-slide-pending'); });
+                    maybeRun();
+                }
+                function runSlide() {
+                    getCards().forEach(function (card, i) {
+                        setTimeout(function () {
+                            card.classList.add('news-slide-in');
+                            setTimeout(function () {
+                                card.classList.remove('news-slide-pending');
+                                card.classList.remove('news-slide-in');
+                            }, 950);
+                        }, i * 130);
+                    });
+                }
+
+                /* esegue l'animazione quando lo splash e' sparito E la sezione e' a schermo */
+                function maybeRun() {
+                    if (opened || !loaderGone || !gridOnScreen()) return;
+                    if (mode === 'deck') { if (!stacked) return; opened = true; openDeck(); }
+                    else if (mode === 'slide') { opened = true; runSlide(); }
+                }
+
+                /* decide appena le card esistono (dietro lo splash) */
+                if ('MutationObserver' in window) {
+                    var mo = new MutationObserver(function () { decide(); });
+                    mo.observe(grid, { childList: true });
+                }
+                decide();
+                setTimeout(decide, 400);
+                setTimeout(decide, 1200);
+
+                window.addEventListener('scroll', maybeRun, { passive: true });
+                window.addEventListener('resize', maybeRun, { passive: true });
 
                 /* lo splash e' sparito? */
                 window.addEventListener('liferadio:loader-hidden', function () {
                     loaderGone = true;
-                    maybeOpen();
+                    maybeRun();
                 }, { once: true });
 
                 var poll = setInterval(function () {
-                    if (loaderIsGone()) { loaderGone = true; clearInterval(poll); maybeOpen(); }
+                    if (loaderIsGone()) { loaderGone = true; clearInterval(poll); maybeRun(); }
                 }, 200);
 
                 /* rete di sicurezza */
-                setTimeout(function () { clearInterval(poll); loaderGone = true; maybeOpen(); }, 12000);
-            }
+                setTimeout(function () { clearInterval(poll); loaderGone = true; maybeRun(); }, 12000);
+            })();
 
-            /* 1) NEWS: mazzo di carte su desktop E mobile */
-            setupDeck(document.getElementById('newsGrid'), '.news-grid-card', {});
-
-            /* 2) INSTAGRAM: mazzo di carte SOLO su mobile (carosello) */
-            setupDeck(document.querySelector('.instagram-grid'), '.ig-post-card', { carouselOnly: true });
-
-            /* ---------- 3) COMPARSA LEGGERA (counter + instagram su desktop) ---------- */
+            /* ---------- 2) COMPARSA LEGGERA (counter + instagram) ---------- */
             (function () {
                 var groups = [
                     { container: '.counter-grid', card: '.counter-card' },
-                    { container: '.instagram-grid', card: '.ig-post-card', desktopOnly: true }
+                    { container: '.instagram-grid', card: '.ig-post-card' }
                 ];
                 groups.forEach(function (g) {
                     var container = document.querySelector(g.container);
                     if (!container) return;
-                    /* Instagram su mobile (carosello) usa il "mazzo di carte": niente fade */
-                    if (g.desktopOnly) {
-                        var cs = getComputedStyle(container);
-                        if (cs.display === 'flex' && container.scrollWidth > container.clientWidth + 8) return;
-                    }
                     var cards = Array.prototype.slice.call(container.querySelectorAll(g.card));
                     if (!cards.length) return;
                     cards.forEach(function (c) { c.classList.add('reveal-pending'); });
