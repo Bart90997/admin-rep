@@ -1,7 +1,73 @@
 {
-  "updatedAt": "2026-10-03T08:38:11.373Z",
-  "count": 146,
+  "updatedAt": "2026-10-03T14:30:35.974Z",
+  "count": 147,
   "news": [
+    {
+      "id": "ami-classifica-spotify-settimana-40-2026-sfera-ebbasta",
+      "source": "allmusicitalia",
+      "title": "Classifica Spotify, settimana 40: Sfera Ebbasta è l’artista più ascoltato in Italia",
+      "tag": "CLASSIFICHE SPOTIFY",
+      "date": "03 ott",
+      "dateFull": "3 Ottobre 2026",
+      "iso": "2026-10-03T08:46:03+02:00",
+      "desc": "Sfera Ebbasta è al numero 1 per la seconda settimana consecutiva fra gli artisti più ascoltati su Spotify in Italia, dal 25 settembre al 1° ottobre 2026, ed è in classifica da 259 settimane, cioè da…",
+      "img": "uploads/allmusicitalia-10ee3bf887-1791037832-1.jpg"
+    },
+    {
+      "id": "ami-rip-ogni-weekend-giorni-da-cani",
+      "source": "allmusicitalia",
+      "title": "RIP, Ogni weekend e Giorni da cani: la domanda su quanto sacrificare per sentirsi vivi",
+      "tag": "MUSICA",
+      "date": "03 ott",
+      "dateFull": "3 Ottobre 2026",
+      "iso": "2026-10-03T08:28:50+02:00",
+      "desc": "Ogni weekend e Giorni da cani sono i due nuovi singoli dei RIP, fuori dal 2 ottobre per Peer Music Italy. I due brani inaugurano una fase focalizzata su una scrittura più intima. Il nuovo progetto…",
+      "img": "uploads/allmusicitalia-9bb13ea501-1791037832-2.png"
+    },
+    {
+      "id": "ami-greta-grida-arrivo-nuovo-singolo",
+      "source": "allmusicitalia",
+      "title": "Greta Grida, ARRIVO: la delusione amorosa diventa una vendetta pop punk",
+      "tag": "MUSICA",
+      "date": "03 ott",
+      "dateFull": "3 Ottobre 2026",
+      "iso": "2026-10-03T08:21:24+02:00",
+      "desc": "ARRIVO, il nuovo singolo di Greta Grida, è disponibile da venerdì 2 ottobre per Nigiri / Sony Music Italy. L’artista lo ha presentato in anteprima il 25 settembre all’Arci Bellezza, in apertura al…",
+      "img": "uploads/allmusicitalia-83469691aa-1791037833-3.png"
+    },
+    {
+      "id": "ami-aiello-te-l-ho-mai-detto-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Aiello, Te l’ho mai detto: chi ci fa crescere resta, anche se non lo chiamiamo più Amore",
+      "tag": "MUSICA",
+      "date": "03 ott",
+      "dateFull": "3 Ottobre 2026",
+      "iso": "2026-10-03T08:07:03+02:00",
+      "desc": "Aiello pubblica Te l’ho mai detto, nuovo singolo inedito disponibile da venerdì 2 ottobre in radio e in tutti gli store digitali per Epic Records / Sony Music, con il video ufficiale già online. Il…",
+      "img": "uploads/allmusicitalia-e37495431b-1791037834-4.png"
+    },
+    {
+      "id": "ami-il-cile-sui-giovani-doggi-ci-schitarro-su-tracklist",
+      "source": "allmusicitalia",
+      "title": "Il Cile pubblica il nuovo album d’inediti “Sui giovani d’oggi ci schitarro su”",
+      "tag": "NUOVO ALBUM",
+      "date": "03 ott",
+      "dateFull": "3 Ottobre 2026",
+      "iso": "2026-10-03T07:00:19+02:00",
+      "desc": "Il Cile, nome d’arte di Lorenzo Cilembrini, torna con un nuovo album d’inediti a nove anni da La fate facile. Si intitola Sui giovani d’oggi ci schitarro su ed è disponibile dal 9 ottobre 2026 per…",
+      "img": "uploads/allmusicitalia-43a49015fc-1791037834-5.jpg"
+    },
+    {
+      "id": "ami-classifiche-fimi-settimana-40-2026-album-singoli",
+      "source": "allmusicitalia",
+      "title": "Album e singoli più venduti in Italia: 22Simba resta primo, Mustang di Antonacci entra alla #3",
+      "tag": "CLASSIFICHE DI VENDITA",
+      "date": "02 ott",
+      "dateFull": "2 Ottobre 2026",
+      "iso": "2026-10-02T18:26:45+02:00",
+      "desc": "Gli album più venduti in Italia dal 25 settembre al 1° ottobre 2026, secondo le classifiche FIMI della settimana 40, vedono 22Simba al numero 1 per la seconda settimana con Miria e Biagio Antonacci…",
+      "img": "uploads/allmusicitalia-6b470d356f-1791037835-6.jpg"
+    },
     {
       "id": "ami-paola-turci-intervista-amore-a-dismisura",
       "source": "allmusicitalia",
@@ -89,6 +155,17 @@
       "iso": "2026-10-01T21:42:13+02:00",
       "desc": "Il testo di Parafulmini, il nuovo singolo di Giorgia, è in fondo a questa pagina. Il brano è uscito venerdì 2 ottobre 2026 in radio e in digitale per Epic/Sony Music. Il pezzo è un inedito di G+1, la…",
       "img": "uploads/allmusicitalia-eb44068165-1790957016-8.jpg"
+    },
+    {
+      "id": "ami-x-factor-2026-in-diretta-prima-puntata-bootcamp",
+      "source": "allmusicitalia",
+      "title": "X Factor 2026, le esibizioni e i verdetti della prima puntata dei Bootcamp",
+      "tag": "X FACTOR",
+      "date": "01 ott",
+      "dateFull": "1 Ottobre 2026",
+      "iso": "2026-10-01T19:32:53+02:00",
+      "desc": "È andata in onda giovedì 1 ottobre la prima puntata dei Bootcamp di X Factor 2026, dalle 21.15 su Sky Uno e in streaming su NOW. Qui trovate tutte le esibizioni e i verdetti dei giudici, nell’ordine…",
+      "img": "uploads/allmusicitalia-e6b7252fbf-1791037835-7.jpg"
     },
     {
       "id": "ami-suno-sanremo-2027-divieto-intelligenza-artificiale",
@@ -1541,72 +1618,6 @@
       "iso": "2026-09-03T18:35:54+02:00",
       "desc": "Zucchero torna in vinile con Rispetto, il suo album del 1986, in una nuova edizione numerata firmata Universal Music. La ristampa, intitolata Rispetto (Studio Original Master), esce venerdì 2 ottobre…",
       "img": "uploads/allmusicitalia-0812314385-1788782222-5.jpg"
-    },
-    {
-      "id": "ami-madame-quanto-forte-ti-pensavo-tiktok",
-      "source": "allmusicitalia",
-      "title": "Madame, Quanto forte ti pensavo torna in Top 50 Spotify: il boom TikTok tre anni dopo",
-      "tag": "MUSICA",
-      "date": "03 set",
-      "dateFull": "3 Settembre 2026",
-      "iso": "2026-09-03T08:20:26+02:00",
-      "desc": "Madame torna in Top 50 su Spotify Italia con Quanto forte ti pensavo, a tre anni dalla pubblicazione del brano. Ad annunciarlo è Sugar Music, che sul proprio profilo Instagram racconta il nuovo…",
-      "img": "uploads/allmusicitalia-5f4937a901-1788782224-6.jpg"
-    },
-    {
-      "id": "ami-te-quiero-euridice-nuovo-singolo-una-regola",
-      "source": "allmusicitalia",
-      "title": "Te quiero Euridice “Una regola” parla di accettare ciò che non si può trattenere",
-      "tag": "MUSICA",
-      "date": "03 set",
-      "dateFull": "3 Settembre 2026",
-      "iso": "2026-09-03T07:07:01+02:00",
-      "desc": "Te quiero Euridice affrontano il tema dell’accettazione in Una regola, il nuovo singolo in uscita il 4 settembre per Artist First/Futura Dischi. Il brano apre una nuova fase del percorso del duo…",
-      "img": "uploads/allmusicitalia-8d2c117a83-1788784097-1.jpg"
-    },
-    {
-      "id": "ami-serena-schintu-la-vita-in-controluce",
-      "source": "allmusicitalia",
-      "title": "Serena Schintu racconta la fragilità dietro le apparenze in “La vita in controluce”",
-      "tag": "MUSICA",
-      "date": "02 set",
-      "dateFull": "3 Settembre 2026",
-      "iso": "2026-09-03T01:32:34+02:00",
-      "desc": "Serena Schintu torna con un nuovo singolo, La vita in controluce, disponibile dall’1 settembre per S-Music.",
-      "img": "uploads/allmusicitalia-731e0aff97-1788784098-2.jpg"
-    },
-    {
-      "id": "ami-enrico-nigiotti-sold-out-livorno-a-casa",
-      "source": "allmusicitalia",
-      "title": "Enrico Nigiotti fa sold out il primo palazzetto: A casa a Livorno",
-      "tag": "MUSICA",
-      "date": "02 set",
-      "dateFull": "2 Settembre 2026",
-      "iso": "2026-09-02T20:35:26+02:00",
-      "desc": "Enrico Nigiotti ha esaurito i biglietti del Modigliani Forum di Livorno. A casa, in programma sabato 21 novembre 2026, è il primo concerto in un palazzetto della carriera di Nigiotti e si tiene nella…",
-      "img": "uploads/allmusicitalia-ef6e2eb259-1788787852-2.jpg"
-    },
-    {
-      "id": "ami-mina-vento-di-passione-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Mina, Vento di passione: la cover di Pino Daniele e il suo significato",
-      "tag": "MUSICA",
-      "date": "02 set",
-      "dateFull": "2 Settembre 2026",
-      "iso": "2026-09-02T19:49:18+02:00",
-      "desc": "Mina torna al repertorio di Pino Daniele e sceglie Vento di passione, brano contenuto nell’album Il mio nome è Pino Daniele e vivo qui del 2007, come singolo di lancio del suo nuovo disco: esce il 18…",
-      "img": "uploads/allmusicitalia-e08d62284c-1788787853-3.jpg"
-    },
-    {
-      "id": "ami-artie-5ive-pugno-di-ferro-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Artie 5ive per Red Bull 64 Bars: “Sono la voce per i quartieri e case popolari”",
-      "tag": "MUSICA",
-      "date": "02 set",
-      "dateFull": "2 Settembre 2026",
-      "iso": "2026-09-02T18:55:46+02:00",
-      "desc": "Artie 5ive pubblica Pugno di Ferro, il nuovo episodio di Red Bull 64 Bars, disponibile da oggi per Red Bull. Il brano racconta il legame tra il successo raggiunto dal rapper milanese e il quartiere…",
-      "img": "uploads/allmusicitalia-8450fa81b6-1788787854-4.jpg"
     }
   ]
 }
