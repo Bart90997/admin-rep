@@ -97,8 +97,6 @@
     "rank2-artist": "SAMURAI JAY",
     "rank3-title": "BAD BAD BAD",
     "rank3-artist": "SHIVA,GEOLIER",
-    "program1-episodes": "[{\"title\":\"Li.Fe. Radio Remix- Ep.1\",\"file\":\"uploads/audio/program1-ep-Dua-Lipa---Training-Season--Live-from-the-Royal-Albert-Hall--1790705362.mp3\",\"uploadedAt\":1790705363568},{\"title\":\"Li.Fe. Radio Remix-Ep.2\",\"file\":\"uploads/audio/program1-ep-NA-TAZZULELL-E-CAFE-EP-3-1790767060.mp3\",\"uploadedAt\":1790767061583}]",
-    "program2-episodes": "[{\"title\":\"Tg Fermi-Ep.1\",\"file\":\"uploads/audio/program2-ep-Dua-Lipa---Training-Season--Live-from-the-Royal-Albert-Hall--1790705427.mp3\",\"uploadedAt\":1790705428367}]",
     "hero1-title": "Max Pezzali: in arrivo “Max Forever Vol. 2” con due inediti",
     "hero1-tag": "MUSICA",
     "hero1-desc": "Max Pezzali annuncia l’arrivo di un nuovo capitolo di Max Forever. Il disco, dal titolo Max Forever Vol. 2 – L’album, esce sulle piattaforme digitali e nei negozi fisici il 30 ottobre 2026. E’ però…",
@@ -227,5 +225,5 @@
     "news2-img": "uploads/allmusicitalia-d44f75cf1f-1790862651-5.jpg",
     "news3-img": "uploads/allmusicitalia-95bd564320-1790863601-4.jpg"
   },
-  "updatedAt": "2026-10-01T16:20:07.560Z"
+  "updatedAt": "2026-10-03T08:38:09.531Z"
 }
