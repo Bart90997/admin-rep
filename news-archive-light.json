@@ -1,7 +1,40 @@
 {
-  "updatedAt": "2026-10-03T14:30:35.974Z",
-  "count": 147,
+  "updatedAt": "2026-10-04T15:05:49.550Z",
+  "count": 145,
   "news": [
+    {
+      "id": "ami-giorgia-live-milano",
+      "source": "allmusicitalia",
+      "title": "Giorgia ha chiuso a Milano due anni di tour: “un incontro di cuori” sul palco con lei Annalisa, Emma e Irama",
+      "tag": "LIVE & TOUR",
+      "date": "04 ott",
+      "dateFull": "4 Ottobre 2026",
+      "iso": "2026-10-04T09:49:39+02:00",
+      "desc": "Sabato 3 ottobre Giorgia ha chiuso all’Unipol Dome di Milano due anni di tour che l’hanno portata in tutta Italia con oltre 40 date e 290.000 biglietti venduti. Un percorso live che arriva al suo…",
+      "img": "uploads/allmusicitalia-0e5cacfeb3-1791126347-1.png"
+    },
+    {
+      "id": "ami-cristina-dona-possibili-superstiti",
+      "source": "allmusicitalia",
+      "title": "Cristina Donà, Possibili superstiti esce il 13 ottobre: il ritorno dopo quasi cinque anni",
+      "tag": "MUSICA",
+      "date": "04 ott",
+      "dateFull": "4 Ottobre 2026",
+      "iso": "2026-10-04T07:00:37+02:00",
+      "desc": "Cristina Donà pubblica il 13 ottobre Possibili superstiti, il nuovo singolo in uscita per Futurecords, con distribuzione Believe. Arriva a quasi cinque anni da deSidera, l’ultimo disco, e anticipa il…",
+      "img": "uploads/allmusicitalia-411b075f1f-1791126348-2.jpg"
+    },
+    {
+      "id": "ami-andrea-figlio-di-anna-tatangelo",
+      "source": "allmusicitalia",
+      "title": "Anna Tatangelo a Verissimo con il figlio Andrea: il matrimonio arriverà, ma lo annuncerà lei",
+      "tag": "MUSICA LEGGERISSIMA",
+      "date": "03 ott",
+      "dateFull": "3 Ottobre 2026",
+      "iso": "2026-10-03T18:56:16+02:00",
+      "desc": "Anna Tatangelo è stata ospite di Verissimo sabato 3 ottobre, su Canale 5, con il figlio Andrea, 16 anni. Mamma da gennaio della secondogenita Beatrice, avuta da Giacomo Buttaroni, ha detto che il…",
+      "img": "uploads/allmusicitalia-e7ba6f402f-1791126349-3.jpg"
+    },
     {
       "id": "ami-classifica-spotify-settimana-40-2026-sfera-ebbasta",
       "source": "allmusicitalia",
@@ -1563,61 +1596,6 @@
       "iso": "2026-09-05T01:08:38+02:00",
       "desc": "Fred De Palma pubblica oggi Ragazzino, il nuovo singolo per Hydea/Mz Management, con Atlantic Records/Warner Music Italy. Dopo l’estate dominata da La testa gira (con Anitta ed Emis Killa), il brano…",
       "img": "uploads/allmusicitalia-4b6083f28b-1788782103-6.jpg"
-    },
-    {
-      "id": "ami-niji-lacrime",
-      "source": "allmusicitalia",
-      "title": "Niji trasforma il dolore in forza: “Lacrime” è il nuovo singolo",
-      "tag": "NUOVO SINGOLO",
-      "date": "04 set",
-      "dateFull": "4 Settembre 2026",
-      "iso": "2026-09-04T07:15:40+02:00",
-      "desc": "Dopo Cattiveria, Niji torna con un nuovo singolo intimo e autobiografico in cui racconta uno dei periodi più difficili della sua vita, tra distanza da casa, perdite, solitudine e battaglie interiori.…",
-      "img": "uploads/allmusicitalia-53fd1fb2f5-1788782214-1.jpg"
-    },
-    {
-      "id": "ami-benji-fede-quando-viaggi-da-sola-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Benji & Fede: la fuga raccontata nel singolo Quando viaggi da sola",
-      "tag": "NUOVO SINGOLO",
-      "date": "03 set",
-      "dateFull": "4 Settembre 2026",
-      "iso": "2026-09-04T04:00:40+02:00",
-      "desc": "Benji & Fede raccontano in Quando viaggi da sola una relazione dove uno dei due si tira sempre indietro: fugge, si allontana, si nasconde dietro un’indifferenza che non regge fino in fondo. Il brano…",
-      "img": "uploads/allmusicitalia-a188370bda-1788782217-2.jpg"
-    },
-    {
-      "id": "ami-los-angeles-di-giuse-the-lizia-il-nuovo-singolo-scritto-con-fulminacci",
-      "source": "allmusicitalia",
-      "title": "Giuse The Lizia, Los Angeles: il significato del nuovo singolo",
-      "tag": "NUOVO SINGOLO",
-      "date": "03 set",
-      "dateFull": "3 Settembre 2026",
-      "iso": "2026-09-03T19:36:41+02:00",
-      "desc": "Giuse The Lizia torna venerdì 4 settembre con Los Angeles, il nuovo singolo per Maciste Dischi/Warner Records/Warner Music Italy, scritto insieme a Fulminacci e prodotto da Golden Years. Il brano…",
-      "img": "uploads/allmusicitalia-ede7b42932-1788782219-3.jpg"
-    },
-    {
-      "id": "ami-welo-alvaro-soler-roy-paci-il-sole-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Welo, Alvaro Soler e Roy Paci, Il sole: il significato del brano",
-      "tag": "NUOVO SINGOLO",
-      "date": "03 set",
-      "dateFull": "3 Settembre 2026",
-      "iso": "2026-09-03T19:18:34+02:00",
-      "desc": "Welo, Alvaro Soler e Roy Paci uniscono le voci in Il sole, il nuovo singolo in uscita venerdì 4 settembre per Island Records/Universal Music Italia. Il brano racconta la sensazione sospesa delle…",
-      "img": "uploads/allmusicitalia-75704fce97-1788782221-4.jpg"
-    },
-    {
-      "id": "ami-zucchero-rispetto-vinile-studio-original-master",
-      "source": "allmusicitalia",
-      "title": "Zucchero, Rispetto torna in vinile: la ristampa numerata Studio Original Master",
-      "tag": "RISTAMPE",
-      "date": "03 set",
-      "dateFull": "3 Settembre 2026",
-      "iso": "2026-09-03T18:35:54+02:00",
-      "desc": "Zucchero torna in vinile con Rispetto, il suo album del 1986, in una nuova edizione numerata firmata Universal Music. La ristampa, intitolata Rispetto (Studio Original Master), esce venerdì 2 ottobre…",
-      "img": "uploads/allmusicitalia-0812314385-1788782222-5.jpg"
     }
   ]
 }
