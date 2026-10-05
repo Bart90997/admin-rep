@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-04T15:05:49.550Z",
-  "count": 145,
+  "updatedAt": "2026-10-05T19:00:56.161Z",
+  "count": 149,
   "news": [
+    {
+      "id": "ami-tony-boy-cura-album-vinile",
+      "source": "allmusicitalia",
+      "title": "Tony Boy porta Cura fuori dallo streaming: il nuovo album esce il 6 novembre solo in vinile",
+      "tag": "RISTAMPE",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T19:51:12+02:00",
+      "desc": "Tony Boy pubblica il 6 novembre il nuovo album Cura, per Atlantic Records Italy/Warner Music Italy, ma non lo troverete su Spotify né sulle altre piattaforme: il disco esce soltanto in vinile, con il…",
+      "img": "uploads/allmusicitalia-a64320390e-1791226852-1.jpg"
+    },
+    {
+      "id": "ami-certificazioni-fimi-settimana-40-2026-david-cocciante",
+      "source": "allmusicitalia",
+      "title": "Certificazioni FIMI: Damiano David al platino con Funny Little Fears, ma c’è anche Cocciante",
+      "tag": "CERTIFICAZIONI FIMI",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T16:11:39+02:00",
+      "desc": "Le certificazioni FIMI della settimana 40 del 2026 portano Damiano David al disco di platino con Funny Little Fears, l’album d’esordio da solista uscito a maggio 2025. Bad Bunny sale a cinque volte…",
+      "img": "uploads/allmusicitalia-63caf9eed0-1791226852-2.jpg"
+    },
+    {
+      "id": "ami-marco-mengoni-giornate-perse-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Marco Mengoni riparte da “Giornate perse”: è il primo singolo della nuova fase",
+      "tag": "NUOVO SINGOLO",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T14:13:24+02:00",
+      "desc": "Testo e significato di Giornate perse, il nuovo singolo di Marco Mengoni, in uscita venerdì 9 ottobre 2026 per Epic Records Italy / Sony Music Italy.",
+      "img": "uploads/allmusicitalia-b81019806e-1791226853-3.jpg"
+    },
+    {
+      "id": "ami-orietta-berti-maledetto-settembre-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Orietta Berti, Maledetto Settembre: il rientro dall’estate con Nina Zilli e Danti, tra reggaeton e Cinquecento",
+      "tag": "MUSICA",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T12:12:52+02:00",
+      "desc": "Orietta Berti pubblica Maledetto Settembre con Nina Zilli e Danti, un singolo con videoclip sul rientro dall’estate. La radio date è venerdì 9 ottobre 2026, per Starpoint Corporation e Gapp Music,…",
+      "img": "uploads/allmusicitalia-ada897a089-1791226853-4.jpg"
+    },
+    {
+      "id": "ami-equarantacinque-in-doppia-fila-primo-ep",
+      "source": "allmusicitalia",
+      "title": "Equarantacinque, In Doppia Fila: sei canzoni sul viaggio, dalla E45 al primo EP",
+      "tag": "MUSICA",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T06:00:26+02:00",
+      "desc": "In Doppia Fila, il primo EP degli Equarantacinque, band veneziana, è disponibile su tutte le piattaforme digitali da venerdì 2 ottobre. Il progetto, pubblicato per Sony Music / Columbia Records,…",
+      "img": "uploads/allmusicitalia-e9c89eadaf-1791226854-5.jpg"
+    },
+    {
+      "id": "ami-dj-fede-giso-il-santo-album",
+      "source": "allmusicitalia",
+      "title": "DJ Fede e Giso, Il Santo: l’album con Emis Killa, DDP e Jack The Smoker",
+      "tag": "NUOVO ALBUM",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T05:00:12+02:00",
+      "desc": "Il Santo, il nuovo album di DJ Fede e Giso, è disponibile in digitale da venerdì 2 ottobre 2026. Sabato 3 ottobre alle 16:30 era in programma la presentazione con un instore al WAG Milano.",
+      "img": "uploads/allmusicitalia-2399a813e4-1791226854-6.png"
+    },
+    {
+      "id": "ami-test-che-canzone-di-annalisa-sei",
+      "source": "allmusicitalia",
+      "title": "Che canzone di Annalisa sei? Il test per i sedici anni di trasformazioni",
+      "tag": "SONDAGGI E TEST",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T00:59:21+02:00",
+      "desc": "Che canzone di Annalisa sei? Il 2 ottobre l’artista ha ricordato sedici anni di trasformazioni, dall’ingresso ad Amici nel 2010 a oggi, e il test di All Music Italia propone dieci canzoni: si…",
+      "img": "uploads/allmusicitalia-985e382c4a-1791226855-7.jpg"
+    },
+    {
+      "id": "ami-new-music-friday-radio-date-09-10-2026",
+      "source": "allmusicitalia",
+      "title": "Radio Date 9 ottobre 2026: tutti i singoli in uscita nella settimana",
+      "tag": "RADIO DATE",
+      "date": "05 ott",
+      "dateFull": "5 Ottobre 2026",
+      "iso": "2026-10-05T00:05:55+02:00",
+      "desc": "Settimana 39 del 2026. Aumenta considervolmente il flusso di nuove uscite: il Radio Date raccoglie i singoli italiani pronti per il New Music Friday, tra ritorni, nuove proposte e brani destinati a…",
+      "img": "uploads/allmusicitalia-b80af9e58e-1791226855-8.jpg"
+    },
     {
       "id": "ami-giorgia-live-milano",
       "source": "allmusicitalia",
@@ -1552,50 +1640,6 @@
       "iso": "2026-09-06T04:41:53+02:00",
       "desc": "Sabato 12 settembre torna a Roma One Shot Game, il contest musicale organizzato da Honiro Label che quest’anno raggiunge la decima edizione. L’appuntamento si svolge alla Hacienda, in via dei…",
       "img": "uploads/allmusicitalia-5df7ade08e-1788782097-2.jpg"
-    },
-    {
-      "id": "ami-cesare-cremonini-londra-amateur",
-      "source": "allmusicitalia",
-      "title": "Cesare Cremonini a Londra con AMATEUR: anteprima live tre giorni prima dell’uscita, ospite il sassofonista di Bowie",
-      "tag": "LIVE & TOUR",
-      "date": "05 set",
-      "dateFull": "5 Settembre 2026",
-      "iso": "2026-09-05T20:44:13+02:00",
-      "desc": "Cesare Cremonini porta AMATEUR a Londra prima ancora che l’album esca nei negozi: il 20 ottobre, tre giorni prima della pubblicazione fissata per il 23 ottobre su EMI/Universal Music, il cantautore…",
-      "img": "uploads/allmusicitalia-1c0f6a0fae-1788782099-3.jpg"
-    },
-    {
-      "id": "ami-immanuel-casto-formato-non-riconosciuto",
-      "source": "allmusicitalia",
-      "title": "Immanuel Casto, il 18 settembre esce il quinto album Formato non riconosciuto: “Non siete rotti. Manca il lettore”",
-      "tag": "NUOVO ALBUM",
-      "date": "05 set",
-      "dateFull": "5 Settembre 2026",
-      "iso": "2026-09-05T20:01:41+02:00",
-      "desc": "Immanuel Casto torna con Formato non riconosciuto, il suo quinto album in studio, disponibile da venerdì 18 settembre 2026 per Freak&Chic. Arriva a quattro anni da Malcostume (2022) e si compone di…",
-      "img": "uploads/allmusicitalia-52aa8bcce5-1788782100-4.jpg"
-    },
-    {
-      "id": "ami-adriano-eremita-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Adriano canta la mancanza dell’amore nel nuovo brano “Eremita”",
-      "tag": "NUOVO SINGOLO",
-      "date": "05 set",
-      "dateFull": "5 Settembre 2026",
-      "iso": "2026-09-05T07:10:09+02:00",
-      "desc": "Adriano lancia il nuovo singolo Eremita, disponibile negli store digitali dal 3 settembre 2026 per peermusic ITALY. Il brano è l’ultimo capitolo del percorso iniziato nei mesi scorsi con l’uscita di…",
-      "img": "uploads/allmusicitalia-6ba4d27932-1788782102-5.jpg"
-    },
-    {
-      "id": "ami-fred-de-palma-ragazzino-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Fred De Palma, Ragazzino: la lettera al ragazzo che è stato. Testo e significato",
-      "tag": "MUSICA",
-      "date": "04 set",
-      "dateFull": "5 Settembre 2026",
-      "iso": "2026-09-05T01:08:38+02:00",
-      "desc": "Fred De Palma pubblica oggi Ragazzino, il nuovo singolo per Hydea/Mz Management, con Atlantic Records/Warner Music Italy. Dopo l’estate dominata da La testa gira (con Anitta ed Emis Killa), il brano…",
-      "img": "uploads/allmusicitalia-4b6083f28b-1788782103-6.jpg"
     }
   ]
 }
