@@ -135,14 +135,14 @@
     "hero5-tag": "NUOVO SINGOLO",
     "hero5-desc": "Testo e significato di Giornate perse, il nuovo singolo di Marco Mengoni, in uscita venerdì 9 ottobre 2026 per Epic Records Italy / Sony Music Italy.",
     "hero5-link": "articolo.html?id=ami-marco-mengoni-giornate-perse-testo-significato",
-    "rv4-label": "RTL 102.5",
-    "rv4-subtitle": "LI.FE. RADIO A RTL 102.5",
-    "rv4-type": "FOTO",
-    "rv4-count": "10",
-    "rv4-link": "https://www.instagram.com/p/DLz6I05Mh6l/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    "rv1-label": "RTL 102.5",
+    "rv1-subtitle": "LI.FE. RADIO A RTL 102.5",
+    "rv1-count": "10",
+    "rv1-link": "https://www.instagram.com/p/DLz6I05Mh6l/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+    "rv1-type": "FOTO"
   },
   "images": {
-    "rv2-img": "uploads/rv2-img-1788167140.jpg",
+    "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
     "ig1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig1-img-1791308949.png",
     "ig2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig2-img-1791308965.png",
     "ig3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig3-img-1791308988.png",
@@ -174,7 +174,7 @@
     "news3-img": "uploads/allmusicitalia-c92f5ae0fa-1791304030-4.jpg",
     "hero4-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero4-img-1791309222.jpg",
     "hero5-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero5-img-1791309228.jpg",
-    "rv4-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv4-img-1791309301.png"
+    "rv1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv1-img-1791309746.png"
   },
-  "updatedAt": "2026-10-06T17:57:39.776Z"
+  "updatedAt": "2026-10-06T18:02:37.118Z"
 }
