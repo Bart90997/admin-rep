@@ -39,7 +39,7 @@
     "rv3-link": "https://www.instagram.com/p/DX1E3SXjP9I/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
     "teamop1-name": "BARTOLO OLIVA",
     "teamop1-role": "Speaker, Responsabile Generale",
-    "teamop1-desc": "Dirige il team e nel tempo libero fa lo speaker!",
+    "teamop1-desc": "",
     "teamfam1-name": "ANTONIO MARINO",
     "teamfam1-role": "Speaker",
     "teamfam1-desc": "Speaker radiofonico a tutti gli effetti ed ex responsabile generale!",
@@ -152,7 +152,18 @@
     "pal7-day": "VENERDÌ",
     "pal7-time": "16:00",
     "pal7-title": "LI.FE. RADIO REMIX",
-    "pal7-sub": "Musica e tanto altro"
+    "pal7-sub": "Musica e tanto altro",
+    "teamop2-name": "Donato de Gennaro",
+    "teamop2-role": "Speaker, Direttore del Comitato Artistico",
+    "teamop3-name": "Umberto di Grazia",
+    "teamop3-role": "Regista",
+    "teamop4-name": "Giuseppe Natale",
+    "teamop4-role": "Speaker, Responsabile della redazione",
+    "teamop5-name": "Giordano Bruno Fedele",
+    "teamop5-role": "Regista, Direttore del Comitato Musicale",
+    "teamop6-name": "Teresa Verde",
+    "teamop6-role": "Speaker",
+    "teamop7-name": "Greta D'Ambra"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -161,7 +172,7 @@
     "ig3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig3-img-1791308988.png",
     "rv3-img": "uploads/rv3-img-1788167154.png",
     "speaker-img": "uploads/speaker-img-1782898443.jpg",
-    "teamop1-img": "uploads/teamop1-img-1788167166.jpg",
+    "teamop1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop1-img-1791315733.png",
     "teamfam1-img": "uploads/teamfam1-img-1788103105.png",
     "teamfam2-img": "uploads/teamfam2-img-1788103112.png",
     "teamfam3-img": "uploads/teamfam3-img-1788167194.png",
@@ -187,7 +198,12 @@
     "news3-img": "uploads/allmusicitalia-c92f5ae0fa-1791304030-4.jpg",
     "hero4-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero4-img-1791309222.jpg",
     "hero5-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero5-img-1791309228.jpg",
-    "rv1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv1-img-1791309746.png"
+    "rv1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv1-img-1791309746.png",
+    "teamop2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop2-img-1791315746.png",
+    "teamop3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop3-img-1791315790.png",
+    "teamop4-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop4-img-1791315808.png",
+    "teamop5-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop5-img-1791315846.png",
+    "teamop6-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop6-img-1791315910.png"
   },
-  "updatedAt": "2026-10-06T18:25:33.342Z"
+  "updatedAt": "2026-10-06T19:46:12.199Z"
 }
