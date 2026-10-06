@@ -382,14 +382,14 @@ const SCHEMA = [
     },
     {
         id: 'nlh', icon: '🎵', title: 'New Life Hit',
-        hint: 'Le <b>nuove hit musicali</b> in evidenza. Per ogni brano puoi incollare il <b>link Spotify o YouTube</b>: comparirà un player in stile Apple nella sezione “DISCO LIFE” per ascoltare la canzone.',
+        hint: 'Le <b>nuove hit musicali</b> in evidenza. Incolla il <b>link Spotify</b> di ogni brano: nel sito, cliccando sulla <b>copertina</b>, si aprirà la traccia.',
         lists: [
             {
                 prefix: 'nlh', label: 'New Life Hit', min: 1, max: 5,
                 fields: [
                     { key: 'title', label: 'Titolo della canzone', type: 'text' },
                     { key: 'desc', label: 'Artista / descrizione', type: 'text', ph: 'Es. TALK TO YOU di ANOTR' },
-                    { key: 'link', label: 'Link Spotify o YouTube (per l\'ascolto)', type: 'text', ph: 'https://open.spotify.com/track/... oppure https://youtu.be/...' }
+                    { key: 'link', label: 'Link Spotify del brano (apertura al clic sulla copertina)', type: 'text', ph: 'https://open.spotify.com/track/...' }
                 ],
                 image: { key: 'img', label: 'Copertina' }
             }
