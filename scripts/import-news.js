@@ -40,6 +40,7 @@ const API = 'https://www.allmusicitalia.it/wp-json/wp/v2';
 const MAX_NEW = parseInt(process.env.MAX_NEW || '8', 10);
 const CLEANUP_DAYS = process.env.CLEANUP_DAYS === undefined ? 30 : parseInt(process.env.CLEANUP_DAYS, 10);
 const DRY = process.env.DRY === '1';
+const HEAL_MAX = parseInt(process.env.HEAL_MAX || '200', 10); // max immagini mancanti da ripristinare per run
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 const steps = [];
@@ -227,6 +228,82 @@ async function downloadImage(url, nameBase) {
     if (DRY) return 'uploads/' + filename;
     try { fs.writeFileSync(path.join(UPLOADS_DIR, filename), buf); } catch (e) { return null; }
     return 'uploads/' + filename;
+}
+
+/* ==================== RIPRISTINO IMMAGINI MANCANTI ==================== */
+/* Alcune notizie (importate prima dell'attivazione di GitHub Actions, o con
+   download fallito) puntano a uploads/... ma il file non e' mai stato
+   committato: sul sito l'immagine non si carica. Ad ogni run ricontrolliamo
+   tutte le notizie e riscarichiamo le immagini mancanti dall'articolo
+   originale (immagine in evidenza via API, oppure meta og:image). */
+
+function slugFromArticleUrl(u) {
+    const m = String(u || '').match(/\/news\/([^\/?#]+)\.html/);
+    return m ? m[1] : null;
+}
+
+async function featuredFromApi(slug) {
+    const res = await httpGet(API + '/posts?slug=' + encodeURIComponent(slug) + '&_embed', 25000);
+    if (!res) return null;
+    try {
+        const d = await res.json();
+        const fm = d && d[0] && d[0]._embedded && d[0]._embedded['wp:featuredmedia'] && d[0]._embedded['wp:featuredmedia'][0];
+        return (fm && fm.source_url) ? fm.source_url : null;
+    } catch (e) { return null; }
+}
+
+async function ogFromHtml(url) {
+    if (!url) return null;
+    const res = await httpGet(url, 25000);
+    if (!res) return null;
+    try {
+        const html = await res.text();
+        const m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
+               || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+        return m ? m[1] : null;
+    } catch (e) { return null; }
+}
+
+async function downloadToExact(url, relPath) {
+    const res = await httpGet(url, 40000);
+    if (!res) return false;
+    let buf;
+    try { buf = Buffer.from(await res.arrayBuffer()); } catch (e) { return false; }
+    if (!buf || buf.length < 800) return false;
+    const abs = path.join(ROOT, relPath);
+    const dir = path.dirname(abs);
+    try { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }); } catch (e) {}
+    try { fs.writeFileSync(abs, buf); return true; } catch (e) { return false; }
+}
+
+async function healMissingImages(archive, maxPerRun) {
+    if (!archive || !Array.isArray(archive.news) || !archive.news.length) return 0;
+    const missing = [];
+    for (const n of archive.news) {
+        const img = n.img || '';
+        if (img.indexOf('uploads/') !== 0) continue;
+        if (fs.existsSync(path.join(ROOT, img))) continue;
+        missing.push(n);
+    }
+    if (!missing.length) { log('Immagini: tutte presenti, nulla da ripristinare.'); return 0; }
+    const limit = Math.min(missing.length, maxPerRun > 0 ? maxPerRun : missing.length);
+    log('Immagini: ' + missing.length + ' mancanti in uploads/ \u2014 ne ripristino fino a ' + limit + ' adesso...');
+    let healed = 0;
+    for (let i = 0; i < limit; i++) {
+        const n = missing[i];
+        const img = n.img;
+        let src = null;
+        const slug = slugFromArticleUrl(n.url);
+        if (slug) src = await featuredFromApi(slug);
+        if (!src) src = await ogFromHtml(n.url);
+        if (!src) { log('  [' + (i + 1) + '/' + limit + '] NON TROVATA: ' + img); continue; }
+        const ok = await downloadToExact(src, img);
+        if (ok) { healed++; log('  [' + (i + 1) + '/' + limit + '] ripristinata ' + img); }
+        else { log('  [' + (i + 1) + '/' + limit + '] download fallito: ' + img); }
+        await new Promise(function (r) { setTimeout(r, 200); });
+    }
+    log('Immagini: ripristinate ' + healed + ' su ' + limit + ' (mancavano ' + missing.length + ').');
+    return healed;
 }
 
 /* ============================ API WORDPRESS ============================ */
@@ -422,6 +499,9 @@ async function runImport() {
     } else {
         log('ERRORE: impossibile salvare news-archive.json.');
     }
+
+    // Ripristina eventuali immagini mancanti in uploads/ (self-healing)
+    await healMissingImages(archive, HEAL_MAX);
 
     if (CLEANUP_DAYS > 0) {
         runCleanup(archive, CLEANUP_DAYS);
