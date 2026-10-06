@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-05T19:00:56.161Z",
-  "count": 149,
+  "updatedAt": "2026-10-06T16:27:13.383Z",
+  "count": 154,
   "news": [
+    {
+      "id": "ami-mr-rain-arcimboldi-concerto-milano-tour-teatri",
+      "source": "allmusicitalia",
+      "title": "MR.RAIN apre il tour nei teatri all’Arcimboldi: il racconto del concerto di Milano",
+      "tag": "TOUR",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T18:23:48+02:00",
+      "desc": "Lunedì 5 ottobre Mattia Balardi, in arte MR.RAIN, ha aperto al Teatro Arcimboldi di Milano il tour nei teatri che lo porterà a Roma, Torino, Brescia, Firenze, Padova e Bologna. Il concerto è durato…",
+      "img": "uploads/allmusicitalia-be64776ebd-1791304028-1.jpg"
+    },
+    {
+      "id": "ami-sottotono-concerto-milano-2027-sotto-effetto-stono",
+      "source": "allmusicitalia",
+      "title": "Sottotono, Tormento e Big Fish celebrano a Milano 30 anni di “Sotto Effetto Stono”",
+      "tag": "TOUR",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T13:54:14+02:00",
+      "desc": "I Sottotono tornano insieme sul palco per celebrare i 30 anni di Sotto effetto stono. Tormento e Big Fish saranno in concerto il 5 marzo 2027 ai Magazzini Generali di Milano con una data costruita…",
+      "img": "uploads/allmusicitalia-4a70847669-1791304029-2.jpg"
+    },
+    {
+      "id": "ami-cesare-cremonini-salmo-amateur",
+      "source": "allmusicitalia",
+      "title": "Cesare Cremonini e Salmo insieme in AMATEUR: “È diventato il mio Virgilio”",
+      "tag": "MUSICA",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T10:29:11+02:00",
+      "desc": "Cesare Cremonini e Salmo cantano insieme in AMATEUR, la title track del nuovo album di Cremonini in uscita il 23 ottobre per EMI/Universal Music. Il 20 ottobre Salmo sarà anche il primo ospite…",
+      "img": "uploads/allmusicitalia-045befb593-1791304029-3.jpg"
+    },
+    {
+      "id": "ami-pooh-domenica-in-parolieri-non-piu-dischi",
+      "source": "allmusicitalia",
+      "title": "Pooh a Domenica In: dopo la perdita dei due parolieri “non abbiamo più fatto dischi”",
+      "tag": "MUSICA",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T09:39:47+02:00",
+      "desc": "I Pooh sono stati ospiti della seconda puntata di Domenica In, domenica 4 ottobre su Rai 1, e hanno raccontato a Mara Venier i momenti più difficili dei loro sessant’anni di storia: l’addio di…",
+      "img": "uploads/allmusicitalia-c92f5ae0fa-1791304030-4.jpg"
+    },
+    {
+      "id": "ami-ai-musica-italiana-monina",
+      "source": "allmusicitalia",
+      "title": "Che l’AI sia con noi: la musica italiana nel compattatore della Morte Nera",
+      "tag": "LA VERSIONE DI MONINA",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T08:00:26+02:00",
+      "desc": "Chi opera nella musica si sta oggi concentrando in maniera ossessivo compulsiva sull’uso dell’AI nella nostra povera musica italiana. Ne ha parlato anche Stefano De Martino anticipando il prossimo…",
+      "img": "uploads/allmusicitalia-340e7726b7-1791304031-5.jpg"
+    },
+    {
+      "id": "ami-margherita-vicario-ho-chiesto-aiuto-analisi-testo-misiano",
+      "source": "allmusicitalia",
+      "title": "Margherita Vicario, Ho chiesto aiuto. L’analisi di un testo che parla di dolore, di cura e della possibilità di reinterpretare la vita.",
+      "tag": "TESTO&AMP;CONTESTO",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T07:00:40+02:00",
+      "desc": "Margherita Vicario Ho chiesto aiuto: l’analisi del testo. Il Prof. di latino Davide Misiano ne analizza per noi il testo. A lui la parola.",
+      "img": "uploads/allmusicitalia-f30537c372-1791304031-6.jpg"
+    },
+    {
+      "id": "ami-ottobre-bestia-nuovo-album",
+      "source": "allmusicitalia",
+      "title": "OTTOBRE annuncia BESTIA: nu metal, salute mentale e Parlami d’amore Mariù",
+      "tag": "MUSICA",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T05:00:01+02:00",
+      "desc": "OTTOBRE pubblica il nuovo album BESTIA per Thamsanqa / The Orchard, in uscita venerdì 9 ottobre. Il disco, che mescola sonorità nu metal e chitarre distorte con aperture melodiche, è prodotto dai…",
+      "img": "uploads/allmusicitalia-ec552dc91f-1791304032-7.png"
+    },
+    {
+      "id": "ami-skeye-ninnananna-nuovo-singolo",
+      "source": "allmusicitalia",
+      "title": "SKEYE dopo X Factor 2026: ninnananna, la canzone che dà un volto all’ansia",
+      "tag": "X FACTOR",
+      "date": "06 ott",
+      "dateFull": "6 Ottobre 2026",
+      "iso": "2026-10-06T01:18:40+02:00",
+      "desc": "ninnananna, il nuovo brano di SKEYE, è disponibile da venerdì 2 ottobre in radio e in digitale. La canzone, scritta dalla stessa SKEYE e prodotta da Marco Zangirolami, è distribuita da Pirames…",
+      "img": "uploads/allmusicitalia-2af6ae0fc7-1791304032-8.jpg"
+    },
     {
       "id": "ami-tony-boy-cura-album-vinile",
       "source": "allmusicitalia",
@@ -1607,39 +1695,6 @@
       "iso": "2026-09-06T20:32:03+02:00",
       "desc": "Ghali è stato special performer alla House 44 di Lewis Hamilton, lo spazio di ospitalità esclusivo che il pilota della Ferrari ha ideato con F1 Paddock Club e Soho House, in occasione del Gran Premio…",
       "img": "uploads/allmusicitalia-12349839e9-1788777604-5.jpg"
-    },
-    {
-      "id": "ami-tokyo-maria",
-      "source": "allmusicitalia",
-      "title": "Tokyo, esce Maria: il brano dedicato alla bisnonna morta in un campo di concentramento giapponese",
-      "tag": "NUOVO SINGOLO",
-      "date": "06 set",
-      "dateFull": "6 Settembre 2026",
-      "iso": "2026-09-06T08:00:33+02:00",
-      "desc": "È uscito venerdì 4 settembre Maria, il primo singolo ufficiale di Tokyo, pubblicato da Oyster Music/Universal Music, l’etichetta indipendente fondata da Guè, ex membro dei Club Dogo.",
-      "img": "uploads/allmusicitalia-dbab433e71-1788777606-6.jpg"
-    },
-    {
-      "id": "ami-filippo-perbellini-colosseum",
-      "source": "allmusicitalia",
-      "title": "Filippo Perbellini e Francesco Montisano Orchestra: Colosseum racconta la solitudine di chi vive per lavoro in viaggio",
-      "tag": "MUSICA",
-      "date": "06 set",
-      "dateFull": "6 Settembre 2026",
-      "iso": "2026-09-06T07:00:23+02:00",
-      "desc": "È uscito venerdì 4 settembre, in radio e su tutte le piattaforme digitali, Colosseum, il nuovo singolo di Filippo Perbellini & Francesco Montisano Orchestra, scritto con il lyricist londinese Daniel…",
-      "img": "uploads/allmusicitalia-ffbd983840-1788782096-1.jpg"
-    },
-    {
-      "id": "ami-one-shot-game-2026-lineup-date-biglietti",
-      "source": "allmusicitalia",
-      "title": "One Shot Game 2026: Niji torna sul palco che lo ha lanciato, Seltsam in anteprima live",
-      "tag": "LIVE & TOUR",
-      "date": "05 set",
-      "dateFull": "6 Settembre 2026",
-      "iso": "2026-09-06T04:41:53+02:00",
-      "desc": "Sabato 12 settembre torna a Roma One Shot Game, il contest musicale organizzato da Honiro Label che quest’anno raggiunge la decima edizione. L’appuntamento si svolge alla Hacienda, in via dei…",
-      "img": "uploads/allmusicitalia-5df7ade08e-1788782097-2.jpg"
     }
   ]
 }
