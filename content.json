@@ -186,7 +186,15 @@
     "teamop17-name": "Giada Zaccariello",
     "teamop17-role": "Regista",
     "teamop18-name": "Carmen Altruda",
-    "teamop18-role": "Speaker"
+    "teamop18-role": "Speaker",
+    "teamop19-name": "Mario Attanasio",
+    "teamop19-role": "Speaker, Vide-Direttore del Comitato Artistico",
+    "teamop20-name": "Chiara di Fiore",
+    "teamop20-role": "Speaker, Vice SMM",
+    "teamop21-name": "Giovanni Zappalà",
+    "teamop21-role": "Regista, Responsabile dei Fonici",
+    "teamop22-name": "Gianpaolo Bortone",
+    "teamop22-role": "Referente"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -238,7 +246,11 @@
     "teamop15-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop15-img-1791316348.png",
     "teamop16-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop16-img-1791316414.png",
     "teamop17-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop17-img-1791316432.png",
-    "teamop18-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop18-img-1791316453.png"
+    "teamop18-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop18-img-1791316453.png",
+    "teamop19-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop19-img-1791316484.png",
+    "teamop20-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop20-img-1791316526.png",
+    "teamop21-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop21-img-1791316553.png",
+    "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png"
   },
-  "updatedAt": "2026-10-06T19:54:30.586Z"
+  "updatedAt": "2026-10-06T19:56:46.381Z"
 }
