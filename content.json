@@ -172,7 +172,21 @@
     "teamop8-role": "Speaker",
     "teamop7-role": "Speaker",
     "teamop11-name": "Angeiica Caputo",
-    "teamop11-role": "Speaker"
+    "teamop11-role": "Speaker",
+    "teamop12-name": "Eugenio Carpiniello",
+    "teamop12-role": "Speaker",
+    "teamop13-name": "Andrea Iavarone",
+    "teamop13-role": "SMM",
+    "teamop14-name": "Giorgia Brancati",
+    "teamop14-role": "Regista",
+    "teamop15-name": "Salvatore Luca Frecentese",
+    "teamop15-role": "Regista",
+    "teamop16-name": "Maria Giulia Atronne",
+    "teamop16-role": "Speaker",
+    "teamop17-name": "Giada Zaccariello",
+    "teamop17-role": "Regista",
+    "teamop18-name": "Carmen Altruda",
+    "teamop18-role": "Speaker"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -217,7 +231,14 @@
     "teamop9-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop9-img-1791316204.png",
     "teamop7-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop7-img-1791316209.png",
     "teamop10-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop10-img-1791316219.png",
-    "teamop11-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop11-img-1791316252.png"
+    "teamop11-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop11-img-1791316252.png",
+    "teamop12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop12-img-1791316281.png",
+    "teamop13-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop13-img-1791316304.png",
+    "teamop14-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop14-img-1791316329.png",
+    "teamop15-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop15-img-1791316348.png",
+    "teamop16-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop16-img-1791316414.png",
+    "teamop17-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop17-img-1791316432.png",
+    "teamop18-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop18-img-1791316453.png"
   },
-  "updatedAt": "2026-10-06T19:51:08.644Z"
+  "updatedAt": "2026-10-06T19:54:30.586Z"
 }
