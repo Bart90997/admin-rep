@@ -73,21 +73,44 @@
         .header-actions { display: flex; align-items: center; gap: 16px; color: rgba(255,255,255,0.7); font-size: 1.2rem; flex-shrink: 0; }
         .header-actions a:hover { color: var(--accent-celeste); }
         .mobile-menu-btn { display: none; background: transparent; border: none; color: rgba(255,255,255,0.8); font-size: 1.55rem; cursor: pointer; }
-        .mobile-nav-overlay {
+        /* Mobile nav — slide-in side panel (matches index/notizie/palinsesto/team) */
+        .mobile-nav-backdrop {
             position: fixed;
             inset: 0;
-            background: rgba(1, 38, 87, 0.96);
-            z-index: 2500;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
+            background: rgba(1, 38, 87, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s cubic-bezier(.22,1,.36,1), visibility 0.4s;
         }
-        .mobile-nav-overlay.active { display: flex; }
-        .mobile-nav-overlay a { color: var(--white); font-family: var(--font-title); font-size: 2rem; font-weight: 900; text-transform: uppercase; }
-        .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: transparent; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
-        .mobile-nav-social { display: flex; gap: 22px; margin-top: 14px; }
+        .mobile-nav-backdrop.active { opacity: 1; visibility: visible; }
+        .mobile-nav-overlay {
+            display: flex;
+            position: fixed;
+            top: 0; right: 0; bottom: 0;
+            width: 82%;
+            max-width: 360px;
+            background: linear-gradient(180deg, #012657 0%, #013a80 100%);
+            z-index: 10000;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 6px;
+            padding: 90px 32px 32px;
+            transform: translateX(100%);
+            transition: transform 0.45s cubic-bezier(.22,1,.36,1);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.4);
+            overflow-y: auto;
+        }
+        .mobile-nav-overlay.active { transform: translateX(0); }
+        .mobile-nav-overlay a { color: var(--white); font-family: var(--font-title); font-size: 1.55rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; transition: color 0.2s, padding-left 0.2s; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); width: 100%; }
+        .mobile-nav-overlay a:hover, .mobile-nav-overlay a:active { color: var(--accent-celeste); padding-left: 8px; }
+        .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; width: 44px; height: 44px; display: grid; place-items: center; color: var(--white); font-size: 1.3rem; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+        .mobile-nav-close:hover { border-color: var(--accent-celeste); color: var(--accent-celeste); }
+        .mobile-nav-social { margin-top: auto; padding-top: 24px; display: flex; gap: 22px; width: 100%; justify-content: flex-start; border-top: 1px solid rgba(255,255,255,0.1); }
+        .mobile-nav-social a { font-size: 1.4rem; color: rgba(255,255,255,0.6); border: none; padding: 0; width: auto; transition: color 0.2s, transform 0.2s; }
+        .mobile-nav-social a:hover { color: var(--accent-celeste); transform: scale(1.2); }
 
         /* ==================== ARTICLE PAGE — RADIO ITALIA STYLE ==================== */
         .article-shell { padding-top: 90px; padding-bottom: 64px; }
@@ -707,7 +730,6 @@
         [data-theme="light"] .theme-toggle-btn { color: #012657; }
 
     </style>
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 <script src="data-source.js"></script>
 </head>
 <body>
@@ -730,7 +752,6 @@
                     <li><a href="notizie.html" class="active">NEWS</a></li>
                     <li><a href="palinsesto.html">PALINSESTO</a></li>
                     <li><a href="team.html">TEAM</a></li>
-                    <li><a href="index.html#rivedi">RI-LIVE</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -745,13 +766,13 @@
             </div>
         </div>
     </header>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-xmark"></i></button>
         <a href="index.html" onclick="closeMobileNav()">HOME</a>
         <a href="notizie.html" onclick="closeMobileNav()">NEWS</a>
         <a href="palinsesto.html" onclick="closeMobileNav()">PALINSESTO</a>
         <a href="team.html" onclick="closeMobileNav()">TEAM</a>
-        <a href="index.html#rivedi" onclick="closeMobileNav()">RI-LIVE</a>
         <button class="mobile-nav-search-link" id="mobileNavSearchBtn"><i class="fas fa-magnifying-glass"></i> CERCA</button>
         <div class="mobile-nav-social">
             <a href="https://www.instagram.com/liferadio.official" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -789,7 +810,6 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="notizie.html">News</a></li>
                     <li><a href="index.html#social-feed">Social</a></li>
-                    <li><a href="index.html#rivedi">Ri-live</a></li>
                     <li><a href="index.html#podcast">Podcast</a></li>
                     <li><a href="palinsesto.html">Palinsesto</a></li>
                 </ul>
@@ -837,11 +857,23 @@
         </div>
     </footer>
     <script>
-        function openMobileNav() { document.getElementById('mobileNav').classList.add('active'); }
-        function closeMobileNav() { document.getElementById('mobileNav').classList.remove('active'); }
+        function openMobileNav() {
+            document.getElementById('mobileNav').classList.add('active');
+            document.getElementById('mobileNavBackdrop').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileNavBackdrop').classList.remove('active');
+            document.body.style.overflow = '';
+        }
         document.addEventListener('DOMContentLoaded', function() {
+            var openBtn = document.getElementById('mobileMenuBtn');
+            if (openBtn) openBtn.addEventListener('click', openMobileNav);
             var closeBtn = document.getElementById('mobileNavClose');
             if (closeBtn) closeBtn.addEventListener('click', closeMobileNav);
+            var bd = document.getElementById('mobileNavBackdrop');
+            if (bd) bd.addEventListener('click', closeMobileNav);
         });
 
         const audio = document.getElementById('radioStreaming');
