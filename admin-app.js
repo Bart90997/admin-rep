@@ -81,6 +81,15 @@ function mkBtn(text, cls, handler) {
     return b;
 }
 
+/* Scritture "a prova di errore": se un elemento non esiste NON fanno crashare
+   la pagina (evita l'errore "cannot set properties of null" quando l'HTML è
+   una versione vecchia o la cache del browser è disallineata). */
+function setVal(sel, val) { const e = $(sel); if (e) e.value = val; }
+function getVal(sel) { const e = $(sel); return e ? e.value : ''; }
+function setTxt(sel, txt) { const e = $(sel); if (e) e.textContent = txt; }
+function setCls(sel, cls) { const e = $(sel); if (e) e.className = cls; }
+function on(sel, ev, fn) { const e = $(sel); if (e) e.addEventListener(ev, fn); }
+
 /* ------------------------- Configurazione ------------------------- */
 
 function loadCfg() {
@@ -88,18 +97,18 @@ function loadCfg() {
     if (!CFG.owner) CFG.owner = DEFAULT_OWNER;
     if (!CFG.repo) CFG.repo = DEFAULT_REPO;
     if (!CFG.branch) CFG.branch = DEFAULT_BRANCH;
-    $('#ghOwner').value = CFG.owner || '';
-    $('#ghRepo').value = CFG.repo || '';
-    $('#ghBranch').value = CFG.branch || DEFAULT_BRANCH;
-    $('#ghToken').value = CFG.token || '';
+    setVal('#ghOwner', CFG.owner || '');
+    setVal('#ghRepo', CFG.repo || '');
+    setVal('#ghBranch', CFG.branch || DEFAULT_BRANCH);
+    setVal('#ghToken', CFG.token || '');
 }
 
 function saveCfg() {
     CFG = {
-        owner: $('#ghOwner').value.trim(),
-        repo: $('#ghRepo').value.trim(),
-        branch: ($('#ghBranch').value.trim() || DEFAULT_BRANCH),
-        token: $('#ghToken').value.trim()
+        owner: getVal('#ghOwner').trim() || DEFAULT_OWNER,
+        repo: getVal('#ghRepo').trim() || DEFAULT_REPO,
+        branch: (getVal('#ghBranch').trim() || DEFAULT_BRANCH),
+        token: getVal('#ghToken').trim()
     };
     localStorage.setItem(CFG_KEY, JSON.stringify(CFG));
 }
@@ -125,32 +134,71 @@ function previewSrc(val) {
     return val + sep + 't=' + Date.now();
 }
 
+/* Traduce un codice di errore di GitHub in un messaggio chiaro in italiano. */
+function ghExplain(status, path) {
+    if (status === 401) return 'Token non valido o scaduto (401). Ricontrolla di aver copiato TUTTO il token (inizia con "github_pat_" oppure "ghp_") e che non sia scaduto.';
+    if (status === 403) return 'Accesso negato (403). Il token NON ha il permesso "Contents: Read and write" su questo repository, oppure hai superato il limite di richieste. Crea/rigenera il token con il permesso giusto.';
+    if (status === 404) return 'Repository o file non trovati (404). Controlla che Proprietario ("' + CFG.owner + '") e Repository ("' + CFG.repo + '") siano scritti ESATTAMENTE come su GitHub e che il token abbia accesso a quel repository.';
+    if (status === 409) return 'Conflitto (409): il file è stato modificato altrove. Premi "↻ Ricarica" e riprova.';
+    if (status === 422) return 'Dati non validi (422). Controlla il ramo ("branch"): di solito è "main".';
+    if (status >= 500) return 'GitHub non disponibile al momento (' + status + '). Riprova tra qualche minuto.';
+    return 'Errore GitHub ' + status + ' su "' + path + '".';
+}
+
 async function ghGet(path) {
     const url = apiUrl(path) + '?ref=' + encodeURIComponent(CFG.branch) + '&t=' + Date.now();
-    const res = await fetch(url, {
-        headers: { 'Authorization': 'token ' + CFG.token, 'Accept': 'application/vnd.github+json' }
-    });
+    let res;
+    try {
+        res = await fetch(url, {
+            headers: { 'Authorization': 'token ' + CFG.token, 'Accept': 'application/vnd.github+json' }
+        });
+    } catch (e) {
+        throw new Error('Impossibile raggiungere GitHub. Controlla la connessione a internet: la rete della scuola potrebbe bloccare "api.github.com". Dettaglio: ' + e.message);
+    }
     if (res.status === 404) return null;
-    if (!res.ok) throw new Error('GitHub GET ' + path + ' -> ' + res.status);
+    if (!res.ok) throw new Error(ghExplain(res.status, path));
     const j = await res.json();
     return { text: b64decodeUtf8(j.content), sha: j.sha };
+}
+
+/* Verifica che il token sia valido e che il repository sia raggiungibile.
+   Restituisce un messaggio di errore chiaro, oppure null se tutto ok. */
+async function checkAccess() {
+    let res;
+    try {
+        res = await fetch('https://api.github.com/repos/' + CFG.owner + '/' + CFG.repo, {
+            headers: { 'Authorization': 'token ' + CFG.token, 'Accept': 'application/vnd.github+json' }
+        });
+    } catch (e) {
+        return 'Impossibile raggiungere GitHub. Controlla la connessione a internet: la rete della scuola potrebbe bloccare "api.github.com". Dettaglio: ' + e.message;
+    }
+    if (res.status === 401) return 'Token non valido o scaduto (401). Ricontrolla di aver copiato TUTTO il token (inizia con "github_pat_" oppure "ghp_").';
+    if (res.status === 403) return 'Accesso negato (403). Il token non ha i permessi necessari. Serve il permesso "Contents: Read and write" su questo repository.';
+    if (res.status === 404) return 'Repository non trovato (404): "' + CFG.owner + '/' + CFG.repo + '". Controlla che il nome sia scritto ESATTAMENTE come su GitHub e che il token abbia accesso a quel repository.';
+    if (!res.ok) return 'Errore GitHub ' + res.status + ' nel verificare il repository.';
+    return null;
 }
 
 async function ghPut(path, base64Content, message, sha) {
     const body = { message: message || ('Aggiornamento ' + path), content: base64Content, branch: CFG.branch };
     if (sha) body.sha = sha;
-    const res = await fetch(apiUrl(path), {
-        method: 'PUT',
-        headers: {
-            'Authorization': 'token ' + CFG.token,
-            'Accept': 'application/vnd.github+json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    });
+    let res;
+    try {
+        res = await fetch(apiUrl(path), {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'token ' + CFG.token,
+                'Accept': 'application/vnd.github+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+    } catch (e) {
+        throw new Error('Impossibile raggiungere GitHub durante il salvataggio. Controlla la connessione (la rete della scuola potrebbe bloccare "api.github.com"). Dettaglio: ' + e.message);
+    }
     if (!res.ok) {
         const t = await res.text();
-        throw new Error('GitHub PUT ' + path + ' -> ' + res.status + ' ' + t.slice(0, 200));
+        throw new Error(ghExplain(res.status, path) + ' [' + t.slice(0, 160) + ']');
     }
     return await res.json();
 }
@@ -166,8 +214,12 @@ async function connect() {
     const btn = $('#btnConnect');
     if (btn) { btn.disabled = true; btn.textContent = '⏳ Carico…'; }
     try {
+        /* 1) Prima verifico token + repository, così l'errore è chiaro. */
+        const accessErr = await checkAccess();
+        if (accessErr) { throw new Error(accessErr); }
+
         const c = await ghGet('content.json');
-        if (!c) { toast('content.json non trovato nel repository.', 'err'); return; }
+        if (!c) { throw new Error('Il repository è raggiungibile ma NON contiene "content.json". Carica il file content.json su GitHub (ramo "' + CFG.branch + '").'); }
         CONTENT = JSON.parse(c.text); CONTENT_SHA = c.sha;
 
         const a = await ghGet('news-archive.json');
@@ -175,16 +227,16 @@ async function connect() {
         const l = await ghGet('news-archive-light.json');
         if (l) { LIGHT = JSON.parse(l.text); LIGHT_SHA = l.sha; }
 
-        $('#connState').textContent = '✅ Connesso a ' + CFG.owner + '/' + CFG.repo;
-        $('#connState').className = 'conn ok';
+        setTxt('#connState', '✅ Connesso a ' + CFG.owner + '/' + CFG.repo);
+        setCls('#connState', 'conn ok');
         renderAll();
         toast('Contenuti caricati da GitHub. Puoi iniziare a modificarli.', 'ok');
         setDirty(false);
     } catch (e) {
         console.error(e);
         toast('Errore di connessione: ' + e.message, 'err');
-        $('#connState').textContent = '⚠️ Errore di connessione';
-        $('#connState').className = 'conn err';
+        setTxt('#connState', '⚠️ Errore di connessione');
+        setCls('#connState', 'conn err');
     } finally {
         if (btn) { btn.disabled = false; btn.textContent = '🔗 Connetti e carica i contenuti'; }
     }
@@ -330,13 +382,14 @@ const SCHEMA = [
     },
     {
         id: 'nlh', icon: '🎵', title: 'New Life Hit',
-        hint: 'Le <b>nuove hit musicali</b> in evidenza.',
+        hint: 'Le <b>nuove hit musicali</b> in evidenza. Per ogni brano puoi incollare il <b>link Spotify o YouTube</b>: comparirà un player in stile Apple nella sezione “DISCO LIFE” per ascoltare la canzone.',
         lists: [
             {
                 prefix: 'nlh', label: 'New Life Hit', min: 1, max: 5,
                 fields: [
                     { key: 'title', label: 'Titolo della canzone', type: 'text' },
-                    { key: 'desc', label: 'Artista / descrizione', type: 'text', ph: 'Es. TALK TO YOU di ANOTR' }
+                    { key: 'desc', label: 'Artista / descrizione', type: 'text', ph: 'Es. TALK TO YOU di ANOTR' },
+                    { key: 'link', label: 'Link Spotify o YouTube (per l\'ascolto)', type: 'text', ph: 'https://open.spotify.com/track/... oppure https://youtu.be/...' }
                 ],
                 image: { key: 'img', label: 'Copertina' }
             }
@@ -967,11 +1020,14 @@ window.addEventListener('beforeunload', function (e) {
 
 document.addEventListener('DOMContentLoaded', function () {
     loadCfg();
-    $('#btnConnect').addEventListener('click', connect);
-    $('#btnSave').addEventListener('click', saveAll);
-    $('#btnReload').addEventListener('click', connect);
-    const ex = $('#btnExpandAll'); if (ex) ex.addEventListener('click', expandAll);
-    const co = $('#btnCollapseAll'); if (co) co.addEventListener('click', collapseAll);
-    const sh = $('#saveHint');
-    if (sh) sh.textContent = 'Modifica i campi e poi premi “💾 Salva su GitHub”.';
+    on('#btnConnect', 'click', connect);
+    on('#btnSave', 'click', saveAll);
+    on('#btnReload', 'click', connect);
+    on('#btnExpandAll', 'click', expandAll);
+    on('#btnCollapseAll', 'click', collapseAll);
+    setTxt('#saveHint', 'Modifica i campi e poi premi “💾 Salva su GitHub”.');
+    /* Avviso se l'HTML è una versione vecchia (disallineata da questo script). */
+    if (!$('#sectionsWrap') || !$('#ghToken')) {
+        console.warn('admin.html sembra una versione vecchia: sostituisci ANCHE admin.html insieme ad admin-app.js.');
+    }
 });
