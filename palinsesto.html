@@ -262,7 +262,6 @@
         .program-episode-row.playing { background: rgba(56,182,255,.08); border-radius: 10px; }
 
 </style>
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 <script src="data-source.js"></script>
 </head>
 <body>
@@ -287,7 +286,6 @@
                     <li><a href="notizie.html">NEWS</a></li>
                     <li><a href="palinsesto.html" class="active">PALINSESTO</a></li>
                     <li><a href="team.html">TEAM</a></li>
-                    <li><a href="index.html#rivedi">RI-LIVE</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -310,7 +308,6 @@
         <a href="notizie.html" onclick="closeMobileNav()">NEWS</a>
         <a href="palinsesto.html" onclick="closeMobileNav()">PALINSESTO</a>
         <a href="team.html" onclick="closeMobileNav()">TEAM</a>
-        <a href="index.html#rivedi" onclick="closeMobileNav()">RI-LIVE</a>
         <button class="mobile-nav-search-link" id="mobileNavSearchBtn"><i class="fas fa-magnifying-glass"></i> CERCA</button>
         <div class="mobile-nav-social">
             <a href="https://www.instagram.com/liferadio.official" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -356,7 +353,6 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="notizie.html">News</a></li>
                     <li><a href="index.html#social-feed">Social</a></li>
-                    <li><a href="index.html#rivedi">Ri-live</a></li>
                     <li><a href="index.html#podcast">Podcast</a></li>
                     <li><a href="palinsesto.html">Palinsesto</a></li>
                 </ul>
@@ -518,9 +514,19 @@
                 .catch(() => {});
             setInterval(loadSpeakerData, 60000);
         })();
-        function closeMobileNav(){ document.getElementById('mobileNav').classList.remove('active'); }
-        document.getElementById('mobileMenuBtn')?.addEventListener('click', () => document.getElementById('mobileNav').classList.add('active'));
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileNavBackdrop').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function openMobileNav() {
+            document.getElementById('mobileNav').classList.add('active');
+            document.getElementById('mobileNavBackdrop').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        document.getElementById('mobileMenuBtn')?.addEventListener('click', openMobileNav);
         document.getElementById('mobileNavClose')?.addEventListener('click', closeMobileNav);
+        document.getElementById('mobileNavBackdrop')?.addEventListener('click', closeMobileNav);
         function safeUrl(url) { return url && String(url).trim() ? String(url).trim() : '#'; }
         function escapeHtml(text) { return String(text || '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
         function applyContent(payload) {
