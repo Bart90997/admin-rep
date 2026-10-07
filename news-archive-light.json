@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-06T19:57:55.366Z",
-  "count": 154,
+  "updatedAt": "2026-10-07T17:10:54.224Z",
+  "count": 156,
   "news": [
+    {
+      "id": "ami-gloria-il-musical-protagonisti-ex-amici",
+      "source": "allmusicitalia",
+      "title": "Gloria il musical, i due protagonisti sono ex di Amici: Valeria Mancini e Nick Casciaro",
+      "tag": "AMICI",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T16:14:13+02:00",
+      "desc": "I due protagonisti di Gloria il musical, il primo spettacolo teatrale costruito sulle canzoni di Umberto Tozzi, vengono entrambi da Amici di Maria De Filippi. Valeria Mancini è Gloria, Nick Casciaro…",
+      "img": "uploads/allmusicitalia-97d0b9866d-1791392999-1.jpg"
+    },
+    {
+      "id": "ami-deejay-time-one-last-dance-unipol-forum-2027",
+      "source": "allmusicitalia",
+      "title": "Deejay Time One Last Dance: l’ultimo grande show indoor a Milano il 6 febbraio 2027",
+      "tag": "TOUR",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T15:03:01+02:00",
+      "desc": "Il programma radiofonico Deejay Time annuncia Deejay Time One Last Dance, il concerto di sabato 6 febbraio 2027 all’Unipol Forum di Milano, ad Assago. Sul palco salgono Albertino, Fargetta, Molella e…",
+      "img": "uploads/allmusicitalia-df362d39af-1791392999-2.jpg"
+    },
+    {
+      "id": "ami-album-italiani-in-uscita-2027",
+      "source": "allmusicitalia",
+      "title": "Album italiani in uscita nel 2027: tutti i nuovi dischi mese per mese",
+      "tag": "NUOVO ALBUM",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T14:40:36+02:00",
+      "desc": "Il calendario degli album italiani in uscita nel 2027 si apre venerdì 22 gennaio con due dischi: Milk Wood Bar, primo album di Vinicio Capossela con BMG, e l’edizione speciale di Quello che non c’è…",
+      "img": "uploads/allmusicitalia-d9e255869d-1791393000-3.jpg"
+    },
+    {
+      "id": "ami-donne-musica-italiana-classifiche-fimi",
+      "source": "allmusicitalia",
+      "title": "Musica, sostantivo femminile. Ma le classifiche italiane parlano quasi solo al maschile",
+      "tag": "MA QUALE MUSICA LEGGERA?",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T14:09:37+02:00",
+      "desc": "Musica: sostantivo femminile. Eppure, nelle classifiche FIMI del 2026, le donne nella musica italiana valgono meno di 8 presenze su 100 fra gli album italiani, mentre il rap maschile da solo ne…",
+      "img": "uploads/allmusicitalia-599f30a1ef-1791393000-4.jpg"
+    },
+    {
+      "id": "ami-anticipazioni-amici-26-commissari-tecnici",
+      "source": "allmusicitalia",
+      "title": "Amici 26, anticipazioni dell’11 ottobre: Amadeus, Zerbi e Samurai Jay al canto, Ambra al ballo",
+      "tag": "AMICI",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T13:57:23+02:00",
+      "desc": "Il ritorno del talent show di Maria De Filippi, Amici, è ormai imminente. La prima puntata di Amici 26 andrà in onda domenica 11 ottobre alle 14 su Canale 5 e, come già avvenuto negli scorsi anni,…",
+      "img": "uploads/allmusicitalia-b58ca28a56-1791393001-5.jpg"
+    },
+    {
+      "id": "ami-delia-rosa-mia-palermo-2027",
+      "source": "allmusicitalia",
+      "title": "Delia porta Rosa Mia al Politeama di Palermo nel centenario di Rosa Balistreri",
+      "tag": "TOUR",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T12:09:54+02:00",
+      "desc": "Delia porta in scena Rosa Mia il 21 marzo 2027 al Teatro Politeama Garibaldi di Palermo, nel giorno del centenario della nascita di Rosa Balistreri. Il concerto, in anteprima assoluta, è il progetto…",
+      "img": "uploads/allmusicitalia-c67879fef7-1791393001-6.jpg"
+    },
+    {
+      "id": "ami-virginio-dio-nella-pioggia",
+      "source": "allmusicitalia",
+      "title": "Virginio, con Dio nella pioggia il pop italiano incontra il mariachi messicano",
+      "tag": "MUSICA",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T11:46:49+02:00",
+      "desc": "Virginio pubblica venerdì 9 ottobre Dio nella pioggia, il singolo in cui il cantautore porta la melodia italiana dentro le sonorità messicane e il mariachi. Esce con Altafonte Italia, mentre la…",
+      "img": "uploads/allmusicitalia-e163a9a666-1791393002-7.jpg"
+    },
+    {
+      "id": "ami-boosta-pianorama-tour-2026",
+      "source": "allmusicitalia",
+      "title": "Boosta porta PIANORAMA dal disco al palco: quattro concerti tra pianoforte ed elettronica",
+      "tag": "TOUR",
+      "date": "07 ott",
+      "dateFull": "7 Ottobre 2026",
+      "iso": "2026-10-07T10:00:51+02:00",
+      "desc": "Davide “Boosta” Dileo porterà PIANORAMA dal disco al palco con un tour di quattro concerti nel 2026. Le date partiranno il 1° novembre da Roma e proseguiranno tra Torino, Forlì e Milano, con un live…",
+      "img": "uploads/allmusicitalia-023c93f3db-1791393002-8.jpg"
+    },
     {
       "id": "ami-mr-rain-arcimboldi-concerto-milano-tour-teatri",
       "source": "allmusicitalia",
@@ -1629,72 +1717,6 @@
       "iso": "2026-09-07T19:34:38+02:00",
       "desc": "Blanco pubblica ufficialmente Sottogonna, fuori da oggi per EMI Records/Universal Music. Il brano, prodotto da Michelangelo, non è una novità per i fan: circolava online da sei anni, da quando nel…",
       "img": "uploads/allmusicitalia-9a72ebc248-1788862232-4.jpg"
-    },
-    {
-      "id": "ami-geolier-achille-lauro-per-noi-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Geolier e Achille Lauro insieme per la prima volta: arriva “Per noi”",
-      "tag": "MUSICA",
-      "date": "07 set",
-      "dateFull": "7 Settembre 2026",
-      "iso": "2026-09-07T14:39:51+02:00",
-      "desc": "Testo e significato di Per noi, il nuovo singolo di Geolier insieme ad Achille Lauro, in uscita venerdì 11 settembre per Atlantic Records Italy / Warner Music Italy.",
-      "img": "uploads/allmusicitalia-9fb859b1ad-1788787851-1.jpg"
-    },
-    {
-      "id": "ami-giorgia-g-nuova-edizione-ottobre-2026",
-      "source": "allmusicitalia",
-      "title": "Giorgia, G torna a ottobre in una nuova versione tra inediti e live",
-      "tag": "LIVE & TOUR",
-      "date": "07 set",
-      "dateFull": "7 Settembre 2026",
-      "iso": "2026-09-07T12:00:08+02:00",
-      "desc": "A ottobre torna in una nuova versione G, l’ultimo album di Giorgia, uscito il 7 novembre 2025 per Michroponica/Epic/Sony Music e certificato disco d’oro lo scorso febbraio. Il disco ha superato i 250…",
-      "img": "uploads/allmusicitalia-b91206c847-1788777595-1.jpg"
-    },
-    {
-      "id": "ami-semestenn-cazzi-miei-testo-significato",
-      "source": "allmusicitalia",
-      "title": "SEM&STÈNN, “CAZZI MIEI” è una dichiarazione di indipendenza",
-      "tag": "MUSICA",
-      "date": "07 set",
-      "dateFull": "7 Settembre 2026",
-      "iso": "2026-09-07T08:00:52+02:00",
-      "desc": "SEM&STÈNN tornano con nuova musica e il 4 settembre hanno lanciato Cazzi miei, secondo singolo della nuova fase artistica del duo dopo Animale. Il brano anticipa DVD SEXY TOYS, l’album in uscita il 2…",
-      "img": "uploads/allmusicitalia-525d431414-1788777598-2.jpg"
-    },
-    {
-      "id": "ami-mina-dilettevoli-inedite-eccedenze-nuovo-album",
-      "source": "allmusicitalia",
-      "title": "Mina, arriva a ottobre il nuovo album Dilettevoli inedite eccedenze",
-      "tag": "NUOVO ALBUM",
-      "date": "07 set",
-      "dateFull": "7 Settembre 2026",
-      "iso": "2026-09-07T07:55:31+02:00",
-      "desc": "Si intitola Dilettevoli inedite eccedenze il nuovo album di Mina, in uscita il 9 ottobre per PDU in digitale, CD e vinile. Lo riporta l’ANSA, secondo cui il disco raccoglierà dieci interpretazioni…",
-      "img": "uploads/allmusicitalia-89857d84c9-1788777600-3.jpg"
-    },
-    {
-      "id": "ami-massimo-cotto-riva-ligure-youll-never-walk-alone",
-      "source": "allmusicitalia",
-      "title": "Riva Ligure ricorda Massimo Cotto con la seconda edizione di You’ll Never Walk Alone",
-      "tag": "MUSICA",
-      "date": "07 set",
-      "dateFull": "7 Settembre 2026",
-      "iso": "2026-09-07T03:58:18+02:00",
-      "desc": "Si è conclusa a Riva Ligure (Imperia) la seconda edizione di You’ll Never Walk Alone, la due giorni in Piazza Matteotti dedicata a Massimo Cotto, andata in scena venerdì 4 e sabato 5 settembre a…",
-      "img": "uploads/allmusicitalia-9cf15c8433-1788777601-4.jpg"
-    },
-    {
-      "id": "ami-ghali-house-44-lewis-hamilton-monza",
-      "source": "allmusicitalia",
-      "title": "Ghali special performer alla House 44 di Lewis Hamilton al Gran Premio di Monza",
-      "tag": "MUSICA",
-      "date": "06 set",
-      "dateFull": "6 Settembre 2026",
-      "iso": "2026-09-06T20:32:03+02:00",
-      "desc": "Ghali è stato special performer alla House 44 di Lewis Hamilton, lo spazio di ospitalità esclusivo che il pilota della Ferrari ha ideato con F1 Paddock Club e Soho House, in occasione del Gran Premio…",
-      "img": "uploads/allmusicitalia-12349839e9-1788777604-5.jpg"
     }
   ]
 }
