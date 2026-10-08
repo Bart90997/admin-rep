@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-08T16:09:33.680Z",
-  "count": 156,
+  "updatedAt": "2026-10-08T17:07:58.435Z",
+  "count": 158,
   "news": [
+    {
+      "id": "ami-jed-amici-26-chi-sono",
+      "source": "allmusicitalia",
+      "title": "Chi sono i JED, Dodo e Jeanvier: il duo livornese di X Factor 2025 entra ad Amici 26",
+      "tag": "AMICI",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T19:05:18+02:00",
+      "desc": "JED sono Dodo e Jeanvier, duo livornese che ha conquistato la maglia nella prima puntata di Amici 26, registrata l’8 ottobre e in onda domenica 11 alle 14 su Canale 5. Nel 2025 erano arrivati ai…",
+      "img": "uploads/allmusicitalia-eed20240ae-1791479274-1.jpg"
+    },
+    {
+      "id": "ami-erness-amici-26-chi-e",
+      "source": "allmusicitalia",
+      "title": "Chi è Erness, il rapper di Sarno che da Nuova Scena arriva ad Amici 26",
+      "tag": "AMICI",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T18:56:58+02:00",
+      "desc": "Erness, rapper salernitano classe 2006, ha conquistato la maglia nella prima puntata di Amici 26, registrata l’8 ottobre e in onda domenica 11 alle 14 su Canale 5. Nel 2025 era in Nuova Scena, il rap…",
+      "img": "uploads/allmusicitalia-f846dfbac9-1791479275-2.jpg"
+    },
+    {
+      "id": "ami-rossella-straordinario-video",
+      "source": "allmusicitalia",
+      "title": "Rossella, in anteprima il video di Straordinario: New York e un brano nato da una meditazione",
+      "tag": "NUOVO SINGOLO",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T17:06:14+02:00",
+      "desc": "Rossella ha girato a New York il video di Straordinario, il nuovo singolo in uscita venerdì 9 ottobre 2026 in digitale e in radio per FDAM, distribuito da ADA Music Italy (Warner Music Italy). Il…",
+      "img": "uploads/allmusicitalia-47ffdddb2a-1791479275-3.jpg"
+    },
+    {
+      "id": "ami-ambra-angiolini-amici-chi-e",
+      "source": "allmusicitalia",
+      "title": "Ambra Angiolini ad Amici 26: chi è la nuova responsabile del ballo",
+      "tag": "AMICI",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T15:58:05+02:00",
+      "desc": "Il conto alla rovescia per Amici 26 è agli sgoccioli. Domenica 11 ottobre alle 14 su Canale 5 il talent di Maria De Filippi riparte con sei responsabili artistici al posto dei professori, e nel…",
+      "img": "uploads/allmusicitalia-cc9c5177ec-1791479276-4.jpg"
+    },
+    {
+      "id": "ami-sangiovanni-ok-buonanotte-testo-significato",
+      "source": "allmusicitalia",
+      "title": "sangiovanni, ok buonanotte: il singolo sulle giornate che iniziano già di corsa",
+      "tag": "NUOVO SINGOLO",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T15:45:59+02:00",
+      "desc": "sangiovanni pubblica venerdì 9 ottobre ok buonanotte, nuovo singolo per Sugar Music in digitale e in rotazione radiofonica, con il pre-save già attivo. È il secondo brano estratto da TUTTO BENE…",
+      "img": "uploads/allmusicitalia-6d14c9d209-1791479276-5.jpg"
+    },
+    {
+      "id": "ami-zarathustra-style-featuring-fabri-fibra-neffa",
+      "source": "allmusicitalia",
+      "title": "Fabri Fibra e Neffa spiegano Zarathustra Style: niente featuring, un disco sporco e grezzo",
+      "tag": "MUSICA",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T12:07:48+02:00",
+      "desc": "Fabri Fibra e Neffa presentano Zarathustra Style, in uscita venerdì 9 ottobre, come un disco senza featuring e con tutti i beat di Neffa, che lo definisce “sporco e grezzo”. Lo spiegano i due in un…",
+      "img": "uploads/allmusicitalia-9b92938fff-1791479277-6.jpg"
+    },
+    {
+      "id": "ami-24-grana-bidonville-nuovo-album",
+      "source": "allmusicitalia",
+      "title": "24 Grana tornano con BIDONVILLE: un disco sulle periferie, a trent’anni dagli esordi",
+      "tag": "MUSICA",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T10:00:13+02:00",
+      "desc": "BIDONVILLE, il nuovo album di inediti dei 24 Grana, esce venerdì 16 ottobre 2026 in fisico e in digitale per La Canzonetta Record. Il disco, che raccoglie 11 brani, arriva nell’anno dei trent’anni di…",
+      "img": "uploads/allmusicitalia-72ca250998-1791479277-7.jpg"
+    },
+    {
+      "id": "ami-giulia-pratelli-un-fiore",
+      "source": "allmusicitalia",
+      "title": "Giulia Pratelli: il nuovo album d’inediti è “Un fiore”",
+      "tag": "NUOVO ALBUM",
+      "date": "08 ott",
+      "dateFull": "8 Ottobre 2026",
+      "iso": "2026-10-08T07:00:52+02:00",
+      "desc": "Giulia Pratelli pubblica Un fiore, piccolo album di cinque inediti, disponibile dal 6 ottobre 2026 per Musica di Seta. A tre anni dall’EP Tutti i santi, la cantautrice toscana mette insieme canzoni…",
+      "img": "uploads/allmusicitalia-8b1205c97f-1791479278-8.jpg"
+    },
     {
       "id": "ami-gloria-il-musical-protagonisti-ex-amici",
       "source": "allmusicitalia",
@@ -1651,72 +1739,6 @@
       "iso": "2026-09-08T19:19:48+02:00",
       "desc": "Elisa, dopo aver lanciato uno spoiler sui social, ha annunciato il suo nuovo album Kintsugi, in uscita il 27 novembre 2026 per Island Records/Universal Music Italia. Da oggi il disco è disponibile in…",
       "img": "uploads/allmusicitalia-a848f7711b-1788948806-4.jpg"
-    },
-    {
-      "id": "ami-22simba-provinciali-testo-significato",
-      "source": "allmusicitalia",
-      "title": "22Simba racconta le sue radici in Provinciali, ultimo atto di MIRIA",
-      "tag": "MUSICA",
-      "date": "08 set",
-      "dateFull": "8 Settembre 2026",
-      "iso": "2026-09-08T18:44:21+02:00",
-      "desc": "Testo e significato di Provinciali, il nuovo singolo di 22Simba, in uscita venerdì 11 settembre 2026 per Island Records/Universal Music Italy.",
-      "img": "uploads/allmusicitalia-2754806728-1788948807-5.jpg"
-    },
-    {
-      "id": "ami-filippo-graziani-verso-casa-nuovo-album",
-      "source": "allmusicitalia",
-      "title": "Filippo Graziani annuncia l’album “Verso Casa” con il singolo “Panico (Punk77)”",
-      "tag": "NUOVO ALBUM",
-      "date": "08 set",
-      "dateFull": "8 Settembre 2026",
-      "iso": "2026-09-08T18:38:32+02:00",
-      "desc": "Filippo Graziani torna con Panico (Punk77), il secondo singolo che anticipa Verso Casa, il suo nuovo album di inediti in uscita a ottobre per INRI Records. Il brano arriva in radio e su tutte le…",
-      "img": "uploads/allmusicitalia-a553a98493-1788948809-6.jpg"
-    },
-    {
-      "id": "ami-gnuquartet-20-anni-carlo-felice-genova-2026",
-      "source": "allmusicitalia",
-      "title": "Samuel e Boosta a sorpresa con gli GnuQuartet: chi sale sul palco per i vent’anni",
-      "tag": "LIVE & TOUR",
-      "date": "08 set",
-      "dateFull": "8 Settembre 2026",
-      "iso": "2026-09-08T10:00:01+02:00",
-      "desc": "Gli GnuQuartet festeggiano vent’anni di carriera con una sola data: 20 anni di GnuQuartet – Live with Friends, lunedì 28 settembre 2026 al Teatro Carlo Felice di Genova. Al cast degli ospiti si…",
-      "img": "uploads/allmusicitalia-b41880bfdc-1788862228-1.jpg"
-    },
-    {
-      "id": "ami-leon-faun-motivo-rinvio-tour",
-      "source": "allmusicitalia",
-      "title": "Leon Faun rinvia il tour: “Impegnato in qualcosa più grande di me”",
-      "tag": "LIVE & TOUR",
-      "date": "08 set",
-      "dateFull": "8 Settembre 2026",
-      "iso": "2026-09-08T05:53:46+02:00",
-      "desc": "Il FASE REM TOUR di Leon Faun non partirà a ottobre. Il rapper e attore romano ha annunciato il rinvio delle quattro date del tour, in programma a ottobre nei club italiani: si terranno invece a…",
-      "img": "uploads/allmusicitalia-3249fb8c60-1788862229-2.jpg"
-    },
-    {
-      "id": "ami-nicola-ferrari-le-cose-che-sai",
-      "source": "allmusicitalia",
-      "title": "Nicola Ferrari, Le cose che sai: il singolo rock che porta al secondo album",
-      "tag": "NUOVO ALBUM",
-      "date": "08 set",
-      "dateFull": "8 Settembre 2026",
-      "iso": "2026-09-08T02:59:19+02:00",
-      "desc": "È fuori Le cose che sai, il nuovo singolo di Nicola Ferrari pubblicato da NF Records per Astralmusic. Il brano arriva dopo Still in to me e racconta la sensazione, dentro una relazione, di non…",
-      "img": "uploads/allmusicitalia-de91f57c6c-1788862231-3.jpg"
-    },
-    {
-      "id": "ami-blanco-sottogonna-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Da SoundCloud a Spotify: Blanco libera finalmente Sottogonna",
-      "tag": "MUSICA",
-      "date": "07 set",
-      "dateFull": "7 Settembre 2026",
-      "iso": "2026-09-07T19:34:38+02:00",
-      "desc": "Blanco pubblica ufficialmente Sottogonna, fuori da oggi per EMI Records/Universal Music. Il brano, prodotto da Michelangelo, non è una novità per i fan: circolava online da sei anni, da quando nel…",
-      "img": "uploads/allmusicitalia-9a72ebc248-1788862232-4.jpg"
     }
   ]
 }
