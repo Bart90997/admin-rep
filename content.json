@@ -194,7 +194,9 @@
     "teamop21-name": "Giovanni Zappalà",
     "teamop21-role": "Regista, Responsabile dei Fonici",
     "teamop22-name": "Gianpaolo Bortone",
-    "teamop22-role": "Referente"
+    "teamop22-role": "Referente",
+    "teamfam12-name": "TERESA CINOGLOSSO",
+    "teamfam12-role": "Speaker,SMM"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -250,7 +252,8 @@
     "teamop19-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop19-img-1791316484.png",
     "teamop20-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop20-img-1791316526.png",
     "teamop21-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop21-img-1791316553.png",
-    "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png"
+    "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png",
+    "teamfam12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamfam12-img-1791475712.png"
   },
-  "updatedAt": "2026-10-06T19:57:53.859Z"
+  "updatedAt": "2026-10-08T16:09:32.010Z"
 }
