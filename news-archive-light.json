@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-08T17:07:58.435Z",
-  "count": 158,
+  "updatedAt": "2026-10-09T16:46:06.945Z",
+  "count": 161,
   "news": [
+    {
+      "id": "ami-classifiche-fimi-settimana-41-2026-album-singoli",
+      "source": "allmusicitalia",
+      "title": "Album e singoli più venduti in Italia: Geolier torna primo, Winner debutta alla #2",
+      "tag": "CLASSIFICHE DI VENDITA",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T17:45:17+02:00",
+      "desc": "Gli album più venduti in Italia dal 2 all’8 ottobre 2026, secondo le classifiche FIMI della settimana 41, vedono Geolier tornare al numero 1 con Tutto è possibile, due settimane dopo aver ceduto il…",
+      "img": "uploads/allmusicitalia-107b7b3f6f-1791564363-1.jpg"
+    },
+    {
+      "id": "ami-brunori-sas-arcimboldi-recensione-scaletta",
+      "source": "allmusicitalia",
+      "title": "Brunori Sas agli Arcimboldi: le canzoni diventano teatro e i monologhi scavano nelle nostre contraddizioni",
+      "tag": "TOUR",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T16:54:13+02:00",
+      "desc": "Brunori Sas porta TUTTOBRUNORI, canzoni e monologhi al Teatro Arcimboldi di Milano, accolto da un sold out nella serata dell’8 ottobre 2026. E per me è stata una piacevole riscoperta.",
+      "img": "uploads/allmusicitalia-e66b2f0eb1-1791564363-2.jpg"
+    },
+    {
+      "id": "ami-federico-olandese-volante-morto",
+      "source": "allmusicitalia",
+      "title": "Addio a Federico l’Olandese Volante: dalla nave al largo dell’Olanda ai pomeriggi di RTL 102.5",
+      "tag": "MUSICA",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T15:29:08+02:00",
+      "desc": "È morto a 76 anni Federico l’Olandese Volante, all’anagrafe Frederik Matthijs Van Stegeren, storica voce di Radio Monte Carlo, Radio 105 e RTL 102.5. La notizia è arrivata venerdì 9 ottobre, dopo il…",
+      "img": "uploads/allmusicitalia-a1980c459b-1791564364-3.jpg"
+    },
+    {
+      "id": "ami-kid-yugi-la-resa-dei-conti-2027",
+      "source": "allmusicitalia",
+      "title": "Kid Yugi annuncia La Resa dei Conti 2027: data e biglietti del concerto a Milano",
+      "tag": "TOUR",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T14:26:05+02:00",
+      "desc": "Kid Yugi annuncia La Resa dei Conti 2027, un nuovo grande concerto in programma il 19 giugno 2027 a Fiera Milano Live, a Rho (Milano). L’appuntamento, prodotto da Vivo Concerti, arriva mentre il…",
+      "img": "uploads/allmusicitalia-65b998d586-1791564364-4.jpg"
+    },
+    {
+      "id": "ami-giin-la-persona-peggiore-del-mondo-album",
+      "source": "allmusicitalia",
+      "title": "GIIN debutta con La persona peggiore del mondo: 13 canzoni sulla ricerca di una casa",
+      "tag": "MUSICA",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T09:00:58+02:00",
+      "desc": "GIIN pubblica venerdì 16 ottobre 2026 il suo primo album La persona peggiore del mondo, in uscita per Giungla Dischi/Artist First. Il vinile potrà essere acquistato da fine mese sullo store di GIIN.…",
+      "img": "uploads/allmusicitalia-6d041f23f5-1791564365-5.jpg"
+    },
+    {
+      "id": "ami-x-factor-2026-pagelle-luca-jurman-seconda-puntata-bootcamp",
+      "source": "allmusicitalia",
+      "title": "X Factor 2026, le pagelle del 2° Bootcamp: Jurman promuove Kora e Alìa, boccia Mattia Fanti",
+      "tag": "LE PAGELLE DI JURMAN",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T08:16:13+02:00",
+      "desc": "Le pagelle di X Factor 2026 della seconda puntata dei Bootcamp, andata in onda giovedì 8 ottobre su Sky Uno e in streaming su NOW dall’Allianz Cloud di Milano, sono di Luca Jurman, Vocal Coach,…",
+      "img": "uploads/allmusicitalia-af2d84ea86-1791564365-6.jpg"
+    },
+    {
+      "id": "ami-classifica-earone-settimana-41-2026-juli-bresh-vetta",
+      "source": "allmusicitalia",
+      "title": "Classifica radio EarOne settimana 41 2026: Juli e Bresh al #1, Giorgia debutta al #12",
+      "tag": "RADIO CHARTS",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T08:11:25+02:00",
+      "desc": "La classifica radio EarOne della settimana 41 del 2026, dal 2 all’8 ottobre, ha un nuovo numero uno tra le canzoni più trasmesse in radio: Serenamente di Juli e Bresh sale dal #13 al #1, alla sesta…",
+      "img": "uploads/allmusicitalia-a78e530255-1791564366-7.jpg"
+    },
+    {
+      "id": "ami-pagelle-nuovi-singoli-9-ottobre-mengoni-jovanotti-e-samurai-jay-promossi-baby-k-rimandata",
+      "source": "allmusicitalia",
+      "title": "Pagelle Nuovi Singoli 9 ottobre: Mengoni, Jovanotti e Samurai Jay promossi, Baby K rimandata",
+      "tag": "PAGELLE NUOVI SINGOLI",
+      "date": "09 ott",
+      "dateFull": "9 Ottobre 2026",
+      "iso": "2026-10-09T07:56:12+02:00",
+      "desc": "New Music Friday: le pagelle di All Music Italia ai nuovi singoli italiani del 9 ottobre 2026, a cura di Alvise Salerno, conduttore radiofonico e divulgatore musicale sul web che ogni settimana…",
+      "img": "uploads/allmusicitalia-5c9ccb8327-1791564366-8.jpg"
+    },
     {
       "id": "ami-jed-amici-26-chi-sono",
       "source": "allmusicitalia",
@@ -1684,61 +1772,6 @@
       "iso": "2026-09-09T20:59:57+02:00",
       "desc": "Marracash e Guè pubblicano Casini, il nuovo singolo uscito nella notte tra l’8 e il 9 settembre per Island Records e Universal Music Italia. Il brano celebra vent’anni di carriera insieme, trent’anni…",
       "img": "uploads/allmusicitalia-dc6de785cd-1789034877-3.jpg"
-    },
-    {
-      "id": "ami-elisa-kintsugi-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Elisa ripara le crepe con l’oro: Kintsugi trasforma le cicatrici in nuova forza",
-      "tag": "MUSICA",
-      "date": "09 set",
-      "dateFull": "9 Settembre 2026",
-      "iso": "2026-09-09T15:05:03+02:00",
-      "desc": "Testo e significato di Kintsugi, il nuovo singolo di Elisa, in uscita l’11 settembre 2026 per Island Records / Universal Music Italy.",
-      "img": "uploads/allmusicitalia-5a15c318d8-1789034878-4.jpg"
-    },
-    {
-      "id": "ami-laura-bono-luna-park",
-      "source": "allmusicitalia",
-      "title": "Laura Bono torna al rock con Luna Park, 21 anni dopo Sanremo Giovani",
-      "tag": "SANREMO",
-      "date": "09 set",
-      "dateFull": "9 Settembre 2026",
-      "iso": "2026-09-09T11:57:36+02:00",
-      "desc": "Laura Bono torna al rock con Luna Park, il nuovo singolo pubblicato da Orangle Records venerdì 11 settembre, a ventun anni dalla vittoria a Sanremo Giovani con Non credo nei miracoli.",
-      "img": "uploads/allmusicitalia-d14b8eb740-1788948801-1.jpg"
-    },
-    {
-      "id": "ami-al-castellana-me-my-friends-and-al-tracklist",
-      "source": "allmusicitalia",
-      "title": "Al Castellana presenta i suoi amici in “Me, My friends and Al”",
-      "tag": "AMICI",
-      "date": "09 set",
-      "dateFull": "9 Settembre 2026",
-      "iso": "2026-09-09T07:10:43+02:00",
-      "desc": "Me, My friends and Al è il titolo del nuovo album di Al Castellana, disponibile in digitale dal 9 settembre 2026 e in vinile dal giorno 11. L’uscita del disco è accompagnata dalla messa in rotazione…",
-      "img": "uploads/allmusicitalia-6139cbf740-1788948802-2.jpg"
-    },
-    {
-      "id": "ami-gino-paoli-quando-ti-rivedro-ornella-vanoni",
-      "source": "allmusicitalia",
-      "title": "Quando ti rivedrò, l’inedito di Gino Paoli nella notte tra i compleanni suo e di Ornella Vanoni",
-      "tag": "MUSICA",
-      "date": "08 set",
-      "dateFull": "8 Settembre 2026",
-      "iso": "2026-09-08T19:29:52+02:00",
-      "desc": "Sugar annuncia l’uscita di Quando ti rivedrò, l’ultimo brano inedito di Gino Paoli, che il Maestro aveva scritto per cantarlo insieme a Ornella Vanoni. Il brano esce venerdì 23 settembre, nella notte…",
-      "img": "uploads/allmusicitalia-f0dadb2428-1788948804-3.jpg"
-    },
-    {
-      "id": "ami-elisa-kintsugi-nuovo-album",
-      "source": "allmusicitalia",
-      "title": "Elisa annuncia Kintsugi, il nuovo album in uscita il 27 novembre",
-      "tag": "NUOVO ALBUM",
-      "date": "08 set",
-      "dateFull": "8 Settembre 2026",
-      "iso": "2026-09-08T19:19:48+02:00",
-      "desc": "Elisa, dopo aver lanciato uno spoiler sui social, ha annunciato il suo nuovo album Kintsugi, in uscita il 27 novembre 2026 per Island Records/Universal Music Italia. Da oggi il disco è disponibile in…",
-      "img": "uploads/allmusicitalia-a848f7711b-1788948806-4.jpg"
     }
   ]
 }
