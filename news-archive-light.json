@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-09T16:46:06.945Z",
-  "count": 161,
+  "updatedAt": "2026-10-10T15:40:10.480Z",
+  "count": 166,
   "news": [
+    {
+      "id": "ami-ty1-junkie-musik-album",
+      "source": "allmusicitalia",
+      "title": "TY1 pubblica Junkie Musik, l’album della dipendenza dalla musica, con Noyz Narcos, Guè e Marracash",
+      "tag": "NUOVO ALBUM",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T16:59:57+02:00",
+      "desc": "TY1 ha pubblicato venerdì 9 ottobre 2026 Junkie Musik, il nuovo album disponibile su tutte le piattaforme digitali per Thaurus in licenza esclusiva M.A.S.T./Believe. La versione fisica, in CD e in…",
+      "img": "uploads/allmusicitalia-9abcb92bf4-1791646806-1.jpg"
+    },
+    {
+      "id": "ami-clode-miley-cyrus-cover-x-factor",
+      "source": "allmusicitalia",
+      "title": "Clode a X Factor: Miley Cyrus condivide la sua cover di Karen Don’t Be Sad",
+      "tag": "X FACTOR",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T16:34:55+02:00",
+      "desc": "Miley Cyrus ha condiviso su Instagram venerdì 9 ottobre la cover di Karen Don’t Be Sad cantata da Clode ai Bootcamp di X Factor e ha taggato la concorrente: “Love this beautiful cover of Karen Don’t…",
+      "img": "uploads/allmusicitalia-aa81b60528-1791646806-2.jpg"
+    },
+    {
+      "id": "ami-amici-26-a-che-ora-dove-vederlo",
+      "source": "allmusicitalia",
+      "title": "Amici 26, a che ora inizia domenica 11 ottobre e dove vedere la prima puntata",
+      "tag": "MUSICA IN TV",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T16:18:49+02:00",
+      "desc": "Amici 26 comincia domenica 11 ottobre alle 14 su Canale 5: a quell’ora parte la prima puntata della ventiseiesima edizione, ideata e condotta da Maria De Filippi, che va avanti fino alle 16.15 circa,…",
+      "img": "uploads/allmusicitalia-f6941bb73d-1791646807-3.jpg"
+    },
+    {
+      "id": "ami-gio-evan-tour-persone-luminose",
+      "source": "allmusicitalia",
+      "title": "Gio Evan, otto teatri per “persone luminose”: il nuovo spettacolo tra musica e poesia",
+      "tag": "TOUR",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T16:00:06+02:00",
+      "desc": "Gio Evan annuncia il tour teatrale “persone luminose”, in programma a marzo 2027 con otto concerti e spettacoli in altrettante città italiane. Le date partiranno il 13 marzo dal Teatro San Domenico…",
+      "img": "uploads/allmusicitalia-245b9e7508-1791646808-4.jpg"
+    },
+    {
+      "id": "ami-samurai-jay-intervista-amici-26",
+      "source": "allmusicitalia",
+      "title": "Intervista a Samurai Jay, dalla gavetta ad Amici 26: “Io non sono là per insegnare a cantare”",
+      "tag": "INTERVISTE",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T13:54:29+02:00",
+      "desc": "Samurai Jay entra in Amici 26 come uno dei nuovi responsabili artistici e, alla vigilia, ci ha rilasciato un’intervista esclusiva sugli anni che il pubblico non conosce: gli inizi da chitarrista, le…",
+      "img": "uploads/allmusicitalia-43a204ddf9-1791646808-5.jpg"
+    },
+    {
+      "id": "ami-vinicio-capossela-oltre-il-bosco-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Vinicio Capossela, Oltre il bosco: il villaggio di Dylan Thomas e il tuffo di Renato",
+      "tag": "MUSICA",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T13:10:44+02:00",
+      "desc": "Vinicio Capossela ha pubblicato l’8 ottobre 2026 per BMG Oltre il bosco, primo brano estratto da Milk Wood Bar, il nuovo album in arrivo il 22 gennaio 2027. La canzone entra nel villaggio…",
+      "img": "uploads/allmusicitalia-6bd3dfd209-1791646808-6.jpg"
+    },
+    {
+      "id": "ami-soap-sophie-nuovo-singolo",
+      "source": "allmusicitalia",
+      "title": "soap torna con Sophie: il singolo nato da una domanda a se stessa",
+      "tag": "NUOVO SINGOLO",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T13:01:14+02:00",
+      "desc": "soap è tornata con Sophie, il nuovo singolo, uscito venerdì 9 ottobre 2026 per Sugar Music. Il brano nasce da una domanda che l’artista rivolge a se stessa, “Di che ha bisogno Sophie? Non me lo…",
+      "img": "uploads/allmusicitalia-59de31cb64-1791646809-7.jpg"
+    },
+    {
+      "id": "ami-lofficina-della-camomilla-vm-18-album",
+      "source": "allmusicitalia",
+      "title": "L’Officina Della Camomilla pubblica VM 18: il nuovo album tra dream pop, psichedelia e rave",
+      "tag": "NUOVO ALBUM",
+      "date": "10 ott",
+      "dateFull": "10 Ottobre 2026",
+      "iso": "2026-10-10T12:45:59+02:00",
+      "desc": "L’Officina Della Camomilla ha pubblicato venerdì 9 ottobre 2026 il nuovo album VM 18, dieci tracce tra dream pop, psichedelia e rave. Dal 17 ottobre la band lo porta dal vivo in otto date nei club…",
+      "img": "uploads/allmusicitalia-bebcbe0348-1791646809-8.jpg"
+    },
     {
       "id": "ami-classifiche-fimi-settimana-41-2026-album-singoli",
       "source": "allmusicitalia",
@@ -1739,39 +1827,6 @@
       "iso": "2026-09-10T19:45:36+02:00",
       "desc": "È andata in onda giovedì 10 settembre la prima delle tre puntate delle Audizioni di X Factor 2026, dalle 21.15 su Sky Uno e in streaming su NOW. Ecco tutte le esibizioni e i verdetti dei giudici,…",
       "img": "uploads/allmusicitalia-60b1ecb468-1789121119-4.jpg"
-    },
-    {
-      "id": "ami-melancholia-schifo",
-      "source": "allmusicitalia",
-      "title": "Melancholia, Schifo: la band torna e per la prima volta canta in italiano",
-      "tag": "MUSICA",
-      "date": "10 set",
-      "dateFull": "10 Settembre 2026",
-      "iso": "2026-09-10T08:00:28+02:00",
-      "desc": "I Melancholia tornano con Schifo, il nuovo singolo in uscita venerdì 18 settembre per Pioggia Rossa Dischi, distribuito da Believe Music. Il brano anticipa I Figli della Pioggia, il nuovo progetto…",
-      "img": "uploads/allmusicitalia-45bcede182-1789034874-1.jpg"
-    },
-    {
-      "id": "ami-camilla-magli-menta",
-      "source": "allmusicitalia",
-      "title": "Camilla Magli ritrova se stessa tornando alle origini nel nuovo brano “Menta”",
-      "tag": "NUOVO SINGOLO",
-      "date": "10 set",
-      "dateFull": "10 Settembre 2026",
-      "iso": "2026-09-10T07:00:58+02:00",
-      "desc": "Menta è il titolo del nuovo singolo di Camilla Magli, in radio e su tutte le piattaforme digitali dall’11 settembre 2026 per Dischi Numero Uno / Sony Music. Il brano inaugura il percorso verso la…",
-      "img": "uploads/allmusicitalia-f6d29d82d4-1789034875-2.jpg"
-    },
-    {
-      "id": "ami-marracash-gue-casini-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Marracash e Guè, Casini: un catalogo di casini per i dieci anni di Santeria",
-      "tag": "MUSICA",
-      "date": "09 set",
-      "dateFull": "9 Settembre 2026",
-      "iso": "2026-09-09T20:59:57+02:00",
-      "desc": "Marracash e Guè pubblicano Casini, il nuovo singolo uscito nella notte tra l’8 e il 9 settembre per Island Records e Universal Music Italia. Il brano celebra vent’anni di carriera insieme, trent’anni…",
-      "img": "uploads/allmusicitalia-dc6de785cd-1789034877-3.jpg"
     }
   ]
 }
