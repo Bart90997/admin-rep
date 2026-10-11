@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-11T08:34:27.933Z",
-  "count": 166,
+  "updatedAt": "2026-10-11T16:06:26.313Z",
+  "count": 170,
   "news": [
+    {
+      "id": "ami-paulo-sayonara-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Paulo, Sayonara: il vizio che col tempo è diventato un pericolo",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T18:01:33+02:00",
+      "desc": "Paulo, 24 anni, ha presentato ad Amici 26 l’inedito Sayonara e ha ottenuto i sì di Rudy Zerbi e Samurai Jay, contro il no di Amadeus. Nel brano il rifiuto di tornare insieme si accompagna a un…",
+      "img": "uploads/allmusicitalia-4d2b8c84bf-1791734781-1.jpg"
+    },
+    {
+      "id": "ami-aura-venosa-solite-solite-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Aura Venosa, Solite solite: le promesse di chi scappa e non torna mai",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T17:58:35+02:00",
+      "desc": "Aura, già Aura Venosa, ha presentato ad Amici 26 l’inedito Solite solite e ha preso la maglia con i sì di Samurai Jay e Rudy Zerbi e il no di Amadeus. Nel brano chi canta rimprovera a un’altra…",
+      "img": "uploads/allmusicitalia-1c96d0c0e7-1791734782-2.jpg"
+    },
+    {
+      "id": "ami-manuel-meledina-se-non-ci-sei-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Manuel Meledina, Se non ci sei: senza di te io non esisto",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T17:42:07+02:00",
+      "desc": "Manuel Meledina ha presentato ad Amici 26 l’inedito Se non ci sei e ha preso la maglia con il sì di Amadeus e i no di Rudy Zerbi e Samurai Jay. Nel brano chi canta dice all’altra persona di non…",
+      "img": "uploads/allmusicitalia-387c5bdc4c-1791734783-3.jpg"
+    },
+    {
+      "id": "ami-andrea-heros-lavoro-lavoro-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Andrea Heros, Lavoro lavoro: la vita che si ripete e il dubbio di perdersi",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T16:54:14+02:00",
+      "desc": "Andrea Heros, il cantautore napoletano che all’anagrafe è Andrea Buono, ha portato ad Amici 26 Lavoro lavoro, un brano sulla stanchezza di chi lavora tutto il giorno e si ritrova solo. Lo ha cantato…",
+      "img": "uploads/allmusicitalia-fee20d9e67-1791734783-4.jpg"
+    },
+    {
+      "id": "ami-saitta-romantici-terroni-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Saitta, Romantici Terroni: i meridionali che emigrano a milioni e tornano a milioni",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T16:34:56+02:00",
+      "desc": "Saitta, cantautore catanese, ha portato Romantici Terroni ad Amici 26: il singolo è uscito il 19 giugno 2026 per Digital Noises ed è distribuito da ADA Music Italy (Warner Music Group). È la risposta…",
+      "img": "uploads/allmusicitalia-969dee2873-1791734784-5.jpg"
+    },
+    {
+      "id": "ami-posniak-questo-dolore-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Posniak, Questo dolore: il dolore che sa ancora di lei",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T16:26:59+02:00",
+      "desc": "Posniak, uno dei ragazzi che hanno preso la maglia ad Amici 26, ha pubblicato nel 2026 Questo dolore, il brano di cui qui trovate testo e significato. È una release WEA, distribuita da ADA / Warner…",
+      "img": "uploads/allmusicitalia-dacd5beaa6-1791734784-6.jpg"
+    },
+    {
+      "id": "ami-paulo-amici-26-chi-e",
+      "source": "allmusicitalia",
+      "title": "Chi è Paulo, il cantante che aprì Blanco all’Ippodromo di San Siro ed entra ad Amici 26",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T15:31:42+02:00",
+      "desc": "Paulo, cantautore bresciano di 24 anni, è fra i cantanti che si sono esibiti nella prima puntata di Amici 26, andata in onda l’11 ottobre alle 14 su Canale 5. Nel 2022 aveva aperto Blanco…",
+      "img": "uploads/allmusicitalia-8991dd3a78-1791734785-7.jpg"
+    },
+    {
+      "id": "ami-kashmere-lunica-che-puo-cambiare-latmosfera-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Kashmere, L’unica che può cambiare l’atmosfera: il funky come cura per una serata d’amore",
+      "tag": "AMICI",
+      "date": "11 ott",
+      "dateFull": "11 Ottobre 2026",
+      "iso": "2026-10-11T14:48:43+02:00",
+      "desc": "Kashmere, cantautore italo-svizzero di 25 anni, ha portato ad Amici 26 L’unica che può cambiare l’atmosfera, il brano con cui a ottobre 2025 ha vinto il Premio Lunezia Nuove Proposte e che il 17…",
+      "img": "uploads/allmusicitalia-308528ea60-1791734785-8.jpg"
+    },
     {
       "id": "ami-ty1-junkie-musik-album",
       "source": "allmusicitalia",
@@ -1783,50 +1871,6 @@
       "iso": "2026-09-12T07:10:32+02:00",
       "desc": "A 20 anni di distanza da Amici di Maria De Filippi, Manuel Aspidi propone una nuova versione del suo brano più famoso: Soli a metà. La canzone viene riletta in spagnolo con il titolo Solo a Mitad; ed…",
       "img": "uploads/allmusicitalia-4618856002-1789206060-2.jpg"
-    },
-    {
-      "id": "ami-orlando-gran-finale",
-      "source": "allmusicitalia",
-      "title": "ORLANDO, in “Gran finale” la promessa di non abbandonarsi",
-      "tag": "MUSICA",
-      "date": "11 set",
-      "dateFull": "11 Settembre 2026",
-      "iso": "2026-09-11T10:00:35+02:00",
-      "desc": "ORLANDO si prepara a chiudere un primo capitolo del suo percorso con Gran finale, il nuovo singolo fuori da venerdì 11 settembre. Il brano anticipa Finchè siam giovani, il primo album dell’artista…",
-      "img": "uploads/allmusicitalia-036cac6544-1789121113-1.jpg"
-    },
-    {
-      "id": "ami-players-club-26-night-skinny",
-      "source": "allmusicitalia",
-      "title": "Night Skinny torna con Players Club 26: la nuova leva del rap è qui",
-      "tag": "MUSICA",
-      "date": "11 set",
-      "dateFull": "11 Settembre 2026",
-      "iso": "2026-09-11T09:00:16+02:00",
-      "desc": "Night Skinny torna con Players Club 26, il nuovo capitolo della serie che riunisce alcuni dei nomi più interessanti della nuova scena rap italiana. Il brano esce venerdì 11 settembre ed è la quarta…",
-      "img": "uploads/allmusicitalia-a79af9657d-1789121116-2.jpg"
-    },
-    {
-      "id": "ami-prima-stanza-a-destra-piccola-magia-testo-significato",
-      "source": "allmusicitalia",
-      "title": "prima stanza a destra, piccola magia: due anime sullo stesso mare con Angelica Bove",
-      "tag": "MUSICA",
-      "date": "11 set",
-      "dateFull": "11 Settembre 2026",
-      "iso": "2026-09-11T00:01:50+02:00",
-      "desc": "prima stanza a destra pubblica piccola magia con Angelica Bove, il nuovo singolo prodotto con BRAIL, fuori da venerdì 11 settembre per Sugar Music. Il brano racconta l’incontro tra due persone che si…",
-      "img": "uploads/allmusicitalia-7f35cc45f3-1789121117-3.jpg"
-    },
-    {
-      "id": "ami-x-factor-2026-in-diretta-prima-puntata-audizioni",
-      "source": "allmusicitalia",
-      "title": "X Factor 2026, le esibizioni e i verdetti della prima puntata delle Audizioni",
-      "tag": "X FACTOR",
-      "date": "10 set",
-      "dateFull": "10 Settembre 2026",
-      "iso": "2026-09-10T19:45:36+02:00",
-      "desc": "È andata in onda giovedì 10 settembre la prima delle tre puntate delle Audizioni di X Factor 2026, dalle 21.15 su Sky Uno e in streaming su NOW. Ecco tutte le esibizioni e i verdetti dei giudici,…",
-      "img": "uploads/allmusicitalia-60b1ecb468-1789121119-4.jpg"
     }
   ]
 }

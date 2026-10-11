@@ -10,3 +10,4 @@
 [2026-10-08 17:07:58] IMPORT ok — nuove: 8, totali: 158
 [2026-10-09 16:46:06] IMPORT ok — nuove: 8, totali: 161
 [2026-10-10 15:40:10] IMPORT ok — nuove: 8, totali: 166
+[2026-10-11 16:06:26] IMPORT ok — nuove: 8, totali: 170
