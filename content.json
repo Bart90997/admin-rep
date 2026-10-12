@@ -1,10 +1,10 @@
 {
   "fields": {
-    "speaker1-name": "BARTOLO OLIVA",
-    "speaker1-program": "LIFE RADIO",
-    "speaker1-start": "06:00",
-    "speaker1-end": "10:00",
-    "speaker1-active": "",
+    "speaker1-name": "DONATO E GIUSEPPE",
+    "speaker1-program": "Ansia.it",
+    "speaker1-start": "15:00",
+    "speaker1-end": "17:00",
+    "speaker1-active": "1",
     "program1-name": "Li.Fe. Radio Remix",
     "program2-name": "Tg Fermi",
     "program3-name": "Ansia.it",
@@ -196,7 +196,10 @@
     "teamop22-name": "Gianpaolo Bortone",
     "teamop22-role": "Referente",
     "teamfam12-name": "TERESA CINOGLOSSO",
-    "teamfam12-role": "Speaker,SMM"
+    "teamfam12-role": "Speaker,SMM",
+    "speaker-name": "DONATO E GIUSEPPE",
+    "speaker-program": "Ansia.it",
+    "speaker-active": "1"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -204,7 +207,7 @@
     "ig2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig2-img-1791308965.png",
     "ig3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig3-img-1791308988.png",
     "rv3-img": "uploads/rv3-img-1788167154.png",
-    "speaker-img": "uploads/speaker-img-1782898443.jpg",
+    "speaker-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/speaker1-img-1791809605.png",
     "teamop1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop1-img-1791315733.png",
     "teamfam1-img": "uploads/teamfam1-img-1788103105.png",
     "teamfam2-img": "uploads/teamfam2-img-1788103112.png",
@@ -220,7 +223,7 @@
     "nlh3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/nlh3-img-1791308366.jpg",
     "nlh4-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/nlh4-img-1791707525.jpeg",
     "nlh5-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/nlh5-img-1791308413.jpg",
-    "speaker1-img": "uploads/speaker1-img-1788109526.jpg",
+    "speaker1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/speaker1-img-1791809605.png",
     "nlh1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/nlh1-img-1791707440.jpeg",
     "nlh2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/nlh2-img-1791707579.jpeg",
     "hero1-img": "uploads/allmusicitalia-6493878348-1790332788-2.jpg",
@@ -255,5 +258,5 @@
     "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png",
     "teamfam12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamfam12-img-1791475712.png"
   },
-  "updatedAt": "2026-10-11T08:34:26.630Z"
+  "updatedAt": "2026-10-12T12:53:44.273Z"
 }
