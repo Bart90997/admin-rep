@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-12T14:38:24.485Z",
-  "count": 170,
+  "updatedAt": "2026-10-12T19:34:29.279Z",
+  "count": 176,
   "news": [
+    {
+      "id": "ami-impoverimento-lessicale-canzoni-vocabolario",
+      "source": "allmusicitalia",
+      "title": "Chi parla male pensa male: le canzoni, il vocabolario e l’impoverimento lessicale",
+      "tag": "LA VERSIONE DI MONINA",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T16:20:06+02:00",
+      "desc": "Ho citato Io vorrei non vorrei ma se vuoi di Lucio Battisti, con quel ritornello così potente da essere entrato a far parte del nostro uso comune. Anche un’altra parola usata, idiosincrasia, quella…",
+      "img": "uploads/allmusicitalia-1353e53901-1791833664-1.jpg"
+    },
+    {
+      "id": "ami-certificazioni-fimi-settimana-41-2026-22simba-pezzali-tony-boy",
+      "source": "allmusicitalia",
+      "title": "Certificazioni FIMI: 22Simba disco di platino con La cura e oro con Miria, ma c’è anche Max Pezzali al triplo platino",
+      "tag": "CERTIFICAZIONI FIMI",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T15:49:13+02:00",
+      "desc": "Le certificazioni FIMI della settimana 41 del 2026 portano 22Simba al disco di platino con La cura e al disco d’oro con Miria, l’album uscito il 18 settembre. Max Pezzali sale a tre volte platino con…",
+      "img": "uploads/allmusicitalia-a43643008f-1791833665-2.jpg"
+    },
+    {
+      "id": "ami-naska-columbia-records-sony-music-italy",
+      "source": "allmusicitalia",
+      "title": "Naska entra nel roster di Columbia Records/Sony Music Italy e ad aprile torna nei club",
+      "tag": "MUSIC BIZ",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T15:18:55+02:00",
+      "desc": "Naska entra nel roster di Columbia Records/Sony Music Italy. Il cantautore pop-punk, vero nome Diego Caterbetti, classe 1997, ha esordito nel 2020 con l’EP ALO/VE.",
+      "img": "uploads/allmusicitalia-80435f266b-1791833665-3.jpg"
+    },
+    {
+      "id": "ami-gazzelle-tour-2027",
+      "source": "allmusicitalia",
+      "title": "Gazzelle dopo San Siro e Circo Massimo: il nuovo tour nei palasport nel 2027",
+      "tag": "TOUR",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T15:04:24+02:00",
+      "desc": "Gazzelle torna in concerto nel 2027 con Gazzelle Palasport 2027, un nuovo tour di otto date nei principali palazzetti italiani. Si parte il 3 aprile dall’Unipol Dome di Milano per arrivare il 29…",
+      "img": "uploads/allmusicitalia-9241e345c0-1791833666-4.jpg"
+    },
+    {
+      "id": "ami-ascolti-amici-26",
+      "source": "allmusicitalia",
+      "title": "Ascolti Amici 26, la prima puntata parte al 22.6%: sotto il debutto del 2025",
+      "tag": "MUSICA IN TV",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T13:06:09+02:00",
+      "desc": "Amici 26 è partito domenica 11 ottobre su Canale 5 con 2.650.000 spettatori e il 22.6% di share, sotto il debutto della scorsa edizione: il 28 settembre 2025 la prima puntata ne aveva fatti…",
+      "img": "uploads/allmusicitalia-6068954fd4-1791833667-5.jpg"
+    },
+    {
+      "id": "ami-willie-peyote-tour-2026-date",
+      "source": "allmusicitalia",
+      "title": "Willie Peyote, la prima scaletta del Club Tour 2026 dopo il debutto a Nonantola",
+      "tag": "TOUR",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T10:45:43+02:00",
+      "desc": "Willie Peyote ha aperto il Club Tour 2026 sabato 10 ottobre al Vox Club di Nonantola, in provincia di Modena. Con il debutto è arrivata anche la prima scaletta ufficiale: 21 sequenze musicali che…",
+      "img": "uploads/allmusicitalia-ee05ea929a-1791833667-6.jpg"
+    },
+    {
+      "id": "ami-melancholia-tour-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Melancholia, il ritorno nei club con I Figli della Pioggia Tour: tutte le date",
+      "tag": "TOUR",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T10:00:54+02:00",
+      "desc": "I Melancholia annunciano i concerti del Figli della Pioggia Tour 2026-2027, il nuovo tour nei club italiani che partirà il 23 ottobre 2026 da Foligno e proseguirà fino a gennaio 2027. Le prime otto…",
+      "img": "uploads/allmusicitalia-c9985c059f-1791833668-7.jpg"
+    },
+    {
+      "id": "ami-allerta-pubblicita-progresso-album",
+      "source": "allmusicitalia",
+      "title": "ALLERTA! pubblicano Pubblicità Progresso solo in CD: il disco come opera da ascoltare dall’inizio alla fine",
+      "tag": "MUSICA",
+      "date": "12 ott",
+      "dateFull": "12 Ottobre 2026",
+      "iso": "2026-10-12T07:00:55+02:00",
+      "desc": "Pubblicità Progresso, il primo album degli ALLERTA!, esce venerdì 6 novembre 2026 unicamente in formato CD su Sony Music Store. Il pre-order del CD è già attivo.",
+      "img": "uploads/allmusicitalia-2ecfc5c8c5-1791833668-8.jpg"
+    },
     {
       "id": "ami-paulo-sayonara-testo-significato",
       "source": "allmusicitalia",
@@ -1849,28 +1937,6 @@
       "iso": "2026-09-13T08:00:18+02:00",
       "desc": "TESTO & ConTESTO Estate 2026. Quando “l’estate sta finendo e un anno se ne va”, è tempo di tirare le somme anche sui testi delle canzoni dell’estate 2026 che il mercato musicale ci ha consegnato.",
       "img": "uploads/allmusicitalia-d80dac8af1-1789296133-2.jpg"
-    },
-    {
-      "id": "ami-dea-culpa-ciao-sono-vale-piove-sulla-pioggia",
-      "source": "allmusicitalia",
-      "title": "Dea Culpa e Ciao Sono Vale raccontano il dolore che non si vede in “Piove sulla pioggia”",
-      "tag": "MUSICA",
-      "date": "12 set",
-      "dateFull": "12 Settembre 2026",
-      "iso": "2026-09-12T08:30:09+02:00",
-      "desc": "Piove sulla pioggia è il nuovo singolo di Dea Culpa e Ciao Sono Vale, disponibile negli store digitali dall’11 settembre 2026. Il duo torna dopo le precedenti collaborazioni Il male è femmina, Pelle…",
-      "img": "uploads/allmusicitalia-08f2d2fba1-1789206059-1.jpg"
-    },
-    {
-      "id": "ami-manuel-aspidi-solo-a-mitad",
-      "source": "allmusicitalia",
-      "title": "Manuel Aspidi: a 20 anni da Amici arriva “Soli a metà” in spagnolo",
-      "tag": "AMICI",
-      "date": "12 set",
-      "dateFull": "12 Settembre 2026",
-      "iso": "2026-09-12T07:10:32+02:00",
-      "desc": "A 20 anni di distanza da Amici di Maria De Filippi, Manuel Aspidi propone una nuova versione del suo brano più famoso: Soli a metà. La canzone viene riletta in spagnolo con il titolo Solo a Mitad; ed…",
-      "img": "uploads/allmusicitalia-4618856002-1789206060-2.jpg"
     }
   ]
 }
