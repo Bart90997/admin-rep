@@ -4,7 +4,7 @@
     "speaker1-program": "Ansia.it",
     "speaker1-start": "15:00",
     "speaker1-end": "17:00",
-    "speaker1-active": "1",
+    "speaker1-active": "",
     "program1-name": "Li.Fe. Radio Remix",
     "program2-name": "Tg Fermi",
     "program3-name": "Ansia.it",
@@ -199,7 +199,7 @@
     "teamfam12-role": "Speaker,SMM",
     "speaker-name": "DONATO E GIUSEPPE",
     "speaker-program": "Ansia.it",
-    "speaker-active": "1"
+    "speaker-active": ""
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -258,5 +258,5 @@
     "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png",
     "teamfam12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamfam12-img-1791475712.png"
   },
-  "updatedAt": "2026-10-12T12:53:44.273Z"
+  "updatedAt": "2026-10-12T14:38:23.192Z"
 }
