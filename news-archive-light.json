@@ -1,7 +1,84 @@
 {
-  "updatedAt": "2026-10-13T17:18:38.166Z",
-  "count": 182,
+  "updatedAt": "2026-10-14T14:50:32.287Z",
+  "count": 187,
   "news": [
+    {
+      "id": "ami-vegas-jones-nel-dubbio-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Vegas Jones, Nel dubbio: fallo adesso o mai più, il bivio di chi non sa perdere",
+      "tag": "MUSICA",
+      "date": "14 ott",
+      "dateFull": "14 Ottobre 2026",
+      "iso": "2026-10-14T15:13:54+02:00",
+      "desc": "Vegas Jones pubblica Nel dubbio, il nuovo singolo uscito mercoledì 14 ottobre per Universal Music Italia. Arriva dopo l’album Chic Nisello 2, uscito a maggio, e racconta il momento in cui restare…",
+      "img": "uploads/allmusicitalia-cdfc243a84-1791989428-1.jpg"
+    },
+    {
+      "id": "ami-angelina-mango-vita-da-adulti-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Angelina Mango, Vita da adulti: il nuovo singolo esce venerdì 16 ottobre",
+      "tag": "NUOVO SINGOLO",
+      "date": "14 ott",
+      "dateFull": "14 Ottobre 2026",
+      "iso": "2026-10-14T14:51:33+02:00",
+      "desc": "Angelina Mango pubblica venerdì 16 ottobre il nuovo singolo Vita da adulti, per LaTarma Records, in distribuzione ADA e Warner Music. L’annuncio è arrivato mercoledì 14 ottobre su Instagram, a un…",
+      "img": "uploads/allmusicitalia-6dac8ff015-1791989428-2.jpg"
+    },
+    {
+      "id": "ami-pinguini-tattici-nucleari-replay",
+      "source": "allmusicitalia",
+      "title": "Pinguini Tattici Nucleari, Replay: il sesto album esce il 4 dicembre 2026",
+      "tag": "NUOVO ALBUM",
+      "date": "14 ott",
+      "dateFull": "14 Ottobre 2026",
+      "iso": "2026-10-14T14:19:44+02:00",
+      "desc": "Il nuovo album dei Pinguini Tattici Nucleari si intitola Replay, è il sesto della loro discografia ed esce il 4 dicembre 2026 per Epic/Sony Music Italy. Il disco arriva due anni dopo Hello World,…",
+      "img": "uploads/allmusicitalia-f2a83efb9a-1791989429-3.jpg"
+    },
+    {
+      "id": "ami-tormento-luci-e-ombre-significato",
+      "source": "allmusicitalia",
+      "title": "Tormento riunisce Noemi, Gué e Shablo nella ballad soul “Luci e ombre”",
+      "tag": "MUSICA",
+      "date": "14 ott",
+      "dateFull": "14 Ottobre 2026",
+      "iso": "2026-10-14T14:03:37+02:00",
+      "desc": "Testo e significato di Luci e ombre, il nuovo singolo di Tormento feat. Noemi, Gué e Shablo, in uscita il 16 ottobre 2026 per Oyster Music.",
+      "img": "uploads/allmusicitalia-b7d44ff802-1791989429-4.jpg"
+    },
+    {
+      "id": "ami-mario-biondi-two-entities",
+      "source": "allmusicitalia",
+      "title": "Mario Biondi torna all’inglese con “Two Entities”, in uscita il 16 ottobre",
+      "tag": "MUSICA",
+      "date": "14 ott",
+      "dateFull": "14 Ottobre 2026",
+      "iso": "2026-10-14T07:25:44+02:00",
+      "desc": "Mario Biondi pubblicherà il 16 ottobre Two Entities, il nuovo album di inediti che segna il ritorno del crooner alla lingua inglese dopo Prova d’autore, il suo primo disco in italiano. L’uscita…",
+      "img": "uploads/allmusicitalia-658802828c-1791989430-5.png"
+    },
+    {
+      "id": "ami-nervi-dente-temporale-significato",
+      "source": "allmusicitalia",
+      "title": "Nervi e Dente, Temporale: il terzo singolo che anticipa l’album prodotto da Dente",
+      "tag": "NUOVO ALBUM",
+      "date": "14 ott",
+      "dateFull": "14 Ottobre 2026",
+      "iso": "2026-10-14T07:00:29+02:00",
+      "desc": "Venerdì 16 ottobre 2026 esce Temporale, il nuovo singolo di Nervi insieme a Dente. Il brano, pubblicato da Pioggia Rossa Dischi con distribuzione Believe, è il terzo estratto dall’album prodotto da…",
+      "img": "uploads/allmusicitalia-26ccc9d86a-1791989431-6.jpg"
+    },
+    {
+      "id": "ami-okgiorgio-parisi-live-bologna-estragon-2026",
+      "source": "allmusicitalia",
+      "title": "okgiorgio e PARISI all’Estragon di Bologna: unica data italiana per l’album insieme",
+      "tag": "TOUR",
+      "date": "14 ott",
+      "dateFull": "14 Ottobre 2026",
+      "iso": "2026-10-14T06:00:16+02:00",
+      "desc": "okgiorgio e PARISI annunciano l’unica data italiana del loro live show: sabato 12 dicembre 2026 all’Estragon Club di Bologna presenteranno dal vivo l’album realizzato insieme. Il live show debutta il…",
+      "img": "uploads/allmusicitalia-b701acb9f4-1791989431-7.jpg"
+    },
     {
       "id": "ami-margherita-vicario-un-tripudio-di-pelle-e-di-baci",
       "source": "allmusicitalia",
@@ -89,6 +166,17 @@
       "iso": "2026-10-13T02:07:42+02:00",
       "desc": "Chi è RIO, il cantante di X Factor 2026? Il suo vero nome è Niccolò Riolfo, è nato nel 2003, viene da Milano e fa rock. Dopo le Audition con una versione molto personale di Rossetto e cioccolato di…",
       "img": "uploads/allmusicitalia-74a8e27901-1791911917-8.jpg"
+    },
+    {
+      "id": "ami-eugenio-in-via-di-gioia-n-oi-ep",
+      "source": "allmusicitalia",
+      "title": "Eugenio in Via Di Gioia, N OI: il nuovo EP mette al centro il noi, poi i club e il Forum",
+      "tag": "MUSICA",
+      "date": "13 ott",
+      "dateFull": "13 Ottobre 2026",
+      "iso": "2026-10-13T01:43:07+02:00",
+      "desc": "Venerdì 16 ottobre 2026 esce N OI, il nuovo EP degli Eugenio in Via Di Gioia per Carosello Records. La band lo presenta dal vivo dal 16 novembre con sette date nei club italiani, poi il 5 maggio 2027…",
+      "img": "uploads/allmusicitalia-0fda99d888-1791989431-8.jpg"
     },
     {
       "id": "ami-impoverimento-lessicale-canzoni-vocabolario",
@@ -1970,39 +2058,6 @@
       "iso": "2026-09-14T20:02:00+02:00",
       "desc": "Ultimo ha annunciato a sorpresa un concerto unico e senza scaletta al pub Dingwalls di Londra: il cantautore romano si esibirà giovedì 17 settembre davanti a 600 persone, cinque giorni prima del 22…",
       "img": "uploads/allmusicitalia-6e63b3bfe5-1789468435-4.jpg"
-    },
-    {
-      "id": "ami-rocco-hunt-clementino-the-album",
-      "source": "allmusicitalia",
-      "title": "Rocco Hunt e Clementino: “The Album” il 6 novembre, quindici anni dopo “‘O mar ‘e ‘o sole”",
-      "tag": "NUOVO ALBUM",
-      "date": "14 set",
-      "dateFull": "14 Settembre 2026",
-      "iso": "2026-09-14T15:13:23+02:00",
-      "desc": "Rocco Hunt e Clementino uniscono le forze in studio: i due rapper campani hanno annunciato The Album, il loro primo disco realizzato insieme, in uscita venerdì 6 novembre per Epic Records/Sony Music…",
-      "img": "uploads/allmusicitalia-6966d19c4d-1789468437-5.jpg"
-    },
-    {
-      "id": "ami-teo-bok-x-factor-intelligenza-artificiale",
-      "source": "allmusicitalia",
-      "title": "Teo Bok, il video più visto della prima puntata di X Factor 2026: la sua spiegazione sull’accento “robotico”",
-      "tag": "X FACTOR",
-      "date": "14 set",
-      "dateFull": "14 Settembre 2026",
-      "iso": "2026-09-14T10:47:34+02:00",
-      "desc": "L’esibizione di Teo Bok su La mia storia tra le dita di Gianluca Grignani, e soprattutto i commenti dei giudici che l’hanno accompagnata, sono diventati uno dei casi più discussi della prima…",
-      "img": "uploads/allmusicitalia-4c0fd72aa7-1789383835-1.jpg"
-    },
-    {
-      "id": "ami-inno-a-ultimo-antonio-rossi-testo",
-      "source": "allmusicitalia",
-      "title": "“Inno a Ultimo” supera un milione di visualizzazioni con un solo obiettivo: farla ascoltare a Niccolò Moriconi",
-      "tag": "MUSICA",
-      "date": "14 set",
-      "dateFull": "14 Settembre 2026",
-      "iso": "2026-09-14T06:00:59+02:00",
-      "desc": "Si chiama Inno a Ultimo ed è una canzone scritta da Antonio Rossi con un destinatario ben preciso: Ultimo. Il brano sta circolando sui social con un obiettivo dichiarato dai fan, riuscire ad arrivare…",
-      "img": "uploads/allmusicitalia-2339029f69-1789383837-2.jpg"
     }
   ]
 }
