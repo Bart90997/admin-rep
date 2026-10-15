@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-14T14:50:32.287Z",
-  "count": 187,
+  "updatedAt": "2026-10-15T14:37:51.450Z",
+  "count": 190,
   "news": [
+    {
+      "id": "ami-mauro-repetto-generazione-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Mauro Repetto, “Generazione”: il nuovo singolo tra ricordi e futuro, prima del debutto come scrittore",
+      "tag": "NUOVO SINGOLO",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T13:51:33+02:00",
+      "desc": "Testo e significato di Generazione, il nuovo singolo di Mauro Repetto, in uscita il 16 ottobre 2026 per Universal Music Italia.",
+      "img": "uploads/allmusicitalia-127ccebdaf-1792075065-1.jpg"
+    },
+    {
+      "id": "ami-topo-gigio-firma-sony-music-italy-kids",
+      "source": "allmusicitalia",
+      "title": "Topo Gigio firma con Sony Music Italy: il personaggio entra nel roster Kids con musica inedita",
+      "tag": "MUSIC BIZ",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T13:46:36+02:00",
+      "desc": "Topo Gigio firma con Sony Music Italy ed entra nel roster Kids dell’etichetta. L’annuncio è del 15 ottobre: la major e il team del personaggio lavoreranno a più progetti basati su musica inedita, che…",
+      "img": "uploads/allmusicitalia-fdb2d13069-1792075066-2.jpg"
+    },
+    {
+      "id": "ami-settembre-tour-2027-date-biglietti-scaletta",
+      "source": "allmusicitalia",
+      "title": "Settembre annuncia i primi concerti del 2027: Pozzuoli, Roma e Milano nei club a marzo",
+      "tag": "TOUR",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T13:01:38+02:00",
+      "desc": "Settembre annuncia i primi concerti del 2027: tre date nei club a marzo, il 9 a Pozzuoli al Duel Beat, il 15 a Roma al Largo Venue e il 20 a Milano ai Magazzini Generali. Il cantautore napoletano…",
+      "img": "uploads/allmusicitalia-4d4b23c4ae-1792075067-3.jpg"
+    },
+    {
+      "id": "ami-novepercento-carmen-singolo-debutto",
+      "source": "allmusicitalia",
+      "title": "novepercento lancia CARMEN e firma il miglior debutto dell’anno tra folklore, cassa dritta e preti che ballano",
+      "tag": "MUSICA",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T12:13:16+02:00",
+      "desc": "novepercento debutta venerdì 16 ottobre con il singolo CARMEN, disponibile su tutte le piattaforme digitali per EMI Records Italy e Universal Music Italia, con cui la cantautrice romana ha firmato.",
+      "img": "uploads/allmusicitalia-a9d3138815-1792075067-4.jpg"
+    },
+    {
+      "id": "ami-renzo-rubino-gran-piano-bar-rubino-tour",
+      "source": "allmusicitalia",
+      "title": "Renzo Rubino riporta il piano bar sul palco: sei concerti tra il 2026 e il 2027",
+      "tag": "TOUR",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T10:00:52+02:00",
+      "desc": "Renzo Rubino torna in concerto con Gran Piano Bar Rubino, un nuovo tour che partirà il 18 ottobre 2026 da Lecce e proseguirà fino a gennaio 2027. Sei date tra club e locali italiani per uno…",
+      "img": "uploads/allmusicitalia-522c5667c2-1792075068-5.jpg"
+    },
+    {
+      "id": "ami-macello-alla-fine",
+      "source": "allmusicitalia",
+      "title": "Macello svela “ALLA FINE” dopo il live milanese: il singolo esce il 16 ottobre",
+      "tag": "NUOVO SINGOLO",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T10:00:11+02:00",
+      "desc": "Macello pubblicherà ALLA FINE venerdì 16 ottobre. Il rapper bolognese ha spoilerato il nuovo singolo durante il live del 13 ottobre ai Magazzini Generali di Milano, prima di annunciarlo ufficialmente…",
+      "img": "uploads/allmusicitalia-4a1e1412a7-1792075069-6.jpg"
+    },
+    {
+      "id": "ami-iosonouncane-fuksas-da-tutta-la-vita-colonna-sonora",
+      "source": "allmusicitalia",
+      "title": "IOSONOUNCANE torna al cinema documentario con “Fuksas – Da tutta la vita”",
+      "tag": "MUSICA",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T07:25:49+02:00",
+      "desc": "IOSONOUNCANE firma la colonna sonora originale di Fuksas – Da tutta la vita, il docufilm scritto e diretto da Elisa Fuksas e dedicato al padre, l’architetto Massimiliano Fuksas. Il film sarà…",
+      "img": "uploads/allmusicitalia-3599f0f02f-1792075069-7.png"
+    },
+    {
+      "id": "ami-dedde-viso-pulito-tracklist",
+      "source": "allmusicitalia",
+      "title": "dedde chiude la trilogia con VISO PULITO: tracklist, feat e il contrasto del volto pulito",
+      "tag": "MUSICA",
+      "date": "15 ott",
+      "dateFull": "15 Ottobre 2026",
+      "iso": "2026-10-15T07:00:49+02:00",
+      "desc": "Venerdì 16 ottobre 2026 esce VISO PULITO, il nuovo album di dedde per Island Records / Universal Music Italia. Dieci tracce e quattro collaborazioni chiudono la trilogia iniziata con RANDAGI 24.7 e…",
+      "img": "uploads/allmusicitalia-fa33f48663-1792075070-8.jpg"
+    },
     {
       "id": "ami-vegas-jones-nel-dubbio-testo-significato",
       "source": "allmusicitalia",
@@ -2003,61 +2091,6 @@
       "iso": "2026-09-15T16:43:32+02:00",
       "desc": "Il 18 settembre esce Ciao bella Italia, il nuovo singolo degli Eugenio in Via Di Gioia con il Piccolo Coro dell’Antoniano, per Carosello Records.",
       "img": "uploads/allmusicitalia-158249c27b-1789811376-6.jpg"
-    },
-    {
-      "id": "ami-fabri-fibra-neffa-zarathustra-style",
-      "source": "allmusicitalia",
-      "title": "Fabri Fibra e Neffa svelano Zarathustra Style: il nuovo album arriva il 9 ottobre",
-      "tag": "NUOVO ALBUM",
-      "date": "15 set",
-      "dateFull": "15 Settembre 2026",
-      "iso": "2026-09-15T16:00:21+02:00",
-      "desc": "Da giorni Milano è tappezzata di cartelloni con una sola scritta, Zarathustra Style. Un’operazione che aveva attirato l’attenzione della scena rap e che ora trova la sua risposta: dietro il progetto…",
-      "img": "uploads/allmusicitalia-b30821477c-1789899077-5.jpg"
-    },
-    {
-      "id": "ami-gioia-lucia-una-canzone-allegra",
-      "source": "allmusicitalia",
-      "title": "Gioia Lucia: Una canzone allegra racconta la vendetta ironica di un amore clandestino",
-      "tag": "NUOVO SINGOLO",
-      "date": "15 set",
-      "dateFull": "15 Settembre 2026",
-      "iso": "2026-09-15T09:00:34+02:00",
-      "desc": "Una canzone allegra, il nuovo singolo di Gioia Lucia prodotto da Yoisho e See Maw, esce il 16 settembre con Artist First. Il brano, che racconta con ironia e leggerezza un amore clandestino, arriva…",
-      "img": "uploads/allmusicitalia-4e0086784c-1789468430-1.jpg"
-    },
-    {
-      "id": "ami-venerdi20-strizzacervelli",
-      "source": "allmusicitalia",
-      "title": "Venerdì20 cita Freud, Jung e Maslow nel nuovo singolo Strizzacervelli",
-      "tag": "NUOVO SINGOLO",
-      "date": "15 set",
-      "dateFull": "15 Settembre 2026",
-      "iso": "2026-09-15T07:30:16+02:00",
-      "desc": "Strizzacervelli è il titolo del nuovo singolo di Venerdì20, disponibile su tutte le piattaforme digitali dall’11 settembre per Finisterre Music e distribuito da Artist First. Il brano, prodotto…",
-      "img": "uploads/allmusicitalia-a45a15e614-1789468431-2.jpg"
-    },
-    {
-      "id": "ami-sanremo-rock-trend-2026-vincitori-graphite-zafira",
-      "source": "allmusicitalia",
-      "title": "Sanremo Rock & Sanremo Trend 2026: vincono Graphite e Zafira & The Funky Royale, il concorso guarda a Canada e Brasile",
-      "tag": "SANREMO",
-      "date": "15 set",
-      "dateFull": "15 Settembre 2026",
-      "iso": "2026-09-15T03:12:54+02:00",
-      "desc": "Graphite e Zafira & The Funky Royale sono i vincitori della finalissima di Sanremo Rock Sanremo Trend 2026 vincitori, andata in scena l’11 e il 12 settembre nella sala Rossa del Teatro Ariston di…",
-      "img": "uploads/allmusicitalia-8310ae4fef-1789468434-3.jpg"
-    },
-    {
-      "id": "ami-ultimo-concerto-londra-dingwalls-17-settembre",
-      "source": "allmusicitalia",
-      "title": "Ultimo a sorpresa a Londra: un concerto intimo al Dingwalls prima del film al cinema",
-      "tag": "LIVE & TOUR",
-      "date": "14 set",
-      "dateFull": "14 Settembre 2026",
-      "iso": "2026-09-14T20:02:00+02:00",
-      "desc": "Ultimo ha annunciato a sorpresa un concerto unico e senza scaletta al pub Dingwalls di Londra: il cantautore romano si esibirà giovedì 17 settembre davanti a 600 persone, cinque giorni prima del 22…",
-      "img": "uploads/allmusicitalia-6e63b3bfe5-1789468435-4.jpg"
     }
   ]
 }
