@@ -1,7 +1,73 @@
 {
-  "updatedAt": "2026-10-19T16:45:45.617Z",
-  "count": 195,
+  "updatedAt": "2026-10-20T14:37:36.183Z",
+  "count": 200,
   "news": [
+    {
+      "id": "ami-joule-canzoni-tristi",
+      "source": "allmusicitalia",
+      "title": "Joule, “Canzoni Tristi” racconta cosa si perde inseguendo il successo",
+      "tag": "MUSICA",
+      "date": "20 ott",
+      "dateFull": "20 Ottobre 2026",
+      "iso": "2026-10-20T16:00:44+02:00",
+      "desc": "Joule torna con “Canzoni Tristi”, il nuovo singolo prodotto da Miror B, disponibile da venerdì 23 ottobre in digitale per Columbia Records/Sony Music Italy e in radio dal 30 ottobre. Il brano parte…",
+      "img": "uploads/allmusicitalia-6c6601ea8f-1792507051-1.jpg"
+    },
+    {
+      "id": "ami-kora-derealizzare-significato",
+      "source": "allmusicitalia",
+      "title": "Kora, Derealizzare: il nuovo singolo nato in una notte in bianco dopo X Factor",
+      "tag": "X FACTOR",
+      "date": "20 ott",
+      "dateFull": "20 Ottobre 2026",
+      "iso": "2026-10-20T13:33:03+02:00",
+      "desc": "Derealizzare, il nuovo singolo di Kora pubblicato da Nuova Storia e distribuito da Ada Music Italy, esce venerdì 23 ottobre. Lo stesso giorno l’artista presenterà il pezzo dal vivo durante la serata…",
+      "img": "uploads/allmusicitalia-1a4580b515-1792507052-2.jpg"
+    },
+    {
+      "id": "ami-virginio-dio-nella-pioggia-video",
+      "source": "allmusicitalia",
+      "title": "Virginio, il video di Dio nella pioggia in anteprima: in scena una chitarra e una tromba",
+      "tag": "VIDEO",
+      "date": "20 ott",
+      "dateFull": "20 Ottobre 2026",
+      "iso": "2026-10-20T10:00:53+02:00",
+      "desc": "All Music Italia presenta in anteprima esclusiva il video di Dio nella pioggia, il singolo di Virginio uscito il 9 ottobre per Altafonte Italia. Lo dirige Ethan Malka, con la consulenza creativa di…",
+      "img": "uploads/allmusicitalia-f5c129c156-1792507052-3.jpg"
+    },
+    {
+      "id": "ami-giulio-casale-endiadi",
+      "source": "allmusicitalia",
+      "title": "Giulio Casale annuncia “endiadi”, il nuovo album in uscita a gennaio 2027",
+      "tag": "NUOVO ALBUM",
+      "date": "20 ott",
+      "dateFull": "20 Ottobre 2026",
+      "iso": "2026-10-20T07:20:44+02:00",
+      "desc": "Giulio Casale pubblicherà il 15 gennaio 2027 endiadi, il suo quinto album solista, che arriva a oltre sette anni di distanza da Inexorable. Ad anticipare il disco sarà All’uomo, singolo in uscita il…",
+      "img": "uploads/allmusicitalia-0a0988dcd7-1792507053-4.png"
+    },
+    {
+      "id": "ami-sedici-non-volevo-farci-caso",
+      "source": "allmusicitalia",
+      "title": "Sedici, non volevo farci caso: il singolo su un amore che è solo paura di perdere qualcuno",
+      "tag": "NUOVO SINGOLO",
+      "date": "20 ott",
+      "dateFull": "20 Ottobre 2026",
+      "iso": "2026-10-20T07:00:49+02:00",
+      "desc": "Sedici pubblica venerdì 23 ottobre il nuovo singolo non volevo farci caso per Honiro Label e Luppolo Dischi. La cantautrice romana arriva al nuovo brano dopo i singoli stanca e in tilt, usciti nel…",
+      "img": "uploads/allmusicitalia-9c6225088c-1792507054-5.jpg"
+    },
+    {
+      "id": "ami-joe-barbieri-la-bella-estate",
+      "source": "allmusicitalia",
+      "title": "Joe Barbieri, La Bella Estate: il primo estratto di Cantabile nasce da Almodóvar e Kundera",
+      "tag": "MUSICA",
+      "date": "20 ott",
+      "dateFull": "20 Ottobre 2026",
+      "iso": "2026-10-20T06:00:05+02:00",
+      "desc": "Joe Barbieri pubblica La Bella Estate, primo estratto dal nuovo album Cantabile, in uscita il 13 novembre. Il singolo è uscito venerdì 16 ottobre 2026 per Microcosmo Dischi, insieme al video.",
+      "img": "uploads/allmusicitalia-91c10d08e7-1792507054-6.jpg"
+    },
     {
       "id": "ami-sanremo-giovani-2026-cantanti-audizioni",
       "source": "allmusicitalia",
@@ -89,6 +155,28 @@
       "iso": "2026-10-19T07:00:22+02:00",
       "desc": "La liberatoria che un artista firma prima di un talent show può consentire alla produzione di usare le sue immagini anche sui social, e un’esibizione andata male può diventare un meme che gli resta…",
       "img": "uploads/allmusicitalia-b2a3542bfe-1792428344-8.jpg"
+    },
+    {
+      "id": "ami-manuele-g-come-gigante",
+      "source": "allmusicitalia",
+      "title": "Manuelé, ex MHANU, riparte con G come Gigante: “più musica, meno parole”",
+      "tag": "MUSICA",
+      "date": "19 ott",
+      "dateFull": "19 Ottobre 2026",
+      "iso": "2026-10-19T06:00:04+02:00",
+      "desc": "Dopo una pausa, MHANU diventa Manuelé: il cantautore di Castelfiorentino, 22 anni, riparte dal singolo G come Gigante, uscito l’11 settembre e prodotto da nessunoMP3.",
+      "img": "uploads/allmusicitalia-073187fad5-1792507054-7.jpg"
+    },
+    {
+      "id": "ami-eugenio-in-via-di-gioia-intervista-n-oi",
+      "source": "allmusicitalia",
+      "title": "Eugenio in Via Di Gioia, N OI e Sanremo: “Non abbiamo nessuna fretta. Chiamateci.”",
+      "tag": "INTERVISTE",
+      "date": "19 ott",
+      "dateFull": "19 Ottobre 2026",
+      "iso": "2026-10-19T02:19:09+02:00",
+      "desc": "Gli Eugenio in Via Di Gioia hanno pubblicato venerdì 16 ottobre N OI, EP di sei brani per Carosello Records. All’intervista con All Music Italia gli Eugenio in Via Di Gioia erano in tre su quattro:…",
+      "img": "uploads/allmusicitalia-44c296d492-1792507055-8.jpg"
     },
     {
       "id": "ami-amici-26-in-diretta-seconda-puntata",
@@ -2113,39 +2201,6 @@
       "iso": "2026-09-21T07:20:35+02:00",
       "desc": "Dopo due anni dall’ultima pubblicazione discografica, i Perturbazione tornano con Quel che non ho più, il primo brano che anticipa Risuona, il nuovo album in uscita il 9 ottobre per The Saifam Group.…",
       "img": "uploads/allmusicitalia-bfdb7341ae-1789989229-3.jpg"
-    },
-    {
-      "id": "ami-westcross-bar-speranza",
-      "source": "allmusicitalia",
-      "title": "Westcross, l’ultimo coccodrillo con TÄRA apre la strada a bar speranza",
-      "tag": "MUSICA",
-      "date": "20 set",
-      "dateFull": "20 Settembre 2026",
-      "iso": "2026-09-20T01:35:13+02:00",
-      "desc": "Westcross annuncia l’album bar speranza disponibile da venerdì 2 ottobre per Island Records / Universal Music Italia. Il disco è anticipato dal nuovo singolo, l’ultimo coccodrillo, uscito venerdì 18…",
-      "img": "uploads/allmusicitalia-09e82c1185-1789899068-1.jpg"
-    },
-    {
-      "id": "ami-ultimo-guinness-world-record",
-      "source": "allmusicitalia",
-      "title": "Ultimo nel Guinness World Records: 250.332 biglietti, il record mondiale per un concerto pop da solista uomo",
-      "tag": "LIVE & TOUR",
-      "date": "19 set",
-      "dateFull": "19 Settembre 2026",
-      "iso": "2026-09-19T22:34:28+02:00",
-      "desc": "Ultimo è entrato ufficialmente nel Guinness World Records. Al concerto La Favola Per Sempre, andato in scena il 4 luglio 2026 a Tor Vergata, a Roma, sono stati venduti 250.332 biglietti: il numero…",
-      "img": "uploads/allmusicitalia-b95b1a51db-1789899072-2.jpg"
-    },
-    {
-      "id": "ami-byd-music-awards-2026-scaletta-ordine-di-uscita-19-settembre",
-      "source": "allmusicitalia",
-      "title": "BYD Music Awards 2026, la scaletta, l’ordine di uscita e i premi della seconda serata all’Arena di Verona",
-      "tag": "MUSICA",
-      "date": "19 set",
-      "dateFull": "19 Settembre 2026",
-      "iso": "2026-09-19T19:55:15+02:00",
-      "desc": "I BYD Music Awards si sono chiusi sabato 19 settembre 2026 con la seconda e ultima serata, andata in onda dall’Arena di Verona su Rai1 dalle 21:30, con la conduzione di Carlo Conti e Vanessa…",
-      "img": "uploads/allmusicitalia-a77af15bbb-1789899073-3.jpg"
     }
   ]
 }
