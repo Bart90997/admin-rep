@@ -166,6 +166,19 @@ function ghExplain(status, path, bodyText) {
     return 'Errore GitHub ' + status + ' su "' + path + '".' + (ghMsg ? ' Dettaglio: ' + ghMsg.replace(/\s+/g, ' ').trim() : '');
 }
 
+/* Messaggio d'errore per i problemi di RETE (fetch fallita: "Failed to fetch").
+   Non e' quasi mai colpa della "rete della scuola": le cause reali piu' comuni
+   sono un'estensione del browser (adblock/privacy), un filtro DNS/VPN, la
+   connessione assente/instabile, oppure un file troppo grande. */
+function ghNetError(detail) {
+    const off = (typeof navigator !== 'undefined' && navigator.onLine === false);
+    let msg = off
+        ? 'Il browser risulta OFFLINE. Controlla la connessione a internet e riprova.'
+        : 'Il browser NON e\' riuscito a contattare GitHub (api.github.com). Cause piu\' comuni: (1) un\'estensione del browser (adblock / privacy / antivirus) blocca api.github.com -> prova in una finestra anonima o disattiva l\'estensione; (2) connessione a internet assente o instabile; (3) un filtro DNS/VPN (Pi-hole, DNS aziendale, VPN) blocca api.github.com; (4) file troppo grande: la connessione cade durante l\'invio. Premi il pulsante "\ud83e\ude7a Test connessione" per capire il problema.';
+    if (detail) msg += ' [Dettaglio: ' + detail + ']';
+    return msg;
+}
+
 async function ghGet(path) {
     const url = apiUrl(path) + '?ref=' + encodeURIComponent(CFG.branch) + '&t=' + Date.now();
     let res;
@@ -174,7 +187,7 @@ async function ghGet(path) {
             headers: { 'Authorization': 'token ' + CFG.token, 'Accept': 'application/vnd.github+json' }
         });
     } catch (e) {
-        throw new Error('Impossibile raggiungere GitHub. Controlla la connessione a internet: la rete della scuola potrebbe bloccare "api.github.com". Dettaglio: ' + e.message);
+        throw new Error(ghNetError(e.message));
     }
     if (res.status === 404) return null;
     if (!res.ok) throw new Error(ghExplain(res.status, path));
@@ -191,7 +204,7 @@ async function checkAccess() {
             headers: { 'Authorization': 'token ' + CFG.token, 'Accept': 'application/vnd.github+json' }
         });
     } catch (e) {
-        return 'Impossibile raggiungere GitHub. Controlla la connessione a internet: la rete della scuola potrebbe bloccare "api.github.com". Dettaglio: ' + e.message;
+        return ghNetError(e.message);
     }
     if (res.status === 401) return 'Token non valido o scaduto (401). Ricontrolla di aver copiato TUTTO il token (inizia con "github_pat_" oppure "ghp_").';
     if (res.status === 403) return 'Accesso negato (403). Il token non ha i permessi necessari. Serve il permesso "Contents: Read and write" su questo repository.';
@@ -240,7 +253,7 @@ async function ghPut(path, base64Content, message, sha, opts) {
             });
         } catch (e) {
             /* Errore di rete: riprovo. */
-            lastErr = new Error('Impossibile raggiungere GitHub durante il salvataggio. Controlla la connessione (la rete della scuola potrebbe bloccare "api.github.com"). Dettaglio: ' + e.message);
+            lastErr = new Error(ghNetError(e.message));
             if (attempt < maxAttempts) { if (opts.onRetry) opts.onRetry(attempt, maxAttempts); await ghSleep(attempt); continue; }
             throw lastErr;
         }
@@ -1083,6 +1096,53 @@ async function saveAll() {
     }
 }
 
+/* ------------------------- Test connessione ------------------------- */
+
+async function testConnection() {
+    const out = $('#netDiag');
+    const say = function (t) { if (out) out.innerHTML = t; };
+    say('\u23f3 Verifico la connessione a GitHub\u2026');
+
+    if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+        say('\u274c Il browser risulta <b>OFFLINE</b>. Ricollega la connessione a internet e riprova.');
+        toast('Browser offline.', 'err');
+        return;
+    }
+
+    /* 1) Raggiungibilita' base di api.github.com (senza token). */
+    let baseOk = false;
+    try {
+        const r = await fetch('https://api.github.com/rate_limit', { cache: 'no-store' });
+        baseOk = r.ok;
+    } catch (e) { baseOk = false; }
+
+    if (!baseOk) {
+        say('\u274c <b>Non riesco a contattare api.github.com.</b> Il problema NON e\' nel pannello. Prova in ordine:<br>' +
+            '1) Apri <a href="https://api.github.com/rate_limit" target="_blank" rel="noopener">https://api.github.com/rate_limit</a> in una nuova scheda: se non si apre, e\' la tua rete/DNS/VPN o un\'estensione a bloccare GitHub.<br>' +
+            '2) Prova in <b>finestra anonima</b> (spesso e\' un adblock/privacy a bloccare).<br>' +
+            '3) Disattiva temporaneamente VPN e filtri DNS (Pi-hole, NextDNS, DNS aziendale).<br>' +
+            '4) Prova da un\'altra rete (es. hotspot del telefono).');
+        toast('GitHub non raggiungibile.', 'err');
+        return;
+    }
+
+    /* 2) Token + repository (se il token e' presente). */
+    saveCfg();
+    if (!CFG.owner || !CFG.repo || !CFG.token) {
+        say('\u2705 GitHub e\' raggiungibile. Inserisci owner, repository e token e premi \u201cConnetti\u201d per completare la verifica.');
+        toast('GitHub raggiungibile.', 'ok');
+        return;
+    }
+    const accessErr = await checkAccess();
+    if (accessErr) {
+        say('\u26a0\ufe0f GitHub e\' raggiungibile, ma c\'e\' un problema con token/repository:<br>' + esc(accessErr));
+        toast('Problema token/repository.', 'err');
+        return;
+    }
+    say('\u2705 <b>Tutto ok!</b> GitHub e\' raggiungibile e il token ha accesso a <b>' + esc(CFG.owner) + '/' + esc(CFG.repo) + '</b>. Se il caricamento di un file grande fallisce ancora, prova con un file piu\' piccolo o riprova.');
+    toast('Connessione OK.', 'ok');
+}
+
 /* ------------------------- Toolbar & init ------------------------- */
 
 function expandAll() { $$('.section').forEach(function (s) { s.classList.remove('collapsed'); }); SCHEMA.forEach(function (sec) { OPEN_SECTIONS[sec.id] = true; }); }
@@ -1095,6 +1155,7 @@ window.addEventListener('beforeunload', function (e) {
 document.addEventListener('DOMContentLoaded', function () {
     loadCfg();
     on('#btnConnect', 'click', connect);
+    on('#btnTest', 'click', testConnection);
     on('#btnSave', 'click', saveAll);
     on('#btnReload', 'click', connect);
     on('#btnExpandAll', 'click', expandAll);
