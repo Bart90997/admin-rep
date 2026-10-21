@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-21T09:55:27.266Z",
-  "count": 200,
+  "updatedAt": "2026-10-21T14:48:59.321Z",
+  "count": 204,
   "news": [
+    {
+      "id": "ami-macello-scaletta-magazzini-generali",
+      "source": "allmusicitalia",
+      "title": "Macello ai Magazzini Generali: la scaletta e l’omaggio a Jordan Jeffrey Baby",
+      "tag": "TOUR",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T14:00:30+02:00",
+      "desc": "I Magazzini Generali di Milano si sono trasformati in una bolgia nella serata del 20 ottobre, con Macello protagonista di un concerto che ha alternato energia, provocazioni e momenti di forte…",
+      "img": "uploads/allmusicitalia-f5df53d992-1792594135-1.jpg"
+    },
+    {
+      "id": "ami-cristina-dona-tour-arte-di-scomparire",
+      "source": "allmusicitalia",
+      "title": "Cristina Donà porta L’arte di scomparire nei teatri: dieci concerti con il nuovo album",
+      "tag": "TOUR",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T13:57:06+02:00",
+      "desc": "Cristina Donà torna in concerto con L’arte di scomparire Tour, dieci date nei teatri italiani tra dicembre 2026 e marzo 2027. La tournée partirà l’11 dicembre da Genova, a due settimane dall’uscita…",
+      "img": "uploads/allmusicitalia-4b6646b041-1792594135-2.jpg"
+    },
+    {
+      "id": "ami-mattia-runway",
+      "source": "allmusicitalia",
+      "title": "Mattia nel singolo “Runway” racconta la passerella come luogo del giudizio",
+      "tag": "NUOVO SINGOLO",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T07:15:44+02:00",
+      "desc": "Mattia (all’anagrafe, Mattia Tosoni) pubblica il singolo Runway, prodotto da Andrea Culpo. Il cantautore e performer classe 1992 porta la passerella fuori dalle sfilate e dentro la vita quotidiana.…",
+      "img": "uploads/allmusicitalia-b16d5fb446-1792594136-3.jpg"
+    },
+    {
+      "id": "ami-unfauno-chiara-chiara",
+      "source": "allmusicitalia",
+      "title": "UnFauno torna con Chiara Chiara, il ritratto di un amore irregolare",
+      "tag": "MUSICA",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T06:00:47+02:00",
+      "desc": "Testo e significato di Chiara Chiara, il nuovo singolo di UnFauno, in uscita giovedì 22 ottobre 2026 per Expolive Project / MGM. Il brano anticipa il suo secondo album in uscita nel 2027 ed è…",
+      "img": "uploads/allmusicitalia-69213960e3-1792594136-4.jpg"
+    },
+    {
+      "id": "ami-cesare-cremonini-conferenza-stampa-londra-amateur",
+      "source": "allmusicitalia",
+      "title": "Cesare Cremonini a Londra: l’algoritmo è “il nuovo karma digitale della musica”",
+      "tag": "MUSICA",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T02:18:50+02:00",
+      "desc": "Cesare Cremonini ha incontrato la stampa a Londra il 20 ottobre per presentare AMATEUR, il suo decimo album di inediti, in uscita il 23 ottobre per EMI/Universal Music. La sera stessa ha presentato…",
+      "img": "uploads/allmusicitalia-f1583caf35-1792594137-5.jpg"
+    },
+    {
+      "id": "ami-cesare-cremonini-londra-live-amateur-scaletta",
+      "source": "allmusicitalia",
+      "title": "Cesare Cremonini nel teatro di Bowie e Amy Winehouse: AMATEUR dal vivo a Londra con tre ospiti",
+      "tag": "MUSICA",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T02:01:38+02:00",
+      "desc": "Martedì 20 ottobre Cesare Cremonini ha presentato dal vivo, a Londra, il suo nuovo disco in uscita il 23 ottobre, AMATEUR. Uno show di un’ora all’O2 Shepherd’s Bush Empire in cui ha eseguito le…",
+      "img": "uploads/allmusicitalia-8b6afbed8e-1792594137-6.jpg"
+    },
+    {
+      "id": "ami-joe-barbieri-tour-2027-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Joe Barbieri porta Cantabile dal vivo con archi e legni: Roma e Napoli nel marzo 2027",
+      "tag": "TOUR",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T01:10:29+02:00",
+      "desc": "Joe Barbieri annuncia le prime date del tour 2027: i concerti di Cantabile (La colonna sonora di una vita) sono il 3 marzo a Roma e il 21 marzo a Napoli.",
+      "img": "uploads/allmusicitalia-d7da10035b-1792594138-7.jpg"
+    },
+    {
+      "id": "ami-mida-rose-nere",
+      "source": "allmusicitalia",
+      "title": "Mida, Rose Nere segna una svolta: dalle storie d’amore alla ricerca di sé",
+      "tag": "MUSICA",
+      "date": "21 ott",
+      "dateFull": "21 Ottobre 2026",
+      "iso": "2026-10-21T00:10:49+02:00",
+      "desc": "Testo e significato di Rose Nere, il nuovo singolo di Mida, in uscita venerdì 23 ottobre 2026 in licenza esclusiva M.A.S.T./Believe. Il pre-save di Rose Nere è già disponibile.",
+      "img": "uploads/allmusicitalia-3e9612cb92-1792594138-8.jpg"
+    },
     {
       "id": "ami-joule-canzoni-tristi",
       "source": "allmusicitalia",
@@ -2157,50 +2245,6 @@
       "iso": "2026-09-21T22:54:04+02:00",
       "desc": "Sfera Ebbasta testo e significato di Lontano, brano fuori dal 22 settembre, primo estratto da Purosangue, il nuovo album in uscita l’11 dicembre. Il brano era già stato anticipato l’8 luglio, durante…",
       "img": "uploads/allmusicitalia-683e1fe832-1790072765-2.jpg"
-    },
-    {
-      "id": "ami-laura-pausini-shakira-madrid-antologia",
-      "source": "allmusicitalia",
-      "title": "Laura Pausini ospite di Shakira a Madrid con Antología",
-      "tag": "MUSICA",
-      "date": "21 set",
-      "dateFull": "21 Settembre 2026",
-      "iso": "2026-09-21T13:59:47+02:00",
-      "desc": "Laura Pausini è stata ospite speciale di Shakira sul palco di Madrid. Domenica 20 settembre, durante una delle date della residenza spagnola della popstar colombiana, le due artiste hanno cantato…",
-      "img": "uploads/allmusicitalia-7c827e8bbe-1790072767-3.jpg"
-    },
-    {
-      "id": "ami-honiro-legacy-scusate-per-il-sangue-solo-vinile",
-      "source": "allmusicitalia",
-      "title": "Nasce Honiro Legacy: Scusate per il sangue e Solo tornano in vinile",
-      "tag": "RISTAMPE",
-      "date": "21 set",
-      "dateFull": "21 Settembre 2026",
-      "iso": "2026-09-21T08:32:10+02:00",
-      "desc": "Nasce Honiro Legacy, la nuova collana di ristampe di Honiro Label dedicata ai titoli più rappresentativi del suo catalogo. I primi due album arrivano in vinile speciale e numerato dal 18 settembre:…",
-      "img": "uploads/allmusicitalia-9db6a662af-1789989225-1.jpg"
-    },
-    {
-      "id": "ami-matsby-fuoricorso",
-      "source": "allmusicitalia",
-      "title": "Matsby svela la tracklist di FUORICORSO: torna dal vivo a Genova",
-      "tag": "MUSICA",
-      "date": "21 set",
-      "dateFull": "21 Settembre 2026",
-      "iso": "2026-09-21T08:14:27+02:00",
-      "desc": "Matsby svela la tracklist del nuovo album FUORICORSO, disponibile in vinile e su tutte le piattaforme digitali dal 2 ottobre. Il disco era stato anticipato dai singoli MUAY THAI, MACHEBELLO È!, ANNI…",
-      "img": "uploads/allmusicitalia-4173180cdd-1789989227-2.jpg"
-    },
-    {
-      "id": "ami-perturbazione-quel-che-non-ho-piu-risuona",
-      "source": "allmusicitalia",
-      "title": "I Perturbazione rileggono gli Yazoo: “Quel che non ho più” anticipa il nuovo album “Risuona”",
-      "tag": "NUOVO ALBUM",
-      "date": "21 set",
-      "dateFull": "21 Settembre 2026",
-      "iso": "2026-09-21T07:20:35+02:00",
-      "desc": "Dopo due anni dall’ultima pubblicazione discografica, i Perturbazione tornano con Quel che non ho più, il primo brano che anticipa Risuona, il nuovo album in uscita il 9 ottobre per The Saifam Group.…",
-      "img": "uploads/allmusicitalia-bfdb7341ae-1789989229-3.jpg"
     }
   ]
 }
