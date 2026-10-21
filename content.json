@@ -199,7 +199,8 @@
     "teamfam12-role": "Speaker,SMM",
     "speaker-name": "DONATO E GIUSEPPE",
     "speaker-program": "Ansia.it",
-    "speaker-active": ""
+    "speaker-active": "",
+    "program3-episodes": "[{\"title\":\"Ep. 1\",\"file\":\"https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/audio/program3-ep-ansia-it-2-2026-27-1792574333.mp3\",\"uploadedAt\":1792574342799}]"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -258,5 +259,5 @@
     "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png",
     "teamfam12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamfam12-img-1791475712.png"
   },
-  "updatedAt": "2026-10-15T17:42:49.049Z"
+  "updatedAt": "2026-10-21T09:19:27.734Z"
 }
