@@ -135,14 +135,35 @@ function previewSrc(val) {
 }
 
 /* Traduce un codice di errore di GitHub in un messaggio chiaro in italiano. */
-function ghExplain(status, path) {
+/* Traduce un codice di errore di GitHub in un messaggio chiaro in italiano.
+   Accetta anche il corpo della risposta (bodyText) per riconoscere i messaggi
+   specifici di GitHub (es. "Repository rule violations" / "Timed out validating the rule"). */
+function ghExplain(status, path, bodyText) {
+    /* Provo a leggere il messaggio "vero" inviato da GitHub. */
+    let ghMsg = '';
+    if (bodyText) {
+        try { ghMsg = (JSON.parse(bodyText).message) || ''; }
+        catch (e) { ghMsg = String(bodyText); }
+    }
+
+    /* 1) Regole del repository / push protection (il caso piu' frequente qui). */
+    if (/repository rule violations/i.test(ghMsg)) {
+        if (/timed out validating the rule/i.test(ghMsg)) {
+            return 'GitHub ha bloccato il caricamento: la verifica di sicurezza ("push protection") NON e\' riuscita in tempo (timeout). Succede soprattutto con i file AUDIO GRANDI. Cosa fare: (1) riprova tra qualche secondo (a volte basta); (2) soluzione definitiva: disattiva la Push protection in GitHub -> repository "admin-rep" -> Settings -> Code security and analysis -> "Push protection" -> Disable; (3) in alternativa carica episodi piu\' leggeri (idealmente sotto ~25 MB).';
+        }
+        if (/push cannot contain secrets/i.test(ghMsg)) {
+            return 'GitHub ha bloccato il caricamento perche\' il file sembra contenere un "segreto" (chiave/token/password). Controlla il file, oppure disattiva la Push protection: Settings -> Code security and analysis -> Push protection -> Disable.';
+        }
+        return 'GitHub ha bloccato il caricamento per una REGOLA del repository ("Repository rule violations"). Dettaglio: ' + ghMsg.replace(/\s+/g, ' ').trim() + ' - Controlla in GitHub: Settings -> Rules e Settings -> Code security and analysis.';
+    }
+
     if (status === 401) return 'Token non valido o scaduto (401). Ricontrolla di aver copiato TUTTO il token (inizia con "github_pat_" oppure "ghp_") e che non sia scaduto.';
     if (status === 403) return 'Accesso negato (403). Il token NON ha il permesso "Contents: Read and write" su questo repository, oppure hai superato il limite di richieste. Crea/rigenera il token con il permesso giusto.';
     if (status === 404) return 'Repository o file non trovati (404). Controlla che Proprietario ("' + CFG.owner + '") e Repository ("' + CFG.repo + '") siano scritti ESATTAMENTE come su GitHub e che il token abbia accesso a quel repository.';
-    if (status === 409) return 'Conflitto (409): il file è stato modificato altrove. Premi "↻ Ricarica" e riprova.';
-    if (status === 422) return 'Dati non validi (422). Controlla il ramo ("branch"): di solito è "main".';
+    if (status === 409) return 'Conflitto (409): il file e\' stato modificato altrove. Premi "\u21bb Ricarica" e riprova.';
+    if (status === 422) return 'Dati non validi (422). Controlla il ramo ("branch"): di solito e\' "main". Se stai caricando un file AUDIO, potrebbe essere troppo grande per GitHub (limite pratico ~50 MB).';
     if (status >= 500) return 'GitHub non disponibile al momento (' + status + '). Riprova tra qualche minuto.';
-    return 'Errore GitHub ' + status + ' su "' + path + '".';
+    return 'Errore GitHub ' + status + ' su "' + path + '".' + (ghMsg ? ' Dettaglio: ' + ghMsg.replace(/\s+/g, ' ').trim() : '');
 }
 
 async function ghGet(path) {
@@ -179,28 +200,63 @@ async function checkAccess() {
     return null;
 }
 
-async function ghPut(path, base64Content, message, sha) {
+/* Riconosce gli errori TRANSITORI di GitHub (timeout di validazione delle regole,
+   errori 5xx, troppe richieste) che conviene semplicemente RIPROVARE.
+   Nota: il 409 "Timed out validating the rule" e' transitorio; il 409 di
+   conflitto vero (sha non aggiornato) NON lo e'. */
+function isTransientGitHubError(status, bodyText) {
+    if (status >= 500) return true;
+    if (status === 429) return true;
+    if (status === 409 && /timed out validating the rule/i.test(bodyText || '')) return true;
+    return false;
+}
+
+function ghSleep(attempt) {
+    /* Attesa crescente (0.7s, 1.4s, 2.8s...) + un po' di caso, max ~8s. */
+    const ms = Math.min(8000, 700 * Math.pow(2, attempt - 1)) + Math.floor(Math.random() * 400);
+    return new Promise(function (r) { setTimeout(r, ms); });
+}
+
+/* PUT del file su GitHub con RIPROVA AUTOMATICA sugli errori transitori.
+   opts.onRetry(attempt, max) viene chiamato prima di ogni nuovo tentativo. */
+async function ghPut(path, base64Content, message, sha, opts) {
+    opts = opts || {};
+    const maxAttempts = opts.maxAttempts || 4;
     const body = { message: message || ('Aggiornamento ' + path), content: base64Content, branch: CFG.branch };
     if (sha) body.sha = sha;
-    let res;
-    try {
-        res = await fetch(apiUrl(path), {
-            method: 'PUT',
-            headers: {
-                'Authorization': 'token ' + CFG.token,
-                'Accept': 'application/vnd.github+json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-        });
-    } catch (e) {
-        throw new Error('Impossibile raggiungere GitHub durante il salvataggio. Controlla la connessione (la rete della scuola potrebbe bloccare "api.github.com"). Dettaglio: ' + e.message);
-    }
-    if (!res.ok) {
+
+    let lastErr = null;
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        let res;
+        try {
+            res = await fetch(apiUrl(path), {
+                method: 'PUT',
+                headers: {
+                    'Authorization': 'token ' + CFG.token,
+                    'Accept': 'application/vnd.github+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+        } catch (e) {
+            /* Errore di rete: riprovo. */
+            lastErr = new Error('Impossibile raggiungere GitHub durante il salvataggio. Controlla la connessione (la rete della scuola potrebbe bloccare "api.github.com"). Dettaglio: ' + e.message);
+            if (attempt < maxAttempts) { if (opts.onRetry) opts.onRetry(attempt, maxAttempts); await ghSleep(attempt); continue; }
+            throw lastErr;
+        }
+
+        if (res.ok) return await res.json();
+
         const t = await res.text();
-        throw new Error(ghExplain(res.status, path) + ' [' + t.slice(0, 160) + ']');
+        lastErr = new Error(ghExplain(res.status, path, t));
+        if (isTransientGitHubError(res.status, t) && attempt < maxAttempts) {
+            if (opts.onRetry) opts.onRetry(attempt, maxAttempts);
+            await ghSleep(attempt);
+            continue;
+        }
+        throw lastErr;
     }
-    return await res.json();
+    throw lastErr || new Error('Errore GitHub sconosciuto.');
 }
 
 /* ------------------------- Connessione ------------------------- */
@@ -645,13 +701,15 @@ async function uploadImage(fileInput, keys, prevEl, pathEl) {
         const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
         const safeKey = keys[0].replace(/[^a-z0-9-]/gi, '');
         const name = 'uploads/' + safeKey + '-' + Math.floor(Date.now() / 1000) + '.' + ext;
-        toast('Carico l\'immagine su GitHub…');
-        await ghPut(name, b64, 'Admin: carica immagine ' + name, null);
+        toast('Carico l\'immagine su GitHub\u2026');
+        await ghPut(name, b64, 'Admin: carica immagine ' + name, null, {
+            onRetry: function (attempt, max) { toast('GitHub occupato, riprovo\u2026 (' + attempt + '/' + max + ')'); }
+        });
         const url = ghRaw(name);
         setImgs(keys, url);
         renderPreview(prevEl, url);
         if (pathEl) pathEl.textContent = url;
-        toast('Immagine caricata! Ricordati di premere “Salva su GitHub”.', 'ok');
+        toast('Immagine caricata! Ricordati di premere \u201cSalva su GitHub\u201d.', 'ok');
     } catch (e) {
         console.error(e);
         toast('Errore caricamento immagine: ' + e.message, 'err');
@@ -827,21 +885,37 @@ async function uploadEpisode(fileInput, n, idx, list, statusEl) {
     const file = fileInput.files && fileInput.files[0];
     if (!file) return;
     if (!CFG.token) { toast('Prima connettiti a GitHub.', 'err'); return; }
-    if (file.size > 95 * 1024 * 1024) { toast('File troppo grande (max ~95 MB su GitHub).', 'err'); return; }
+
+    /* Limite pratico della GitHub API: sopra ~50 MB il caricamento via API
+       fallisce quasi sempre; sopra ~25 MB la verifica di sicurezza di GitHub
+       ("push protection") puo' andare in timeout ("Timed out validating the rule"). */
+    const MB = 1024 * 1024;
+    if (file.size > 50 * MB) {
+        statusEl.textContent = 'File troppo grande per il pannello (max ~50 MB).';
+        toast('File troppo grande (' + (file.size / MB).toFixed(1) + ' MB). GitHub accetta via pannello solo file fino a ~50 MB. Comprimi l\'MP3 o caricalo con Git.', 'err');
+        return;
+    }
+    if (file.size > 25 * MB) {
+        toast('File grande (' + (file.size / MB).toFixed(1) + ' MB): il caricamento puo\' richiedere tempo e a volte va riprovato.', 'ok');
+    }
     try {
-        statusEl.textContent = '⏳ Caricamento audio… (può richiedere qualche minuto)';
+        statusEl.textContent = '\u23f3 Caricamento audio\u2026 (pu\u00f2 richiedere qualche minuto)';
         const b64 = await fileToBase64(file);
         const ext = (file.name.split('.').pop() || 'mp3').toLowerCase();
         const base = file.name.replace(/\.[^.]+$/, '').replace(/[^a-z0-9]+/gi, '-').slice(0, 60).replace(/^-+|-+$/g, '') || 'puntata';
         const name = 'uploads/audio/program' + n + '-ep-' + base + '-' + Math.floor(Date.now() / 1000) + '.' + ext;
-        await ghPut(name, b64, 'Admin: carica puntata ' + name, null);
+        await ghPut(name, b64, 'Admin: carica puntata ' + name, null, {
+            maxAttempts: 5,
+            onRetry: function (attempt, max) { statusEl.textContent = '\u23f3 GitHub occupato, riprovo\u2026 (' + attempt + '/' + max + ')'; }
+        });
         const url = ghRaw(name);
         const eps = getEpisodes(n);
         eps[idx].file = url;
         eps[idx].uploadedAt = Date.now();
         setEpisodes(n, eps);
         renderEpisodeList(list, n);
-        toast('Puntata caricata! Ricordati di premere “Salva su GitHub”.', 'ok');
+        statusEl.textContent = '\u2705 Puntata caricata.';
+        toast('Puntata caricata! Ricordati di premere \u201cSalva su GitHub\u201d.', 'ok');
     } catch (e) {
         console.error(e);
         statusEl.textContent = 'Errore: ' + e.message;
