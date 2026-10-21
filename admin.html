@@ -121,8 +121,10 @@ select{cursor:pointer}
 </div>
 <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
 <button id="btnConnect" class="btn">🔗 Connetti e carica i contenuti</button>
+<button id="btnTest" class="btn ghost">🩺 Test connessione</button>
 <span class="hint" style="margin:0">Il token resta solo nel tuo browser. Usa un fine-grained token con permesso “Contents: Read and write”.</span>
 </div>
+<div id="netDiag" class="hint" style="margin-top:10px"></div>
 </div>
 
 <!-- ===================== TOOLBAR ===================== -->
@@ -141,6 +143,6 @@ select{cursor:pointer}
 
 </main>
 <div id="toast" class="toast"></div>
-<script src="admin-app.js?v=4"></script>
+<script src="admin-app.js?v=5"></script>
 </body>
 </html>
