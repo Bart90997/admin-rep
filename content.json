@@ -103,10 +103,6 @@
     "news1-desc": "Il tribunale civile di Vicenza ha respinto la richiesta di risarcimento presentata dai genitori di Michele Merlo, morto il 6 giugno 2021 per una leucemia fulminante. La sentenza è arrivata martedì…",
     "news1-date": "23 Settembre 2026",
     "news1-link": "articolo.html?id=ami-michele-merlo-sentenza-risarcimento-respinto",
-    "hero3-title": "Sfera Ebbasta, Lontano è il primo estratto da Purosangue",
-    "hero3-tag": "MUSICA",
-    "hero3-desc": "Sfera Ebbasta testo e significato di Lontano, brano fuori dal 22 settembre, primo estratto da Purosangue, il nuovo album in uscita l’11 dicembre. Il brano era già stato anticipato l’8 luglio, durante…",
-    "hero3-link": "articolo.html?id=ami-sfera-ebbasta-lontano-testo-significato",
     "hero2-title": "MR.RAIN apre il tour nei teatri all’Arcimboldi: il racconto del concerto di Milano",
     "hero2-tag": "TOUR",
     "hero2-desc": "Lunedì 5 ottobre Mattia Balardi, in arte MR.RAIN, ha aperto al Teatro Arcimboldi di Milano il tour nei teatri che lo porterà a Roma, Torino, Brescia, Firenze, Padova e Bologna. Il concerto è durato…",
@@ -228,7 +224,6 @@
     "nlh1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/nlh1-img-1791707440.jpeg",
     "nlh2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/nlh2-img-1791707579.jpeg",
     "hero1-img": "uploads/allmusicitalia-6493878348-1790332788-2.jpg",
-    "hero3-img": "uploads/allmusicitalia-683e1fe832-1790072765-2.jpg",
     "news1-img": "uploads/allmusicitalia-b2034ffb0d-1790246206-6.jpg",
     "hero2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero2-img-1791309213.jpg",
     "news2-img": "uploads/allmusicitalia-045befb593-1791304029-3.jpg",
@@ -259,5 +254,5 @@
     "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png",
     "teamfam12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamfam12-img-1791475712.png"
   },
-  "updatedAt": "2026-10-21T09:55:25.783Z"
+  "updatedAt": "2026-10-22T14:49:40.669Z"
 }

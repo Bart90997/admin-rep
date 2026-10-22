@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-21T14:48:59.321Z",
-  "count": 204,
+  "updatedAt": "2026-10-22T14:49:40.661Z",
+  "count": 210,
   "news": [
+    {
+      "id": "ami-lucio-corsi-napoleone-buonanotte-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Lucio Corsi, Napoleone Buonanotte: la ragazza che scuote chi è stanco della routine",
+      "tag": "MUSICA",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T16:17:34+02:00",
+      "desc": "Lucio Corsi pubblica per Sugar Music venerdì 30 ottobre Napoleone Buonanotte, il nuovo singolo che aveva presentato in anteprima a sorpresa durante Prove aperte, un appuntamento dal vivo. La canzone…",
+      "img": "uploads/allmusicitalia-5cb2b85b43-1792680576-1.jpg"
+    },
+    {
+      "id": "ami-millealice-nascere-inciampare-crescere-tracklist",
+      "source": "allmusicitalia",
+      "title": "MilleAlice, NASCERE, INCIAMPARE, CRESCERE: il debut album in tre atti, tracklist e crediti",
+      "tag": "NUOVO ALBUM",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T16:00:43+02:00",
+      "desc": "MilleAlice torna con NASCERE, INCIAMPARE, CRESCERE, il disco d’esordio in uscita venerdì 23 ottobre 2026. Dopo i primi due atti, NASCERE del 10 aprile e INCIAMPARE del 12 giugno, il terzo completa il…",
+      "img": "uploads/allmusicitalia-99e573c7c6-1792680577-2.jpg"
+    },
+    {
+      "id": "ami-marco-mengoni-felice-si-ma-tutto-sbagliato",
+      "source": "allmusicitalia",
+      "title": "Marco Mengoni, felice sì, ma tutto sbagliato: il nuovo album esce l’11 dicembre",
+      "tag": "NUOVO ALBUM",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T13:55:31+02:00",
+      "desc": "Marco Mengoni pubblica l’11 dicembre 2026 felice sì, ma tutto sbagliato, il suo undicesimo album, per Epic Records Italy/Sony Music Italy. Il disco, anticipato dal singolo Giornate perse, è in…",
+      "img": "uploads/allmusicitalia-b09fa035ce-1792680577-3.jpg"
+    },
+    {
+      "id": "ami-utente175-apnea",
+      "source": "allmusicitalia",
+      "title": "UTENTE175 presenta APNEA: la fine di un amore che lascia senza respiro",
+      "tag": "MUSICA",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T12:00:44+02:00",
+      "desc": "Testo e significato di APNEA, il nuovo singolo di UTENTE175, in uscita venerdì 23 ottobre 2026 per Meraki, con distribuzione ADA Music Italy. Il brano anticipa il nuovo EP dell’artista, intitolato LE…",
+      "img": "uploads/allmusicitalia-53881689fc-1792680578-4.jpg"
+    },
+    {
+      "id": "ami-naska-nascondino-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Naska debutta in Columbia con Nascondino, una ballad rock su chi era prima di crescere",
+      "tag": "MUSICA",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T10:50:31+02:00",
+      "desc": "Naska pubblica venerdì 23 ottobre Nascondino, il singolo che segna il suo debutto per Columbia Records/Sony Music Italy: una ballad rock sul confronto con il proprio passato e sulla parte di sé che…",
+      "img": "uploads/allmusicitalia-e75cec2bc1-1792680578-5.jpg"
+    },
+    {
+      "id": "ami-brando-madonia-nuovo-singolo-il-mostro",
+      "source": "allmusicitalia",
+      "title": "Brando Madonia guarda in faccia le proprie paure con “Il mostro”",
+      "tag": "MUSICA",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T07:07:16+02:00",
+      "desc": "Il 23 ottobre esce Il mostro, il nuovo singolo di Brando Madonia, cantautore catanese finalista al Premio Tenco nel 2023 nella categoria Miglior opera prima con l’album Le conseguenze della notte. Il…",
+      "img": "uploads/allmusicitalia-c08251798f-1792680579-6.png"
+    },
+    {
+      "id": "ami-mina-dilettevoli-inedite-eccedenze-recensione-album",
+      "source": "allmusicitalia",
+      "title": "Mina va metabolizzata con calma, come la vera arte richiede. Dilettevoli inedite Eccedenze da maneggiare con cura.",
+      "tag": "FOCUS",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T01:00:36+02:00",
+      "desc": "Da qualche giorno è stato pubblicato il nuovo album di Mina, Dilettevoli inedite eccedenze, ed eccoci qui a parlarne in lungo e in largo con la calma che si deve ai giganti della nostra musica, di…",
+      "img": "uploads/allmusicitalia-e0bcc827cf-1792680579-7.jpg"
+    },
+    {
+      "id": "ami-rapper-scontri-milano-sayf-madame-ghali",
+      "source": "allmusicitalia",
+      "title": "Scontri di Milano, cosa hanno detto i rapper: da Sayf a Madame, chi si espone e chi tace",
+      "tag": "MUSICA",
+      "date": "22 ott",
+      "dateFull": "22 Ottobre 2026",
+      "iso": "2026-10-22T00:15:23+02:00",
+      "desc": "Dopo gli scontri di Milano del 17 e 18 ottobre molti rapper hanno detto la loro: c’è chi prova a spiegare la rabbia dei ragazzi, chi la condanna e chi, è rimasto in silenzio.",
+      "img": "uploads/allmusicitalia-e648cecf23-1792680580-8.jpg"
+    },
     {
       "id": "ami-macello-scaletta-magazzini-generali",
       "source": "allmusicitalia",
@@ -2223,28 +2311,6 @@
       "iso": "2026-09-22T19:13:49+02:00",
       "desc": "Settembre pubblica Lentiggini venerdì 25 settembre, in radio e su tutte le piattaforme digitali, per Latarma Records (distribuito da ADA/Warner Music Italy). Il brano arriva con un videoclip…",
       "img": "uploads/allmusicitalia-d2d123192d-1790158892-6.jpg"
-    },
-    {
-      "id": "ami-thegiornalisti-completamente-sold-out-anniversary-edition",
-      "source": "allmusicitalia",
-      "title": "Thegiornalisti, torna Completamente Sold Out: per i 10 anni arriva la Anniversary Edition in vinile",
-      "tag": "RISTAMPE",
-      "date": "22 set",
-      "dateFull": "22 Settembre 2026",
-      "iso": "2026-09-22T08:00:42+02:00",
-      "desc": "I Thegiornalisti celebrano i dieci anni di Completamente Sold Out – Anniversary Edition, in uscita il 23 ottobre in vinile per Carosello Records. Il pre-order è disponibile dal 21 settembre, nel…",
-      "img": "uploads/allmusicitalia-ede0d68bd8-1790072764-1.jpg"
-    },
-    {
-      "id": "ami-sfera-ebbasta-lontano-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Sfera Ebbasta, Lontano è il primo estratto da Purosangue",
-      "tag": "MUSICA",
-      "date": "21 set",
-      "dateFull": "21 Settembre 2026",
-      "iso": "2026-09-21T22:54:04+02:00",
-      "desc": "Sfera Ebbasta testo e significato di Lontano, brano fuori dal 22 settembre, primo estratto da Purosangue, il nuovo album in uscita l’11 dicembre. Il brano era già stato anticipato l’8 luglio, durante…",
-      "img": "uploads/allmusicitalia-683e1fe832-1790072765-2.jpg"
     }
   ]
 }
