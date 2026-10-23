@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-22T14:49:40.661Z",
-  "count": 210,
+  "updatedAt": "2026-10-23T14:35:40.060Z",
+  "count": 209,
   "news": [
+    {
+      "id": "ami-carl-brave-tour-2027",
+      "source": "allmusicitalia",
+      "title": "Carl Brave porta Un’altra stupida Odissea nei teatri: 10 concerti nel 2027",
+      "tag": "TOUR",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T13:59:00+02:00",
+      "desc": "Carl Brave torna in concerto nel 2027 con Un’altra stupida Odissea, il nuovo tour nei teatri italiani. Dieci date tra aprile e maggio, da Montecatini Terme a Padova, con tappe anche a Roma, Milano,…",
+      "img": "uploads/allmusicitalia-5f7aa06c6d-1792766136-1.jpg"
+    },
+    {
+      "id": "ami-soap-sensible",
+      "source": "allmusicitalia",
+      "title": "Sensible: soap trasforma le insicurezze in un diario musicale",
+      "tag": "MUSICA",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T10:00:16+02:00",
+      "desc": "soap torna con Sensible, il suo nuovo album di inediti in uscita venerdì 6 novembre 2026 in digitale e in formato CD per Sugar Music. Il pre-order è disponibile dal 14 ottobre sul sito ufficiale di…",
+      "img": "uploads/allmusicitalia-e6b98e825f-1792766136-2.jpg"
+    },
+    {
+      "id": "ami-luk3-intervista-elettrica",
+      "source": "allmusicitalia",
+      "title": "Luk3 presenta il nuovo singolo Elettrica: “È l’inizio di un nuovo capitolo”",
+      "tag": "INTERVISTE",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T07:07:47+02:00",
+      "desc": "Luk3 pubblica venerdì 23 ottobre il nuovo singolo Elettrica per DMB / TRIGGGER / Atlantic Records Italy (Warner Music Italy). Lo ha presentato in anteprima nel concerto sold-out del 12 ottobre ai…",
+      "img": "uploads/allmusicitalia-0f5f9ee564-1792766137-3.jpg"
+    },
+    {
+      "id": "ami-alberto-fortis-sentimental-city",
+      "source": "allmusicitalia",
+      "title": "Alberto Fortis pubblica “Sentimental City”, il nuovo album d’inediti dopo 12 anni",
+      "tag": "NUOVO ALBUM",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T07:04:37+02:00",
+      "desc": "Alberto Fortis torna con un nuovo album d’inediti a dodici anni da Do l’anima. Dal 23 ottobre 2026 è disponibile in formato fisico e digitale Sentimental City, pubblicato da Azzurra Music e…",
+      "img": "uploads/allmusicitalia-ea46608117-1792766137-4.jpg"
+    },
+    {
+      "id": "ami-classifica-earone-settimana-43-2026-miley-cyrus-vetta",
+      "source": "allmusicitalia",
+      "title": "Classifica radio EarOne settimana 43 2026: Miley Cyrus al #1, GAIA debutta al #14",
+      "tag": "RADIO CHARTS",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T06:26:24+02:00",
+      "desc": "La classifica radio EarOne della settimana 43 del 2026, dal 16 al 22 ottobre, cambia ancora il numero uno tra le canzoni più trasmesse in radio: Bass Persuades di Miley Cyrus sale dal #4 al #1, alla…",
+      "img": "uploads/allmusicitalia-ad2f353f53-1792766138-5.jpg"
+    },
+    {
+      "id": "ami-x-factor-2026-pagelle-luca-jurman-primo-live",
+      "source": "allmusicitalia",
+      "title": "X Factor 2026, le pagelle del primo Live: Jurman applaude Teo Bok e Alìa, boccia Scraffs",
+      "tag": "LE PAGELLE DI JURMAN",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T04:55:58+02:00",
+      "desc": "Nelle pagelle del primo Live Show di X Factor 2026, in onda giovedì 22 ottobre su Sky Uno, Luca Jurman parte dagli Škoda X Pass di Giorgia, per lui un tentativo di recupero dopo le Last Call, e…",
+      "img": "uploads/allmusicitalia-06fe4096ef-1792766138-6.jpg"
+    },
+    {
+      "id": "ami-pagelle-nuovi-singoli-23-ottobre-2026",
+      "source": "allmusicitalia",
+      "title": "Pagelle Nuovi Singoli 23 ottobre: 3D con Nayt e Battista Golden Song, D’Alessio e Luk3 bocciati",
+      "tag": "PAGELLE NUOVI SINGOLI",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T03:10:07+02:00",
+      "desc": "New Music Friday: le pagelle di All Music Italia ai nuovi singoli italiani del 23 ottobre 2026, a cura di Alvise Salerno, conduttore radiofonico e divulgatore musicale sul web che ogni settimana…",
+      "img": "uploads/allmusicitalia-a431ca4cbf-1792766139-7.jpg"
+    },
+    {
+      "id": "ami-tancredi-schegge-le-foglie",
+      "source": "allmusicitalia",
+      "title": "Tancredi fa un disco in nove giorni e lo racconta su YouTube: esce Schegge (Le foglie)",
+      "tag": "MUSICA",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T02:28:19+02:00",
+      "desc": "Il nuovo singolo di Tancredi, Schegge (Le foglie), esce venerdì 23 ottobre su tutte le piattaforme digitali. Il brano apre Odissea 2001, il progetto con cui il cantautore milanese inaugura una fase…",
+      "img": "uploads/allmusicitalia-ca33b9ca79-1792766139-8.jpg"
+    },
     {
       "id": "ami-lucio-corsi-napoleone-buonanotte-testo-significato",
       "source": "allmusicitalia",
@@ -2212,105 +2300,6 @@
       "iso": "2026-09-23T18:45:24+02:00",
       "desc": "Testo e significato di Ho chiesto aiuto, il nuovo singolo di Margherita Vicario, uscito venerdì 25 settembre 2026 su tutte le piattaforme digitali.",
       "img": "uploads/allmusicitalia-f090b2ed86-1790418209-4.jpg"
-    },
-    {
-      "id": "ami-centomilacarie-monete-bottoni-testo-significato",
-      "source": "allmusicitalia",
-      "title": "centomilacarie, Monete e bottoni: tenerezza e brutalità nello stesso amore",
-      "tag": "MUSICA",
-      "date": "23 set",
-      "dateFull": "23 Settembre 2026",
-      "iso": "2026-09-23T14:00:52+02:00",
-      "desc": "centomilacarie torna venerdì 25 settembre con Monete e bottoni, nuovo singolo pubblicato da Maciste Dischi, Atlantic Records Italy e Warner Music Italy.",
-      "img": "uploads/allmusicitalia-abda494abd-1790418211-5.jpg"
-    },
-    {
-      "id": "ami-sangiovanni-ti-ho-cercata-felicita-testo-significato",
-      "source": "allmusicitalia",
-      "title": "sangiovanni torna con ti ho cercata (felicità): nel nuovo singolo un sample di Lucio Dalla",
-      "tag": "NUOVO SINGOLO",
-      "date": "23 set",
-      "dateFull": "23 Settembre 2026",
-      "iso": "2026-09-23T13:27:59+02:00",
-      "desc": "sangiovanni torna venerdì 25 settembre con ti ho cercata (felicità), nuovo singolo pubblicato da Sugar Music e primo brano del suo prossimo album. La canzone contiene un campionamento di Felicità di…",
-      "img": "uploads/allmusicitalia-13eb925d3b-1790418212-6.jpg"
-    },
-    {
-      "id": "ami-francesca-michielin-la-mia-ragazza-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Francesca Michielin, la storia di Katherina Hetzeldorfer ispira “La mia ragazza”",
-      "tag": "MUSICA",
-      "date": "23 set",
-      "dateFull": "23 Settembre 2026",
-      "iso": "2026-09-23T08:26:56+02:00",
-      "desc": "Francesca Michielin pubblica La mia ragazza venerdì 25 settembre 2026 per Columbia Records/Sony Music Italy. Il nuovo singolo arriva dopo Magia Bianca e lo Strega Comanda Summer Tour. Il brano è…",
-      "img": "uploads/allmusicitalia-c67b3917d1-1790158888-1.jpg"
-    },
-    {
-      "id": "ami-lumiero-ancora-te-significato",
-      "source": "allmusicitalia",
-      "title": "Lumiero nel nuovo singolo, “Ancora te”, racconta un ricordo che non passa",
-      "tag": "NUOVO SINGOLO",
-      "date": "23 set",
-      "dateFull": "23 Settembre 2026",
-      "iso": "2026-09-23T08:04:02+02:00",
-      "desc": "Lumiero pubblica Ancora te venerdì 25 settembre per Marengo Dischi, in licenza esclusiva M.A.S.T./Believe. Il singolo arriva dopo l’album d’esordio Il Primo Grande Disco Di Lumiero e le date estive…",
-      "img": "uploads/allmusicitalia-1e4204027c-1790158889-2.jpg"
-    },
-    {
-      "id": "ami-matteo-faustini-amore-o-abitudine-significato",
-      "source": "allmusicitalia",
-      "title": "Matteo Faustini, “Amore o Abitudine”: quando restare insieme non basta a dirsi innamorati",
-      "tag": "MUSICA",
-      "date": "23 set",
-      "dateFull": "23 Settembre 2026",
-      "iso": "2026-09-23T07:36:24+02:00",
-      "desc": "Matteo Faustini torna con Amore o Abitudine, il nuovo singolo disponibile sulle piattaforme digitali e in rotazione radiofonica da venerdì 25 settembre 2026. L’artista firma testo e musica. La…",
-      "img": "uploads/allmusicitalia-04fc017b65-1790158891-3.jpg"
-    },
-    {
-      "id": "ami-marco-mengoni-sbagliato-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Marco Mengoni sta tornando: “Sbagliato” è il titolo del nuovo singolo?",
-      "tag": "NUOVO SINGOLO",
-      "date": "22 set",
-      "dateFull": "22 Settembre 2026",
-      "iso": "2026-09-22T20:56:01+02:00",
-      "desc": "Marco Mengoni sta tornando con un nuovo singolo e una parola ricorrente nel testo, Sbagliato. È passato diverso tempo da quando l’artista ha lanciato un singolo da solista e ora, torna con un video…",
-      "img": "uploads/allmusicitalia-fc4dd209cc-1790158891-4.jpg"
-    },
-    {
-      "id": "ami-marco-mengoni-allo-sbagliato-direttore-creativo-milano",
-      "source": "allmusicitalia",
-      "title": "Marco Mengoni diventa direttore creativo di Allo Sbagliato, il nuovo offline club di Milano",
-      "tag": "MUSICA",
-      "date": "22 set",
-      "dateFull": "22 Settembre 2026",
-      "iso": "2026-09-22T20:56:01+02:00",
-      "desc": "In molti, noi compresi, avevamo pensato che Marco Mengoni stesse per annunciare il suo ritorno con nuova musica. Un video pubblicato sui social, un countdown e quella parola, Sbagliato, ripetuta più…",
-      "img": "uploads/allmusicitalia-cb8c380593-1790506519-6.jpg"
-    },
-    {
-      "id": "ami-ornella-vanoni-vivere-il-mio-concerto-piu-bello",
-      "source": "allmusicitalia",
-      "title": "Ornella Vanoni, Vivere il mio concerto più bello: il nuovo disco con Elisa e tanti ospiti",
-      "tag": "LIVE & TOUR",
-      "date": "22 set",
-      "dateFull": "22 Settembre 2026",
-      "iso": "2026-09-22T19:39:13+02:00",
-      "desc": "BMG annuncia VIVERE il mio concerto più bello! di Ornella Vanoni, in uscita il 13 novembre e in pre-order dalle 12 di martedì 22 settembre. Il progetto, annunciato per festeggiare il compleanno della…",
-      "img": "uploads/allmusicitalia-6c4a006a55-1790158892-5.jpg"
-    },
-    {
-      "id": "ami-settembre-lentiggini-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Settembre, Lentiggini: una canzone per chi ha paura di essere dimenticato",
-      "tag": "NUOVO SINGOLO",
-      "date": "22 set",
-      "dateFull": "22 Settembre 2026",
-      "iso": "2026-09-22T19:13:49+02:00",
-      "desc": "Settembre pubblica Lentiggini venerdì 25 settembre, in radio e su tutte le piattaforme digitali, per Latarma Records (distribuito da ADA/Warner Music Italy). Il brano arriva con un videoclip…",
-      "img": "uploads/allmusicitalia-d2d123192d-1790158892-6.jpg"
     }
   ]
 }
