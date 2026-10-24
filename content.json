@@ -108,7 +108,7 @@
     "program7-desc": "Tutto il mondo dei film e delle serie tv in un solo programma!",
     "pal6-day": "VENERDÌ",
     "pal6-time": "15:00",
-    "pal6-title": "AULA 0",
+    "pal6-title": "AULA ZERO",
     "pal6-sub": "Debate(ne vedrete delle belle)",
     "pal7-day": "VENERDÌ",
     "pal7-time": "16:00",
@@ -195,7 +195,11 @@
     "pal8-day": "GIOVEDÌ",
     "pal8-sub": "Tutto sul modo del cinema e delle serie tv!",
     "pal8-time": "16:00",
-    "pal8-title": "SERIES AND GO"
+    "pal8-title": "SERIES AND GO",
+    "pal9-day": "MARTEDÌ",
+    "pal9-time": "16:00",
+    "pal9-title": "ANSIA.it",
+    "pal9-sub": "Le notizie dal mondo in chiave ironica!"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -252,5 +256,5 @@
     "hero3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero3-img-1792835096.jpg",
     "news3-img": "uploads/allmusicitalia-1afa066480-1792834361-8.jpg"
   },
-  "updatedAt": "2026-10-24T10:44:48.555Z"
+  "updatedAt": "2026-10-24T10:46:55.688Z"
 }
