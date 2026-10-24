@@ -179,6 +179,19 @@ function ghNetError(detail) {
     return msg;
 }
 
+/* Legge un JSON in modo sicuro: se il testo e' vuoto o non valido, da' un
+   messaggio CHIARO invece del criptico "Unexpected end of JSON input". */
+function parseJsonSafe(text, name) {
+    if (text == null || String(text).trim() === '') {
+        throw new Error('Il file "' + name + '" risulta VUOTO o non leggibile da GitHub. Premi "\u21bb Ricarica"; se il problema resta, il file potrebbe essere danneggiato.');
+    }
+    try {
+        return JSON.parse(text);
+    } catch (e) {
+        throw new Error('Il file "' + name + '" non e\' un JSON valido (' + e.message + '). Controlla di non averlo modificato a mano.');
+    }
+}
+
 async function ghGet(path) {
     const url = apiUrl(path) + '?ref=' + encodeURIComponent(CFG.branch) + '&t=' + Date.now();
     let res;
@@ -192,7 +205,26 @@ async function ghGet(path) {
     if (res.status === 404) return null;
     if (!res.ok) throw new Error(ghExplain(res.status, path));
     const j = await res.json();
-    return { text: b64decodeUtf8(j.content), sha: j.sha };
+
+    let text;
+    if (j.encoding === 'none' || !j.content) {
+        /* File PIU' GRANDE DI 1 MB: la Contents API NON restituisce il contenuto
+           (encoding "none", content vuoto). Lo scarico in formato "raw".
+           Senza questo, JSON.parse('') darebbe "Unexpected end of JSON input". */
+        let rawRes;
+        try {
+            rawRes = await fetch(url, {
+                headers: { 'Authorization': 'token ' + CFG.token, 'Accept': 'application/vnd.github.raw' }
+            });
+        } catch (e) {
+            throw new Error(ghNetError(e.message));
+        }
+        if (!rawRes.ok) throw new Error(ghExplain(rawRes.status, path));
+        text = await rawRes.text();
+    } else {
+        text = b64decodeUtf8(j.content);
+    }
+    return { text: text, sha: j.sha };
 }
 
 /* Verifica che il token sia valido e che il repository sia raggiungibile.
@@ -289,12 +321,12 @@ async function connect() {
 
         const c = await ghGet('content.json');
         if (!c) { throw new Error('Il repository è raggiungibile ma NON contiene "content.json". Carica il file content.json su GitHub (ramo "' + CFG.branch + '").'); }
-        CONTENT = JSON.parse(c.text); CONTENT_SHA = c.sha;
+        CONTENT = parseJsonSafe(c.text, 'content.json'); CONTENT_SHA = c.sha;
 
         const a = await ghGet('news-archive.json');
-        if (a) { ARCHIVE = JSON.parse(a.text); ARCHIVE_SHA = a.sha; }
+        if (a) { ARCHIVE = parseJsonSafe(a.text, 'news-archive.json'); ARCHIVE_SHA = a.sha; }
         const l = await ghGet('news-archive-light.json');
-        if (l) { LIGHT = JSON.parse(l.text); LIGHT_SHA = l.sha; }
+        if (l) { LIGHT = parseJsonSafe(l.text, 'news-archive-light.json'); LIGHT_SHA = l.sha; }
 
         setTxt('#connState', '✅ Connesso a ' + CFG.owner + '/' + CFG.repo);
         setCls('#connState', 'conn ok');
