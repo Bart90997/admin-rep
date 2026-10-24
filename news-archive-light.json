@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-24T10:46:57.393Z",
-  "count": 8,
+  "updatedAt": "2026-10-24T13:47:58.215Z",
+  "count": 16,
   "news": [
     {
       "id": "ami-gloria-musical-umberto-tozzi-recensione",
@@ -89,6 +89,94 @@
       "iso": "2026-10-23T18:49:15+02:00",
       "desc": "Gli album più venduti in Italia dal 16 al 22 ottobre 2026, secondo le classifiche FIMI della settimana 43, tornano a Geolier: Tutto è possibile. Atto II, la nuova edizione uscita il 16 ottobre, lo…",
       "img": "uploads/allmusicitalia-1afa066480-1792834361-8.jpg"
+    },
+    {
+      "id": "ami-carl-brave-tour-2027",
+      "source": "allmusicitalia",
+      "title": "Carl Brave porta Un’altra stupida Odissea nei teatri: 10 concerti nel 2027",
+      "tag": "TOUR",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T13:59:00+02:00",
+      "desc": "Carl Brave torna in concerto nel 2027 con Un’altra stupida Odissea, il nuovo tour nei teatri italiani. Dieci date tra aprile e maggio, da Montecatini Terme a Padova, con tappe anche a Roma, Milano,…",
+      "img": "uploads/allmusicitalia-5f7aa06c6d-1792849674-1.jpg"
+    },
+    {
+      "id": "ami-soap-sensible",
+      "source": "allmusicitalia",
+      "title": "Sensible: soap trasforma le insicurezze in un diario musicale",
+      "tag": "MUSICA",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T10:00:16+02:00",
+      "desc": "soap torna con Sensible, il suo nuovo album di inediti in uscita venerdì 6 novembre 2026 in digitale e in formato CD per Sugar Music. Il pre-order è disponibile dal 14 ottobre sul sito ufficiale di…",
+      "img": "uploads/allmusicitalia-e6b98e825f-1792849674-2.jpg"
+    },
+    {
+      "id": "ami-luk3-intervista-elettrica",
+      "source": "allmusicitalia",
+      "title": "Luk3 presenta il nuovo singolo Elettrica: “È l’inizio di un nuovo capitolo”",
+      "tag": "INTERVISTE",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T07:07:47+02:00",
+      "desc": "Luk3 pubblica venerdì 23 ottobre il nuovo singolo Elettrica per DMB / TRIGGGER / Atlantic Records Italy (Warner Music Italy). Lo ha presentato in anteprima nel concerto sold-out del 12 ottobre ai…",
+      "img": "uploads/allmusicitalia-0f5f9ee564-1792849675-3.jpg"
+    },
+    {
+      "id": "ami-alberto-fortis-sentimental-city",
+      "source": "allmusicitalia",
+      "title": "Alberto Fortis pubblica “Sentimental City”, il nuovo album d’inediti dopo 12 anni",
+      "tag": "NUOVO ALBUM",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T07:04:37+02:00",
+      "desc": "Alberto Fortis torna con un nuovo album d’inediti a dodici anni da Do l’anima. Dal 23 ottobre 2026 è disponibile in formato fisico e digitale Sentimental City, pubblicato da Azzurra Music e…",
+      "img": "uploads/allmusicitalia-ea46608117-1792849675-4.jpg"
+    },
+    {
+      "id": "ami-classifica-earone-settimana-43-2026-miley-cyrus-vetta",
+      "source": "allmusicitalia",
+      "title": "Classifica radio EarOne settimana 43 2026: Miley Cyrus al #1, GAIA debutta al #14",
+      "tag": "RADIO CHARTS",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T06:26:24+02:00",
+      "desc": "La classifica radio EarOne della settimana 43 del 2026, dal 16 al 22 ottobre, cambia ancora il numero uno tra le canzoni più trasmesse in radio: Bass Persuades di Miley Cyrus sale dal #4 al #1, alla…",
+      "img": "uploads/allmusicitalia-ad2f353f53-1792849676-5.jpg"
+    },
+    {
+      "id": "ami-x-factor-2026-pagelle-luca-jurman-primo-live",
+      "source": "allmusicitalia",
+      "title": "X Factor 2026, le pagelle del primo Live: Jurman applaude Teo Bok e Alìa, boccia Scraffs",
+      "tag": "LE PAGELLE DI JURMAN",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T04:55:58+02:00",
+      "desc": "Nelle pagelle del primo Live Show di X Factor 2026, in onda giovedì 22 ottobre su Sky Uno, Luca Jurman parte dagli Škoda X Pass di Giorgia, per lui un tentativo di recupero dopo le Last Call, e…",
+      "img": "uploads/allmusicitalia-06fe4096ef-1792849676-6.jpg"
+    },
+    {
+      "id": "ami-pagelle-nuovi-singoli-23-ottobre-2026",
+      "source": "allmusicitalia",
+      "title": "Pagelle Nuovi Singoli 23 ottobre: 3D con Nayt e Battista Golden Song, D’Alessio e Luk3 bocciati",
+      "tag": "PAGELLE NUOVI SINGOLI",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T03:10:07+02:00",
+      "desc": "New Music Friday: le pagelle di All Music Italia ai nuovi singoli italiani del 23 ottobre 2026, a cura di Alvise Salerno, conduttore radiofonico e divulgatore musicale sul web che ogni settimana…",
+      "img": "uploads/allmusicitalia-a431ca4cbf-1792849677-7.jpg"
+    },
+    {
+      "id": "ami-tancredi-schegge-le-foglie",
+      "source": "allmusicitalia",
+      "title": "Tancredi fa un disco in nove giorni e lo racconta su YouTube: esce Schegge (Le foglie)",
+      "tag": "MUSICA",
+      "date": "23 ott",
+      "dateFull": "23 Ottobre 2026",
+      "iso": "2026-10-23T02:28:19+02:00",
+      "desc": "Il nuovo singolo di Tancredi, Schegge (Le foglie), esce venerdì 23 ottobre su tutte le piattaforme digitali. Il brano apre Odissea 2001, il progetto con cui il cantautore milanese inaugura una fase…",
+      "img": "uploads/allmusicitalia-ca33b9ca79-1792849677-8.jpg"
     }
   ]
 }
