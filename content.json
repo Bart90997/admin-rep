@@ -24,9 +24,9 @@
     "pal5-time": "16:00",
     "pal5-title": "Series and go",
     "pal5-sub": "Tutto su serie e film!",
-    "ig1-link": "https://www.instagram.com/reel/DeJtdlwMNdE/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+    "ig1-link": "https://www.instagram.com/p/De2AiOjjCjx/?utm_source=ig_web_button_share_sheet",
     "ig2-link": "https://www.instagram.com/p/DdQxos2DGmU/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
-    "ig3-link": "https://www.instagram.com/p/DeGwsJGDL9e/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+    "ig3-link": "https://www.instagram.com/reel/DewdysnhQ2E/?utm_source=ig_web_button_share_sheet",
     "rv2-label": "CORSA",
     "rv2-subtitle": "LI.FE. RADIO ALLA CORSA DI MIGUEL",
     "rv2-type": "FOTO",
@@ -103,7 +103,7 @@
     "program2-desc": "Le notizie e le attività del Liceo Fermi Aversa",
     "program3-desc": "Le notizie dal mondo in chiave ironica!",
     "program4-name": "Aula 0",
-    "program4-desc": "Il programma di debate di Li.FE. Radio! Ne vedremo delle belle...",
+    "program4-desc": "Il programma di debate di Li.Fe. Radio! Ne vedremo delle belle...",
     "program5-name": "0-Voglia di scrivere",
     "program5-desc": "Gossip e tanto altro",
     "program6-name": "World Safari",
@@ -165,7 +165,7 @@
     "speaker-name": "DONATO E GIUSEPPE",
     "speaker-program": "Ansia.it",
     "speaker-active": "",
-    "program3-episodes": "[{\"title\":\"Ep.1\",\"file\":\"https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/audio/program3-ep-ansiait-1-1792835789.mp3\",\"uploadedAt\":1792835791453}]",
+    "program3-episodes": "[{\"title\":\"Ep.1\",\"file\":\"https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/audio/program3-ep-ansiait-1-1792837027.mp3\",\"uploadedAt\":1792837055056}]",
     "hero1-title": "Raffaella Carrà torna sul palco in ologramma: il primo concerto ufficiale all’Atlantico di Roma",
     "hero1-tag": "TOUR",
     "hero1-desc": "Raffaella Carrà torna su un palco in ologramma: lunedì 28 dicembre 2026, alle 21, l’Atlantico di Roma ospita The Show Must Go On, il primo concerto ufficiale in ologramma dedicato alla cantante,…",
@@ -196,9 +196,9 @@
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
-    "ig1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig1-img-1791308949.png",
+    "ig1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig1-img-1792837401.png",
     "ig2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig2-img-1791308965.png",
-    "ig3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig3-img-1791308988.png",
+    "ig3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/ig3-img-1792837478.png",
     "rv3-img": "uploads/rv3-img-1788167154.png",
     "speaker-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/speaker1-img-1791809605.png",
     "teamop1-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop1-img-1791315733.png",
@@ -249,5 +249,5 @@
     "hero3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero3-img-1792835096.jpg",
     "news3-img": "uploads/allmusicitalia-1afa066480-1792834361-8.jpg"
   },
-  "updatedAt": "2026-10-24T09:56:35.438Z"
+  "updatedAt": "2026-10-24T10:31:51.495Z"
 }
