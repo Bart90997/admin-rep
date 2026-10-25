@@ -1,7 +1,84 @@
 {
-  "updatedAt": "2026-10-24T13:47:58.215Z",
-  "count": 16,
+  "updatedAt": "2026-10-25T14:04:01.428Z",
+  "count": 23,
   "news": [
+    {
+      "id": "ami-battista-o-cavallo-e-ritorno-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Battista, ‘O cavallo ‘e ritorno: il furto con riscatto per raccontare il Sud dopo l’Unità",
+      "tag": "MUSICA",
+      "date": "25 ott",
+      "dateFull": "25 Ottobre 2026",
+      "iso": "2026-10-25T11:25:22+01:00",
+      "desc": "Battista ha pubblicato in autoproduzione venerdì 23 ottobre 2026 ‘O cavallo ‘e ritorno, secondo singolo dopo l’esordio virale di settembre. Testo e significato del brano partono dal cavallo di…",
+      "img": "uploads/allmusicitalia-2ee3362dab-1792937037-1.jpg"
+    },
+    {
+      "id": "ami-amici-26-in-diretta-terza-puntata",
+      "source": "allmusicitalia",
+      "title": "Amici 26, le esibizioni e i verdetti della terza puntata",
+      "tag": "AMICI",
+      "date": "25 ott",
+      "dateFull": "25 Ottobre 2026",
+      "iso": "2026-10-25T11:00:42+01:00",
+      "desc": "Amici 26 in diretta: la terza puntata va in onda oggi, domenica 25 ottobre, dalle 14 su Canale 5. Qui trovate, durante la puntata, le esibizioni di canto e di ballo, i sì dei responsabili artistici e…",
+      "img": "uploads/allmusicitalia-3c16de3f35-1792937038-2.jpg"
+    },
+    {
+      "id": "ami-il-pubblico-ha-sempre-ragione-skiantos",
+      "source": "allmusicitalia",
+      "title": "Il pubblico ha sempre ragione? Non decide nulla, e Freak Antoni lo sapeva",
+      "tag": "LA VERSIONE DI MONINA",
+      "date": "25 ott",
+      "dateFull": "25 Ottobre 2026",
+      "iso": "2026-10-25T08:00:41+01:00",
+      "desc": "Il cliente ha sempre ragione. Sì, il pubblico ha sempre ragione, questa la tesi portata avanti. Il pubblico, come il cliente, non decide nulla. Il mercato, perché è da lì che tutto è partito,…",
+      "img": "uploads/allmusicitalia-470380be44-1792937038-3.jpg"
+    },
+    {
+      "id": "ami-dada-viscera-album-mela-wela",
+      "source": "allmusicitalia",
+      "title": "DADA’, VISCERA: dopo CORE IN FABULA l’album più cupo, con MELA WELA e uno spettacolo a Napoli",
+      "tag": "NUOVO ALBUM",
+      "date": "25 ott",
+      "dateFull": "25 Ottobre 2026",
+      "iso": "2026-10-25T07:00:57+01:00",
+      "desc": "Venerdì 30 ottobre esce VISCERA, il nuovo album di DADA’, in digitale e in vinile. Il vinile è in pre-order sul sito dell’artista, con le spedizioni dal 16 novembre, e il disco è anticipato da MELA…",
+      "img": "uploads/allmusicitalia-814c6d0831-1792937039-4.jpg"
+    },
+    {
+      "id": "ami-3d-nayt-senza-armi-significato",
+      "source": "allmusicitalia",
+      "title": "3D e Nayt, Senza Armi: il singolo che fa del disarmarsi un atto di coraggio",
+      "tag": "NUOVO SINGOLO",
+      "date": "25 ott",
+      "dateFull": "25 Ottobre 2026",
+      "iso": "2026-10-25T06:00:31+01:00",
+      "desc": "3D torna con Nayt in Senza Armi. Il singolo, pubblicato dallo stesso 3D, è uscito venerdì 23 ottobre 2026 su tutti i digital store e in radio, dopo l’album Empirìa dell’aprile 2024, in cui Nayt…",
+      "img": "uploads/allmusicitalia-c35dd0d8b6-1792937039-5.jpg"
+    },
+    {
+      "id": "ami-sangiovanni-alfa-da-domani-testo-significato",
+      "source": "allmusicitalia",
+      "title": "sangiovanni e Alfa, da domani: il duetto dei buoni propositi presentato al Forum",
+      "tag": "MUSICA",
+      "date": "24 ott",
+      "dateFull": "24 Ottobre 2026",
+      "iso": "2026-10-24T23:40:03+02:00",
+      "desc": "Sabato 24 ottobre, all’Unipol Forum di Assago, sangiovanni e Alfa hanno presentato dal vivo il loro duetto da domani, nella data sold out che chiude il tour 2026 di Alfa.",
+      "img": "uploads/allmusicitalia-2584797924-1792937040-6.jpg"
+    },
+    {
+      "id": "ami-envy-colpa-mia-significato",
+      "source": "allmusicitalia",
+      "title": "Envy, Colpa Mia: lo studio allestito in carcere e il ritorno dopo il mixtape More Life",
+      "tag": "MUSICA",
+      "date": "24 ott",
+      "dateFull": "24 Ottobre 2026",
+      "iso": "2026-10-24T21:13:15+02:00",
+      "desc": "Envy torna con Colpa Mia, il nuovo singolo uscito venerdì 23 ottobre su tutte le piattaforme digitali. Il rapper napoletano ha scritto i brani nuovi nell’ultimo anno, durante la detenzione, in uno…",
+      "img": "uploads/allmusicitalia-3fbd17151b-1792937040-7.jpg"
+    },
     {
       "id": "ami-gloria-musical-umberto-tozzi-recensione",
       "source": "allmusicitalia",
