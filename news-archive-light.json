@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-25T14:04:01.428Z",
-  "count": 23,
+  "updatedAt": "2026-10-26T16:25:43.042Z",
+  "count": 31,
   "news": [
+    {
+      "id": "ami-certificazioni-fimi-settimana-43-2026-anna-geolier-sayf",
+      "source": "allmusicitalia",
+      "title": "Certificazioni FIMI: sesto platino per ANNA, due certificazioni per Geolier e platino a Sayf",
+      "tag": "CLASSIFICHE",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T15:13:42+01:00",
+      "desc": "Le certificazioni FIMI della settimana 43 del 2026 portano ANNA al sesto platino con Vera Baddie, album del 2024. Geolier certifica due brani, platino per Stelle e oro per Autorità, mentre Sayf…",
+      "img": "uploads/allmusicitalia-f283e00da1-1793031938-1.jpg"
+    },
+    {
+      "id": "ami-lucio-dalla-caruso-vinile-40-anni",
+      "source": "allmusicitalia",
+      "title": "Lucio Dalla, Caruso compie 40 anni: vinile Occhi Verdi in pre-order solo fino al 30 ottobre",
+      "tag": "RISTAMPE",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T15:06:10+01:00",
+      "desc": "Sony Music celebra i 40 anni di Caruso di Lucio Dalla, brano pubblicato nell’ottobre 1986, con un vinile da collezione 12 pollici a 45 giri, numerato, nella colorazione Occhi Verdi. Il disco è in…",
+      "img": "uploads/allmusicitalia-cb31583b8d-1793031939-2.jpg"
+    },
+    {
+      "id": "ami-latrelle-silenzio-assordante-album",
+      "source": "allmusicitalia",
+      "title": "Latrelle, l’album Silenzio Assordante non ha data d’uscita: esce una settimana alla volta",
+      "tag": "NUOVO ALBUM",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T14:50:23+01:00",
+      "desc": "Latrelle annuncia Silenzio Assordante, il suo primo album ufficiale, firmato K100 Ent e Atlantic Records Italy / Warner Music Italy. Il disco non ha una data d’uscita: è fuori ogni settimana, a…",
+      "img": "uploads/allmusicitalia-7240769859-1793031939-3.jpg"
+    },
+    {
+      "id": "ami-fast-animals-and-slow-kids-milano-2026",
+      "source": "allmusicitalia",
+      "title": "Fast Animals and Slow Kids, Inverno Nucleare Tour 2027: date, biglietti e scaletta",
+      "tag": "TOUR",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T13:10:53+01:00",
+      "desc": "I Fast Animals and Slow Kids torneranno in tour nell’aprile 2027 con Inverno Nucleare Tour 2027, sette concerti tra Bologna, Padova, Milano, Venaria Reale, Napoli, Roma e Firenze. Il nuovo calendario…",
+      "img": "uploads/allmusicitalia-7fccd0e9d1-1793031940-4.jpg"
+    },
+    {
+      "id": "ami-giordana-angi-piccole-cose-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Giordana Angi, Piccole cose: il nuovo singolo nato da una crisi e dalla poesia di Alda Merini",
+      "tag": "NUOVO SINGOLO",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T13:00:13+01:00",
+      "desc": "Giordana Angi pubblica Piccole cose, il nuovo singolo in uscita venerdì 30 ottobre per Warner Records Italy / Warner Music Italy. Il brano nasce da una crisi personale e racconta il bisogno di…",
+      "img": "uploads/allmusicitalia-d94ac5945c-1793031940-5.jpg"
+    },
+    {
+      "id": "ami-cioffi-superstar-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Cioffi, Superstar: il mea culpa di un ragazzo innamorato della compagna e della vita",
+      "tag": "MUSICA",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T11:30:30+01:00",
+      "desc": "Il nuovo singolo di Cioffi, Superstar, arriva in radio venerdì 30 ottobre con l’etichetta Cioffi / Warner Records. Il brano è un pop che mette in scena il mea culpa di un ragazzo sui propri difetti,…",
+      "img": "uploads/allmusicitalia-1d4ea44551-1793031941-6.jpg"
+    },
+    {
+      "id": "ami-eddie-brock-amarsi-tour-2026-date-concerti",
+      "source": "allmusicitalia",
+      "title": "Eddie Brock chiude il Nosotros Live Tour a Milano. E per il futuro si parla già di Atto 1",
+      "tag": "TOUR",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T09:40:40+01:00",
+      "desc": "Eddie Brock ha concluso il NOSOTROS LIVE TOUR 2026, la serie di due concerti nei club che lo ha riportato sul palco dopo la cancellazione della tournée estiva. Il calendario si è aperto il 21 ottobre…",
+      "img": "uploads/allmusicitalia-c9f0117e4e-1793031941-7.jpg"
+    },
+    {
+      "id": "ami-davide-shorty-koralle-circolo-virtuoso",
+      "source": "allmusicitalia",
+      "title": "Davide Shorty e Koralle, “TOSSICA” apre il percorso verso “CIRCOLO VIRTUOSO”",
+      "tag": "MUSICA",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T07:30:56+01:00",
+      "desc": "Davide Shorty e Koralle pubblicheranno il 4 dicembre 2026 CIRCOLO VIRTUOSO, il nuovo album in uscita per Django Music. Il disco contiene undici tracce ed è il risultato di un lavoro iniziato nel…",
+      "img": "uploads/allmusicitalia-dc02f419ce-1793031942-8.png"
+    },
     {
       "id": "ami-battista-o-cavallo-e-ritorno-testo-significato",
       "source": "allmusicitalia",
