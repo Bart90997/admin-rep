@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-26T16:25:43.042Z",
-  "count": 31,
+  "updatedAt": "2026-10-27T15:40:55.943Z",
+  "count": 39,
   "news": [
+    {
+      "id": "ami-luigi-strangis-tutto-significato",
+      "source": "allmusicitalia",
+      "title": "Luigi Strangis pubblica “TUTTO”: il significato del brano pop rock",
+      "tag": "NUOVO SINGOLO",
+      "date": "27 ott",
+      "dateFull": "27 Ottobre 2026",
+      "iso": "2026-10-27T14:55:15+01:00",
+      "desc": "Testo e significato di Tutto, il nuovo singolo di Luigi Strangis, in uscita venerdì 30 ottobre 2026 per 21Co, con distribuzione Believe Italia.",
+      "img": "uploads/allmusicitalia-3687c31f8b-1793115650-1.jpg"
+    },
+    {
+      "id": "ami-mario-biondi-tour-2026-date-biglietti-scaletta",
+      "source": "allmusicitalia",
+      "title": "Mario Biondi, al via da Trento il tour nei teatri dopo l’uscita di “Two Entities”",
+      "tag": "TOUR",
+      "date": "27 ott",
+      "dateFull": "27 Ottobre 2026",
+      "iso": "2026-10-27T10:30:48+01:00",
+      "desc": "Mario Biondi torna nei teatri italiani con il tour 2026: la prima data è in programma il 1° novembre all’Auditorium Santa Chiara di Trento. La tournée proseguirà tra novembre e dicembre, con tappe a…",
+      "img": "uploads/allmusicitalia-0068f635b6-1793115651-2.jpg"
+    },
+    {
+      "id": "ami-concerti-halloween-2026-31-ottobre",
+      "source": "allmusicitalia",
+      "title": "Concerti di Halloween 2026: Gardaland, Imola, i club di Roma e il jazz horror di Maccarese",
+      "tag": "TOUR",
+      "date": "27 ott",
+      "dateFull": "27 Ottobre 2026",
+      "iso": "2026-10-27T08:00:01+01:00",
+      "desc": "I concerti di Halloween 2026 si concentrano su sabato 31 ottobre: da Gardaland all’Autodromo di Imola, dai club di Roma, Milano e Bologna fino al Museo del Saxofono di Maccarese, dove un quartetto…",
+      "img": "uploads/allmusicitalia-8572cbc066-1793115652-3.jpg"
+    },
+    {
+      "id": "ami-latarma-records-diventa-larec",
+      "source": "allmusicitalia",
+      "title": "LaTarma Records diventa LaRec: Marta Donà cambia nome all’etichetta",
+      "tag": "MUSIC BIZ",
+      "date": "27 ott",
+      "dateFull": "27 Ottobre 2026",
+      "iso": "2026-10-27T07:00:47+01:00",
+      "desc": "LaTarma, la società di Marta Donà, cambia il nome di due delle sue tre divisioni: LaTarma Records diventa LaRec e LaTarma Entertainment diventa LaLate Entertainment. Il nome LaTarma resta solo al…",
+      "img": "uploads/allmusicitalia-335dd2408a-1793115652-4.jpg"
+    },
+    {
+      "id": "ami-eugenio-in-via-di-gioia-cerchi-se-domani-non-torno",
+      "source": "allmusicitalia",
+      "title": "Cerchi degli Eugenio in Via Di Gioia accompagna Se domani non torno, il film su Giulia Cecchettin",
+      "tag": "MUSICA",
+      "date": "27 ott",
+      "dateFull": "27 Ottobre 2026",
+      "iso": "2026-10-27T06:00:41+01:00",
+      "desc": "Il brano Cerchi degli Eugenio in Via Di Gioia è presente in una scena di Se domani non torno, il film diretto da Paola Randi e scritto da Lisa Nur Sultan e dalla stessa Randi, in uscita nelle sale il…",
+      "img": "uploads/allmusicitalia-c6101644f0-1793115653-5.jpg"
+    },
+    {
+      "id": "ami-ultimo-live-tor-vergata-box-vinile-amazon",
+      "source": "allmusicitalia",
+      "title": "Ultimo Live Tor Vergata esce il 13 novembre: 38 tracce e cinque box, anche autografati",
+      "tag": "LIVE & TOUR",
+      "date": "27 ott",
+      "dateFull": "27 Ottobre 2026",
+      "iso": "2026-10-27T01:46:50+01:00",
+      "desc": "Ultimo pubblica venerdì 13 novembre Ultimo Live Tor Vergata, il live album del concerto del 4 luglio a Roma, per la sua etichetta indipendente Ultimo Records. Esce in digitale e in formato fisico, ed…",
+      "img": "uploads/allmusicitalia-265b5c1563-1793115654-6.jpg"
+    },
+    {
+      "id": "ami-francesca-michielin-magia-bianca-magia-nera-intervista",
+      "source": "allmusicitalia",
+      "title": "Francesca Michielin: “L’anno prossimo chiuderò baracca e burattini”",
+      "tag": "INTERVISTE",
+      "date": "27 ott",
+      "dateFull": "27 Ottobre 2026",
+      "iso": "2026-10-27T00:01:18+01:00",
+      "desc": "Francesca Michielin pubblica venerdì 30 ottobre Magia Bianca, Magia Nera (Columbia Records / Sony Music Italy), il concept che completa con sei brani nuovi Magia Bianca, uscito a giugno. In questa…",
+      "img": "uploads/allmusicitalia-490a1e50dc-1793115654-7.jpg"
+    },
+    {
+      "id": "ami-vasco-rossi-gesto-palco-eta",
+      "source": "allmusicitalia",
+      "title": "Il Lato B di Vasco Rossi: crescere senza diventare addomesticati",
+      "tag": "LATO B",
+      "date": "26 ott",
+      "dateFull": "26 Ottobre 2026",
+      "iso": "2026-10-26T23:31:04+01:00",
+      "desc": "Vasco Rossi ha finito il tour lo scorso giugno, ma siccome i video sui social sono come Equitalia e prima o poi arrivano sempre da te, ecco che da poche ore è apparso in rete un video, girato da…",
+      "img": "uploads/allmusicitalia-96db239823-1793115655-8.jpg"
+    },
     {
       "id": "ami-certificazioni-fimi-settimana-43-2026-anna-geolier-sayf",
       "source": "allmusicitalia",
