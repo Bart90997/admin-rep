@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-10-29T16:33:17.757Z",
-  "count": 55,
+  "updatedAt": "2026-10-30T16:28:21.982Z",
+  "count": 63,
   "news": [
+    {
+      "id": "ami-sayf-santissima-fest-2027-genova",
+      "source": "allmusicitalia",
+      "title": "Sayf torna a Genova nel 2027 con la terza edizione del Santissima Fest",
+      "tag": "TOUR",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T16:00:55+01:00",
+      "desc": "Sayf tornerà in concerto a Genova venerdì 16 luglio 2027 per la terza edizione del Santissima Fest. L’appuntamento è ancora una volta all’Arena del Mare del Porto Antico, con apertura cancelli alle…",
+      "img": "uploads/allmusicitalia-c7ad58212e-1793377697-1.jpg"
+    },
+    {
+      "id": "ami-gialappashow-ospiti-musicali",
+      "source": "allmusicitalia",
+      "title": "GialappaShow, gli ospiti musicali puntata per puntata: da Gabbani a Malika Ayane",
+      "tag": "MUSICA IN TV",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T15:13:50+01:00",
+      "desc": "Il GialappaShow mette la musica in prima serata ogni lunedì alle 21.30 su TV8, in simulcast su Sky e in streaming su NOW, con le cover dei Neri per Caso, nel cast del programma dal 2023, e con i…",
+      "img": "uploads/allmusicitalia-d5ddda0681-1793377697-2.jpg"
+    },
+    {
+      "id": "ami-marco-masini-live-2026-date-concerti",
+      "source": "allmusicitalia",
+      "title": "Marco Masini, la scaletta del Live 2026 e le date dell’autunno",
+      "tag": "TOUR",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T13:40:38+01:00",
+      "desc": "Marco Masini torna nei palasport con cinque concerti del Live 2026. Si parte martedì 3 novembre dall’Unipol Forum di Assago, alle porte di Milano, per proseguire a Firenze, Padova, Roma e Napoli,…",
+      "img": "uploads/allmusicitalia-ea880722c9-1793377698-3.jpg"
+    },
+    {
+      "id": "ami-massimo-ranieri-tour-date-concerti",
+      "source": "allmusicitalia",
+      "title": "Massimo Ranieri, il tour prosegue nel 2027: da Napoli a Milano e Livorno",
+      "tag": "TOUR",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T10:00:49+01:00",
+      "desc": "Massimo Ranieri prosegue il tour Tutti i sogni ancora in volo… e continuano a volare con nuovi concerti tra la fine del 2026 e il 2027. Il calendario riparte il 30 ottobre dal Teatro Storchi di…",
+      "img": "uploads/allmusicitalia-3a780aa0ca-1793377698-4.jpg"
+    },
+    {
+      "id": "ami-rkomi-a-milano-fabrique-ep",
+      "source": "allmusicitalia",
+      "title": "Rkomi torna alle origini al Fabrique: cinque concerti tra Dasein Sollen e A Milano",
+      "tag": "TOUR",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T09:40:35+01:00",
+      "desc": "Rkomi si prepara a tornare sul palco del Fabrique di Milano con RKOMI A MILANO – LIVE, una residency di cinque concerti che partirà il 3 novembre 2026. Le prime quattro serate, in programma il 3, 4,…",
+      "img": "uploads/allmusicitalia-f53fc6225d-1793377699-5.jpg"
+    },
+    {
+      "id": "ami-classifica-earone-settimana-44-2026-jovanotti-vetta",
+      "source": "allmusicitalia",
+      "title": "Classifica radio EarOne settimana 44 2026: Jovanotti e Samurai Jay salgono dalla #18 alla #1",
+      "tag": "RADIO CHARTS",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T09:24:17+01:00",
+      "desc": "Jovanotti è il nuovo numero uno della classifica radio EarOne della settimana 44 del 2026, dal 23 al 29 ottobre: Le foglie di te, con Samurai Jay, sale dal #18 al #1 alla terza settimana di presenza…",
+      "img": "uploads/allmusicitalia-c9aac47578-1793377700-6.jpg"
+    },
+    {
+      "id": "ami-moda-altalena-tour-2027-date-biglietti-scaletta",
+      "source": "allmusicitalia",
+      "title": "Modà tornano nei palasport ad aprile 2027 con l’Altalena Tour: sette date da Ancona a Padova",
+      "tag": "TOUR",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T08:00:04+01:00",
+      "desc": "I Modà annunciano il tour 2027: l’Altalena Tour porta la band in sette palasport italiani con concerti dal 10 al 28 aprile e prevendite in apertura venerdì 30 ottobre alle 14. Le date partono dal…",
+      "img": "uploads/allmusicitalia-b4952e0144-1793377700-7.jpg"
+    },
+    {
+      "id": "ami-contratto-management-artista-manager-blanco",
+      "source": "allmusicitalia",
+      "title": "Blanco, Cremonini, il contratto di management: i manager sono davvero il male della musica?",
+      "tag": "DILLO ALL'AVVOCATO",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T07:30:36+01:00",
+      "desc": "Un contratto di management può stabilire diritti e doveri di artista e manager, ma non può obbligare due persone a continuare a fidarsi: lo spiega l’avvocato Fabio Falcone dopo lo scambio di storie…",
+      "img": "uploads/allmusicitalia-93e555dd13-1793377701-8.jpg"
+    },
     {
       "id": "ami-nels-meta-strada-primo-ep",
       "source": "allmusicitalia",
