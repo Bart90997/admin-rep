@@ -1,7 +1,84 @@
 {
-  "updatedAt": "2026-10-30T16:28:21.982Z",
-  "count": 63,
+  "updatedAt": "2026-10-31T15:35:11.956Z",
+  "count": 71,
   "news": [
+    {
+      "id": "ami-francesco-baccini-nomi-e-cognomi2",
+      "source": "allmusicitalia",
+      "title": "Francesco Baccini, Nomi e cognomi2: tredici canzoni intitolate a personaggi reali e inventati",
+      "tag": "MUSICA",
+      "date": "31 ott",
+      "dateFull": "31 Ottobre 2026",
+      "iso": "2026-10-31T08:00:17+01:00",
+      "desc": "Francesco Baccini riprende il titolo del suo lavoro discografico più venduto e torna con Nomi e cognomi2, un album di inediti da solista che mancava dal 2007. Il disco, uscito venerdì 30 ottobre per…",
+      "img": "uploads/allmusicitalia-d8f65544dd-1793460907-1.jpg"
+    },
+    {
+      "id": "ami-nels-live-acustici",
+      "source": "allmusicitalia",
+      "title": "Nels annuncia due live acustici: appuntamenti a Milano e Bologna",
+      "tag": "TOUR",
+      "date": "31 ott",
+      "dateFull": "31 Ottobre 2026",
+      "iso": "2026-10-31T07:00:26+01:00",
+      "desc": "Nels porta i suoi live acustici in due club: mercoledì 11 novembre all’Arci Bellezza di Milano e giovedì 12 novembre al Locomotiv Club di Bologna. I concerti arrivano a pochi giorni da Metà strada,…",
+      "img": "uploads/allmusicitalia-547f17229e-1793460907-2.jpg"
+    },
+    {
+      "id": "ami-gigi-dalessio-concerti-2027-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Gigi D’Alessio, dagli stadi al tour europeo: tutte le novità dei concerti 2027",
+      "tag": "TOUR",
+      "date": "31 ott",
+      "dateFull": "31 Ottobre 2026",
+      "iso": "2026-10-31T02:00:27+01:00",
+      "desc": "Gigi D’Alessio annuncia i primi concerti del 2027, con cinque appuntamenti tra l’Arena di Verona e gli stadi italiani. Il calendario si apre il 22 maggio a Verona con Gigi & Friends in Arena e…",
+      "img": "uploads/allmusicitalia-06d0d0eb64-1793460908-3.jpg"
+    },
+    {
+      "id": "ami-elena-rose-lovers-prayer-joshua-shablo",
+      "source": "allmusicitalia",
+      "title": "Elena Rose canta in italiano con Joshua: Lover’s Prayer, il brano prodotto da Shablo",
+      "tag": "NUOVO SINGOLO",
+      "date": "31 ott",
+      "dateFull": "31 Ottobre 2026",
+      "iso": "2026-10-31T01:14:48+01:00",
+      "desc": "Elena Rose, cantautrice venezuelana, canta per la prima volta in italiano. Lo fa in Lover’s Prayer, il brano con Joshua, prodotto da Shablo, uscito venerdì 30 ottobre per Urubamba e distribuito in…",
+      "img": "uploads/allmusicitalia-9320de47e0-1793460909-4.jpg"
+    },
+    {
+      "id": "ami-alteo-iride-singolo-dopo-x-factor",
+      "source": "allmusicitalia",
+      "title": "Iride, il singolo d’esordio di ALTEO, prende il nome di sua nonna",
+      "tag": "NUOVO SINGOLO",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T23:31:49+01:00",
+      "desc": "Iride è il singolo d’esordio di ALTEO, uscito venerdì 23 ottobre a otto giorni dall’eliminazione dalle Last Call di X Factor 2026. Il brano è su tutte le piattaforme per Sensei Records, con…",
+      "img": "uploads/allmusicitalia-0c240a642b-1793460909-5.jpg"
+    },
+    {
+      "id": "ami-primafestival-sanremo-2027-the-jackal",
+      "source": "allmusicitalia",
+      "title": "I The Jackal condurranno il PrimaFestival di Sanremo 2027: l’annuncio di De Martino al Tg1",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T22:05:58+01:00",
+      "desc": "I The Jackal al completo condurranno il PrimaFestival di Sanremo 2027. L’annuncio arriva oggi, 30 ottobre, da Stefano De Martino, che si è collegato in videochiamata con il collettivo comico…",
+      "img": "uploads/allmusicitalia-bb15ef958f-1793460910-6.jpg"
+    },
+    {
+      "id": "ami-classifiche-fimi-settimana-44-2026-album-singoli",
+      "source": "allmusicitalia",
+      "title": "Album e singoli più venduti in Italia: Cesare Cremonini debutta primo con Amateur, Geolier guida i singoli",
+      "tag": "CLASSIFICHE DI VENDITA",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T17:47:27+01:00",
+      "desc": "Gli album più venduti in Italia dal 23 al 29 ottobre 2026, nelle classifiche FIMI della settimana 44, hanno un nuovo numero uno: Cesare Cremonini debutta alla #1 con Amateur e toglie la vetta a…",
+      "img": "uploads/allmusicitalia-f70d2b05cd-1793460910-7.jpg"
+    },
     {
       "id": "ami-sayf-santissima-fest-2027-genova",
       "source": "allmusicitalia",
@@ -89,6 +166,17 @@
       "iso": "2026-10-30T07:30:36+01:00",
       "desc": "Un contratto di management può stabilire diritti e doveri di artista e manager, ma non può obbligare due persone a continuare a fidarsi: lo spiega l’avvocato Fabio Falcone dopo lo scambio di storie…",
       "img": "uploads/allmusicitalia-93e555dd13-1793377701-8.jpg"
+    },
+    {
+      "id": "ami-amalia-gre-non-so",
+      "source": "allmusicitalia",
+      "title": "Amalia Gré torna con il singolo “Non so” tra jazz, soul e pop",
+      "tag": "NUOVO SINGOLO",
+      "date": "30 ott",
+      "dateFull": "30 Ottobre 2026",
+      "iso": "2026-10-30T07:12:08+01:00",
+      "desc": "Non so è il titolo del nuovo singolo di Amalia Gré, pubblicato il 18 ottobre e in radio dal 26 ottobre 2026. Il brano, scritto dalla stessa cantautrice e pubblicato dall’etichetta Attic Records,…",
+      "img": "uploads/allmusicitalia-22925a3f4c-1793460911-8.jpg"
     },
     {
       "id": "ami-nels-meta-strada-primo-ep",
