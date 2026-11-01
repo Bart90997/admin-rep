@@ -1,7 +1,62 @@
 {
-  "updatedAt": "2026-10-31T15:35:11.956Z",
-  "count": 71,
+  "updatedAt": "2026-11-01T16:33:05.890Z",
+  "count": 76,
   "news": [
+    {
+      "id": "ami-simone-tomassini-rock-n-road",
+      "source": "allmusicitalia",
+      "title": "Simone Tomassini, dalla musica alla TV: arriva il programma Rock ‘n Road",
+      "tag": "MUSICA",
+      "date": "01 nov",
+      "dateFull": "1 Novembre 2026",
+      "iso": "2026-11-01T12:49:10+01:00",
+      "desc": "Simone Tomassini torna in televisione, questa volta nelle vesti di conduttore. Il cantautore comasco è alla guida di Rock ‘n Road, il nuovo programma musicale di Espansione Tv che mette insieme…",
+      "img": "uploads/allmusicitalia-dd8d05455d-1793550783-1.jpg"
+    },
+    {
+      "id": "ami-amici-26-in-diretta-quarta-puntata",
+      "source": "allmusicitalia",
+      "title": "Amici 26 in diretta: la quarta puntata del 1 novembre",
+      "tag": "AMICI",
+      "date": "01 nov",
+      "dateFull": "1 Novembre 2026",
+      "iso": "2026-11-01T11:00:46+01:00",
+      "desc": "Amici 26 in diretta: la quarta puntata è andata in onda oggi, domenica 1 novembre, dalle 14 su Canale 5. Qui trovate le esibizioni di canto e di ballo, le sfide e i verdetti. La puntata era…",
+      "img": "uploads/allmusicitalia-10a56b162d-1793550783-2.jpg"
+    },
+    {
+      "id": "ami-iraci-5-canzoni-sulla-speranza",
+      "source": "allmusicitalia",
+      "title": "IRACI trasforma cinque paure in canzoni: il 13 novembre l’EP 5 canzoni sulla speranza",
+      "tag": "MUSICA",
+      "date": "01 nov",
+      "dateFull": "1 Novembre 2026",
+      "iso": "2026-11-01T08:00:32+01:00",
+      "desc": "IRACI pubblica venerdì 13 novembre l’EP 5 canzoni sulla speranza, una canzone per ciascuna delle cinque paure della sua generazione, per Alpaca Music e con distribuzione DistroKid. Il disco è…",
+      "img": "uploads/allmusicitalia-4d83cf2605-1793550784-3.jpg"
+    },
+    {
+      "id": "ami-virginio-intervista-dio-nella-pioggia",
+      "source": "allmusicitalia",
+      "title": "Virginio presenta “Dio nella pioggia”: “Dovremmo andare tutti a lezione di empatia”",
+      "tag": "INTERVISTE",
+      "date": "01 nov",
+      "dateFull": "1 Novembre 2026",
+      "iso": "2026-11-01T07:00:33+01:00",
+      "desc": "La pioggia non è necessariamente qualcosa da cui ripararsi. Può essere una benedizione, un momento di passaggio, persino una possibilità di rinascita. È da questa immagine che nasce Dio nella pioggia…",
+      "img": "uploads/allmusicitalia-95aa317812-1793550784-4.jpg"
+    },
+    {
+      "id": "ami-zecchino-doro-2026-roma-carlo-conti",
+      "source": "allmusicitalia",
+      "title": "Zecchino d’Oro 2026 da Roma: Carlo Conti conduce la serata del 4 dicembre su Rai 1",
+      "tag": "MUSICA",
+      "date": "31 ott",
+      "dateFull": "31 Ottobre 2026",
+      "iso": "2026-10-31T22:23:46+01:00",
+      "desc": "Carlo Conti condurrà lo Zecchino d’Oro 2026, in prima serata su Rai 1 venerdì 4 dicembre dallo Studio 5 “Fabrizio Frizzi” della Rai a Roma. In via del tutto straordinaria, il festival lascia per…",
+      "img": "uploads/allmusicitalia-1e4f911fda-1793550785-5.jpg"
+    },
     {
       "id": "ami-francesco-baccini-nomi-e-cognomi2",
       "source": "allmusicitalia",
