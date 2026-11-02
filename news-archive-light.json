@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-01T16:33:05.890Z",
-  "count": 76,
+  "updatedAt": "2026-11-02T19:56:46.453Z",
+  "count": 84,
   "news": [
+    {
+      "id": "ami-tony-boy-sparisci-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Tony Boy, Sparisci anticipa Cura: il disco esce solo in vinile, ma il singolo arriva in streaming",
+      "tag": "RISTAMPE",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T16:27:32+01:00",
+      "desc": "Tony Boy pubblica Sparisci martedì 3 novembre, subito dopo la mezzanotte, per 22 SRL/Atlantic Records/Warner Music. È il primo singolo ufficiale di Cura, il nuovo album del rapper in uscita il 6…",
+      "img": "uploads/allmusicitalia-9958912e0a-1793649401-1.jpg"
+    },
+    {
+      "id": "ami-olly-tutta-vita-nono-platino-disco-diamante",
+      "source": "allmusicitalia",
+      "title": "Olly, Tutta vita è disco di diamante in due anni: prima di lui solo Lazza e Marracash",
+      "tag": "MUSICA",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T16:08:32+01:00",
+      "desc": "Olly è disco di diamante: Tutta vita, l’album uscito il 25 ottobre 2024 per Epic Records/Sony Music Italy, supera le 500.000 unità nella settimana 44 della FIMI, quella dal 23 al 29 ottobre 2026.",
+      "img": "uploads/allmusicitalia-bda86c02f2-1793649402-2.jpg"
+    },
+    {
+      "id": "ami-certificazioni-fimi-settimana-44-2026-olly-diamante-geolier",
+      "source": "allmusicitalia",
+      "title": "Certificazioni FIMI: Olly diamante dopo Lazza e Marracash, e Geolier al quinto platino",
+      "tag": "CERTIFICAZIONI FIMI",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T15:31:47+01:00",
+      "desc": "Olly è disco di diamante: Tutta vita, l’album uscito il 25 ottobre 2024, supera le 500.000 unità nelle certificazioni FIMI della settimana 44 del 2026, quella dal 23 al 29 ottobre. Questa settimana…",
+      "img": "uploads/allmusicitalia-f092ed0490-1793649403-3.jpg"
+    },
+    {
+      "id": "ami-mille-superclub-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Mille firma con Columbia Records/Sony Music e lancia il singolo Superclub",
+      "tag": "NUOVO SINGOLO",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T13:06:26+01:00",
+      "desc": "Mille firma con Columbia Records/Sony Music Italy e inaugura una nuova fase con Superclub, il singolo in radio e in digitale dal 13 novembre, che anticipa l’album in uscita nel 2027. Il club del…",
+      "img": "uploads/allmusicitalia-ca3fe2fecb-1793649403-4.jpg"
+    },
+    {
+      "id": "ami-yaraki-13esima-casa",
+      "source": "allmusicitalia",
+      "title": "13esima casa è il terzo EP di Yaraki: famiglia, amicizie e traslochi in un racconto",
+      "tag": "AMICI",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T07:00:56+01:00",
+      "desc": "Yaraki pubblica venerdì 13 novembre 13esima casa, il suo terzo EP, per Warner Records Italy. L’artista italo-brasiliana lo ha annunciato con un trailer su Instagram, dopo i singoli Nn so + Che…",
+      "img": "uploads/allmusicitalia-e0f2bc1fee-1793649404-5.jpg"
+    },
+    {
+      "id": "ami-fast-animals-and-slow-kids-inverno-nucleare",
+      "source": "allmusicitalia",
+      "title": "I Fast Animals and Slow Kids tornano con Inverno Nucleare, scritto con Riccardo Zanotti",
+      "tag": "MUSICA",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T06:00:22+01:00",
+      "desc": "I Fast Animals and Slow Kids sono tornati con Inverno Nucleare, il singolo uscito venerdì 30 ottobre due anni dopo l’album Hotel Esistenza. Segna la partenza della collaborazione tra Woodworm,…",
+      "img": "uploads/allmusicitalia-c085c80fa8-1793649404-6.jpg"
+    },
+    {
+      "id": "ami-ami-charts-ottobre-2026-emma-classici",
+      "source": "allmusicitalia",
+      "title": "AMI Charts ottobre 2026: Emma prima, dal secondo al decimo posto comandano i classici",
+      "tag": "MUSICA",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T04:33:59+01:00",
+      "desc": "Emma è alla #1 nella AMI Charts di ottobre 2026 con una media di 4,97 vinili. Dalla #2 alla #10 troviamo nove classici della musica italiana: Vasco Rossi, Loredana Bertè, Ligabue, Gianna Nannini,…",
+      "img": "uploads/allmusicitalia-b48669aca2-1793649405-7.jpg"
+    },
+    {
+      "id": "ami-universal-supera-warner-classifiche-ottobre-2026",
+      "source": "allmusicitalia",
+      "title": "Universal supera Warner nelle classifiche di ottobre 2026: 36,0% contro 34,1% nel Medagliere",
+      "tag": "MUSIC BIZ",
+      "date": "02 nov",
+      "dateFull": "2 Novembre 2026",
+      "iso": "2026-11-02T03:36:45+01:00",
+      "desc": "Medagliere della discografia: Universal Music supera Warner Music nel Medagliere di ottobre 2026: nelle classifiche di vendita FIMI la discografica è presente nel 36,0% delle posizioni, contro il…",
+      "img": "uploads/allmusicitalia-ea22a79eec-1793649405-8.jpg"
+    },
     {
       "id": "ami-simone-tomassini-rock-n-road",
       "source": "allmusicitalia",
