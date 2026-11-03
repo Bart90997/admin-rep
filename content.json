@@ -8,15 +8,11 @@
     "program1-name": "Li.Fe. Radio Remix",
     "program2-name": "Tg Fermi",
     "program3-name": "Ansia.it",
-    "pal3-day": "MERCOLEDÌ",
+    "pal3-day": "MARTEDÌ",
     "pal3-time": "15:00",
     "pal3-title": "ZERO - VOGLIA DI SCRIVERE",
     "pal3-sub": "Gossip e non solo…",
-    "pal4-day": "MARTEDÌ",
-    "pal4-time": "15:00",
-    "pal4-title": "ANSIA.it",
-    "pal4-sub": "Le notizie dal mondo in chiave ironica!",
-    "pal5-day": "MERCOLEDÌ",
+    "pal5-day": "MARTEDÌ",
     "pal5-time": "16:00",
     "pal5-title": "ZERO - VOGLIA DI SCRIVERE",
     "pal5-sub": "Gossip e non solo…",
@@ -188,18 +184,14 @@
     "news3-desc": "Gli album più venduti in Italia dal 16 al 22 ottobre 2026, secondo le classifiche FIMI della settimana 43, tornano a Geolier: Tutto è possibile. Atto II, la nuova edizione uscita il 16 ottobre, lo…",
     "news3-date": "23 Ottobre 2026",
     "news3-link": "articolo.html?id=ami-classifiche-fimi-settimana-43-2026-album-singoli",
-    "pal1-day": "GIOVEDÌ",
+    "pal1-day": "MERCOLEDÌ",
     "pal1-time": "15:00",
     "pal1-title": "SERIES AND GO",
     "pal1-sub": "Tutto sul modo del cinema e delle serie tv!",
-    "pal8-day": "GIOVEDÌ",
+    "pal8-day": "MERCOLEDÌ",
     "pal8-sub": "Tutto sul modo del cinema e delle serie tv!",
     "pal8-time": "16:00",
-    "pal8-title": "SERIES AND GO",
-    "pal9-day": "MARTEDÌ",
-    "pal9-time": "16:00",
-    "pal9-title": "ANSIA.it",
-    "pal9-sub": "Le notizie dal mondo in chiave ironica!"
+    "pal8-title": "SERIES AND GO"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -256,5 +248,5 @@
     "hero3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero3-img-1792835096.jpg",
     "news3-img": "uploads/allmusicitalia-1afa066480-1792834361-8.jpg"
   },
-  "updatedAt": "2026-10-24T10:46:55.688Z"
+  "updatedAt": "2026-11-03T13:56:55.882Z"
 }
