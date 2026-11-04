@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-03T17:28:59.294Z",
-  "count": 92,
+  "updatedAt": "2026-11-04T17:42:16.060Z",
+  "count": 100,
   "news": [
+    {
+      "id": "ami-gianna-nannini-ricominciassimo-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Gianna Nannini, Ricominciassimo: la ballad scritta con Gazzelle esce con GIANNAGOLD",
+      "tag": "MUSICA",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T16:58:07+01:00",
+      "desc": "Gianna Nannini ha scritto Ricominciassimo con Gazzelle e Federico Nardelli. È la sua prima collaborazione con il cantautore romano. Il brano, prodotto da Gianna Nannini e Dardust, è il nuovo singolo…",
+      "img": "uploads/allmusicitalia-c16d967893-1793814132-1.jpg"
+    },
+    {
+      "id": "ami-pierdavide-carone-non-passi",
+      "source": "allmusicitalia",
+      "title": "Pierdavide Carone, Non passi: la ballata autobiografica su chi non c’è più",
+      "tag": "MUSICA",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T16:54:12+01:00",
+      "desc": "Pierdavide Carone pubblica venerdì 6 novembre il nuovo singolo Non passi per Zoo Dischi/ADA Music Italy, una ballata autobiografica sulla perdita di una persona cara.",
+      "img": "uploads/allmusicitalia-385ca16254-1793814132-2.jpg"
+    },
+    {
+      "id": "ami-gianna-nannini-intervista-giannagold",
+      "source": "allmusicitalia",
+      "title": "Gianna Nannini: l’orchestra sinfonica “è il vero elemento rock di questo disco”",
+      "tag": "INTERVISTE",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T16:38:58+01:00",
+      "desc": "Gianna Nannini ha raccontato a All Music Italia, a Milano, come è nato GIANNAGOLD, il disco da 29 brani in uscita venerdì 6 novembre per EMI/Universal Music Italia. Nell’intervista di Alvise Salerno…",
+      "img": "uploads/allmusicitalia-291221fe9b-1793814133-3.jpg"
+    },
+    {
+      "id": "ami-sarah-toscano-affinche-nessuno-ci-cancelli-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Sarah Toscano, Affinché nessuno ci cancelli: il nuovo singolo sulla paura di essere dimenticati",
+      "tag": "NUOVO SINGOLO",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T14:42:03+01:00",
+      "desc": "Sarah Toscano pubblica venerdì 6 novembre, sulle piattaforme digitali, il nuovo singolo Affinché nessuno ci cancelli per Warner Records / Warner Music Italy. Viene presentato come un racconto sulla…",
+      "img": "uploads/allmusicitalia-31d17fd81f-1793814133-4.jpg"
+    },
+    {
+      "id": "ami-tha-supreme-terzo-album-linguaggio-universale",
+      "source": "allmusicitalia",
+      "title": "tha Supreme, il terzo album Linguaggio Universale esce l’8 gennaio",
+      "tag": "NUOVO ALBUM",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T14:24:53+01:00",
+      "desc": "tha Supreme annuncia il terzo album: si intitola Լïიننوลցوιö Նหiνغгيаլξ (da leggere Linguaggio Universale) ed esce venerdì 8 gennaio 2027 per Epic Records Italy e Sony Music Italy. Il disco è già…",
+      "img": "uploads/allmusicitalia-af8a1d8166-1793814134-5.jpg"
+    },
+    {
+      "id": "ami-emili-kasa-non-sono-lei",
+      "source": "allmusicitalia",
+      "title": "Emili Kasa torna con Non sono lei, un brano sulla ricerca di sé",
+      "tag": "NUOVO SINGOLO",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T10:00:06+01:00",
+      "desc": "Emili Kasa pubblica venerdì 6 novembre il nuovo singolo Non sono lei per Maciste Dischi. Il brano arriva dopo Goodbye (rabbia, ti giuro, come stai) e l’EP Kalimera, un lavoro che racconta la crescita…",
+      "img": "uploads/allmusicitalia-c7a1086132-1793814134-6.jpg"
+    },
+    {
+      "id": "ami-tosca-feminae-a-teatro-tour-date",
+      "source": "allmusicitalia",
+      "title": "Tosca porta Feminae in teatro: venti date da Milano a Padova, con Parigi e Lisbona",
+      "tag": "TOUR",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T06:00:03+01:00",
+      "desc": "Tosca porta in teatro l’album Feminae: il tour Feminae a Teatro parte il 30 novembre 2026 dal Piccolo Teatro Strehler di Milano e conta venti date fra Italia, Francia e Portogallo, fino al concerto…",
+      "img": "uploads/allmusicitalia-8e6dd784ea-1793814135-7.jpg"
+    },
+    {
+      "id": "ami-paola-iezzi-dopofestival-sanremo-2027",
+      "source": "allmusicitalia",
+      "title": "Fiorello spoilera il Dopofestival 2027: Paola Iezzi con la Gialappa’s, e lei non smentisce",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "04 nov",
+      "dateFull": "4 Novembre 2026",
+      "iso": "2026-11-04T05:00:53+01:00",
+      "desc": "Paola Iezzi condurrà il Dopofestival di Sanremo 2027 insieme alla Gialappa’s Band. Lo ha anticipato Fiorello il 3 novembre a La Pennicanza, su Rai Radio2 e RaiPlay, chiamando in diretta la cantante:…",
+      "img": "uploads/allmusicitalia-3bfc10f5f5-1793814135-8.jpg"
+    },
     {
       "id": "ami-gazzelle-ogni-volta-che-sei-qui",
       "source": "allmusicitalia",
