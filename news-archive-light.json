@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-04T17:42:16.060Z",
-  "count": 100,
+  "updatedAt": "2026-11-05T17:49:22.100Z",
+  "count": 108,
   "news": [
+    {
+      "id": "ami-monksta-records-etichetta-house-of-music",
+      "source": "allmusicitalia",
+      "title": "Monksta Records: l’agenzia di management e booking apre una label con House of Music",
+      "tag": "MUSIC BIZ",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T18:00:31+01:00",
+      "desc": "L’agenzia Monksta, attiva dal 2022 nel management e nel booking, si allarga alla discografia: nasce Monksta Records, etichetta indipendente costruita in collaborazione con House of Music.",
+      "img": "uploads/allmusicitalia-f0bff4dfcb-1793900957-1.jpg"
+    },
+    {
+      "id": "ami-mv-killa-la-citta-che-non-dorme-tracklist",
+      "source": "allmusicitalia",
+      "title": "MV Killa svela la tracklist di LA CITTÀ CHE NON DORME: cinque featuring, da Artie 5ive a Guè",
+      "tag": "MUSICA",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T18:00:06+01:00",
+      "desc": "MV Killa svela la tracklist di LA CITTÀ CHE NON DORME, l’album in uscita venerdì 13 novembre per Warner Records / Warner Music Italy, in cui la città diventa un teatro a cielo aperto dove ognuno…",
+      "img": "uploads/allmusicitalia-44da9271c8-1793900958-2.jpg"
+    },
+    {
+      "id": "ami-spazi-che-suonano-atlante-live-club",
+      "source": "allmusicitalia",
+      "title": "Spazi che Suonano, l’Atlante dei live club alla Camera: solo il 5% delle entrate dal pubblico",
+      "tag": "MUSIC BIZ",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T14:01:11+01:00",
+      "desc": "I live club italiani vivono di musica originale, ma solo il 5% delle loro entrate arriva da finanziamenti e bandi, contro una media europea del 21%. Il dato arriva da Spazi che Suonano, l’Atlante dei…",
+      "img": "uploads/allmusicitalia-c053d4953c-1793900959-3.jpg"
+    },
+    {
+      "id": "ami-la-nina-il-fuoco-che-ti-porti-dentro-colonna-sonora",
+      "source": "allmusicitalia",
+      "title": "LA NIÑA e Alfredo Maddaluno, preorder per la colonna sonora de Il fuoco che ti porti dentro",
+      "tag": "MUSICA",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T14:00:39+01:00",
+      "desc": "Da martedì 3 novembre è disponibile in preorder la colonna sonora originale del film Il fuoco che ti porti dentro, realizzata da LA NIÑA e Alfredo Maddaluno e pubblicata da CAM Sugar/Picomedia.",
+      "img": "uploads/allmusicitalia-9ed5ef2140-1793900959-4.jpg"
+    },
+    {
+      "id": "ami-mace-sangha-significato-album",
+      "source": "allmusicitalia",
+      "title": "MACE annuncia SANGHA, il nuovo album in uscita il 27 novembre dopo la residenza in Toscana",
+      "tag": "NUOVO ALBUM",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T13:11:05+01:00",
+      "desc": "MACE torna con il suo nuovo album SANGHA, disponibile da venerdì 27 novembre 2026 per Atlantic Records Italy / Warner Music Italy. Il disco uscirà su tutte le piattaforme digitali e nei formati…",
+      "img": "uploads/allmusicitalia-5a9d601c4a-1793900960-5.jpg"
+    },
+    {
+      "id": "ami-lucio-corsi-napoleone-buonanotte-analisi-misiano",
+      "source": "allmusicitalia",
+      "title": "Lucio Corsi, Napoleone Buonanotte: l’eroicomico nell’analisi del Prof di latino",
+      "tag": "TESTO&AMP;CONTESTO",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T11:00:24+01:00",
+      "desc": "Lucio Corsi, Napoleone Buonanotte: Testo&ConTesto. Il “menestrello maremmano” anticipa il suo primo tour nei palazzetti con un nuovo singolo, che merita l’analisi del nostro Prof di latino, Davide…",
+      "img": "uploads/allmusicitalia-0c12980349-1793900960-6.jpg"
+    },
+    {
+      "id": "ami-nikita-smascheramandomi",
+      "source": "allmusicitalia",
+      "title": "Nikita porta SmascherAMANDOMI sul palco del Teatro La Creta: il 12 novembre lo show a Milano",
+      "tag": "LIVE & TOUR",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T11:00:20+01:00",
+      "desc": "Nikita presenta in anteprima il suo album d’esordio SmascherAMANDOMI, distribuito da Nike 111 Records e composto da 11 tracce, con uno show in programma il 12 novembre 2026 al Teatro La Creta di…",
+      "img": "uploads/allmusicitalia-7bc7a0e7e3-1793900961-7.jpg"
+    },
+    {
+      "id": "ami-shabel-ballerina-video-anteprima",
+      "source": "allmusicitalia",
+      "title": "Shabel, il video di Ballerina: una ballerina con i guanti da pugile impara a rialzarsi",
+      "tag": "VIDEO",
+      "date": "05 nov",
+      "dateFull": "5 Novembre 2026",
+      "iso": "2026-11-05T09:00:09+01:00",
+      "desc": "Il video di Ballerina di Shabel è online in anteprima su All Music Italia. Lo dirige Luca Angelini e al centro c’è una ballerina con i guanti da pugile. Il singolo è uscito il 30 ottobre per Alta…",
+      "img": "uploads/allmusicitalia-5e06c701e5-1793900961-8.jpg"
+    },
     {
       "id": "ami-gianna-nannini-ricominciassimo-testo-significato",
       "source": "allmusicitalia",
