@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-05T17:49:22.100Z",
-  "count": 108,
+  "updatedAt": "2026-11-06T17:06:49.699Z",
+  "count": 116,
   "news": [
+    {
+      "id": "ami-nayt-tour-2026-date-palazzetti",
+      "source": "allmusicitalia",
+      "title": "Nayt, la scaletta del Noi Individui Tour 2026: tutte le canzoni e le ultime date",
+      "tag": "TOUR",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T17:45:53+01:00",
+      "desc": "Nayt ha iniziato il Noi Individui Tour 2026, il suo primo tour nei palasport, con la data zero del 1° novembre al Modigliani Forum di Livorno e il concerto del 3 novembre al Palaflorio di Bari. La…",
+      "img": "uploads/allmusicitalia-f3114896d3-1793984806-1.jpg"
+    },
+    {
+      "id": "ami-classifiche-fimi-settimana-45-2026-album-singoli",
+      "source": "allmusicitalia",
+      "title": "Album e singoli più venduti in Italia: Kid Yugi torna primo, Max Pezzali debutta sul podio",
+      "tag": "CLASSIFICHE DI VENDITA",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T17:20:24+01:00",
+      "desc": "Gli album più venduti in Italia dal 30 ottobre al 5 novembre 2026, nelle classifiche FIMI della settimana 45, tornano a Kid Yugi: Anche gli eroi muoiono Post Mortem, la nuova edizione del 30 ottobre,…",
+      "img": "uploads/allmusicitalia-97400bb4ae-1793984806-2.jpg"
+    },
+    {
+      "id": "ami-rocco-hunt-clementino-intervista-the-album",
+      "source": "allmusicitalia",
+      "title": "Intervista a Rocco Hunt e Clementino: “Nessun trend, nessuna strategia di mercato”",
+      "tag": "INTERVISTE",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T16:30:42+01:00",
+      "desc": "Rocco Hunt e Clementino raccontano The Album, il loro primo album insieme in uscita oggi, venerdì 6 novembre, per Epic Records/Sony Music Italy, nell’intervista di Alvise Salerno per All Music Italia.",
+      "img": "uploads/allmusicitalia-9dca6a04af-1793984807-3.jpg"
+    },
+    {
+      "id": "ami-vasco-brondi-terra-concerti-2027",
+      "source": "allmusicitalia",
+      "title": "Vasco Brondi riporta dal vivo “Terra” dieci anni dopo: due concerti a Milano e Roma",
+      "tag": "TOUR",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T12:00:50+01:00",
+      "desc": "Vasco Brondi torna dal vivo nel 2027 con due concerti speciali per celebrare i dieci anni di Terra, l’ultimo album di inediti pubblicato con il progetto Le Luci della Centrale Elettrica.",
+      "img": "uploads/allmusicitalia-8838e296a4-1793984807-4.jpg"
+    },
+    {
+      "id": "ami-classifica-earone-settimana-45-2026-giorgia-vetta",
+      "source": "allmusicitalia",
+      "title": "Classifica radio EarOne settimana 45 2026: Giorgia al #1, Lucio Corsi debutta al #24",
+      "tag": "RADIO CHARTS",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T10:27:49+01:00",
+      "desc": "Giorgia è la nuova numero uno della classifica radio EarOne della settimana 45 del 2026, dal 30 ottobre al 5 novembre: Parafulmini sale dal #9 al #1 alla quinta settimana di presenza e diventa la…",
+      "img": "uploads/allmusicitalia-d43bd2a8d4-1793984808-5.jpg"
+    },
+    {
+      "id": "ami-pamela-petrarolo-senza-tutto-questo",
+      "source": "allmusicitalia",
+      "title": "Pamela Petrarolo, dopo il no di De Martino, lancia “Senza tutto questo”",
+      "tag": "MUSICA",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T07:02:57+01:00",
+      "desc": "Pamela Petrarolo torna alla musica con il singolo Senza tutto questo, disponibile negli store digitali dal 30 ottobre 2026 per JANAMELA Group. Il brano anticipa un nuovo album, composto da nove…",
+      "img": "uploads/allmusicitalia-b38da73f15-1793984808-6.jpg"
+    },
+    {
+      "id": "ami-cover-del-mese-novembre-gianmaria",
+      "source": "allmusicitalia",
+      "title": "Gianmaria è la Cover del mese di novembre: il ritorno con Senza la tua mano in tasca",
+      "tag": "MUSICA",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T07:00:12+01:00",
+      "desc": "Gianmaria è l’artista della Cover del mese di novembre di All Music Italia. Il numero #03 ha in copertina la frase “due anni dopo, torna a parlarci con un nuovo singolo, senza filtri” ed esce con…",
+      "img": "uploads/allmusicitalia-46c3670ef9-1793984808-7.jpg"
+    },
+    {
+      "id": "ami-occhi-parolacce-significato",
+      "source": "allmusicitalia",
+      "title": "Occhi pubblica PAROLACCE: il nuovo singolo racconta una storia che esiste solo nella fantasia",
+      "tag": "NUOVO SINGOLO",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T06:00:54+01:00",
+      "desc": "Occhi pubblica venerdì 6 novembre il nuovo singolo PAROLACCE per Nigiri Records/Sony Music Italy. Il brano, disponibile in pre-save, è stato scritto da Occhi, composto insieme a Riccardo Lodi e…",
+      "img": "uploads/allmusicitalia-c16188b7c5-1793984809-8.jpg"
+    },
     {
       "id": "ami-monksta-records-etichetta-house-of-music",
       "source": "allmusicitalia",
