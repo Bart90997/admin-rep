@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-06T17:06:49.699Z",
-  "count": 116,
+  "updatedAt": "2026-11-07T16:02:31.394Z",
+  "count": 124,
   "news": [
+    {
+      "id": "ami-senza-cri-concerti-2027",
+      "source": "allmusicitalia",
+      "title": "Senza Cri, due concerti nel 2027: Roma e Milano a novembre",
+      "tag": "TOUR",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T16:00:55+01:00",
+      "desc": "Senza Cri annuncia due concerti per novembre 2027. L’artista si esibirà il 25 novembre a Roma, al Largo Venue, e il 26 novembre a Milano, alla Santeria Toscana.",
+      "img": "uploads/allmusicitalia-d483ab14e0-1794067347-1.jpg"
+    },
+    {
+      "id": "ami-onlyseba-farfalle",
+      "source": "allmusicitalia",
+      "title": "Onlyseba, Farfalle: il ritorno dopo due anni lontano dalle pubblicazioni",
+      "tag": "MUSICA",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T14:36:39+01:00",
+      "desc": "Onlyseba pubblica venerdì 13 novembre 2026 il nuovo singolo Farfalle, che segna il suo ritorno discografico dopo circa due anni lontano dalle pubblicazioni. Il brano è distribuito da Orangle Records,…",
+      "img": "uploads/allmusicitalia-d84595bda6-1794067348-2.jpg"
+    },
+    {
+      "id": "ami-perturbazione-tour-risuona",
+      "source": "allmusicitalia",
+      "title": "I Perturbazione portano «Risuona» dal vivo per la prima volta, con la data zero a Saluzzo",
+      "tag": "TOUR",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T14:25:46+01:00",
+      "desc": "I Perturbazione presentano per la prima volta dal vivo Risuona sabato 7 novembre 2026 al Cinema Teatro Magda Olivero di Saluzzo. La data zero apre il tour Risuona dal vivo, con otto concerti…",
+      "img": "uploads/allmusicitalia-5201be3580-1794067348-3.jpg"
+    },
+    {
+      "id": "ami-mandark-amore-automa",
+      "source": "allmusicitalia",
+      "title": "Mandark, fuori Amore Automa: una Roma smarrita e i viaggi in Asia per ritrovare la musica",
+      "tag": "MUSICA",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T14:22:13+01:00",
+      "desc": "Mandark ha pubblicato venerdì 6 novembre il nuovo album Amore Automa, otto brani usciti per Supernova Group che raccontano una Roma smarrita e degradata. Il disco è stato anticipato dal singolo Bella…",
+      "img": "uploads/allmusicitalia-aaae587d33-1794067349-4.jpg"
+    },
+    {
+      "id": "ami-giorgia-last-call-canale-5-scaletta",
+      "source": "allmusicitalia",
+      "title": "Giorgia Last Call su Canale 5 il 10 novembre: il concerto di Milano con Annalisa, Emma e Irama",
+      "tag": "MUSICA IN TV",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T12:39:02+01:00",
+      "desc": "Lo speciale Giorgia – Last Call va in onda martedì 10 novembre 2026 in prima serata su Canale 5: è il concerto che Giorgia ha tenuto all’Unipol Dome di Milano il 3 ottobre, ultima data del tour G…",
+      "img": "uploads/allmusicitalia-345bd4d4ce-1794067349-5.png"
+    },
+    {
+      "id": "ami-marco-masini-tour-2027",
+      "source": "allmusicitalia",
+      "title": "Marco Masini annuncia Teatri 2027: tutte le date del nuovo tour",
+      "tag": "TOUR",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T08:00:12+01:00",
+      "desc": "Marco Masini tornerà dal vivo nella primavera del 2027 con Teatri 2027, una tournée di 12 concerti in programma dal 6 aprile al 18 maggio. L’annuncio è arrivato martedì 3 novembre dal palco…",
+      "img": "uploads/allmusicitalia-0f0c704f1f-1794067350-6.jpg"
+    },
+    {
+      "id": "ami-giovapiugiova-arrivera",
+      "source": "allmusicitalia",
+      "title": "Giovapiùgiova lancia il brano “Arriverà” in attesa del nuovo album",
+      "tag": "NUOVO ALBUM",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T07:05:55+01:00",
+      "desc": "Arriverà è il titolo del nuovo singolo di Giovapiùgiova, disponibile sulle piattaforme digitali dal 6 novembre 2026. Il brano (Supernova Dischi – distribuzione Believe) rappresenta un passo ulteriore…",
+      "img": "uploads/allmusicitalia-144f79acd8-1794067350-7.jpg"
+    },
+    {
+      "id": "ami-ibisco-fomoromanzo",
+      "source": "allmusicitalia",
+      "title": "Ibisco, FOMOROMANZO: il nuovo album tra fragilità umane e mondo digitale",
+      "tag": "NUOVO ALBUM",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T07:00:49+01:00",
+      "desc": "Ibisco torna con FOMOROMANZO, il suo terzo album in uscita venerdì 6 novembre 2026 per Panico Dischi. Il disco è stato anticipato dai singoli Tuona/Restituire, So bene come ti senti e Tentacoli del…",
+      "img": "uploads/allmusicitalia-64b6c62624-1794067350-8.jpg"
+    },
     {
       "id": "ami-nayt-tour-2026-date-palazzetti",
       "source": "allmusicitalia",
