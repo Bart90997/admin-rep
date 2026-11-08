@@ -190,7 +190,17 @@
     "teamop9-desc": "Docile e Tranquilla, come una primula primaverile, ma quando si mette al microfono, non ce n'è per nessuno! Dedita, determinata e con tanta voglia di mettersi in gioco!",
     "teamop10-desc": "Una ragazza dalle mille passioni, sempre pronta a ridere e a scherzare! È sempre pronta a mettersi dietro ai pulsanti della regia, con una destrezza unica!",
     "teamop11-desc": "Uno dei nostri speaker più determinati e presenti! Anch'essa dalle mille passioni, entra a Li.Fe. radio come speaker, con l'intento di plasmare con la sua voce le giornate degli ascoltatori (Ci riesci, Angie!).",
-    "teamop12-desc": ""
+    "teamop12-desc": "Speaker instancabile e perseverante, che non smette mai di proferire impegno nelle sue trasmissioni! Riesce sempre a tenere incollati i suoi ascoltatori!",
+    "teamop13-desc": "Andrea è lo storico Social Media Manager di Li.Fe. Radio! Poliedrico a sempre impegnato, lo troverai in qualunque evento dell'emittente (Ve lo assicuriamo, sempre!)",
+    "teamop22-desc": "Riesce a tenerci uniti, come una grande famiglia! I membri del team operativo possono cambiare, ma lui no! È la costante di Li.Fe. Radio: Scrupoloso, sapiente e lungimirante!",
+    "teamop21-desc": "Il grande fratello, colui che è dietro le telecamere e i bottoni! Riesce a coordinare i Fonici con una maestria encomiabile! Potrebbe cominciare a parlarti di argomenti randomici per ore, ma non preoccuparti, è tutto normale!",
+    "teamop14-desc": "Generosa, cordiale ed empatica: Sa di certo come tirarti via un sorriso! Costantemente a disposizione per ogni evenienza, proferisce in Li.Fe. Radio tutto il suo impegno, sempre!",
+    "teamop20-desc": "L'instancabile Vice Social Media Manager di Li.Fe. radio! Gestisce con Andrea i social Media ufficiali. onnipresente ed è incredibilmente solare!",
+    "teamop15-desc": "Salvatore Luca Frecentese (Per i comuni mortali \"Sabatino\") è un regista di Li.Fe. Radio. In regia quasi ogni settimana, ha un'incredibile voglia di partecipare e un'encomiabile spirito di squadra!",
+    "teamop16-desc": "Voce vivace e coinvolgente, sempre pronta a collaborare e a sperimentare. Ogni settimana porta in diretta entusiasmo, spontaneità e una grande curiosità verso nuove esperienze!",
+    "teamop17-desc": "Speaker intraprendente e creativa, capace di trasmettere energia e personalità. Affronta ogni diretta con entusiasmo, curiosità e spirito di squadra, senza rinunciare a mettersi alla prova.",
+    "teamop18-desc": "Una delle voci di punta di Li.Fe. Radio, speaker esperta e presenza ormai imprescindibile. Con carisma, sicurezza e personalità, contribuisce a rendere ogni diretta un appuntamento speciale.",
+    "teamop19-desc": "Speaker carismatico e creativo, ricopre il ruolo di vice-direttore del Comitato Artistico. Con intraprendenza e spirito d'iniziativa, contribuisce alla crescita editoriale e artistica di Li.Fe. Radio."
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -247,5 +257,5 @@
     "hero3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero3-img-1792835096.jpg",
     "news3-img": "uploads/allmusicitalia-1afa066480-1792834361-8.jpg"
   },
-  "updatedAt": "2026-11-08T20:31:00.869Z"
+  "updatedAt": "2026-11-08T21:15:30.285Z"
 }
