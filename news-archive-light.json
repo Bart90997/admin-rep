@@ -1,7 +1,62 @@
 {
-  "updatedAt": "2026-11-07T16:02:31.394Z",
-  "count": 124,
+  "updatedAt": "2026-11-08T16:29:15.179Z",
+  "count": 132,
   "news": [
+    {
+      "id": "ami-pierpaolo-capovilla-tour-2026",
+      "source": "allmusicitalia",
+      "title": "Pierpaolo Capovilla e i Cattivi Maestri, cinque concerti a novembre dal Druso al Mercato Nuovo",
+      "tag": "TOUR",
+      "date": "08 nov",
+      "dateFull": "8 Novembre 2026",
+      "iso": "2026-11-08T16:00:49+01:00",
+      "desc": "Pierpaolo Capovilla e i Cattivi Maestri tornano in concerto con il Tour autunnale 2026. Dopo i live da aprile a settembre, la seconda parte del tour conta cinque date a novembre, dal debutto al Druso…",
+      "img": "uploads/allmusicitalia-961b89dc6f-1794155350-1.jpg"
+    },
+    {
+      "id": "ami-amici-26-in-diretta-quinta-puntata",
+      "source": "allmusicitalia",
+      "title": "Amici 26 in diretta: la quinta puntata dell’8 novembre, Shari e Tìaso primi a pari merito",
+      "tag": "AMICI",
+      "date": "08 nov",
+      "dateFull": "8 Novembre 2026",
+      "iso": "2026-11-08T13:49:22+01:00",
+      "desc": "Amici 26 in diretta: la quinta puntata è andata in onda oggi, domenica 8 novembre, dalle 14 su Canale 5. Qui trovate le esibizioni di canto e di ballo, le sfide e i verdetti. La puntata era…",
+      "img": "uploads/allmusicitalia-d2e9920f31-1794155351-2.jpg"
+    },
+    {
+      "id": "ami-quintorigo-john-de-leo-tour-2027",
+      "source": "allmusicitalia",
+      "title": "Quintorigo e John De Leo di nuovo insieme: nel 2027 tornano i primi tre album dal vivo",
+      "tag": "TOUR",
+      "date": "08 nov",
+      "dateFull": "8 Novembre 2026",
+      "iso": "2026-11-08T10:00:16+01:00",
+      "desc": "I Quintorigo e John De Leo tornano insieme sul palco nel 2027 con Rospo Grigio in Cattività, un tour di sette concerti che riunisce la formazione originale della band. Si parte il 22 gennaio da…",
+      "img": "uploads/allmusicitalia-08d21a5657-1794155351-3.jpg"
+    },
+    {
+      "id": "ami-fares-anche-io-ho-paura",
+      "source": "allmusicitalia",
+      "title": "Fares, Anche Io Ho Paura: il nuovo album sulla paura e il vinile disegnato dal vivo",
+      "tag": "RISTAMPE",
+      "date": "08 nov",
+      "dateFull": "8 Novembre 2026",
+      "iso": "2026-11-08T07:00:26+01:00",
+      "desc": "Fares pubblica venerdì 4 dicembre 2026 il nuovo album Anche Io Ho Paura, in digitale e in vinile per DOREMI. Il cantautore, componente del collettivo BNKR44, costruisce il disco su 14 brani dedicati…",
+      "img": "uploads/allmusicitalia-7581d0410e-1794155352-4.jpg"
+    },
+    {
+      "id": "ami-test-che-canzone-di-laura-pausini-sei",
+      "source": "allmusicitalia",
+      "title": "Che canzone di Laura Pausini sei? Il test nei giorni del tour e dei vent’anni di Io canto",
+      "tag": "SONDAGGI E TEST",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T20:20:10+01:00",
+      "desc": "Che canzone di Laura Pausini sei? Il nuovo test di All Music Italia mette in gioco otto brani, da La solitudine del 1993 a Scatola del 2022: dieci domande sulla vita di tutti i giorni e una sola…",
+      "img": "uploads/allmusicitalia-f87d215121-1794155353-5.jpg"
+    },
     {
       "id": "ami-senza-cri-concerti-2027",
       "source": "allmusicitalia",
@@ -89,6 +144,39 @@
       "iso": "2026-11-07T07:00:49+01:00",
       "desc": "Ibisco torna con FOMOROMANZO, il suo terzo album in uscita venerdì 6 novembre 2026 per Panico Dischi. Il disco è stato anticipato dai singoli Tuona/Restituire, So bene come ti senti e Tentacoli del…",
       "img": "uploads/allmusicitalia-64b6c62624-1794067350-8.jpg"
+    },
+    {
+      "id": "ami-te-quiero-euridice-geografie",
+      "source": "allmusicitalia",
+      "title": "Te quiero Euridice, Geografie: l’EP con SANTACHIARA nato dal bando EncodER",
+      "tag": "MUSICA",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T06:00:15+01:00",
+      "desc": "I Te quiero Euridice hanno pubblicato venerdì 6 novembre il nuovo EP Geografie per Artist First e Futura Dischi.",
+      "img": "uploads/allmusicitalia-3531d1a3c9-1794155353-6.jpg"
+    },
+    {
+      "id": "ami-musicultura-2027-comitato-garanzia-iscrizioni",
+      "source": "allmusicitalia",
+      "title": "Musicultura 2027, Dimartino, Giorgio Poi e Francesco Sarcina entrano nel Comitato di Garanzia",
+      "tag": "MUSICA",
+      "date": "07 nov",
+      "dateFull": "7 Novembre 2026",
+      "iso": "2026-11-07T01:37:10+01:00",
+      "desc": "Dimartino, Giorgio Poi e Francesco Sarcina (Le Vibrazioni) entrano nel Comitato Artistico di Garanzia di Musicultura 2027, la 38ª edizione del concorso per la canzone popolare e d’autore. Le…",
+      "img": "uploads/allmusicitalia-c88f567fe6-1794155354-7.jpg"
+    },
+    {
+      "id": "ami-santeria-liveurope-dieci-serate-siae",
+      "source": "allmusicitalia",
+      "title": "Santeria Liveurope, dieci serate per gli emergenti europei con SIAE: si parte l’11 novembre",
+      "tag": "LIVE & TOUR",
+      "date": "06 nov",
+      "dateFull": "6 Novembre 2026",
+      "iso": "2026-11-06T22:57:05+01:00",
+      "desc": "Nasce Santeria Liveurope, un programma di dieci serate per gli artisti emergenti europei, realizzato da Santeria a Milano in collaborazione con SIAE, la Società Italiana degli Autori ed Editori. Il…",
+      "img": "uploads/allmusicitalia-f9f863ac8a-1794155354-8.jpg"
     },
     {
       "id": "ami-nayt-tour-2026-date-palazzetti",
