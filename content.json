@@ -27,7 +27,7 @@
     "rv3-link": "https://www.instagram.com/p/DX1E3SXjP9I/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
     "teamop1-name": "BARTOLO OLIVA",
     "teamop1-role": "Speaker, Responsabile Generale",
-    "teamop1-desc": "",
+    "teamop1-desc": "Colui che tiene su tutto l'ambaradam. Determinato, serio, a tratti dispotico (Ma non ditelo a nessuno!). Ambisce a portare il progetto a vette altissime (E ci sta riuscendo!)",
     "teamfam1-name": "ANTONIO MARINO",
     "teamfam1-role": "Speaker",
     "teamfam1-desc": "Speaker radiofonico a tutti gli effetti ed ex responsabile generale!",
@@ -179,7 +179,18 @@
     "pal2-day": "Giovedì ",
     "pal2-time": "15:00",
     "pal2-title": "Li.Fe. Radio Remix",
-    "pal2-sub": "Un programma decisamente ritmato! Con Bartolomeo Oliva"
+    "pal2-sub": "Un programma decisamente ritmato! Con Bartolomeo Oliva",
+    "teamop2-desc": "Prendi un pizzico di Totò, con quanto basta di Alessandro Siani e un po' di Charlie Chaplin: Otterrai Donato de Gennaro! Attore teatrale da quando era in fasce, porta il suo talento a Li.Fe. Radio da quando è in questa scuola.",
+    "teamop3-desc": "Se hai un problema, Umberto può risolverlo! Non si sa come faccia di preciso, ma ha il potere di aggiustare qualsiasi cosa! È un professionista in non si sa quale settore, ma stanne certo: Ci torna sempre utile!",
+    "teamop4-desc": "Serissimo, fin troppo! Lettore accanito e nato con gli occhiali. Se vuoi che qualcosa sia fatto, DEVI chiedere a lui! Stai attento, però, a non avviare una discussione con questo essere (Potresti uscirne qualche decennio dopo!).",
+    "teamop5-desc": "Appassionato della musica in ogni sua forma. Solare, scherzoso, amante di Tate Mcrae e Gracie Abrams. Praticamente un jukebox ambulante!",
+    "teamop6-desc": "Speaker dedita e appassionata, anch'essa attrice e poliedrica, Riesce sempre a strapparti un sorriso! Innamorata follemente di Olivia Rodrigo.",
+    "teamop7-desc": "Una costante sul quale Li.Fe. Radio può contare! Greta è sempre attiva e presente, con una voglia e una dedizione encomiabili! Sempre pronta a mettersi in gioco davanti al microfono.",
+    "teamop8-desc": "Chi non conosce Mattia?! È certamente controverso, ma ciò del quale puoi stare certo è che quest'ultimo è un'elefante nella stanza: Non puoi di certo non notarlo!",
+    "teamop9-desc": "Docile e Tranquilla, come una primula primaverile, ma quando si mette al microfono, non ce n'è per nessuno! Dedita, determinata e con tanta voglia di mettersi in gioco!",
+    "teamop10-desc": "Una ragazza dalle mille passioni, sempre pronta a ridere e a scherzare! È sempre pronta a mettersi dietro ai pulsanti della regia, con una destrezza unica!",
+    "teamop11-desc": "Uno dei nostri speaker più determinati e presenti! Anch'essa dalle mille passioni, entra a Li.Fe. radio come speaker, con l'intento di plasmare con la sua voce le giornate degli ascoltatori (Ci riesci, Angie!).",
+    "teamop12-desc": ""
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -236,5 +247,5 @@
     "hero3-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/hero3-img-1792835096.jpg",
     "news3-img": "uploads/allmusicitalia-1afa066480-1792834361-8.jpg"
   },
-  "updatedAt": "2026-11-08T20:10:46.104Z"
+  "updatedAt": "2026-11-08T20:30:04.139Z"
 }
