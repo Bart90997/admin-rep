@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-08T21:32:28.690Z",
-  "count": 132,
+  "updatedAt": "2026-11-09T20:21:51.746Z",
+  "count": 140,
   "news": [
+    {
+      "id": "ami-teca-luce-mia-si-fa-notte-significato",
+      "source": "allmusicitalia",
+      "title": "TECA pubblica Luce mia si fa notte: la fine di un amore che non può più proseguire",
+      "tag": "MUSICA",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T17:25:02+01:00",
+      "desc": "TECA pubblica il nuovo singolo Luce mia si fa notte, disponibile su tutte le piattaforme digitali da venerdì 13 novembre 2026, per SOVRUM / WEA con distribuzione di ADA Music Italy.",
+      "img": "uploads/allmusicitalia-5cd52a642b-1794255707-1.jpg"
+    },
+    {
+      "id": "ami-blanco-stelle-galassie-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Blanco torna a sorpresa con Stelle&Galassie, scritta con Paulo di Amici 26",
+      "tag": "AMICI",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T16:22:47+01:00",
+      "desc": "Blanco pubblica a sorpresa Stelle&Galassie, il nuovo singolo uscito lunedì 9 novembre su tutte le piattaforme per BAMBAM S.r.l./Universal Music Italia, a undici giorni dallo scontro social con il suo…",
+      "img": "uploads/allmusicitalia-d86ecd42ea-1794255708-2.jpg"
+    },
+    {
+      "id": "ami-certificazioni-fimi-settimana-45-2026-kid-yugi-artie-5ive",
+      "source": "allmusicitalia",
+      "title": "Certificazioni FIMI: Kid Yugi quadruplo platino con Anche gli eroi muoiono, Elodie triplo con This is Elodie",
+      "tag": "CERTIFICAZIONI FIMI",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T15:17:17+01:00",
+      "desc": "Kid Yugi è quadruplo platino con Anche gli eroi muoiono, l’album uscito il 30 gennaio 2026. Nelle certificazioni FIMI della settimana 45 del 2026, quella dal 30 ottobre al 5 novembre, lo stesso…",
+      "img": "uploads/allmusicitalia-cde0910693-1794255708-3.jpg"
+    },
+    {
+      "id": "ami-francesco-gabbani-francesco-gabbani-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Francesco Gabbani intitola il singolo con il suo nome: pace con la natura, il tempo e sé stesso",
+      "tag": "NUOVO SINGOLO",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T15:03:24+01:00",
+      "desc": "Francesco Gabbani pubblica venerdì 13 novembre il nuovo singolo inedito Francesco Gabbani, un brano sulla riconciliazione con la natura, con il tempo e con sé stesso, disponibile in radio e su tutte…",
+      "img": "uploads/allmusicitalia-0f074cecd3-1794255709-4.jpg"
+    },
+    {
+      "id": "ami-sal-da-vinci-sal-da-claus-album-di-natale",
+      "source": "allmusicitalia",
+      "title": "Sal Da Vinci diventa Sal Da Claus: il 27 novembre esce il suo album di Natale",
+      "tag": "NUOVO ALBUM",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T14:21:48+01:00",
+      "desc": "Sal Da Vinci pubblica un album di canzoni di Natale: Sal Da Claus – The Christmas Album esce venerdì 27 novembre per Atlantic Records/Warner Music Italy ed è disponibile da oggi in preorder.",
+      "img": "uploads/allmusicitalia-950977ddad-1794255709-5.jpg"
+    },
+    {
+      "id": "ami-nitto-atp-finals-2026-artisti-music-break",
+      "source": "allmusicitalia",
+      "title": "Nitto ATP Finals 2026, gli artisti: Achille Lauro apre, Andrea Bocelli chiude",
+      "tag": "MUSICA",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T13:56:43+01:00",
+      "desc": "Gli artisti delle Nitto ATP Finals 2026 sono nove: Achille Lauro apre giovedì 12 novembre con il Grand Opening Show, sette nomi della musica italiana si alternano nei Music Break dal 15 al 21…",
+      "img": "uploads/allmusicitalia-d038a4e164-1794255710-6.jpg"
+    },
+    {
+      "id": "ami-cassandra-raffaele-c4",
+      "source": "allmusicitalia",
+      "title": "“C4” è il nuovo capitolo di Cassandra Raffaele: un doppio album tra elettronica e introspezione",
+      "tag": "NUOVO ALBUM",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T07:20:20+01:00",
+      "desc": "Cassandra Raffaele prepara il ritorno discografico con C4, un doppio album composto da diciannove tracce, in uscita il 20 novembre per l’etichetta indipendente 261 Records, con distribuzione The…",
+      "img": "uploads/allmusicitalia-ac4ba8cb6c-1794255710-7.png"
+    },
+    {
+      "id": "ami-federica-tremolada-sony-music-italy-andrea-rosi",
+      "source": "allmusicitalia",
+      "title": "Sony Music Italy, Federica Tremolada potrebbe prendere il posto di Andrea Rosi",
+      "tag": "MUSIC BIZ",
+      "date": "09 nov",
+      "dateFull": "9 Novembre 2026",
+      "iso": "2026-11-09T07:00:25+01:00",
+      "desc": "Federica Tremolada potrebbe essere la prossima numero uno di Sony Music Italy, al posto di Andrea Rosi. Secondo le nostre fonti la scelta è ormai orientata su di lei, anche se il passaggio di…",
+      "img": "uploads/allmusicitalia-e17316f453-1794255711-8.jpg"
+    },
     {
       "id": "ami-pierpaolo-capovilla-tour-2026",
       "source": "allmusicitalia",
