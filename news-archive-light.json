@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-09T20:21:51.746Z",
-  "count": 140,
+  "updatedAt": "2026-11-10T17:26:07.924Z",
+  "count": 148,
   "news": [
+    {
+      "id": "ami-antonio-altini-risposte-domande",
+      "source": "allmusicitalia",
+      "title": "Antonio Altini risponde alle nostre sette domande: il testo integrale",
+      "tag": "MA QUALE MUSICA LEGGERA?",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T17:45:55+01:00",
+      "desc": "Sabato 7 novembre, alle 17:22, Antonio Altini ha risposto per iscritto alle sette domande che gli avevo mandato il 5 novembre, prima della scadenza delle 18 che gli avevamo dato. Riguardano il…",
+      "img": "uploads/allmusicitalia-39939b7c3d-1794331563-1.jpg"
+    },
+    {
+      "id": "ami-antonio-altini-papillon-contratto-700-euro",
+      "source": "allmusicitalia",
+      "title": "Antonio Altini, parla Papillon: dopo l’inchiesta 700 euro per 24 concerti e una data sola",
+      "tag": "MA QUALE MUSICA LEGGERA?",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T17:43:41+01:00",
+      "desc": "A maggio scorso abbiamo raccontato la storia di Antonio Altini, agente di booking con Altini Cose, e degli artisti emergenti che raccontano di avergli pagato in anticipo concerti mai svolti, o svolti…",
+      "img": "uploads/allmusicitalia-2a8b3e9f9d-1794331563-2.jpg"
+    },
+    {
+      "id": "ami-cate-lumina-mi-primer-amor",
+      "source": "allmusicitalia",
+      "title": "Cate Lumina, Mi Primer Amor finisce nel video dell’Inter su Ronaldo: esce venerdì 13 novembre",
+      "tag": "VIDEO",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T15:22:11+01:00",
+      "desc": "Cate Lumina annuncia Mi Primer Amor, il singolo che l’Inter ha già usato come colonna sonora di un video su Ronaldo. Il brano esce venerdì 13 novembre su tutte le piattaforme per LaRec/ADA/Warner…",
+      "img": "uploads/allmusicitalia-c1eae42d1e-1794331564-3.jpg"
+    },
+    {
+      "id": "ami-jacopo-sarno-pizza",
+      "source": "allmusicitalia",
+      "title": "Jacopo Sarno, Pizza: ‘Chi è la Signora? Per me è la democrazia’",
+      "tag": "MUSICA",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T12:00:35+01:00",
+      "desc": "Jacopo Sarno pubblica venerdì 13 novembre, in radio e in digitale, Pizza, il nuovo singolo distribuito da Energy Power, con il pre-save già attivo. Il brano è il secondo estratto da Disastri in…",
+      "img": "uploads/allmusicitalia-7dae267437-1794331564-4.jpg"
+    },
+    {
+      "id": "ami-milano-music-week-2026-programma-concerti",
+      "source": "allmusicitalia",
+      "title": "Milano Music Week 2026: programma dei concerti e dei dj set dal 16 al 22 novembre",
+      "tag": "MUSICA",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T10:00:00+01:00",
+      "desc": "La Milano Music Week 2026, decima edizione della manifestazione, va da lunedì 16 a domenica 22 novembre, con la Fabbrica del Vapore come sede principale e la direzione artistica di Linus. Il…",
+      "img": "uploads/allmusicitalia-03eaaff35d-1794331565-5.jpg"
+    },
+    {
+      "id": "ami-sal-da-vinci-meravigliosamente-rai-1-per-sempre-sal",
+      "source": "allmusicitalia",
+      "title": "Sal Da Vinci festeggia 50 anni di carriera: Meravigliosamente su Rai 1 il 20 e 27 novembre",
+      "tag": "MUSICA",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T09:00:57+01:00",
+      "desc": "Sal Da Vinci festeggia i cinquant’anni di carriera con due serate su Rai 1, Meravigliosamente, in onda venerdì 20 e venerdì 27 novembre, e con l’autobiografia Per sempre Sal, in libreria dal 24…",
+      "img": "uploads/allmusicitalia-e47fedf70c-1794331566-6.jpg"
+    },
+    {
+      "id": "ami-cosmo-tour-2027-date-concerti-2",
+      "source": "allmusicitalia",
+      "title": "Cosmo porta Il fiore del futuro nei club: il tour 2027 parte il 29 gennaio da Bologna",
+      "tag": "TOUR",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T08:00:48+01:00",
+      "desc": "Cosmo annuncia le date dei concerti del 2027 con Il fiore del futuro Club Tour 2027: otto serate in club e teatri, dal 29 gennaio all’Estragon di Bologna al 26 febbraio all’Eremo Club di Molfetta.",
+      "img": "uploads/allmusicitalia-75744faeaa-1794331566-7.jpg"
+    },
+    {
+      "id": "ami-cartapesta-londra-nuovo-singolo",
+      "source": "allmusicitalia",
+      "title": "“LONDRA” è il nuovo singolo di Cartapesta: una partenza alla ricerca di sé",
+      "tag": "NUOVO SINGOLO",
+      "date": "10 nov",
+      "dateFull": "10 Novembre 2026",
+      "iso": "2026-11-10T07:20:10+01:00",
+      "desc": "Cartapesta lancia il nuovo singolo Londra. Il brano è anticipato dal monologo Impareremo a restare da soli, che introduce il nuovo progetto artistico del cantautore.",
+      "img": "uploads/allmusicitalia-7f8bb86974-1794331567-8.png"
+    },
     {
       "id": "ami-teca-luce-mia-si-fa-notte-significato",
       "source": "allmusicitalia",
