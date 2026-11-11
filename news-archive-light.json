@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-10T17:26:07.924Z",
-  "count": 148,
+  "updatedAt": "2026-11-11T17:39:10.662Z",
+  "count": 156,
   "news": [
+    {
+      "id": "ami-artie-5ive-tour-2027",
+      "source": "allmusicitalia",
+      "title": "Artie 5ive, dal Forum sold out al Vittoria Tour Palasport 2027: cinque date a ottobre",
+      "tag": "TOUR",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T18:09:30+01:00",
+      "desc": "Artie 5ive tornerà nei palasport nell’ottobre 2027 con il Vittoria Tour Palasport. Il rapper ha annunciato le cinque date il 10 novembre dal palco dell’Unipol Forum di Assago, durante il concerto…",
+      "img": "uploads/allmusicitalia-e876416613-1794418746-1.jpg"
+    },
+    {
+      "id": "ami-ene-gemini-significato",
+      "source": "allmusicitalia",
+      "title": "ENÈ pubblica GEMINI: la power ballad pop sul confine tra amore e dipendenza affettiva",
+      "tag": "MUSICA",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T17:29:36+01:00",
+      "desc": "ENÈ ha pubblicato venerdì 6 novembre su tutte le piattaforme digitali il singolo GEMINI per One More / Visionary Sapiens, con la distribuzione di ADA/Warner Music Italy. Il pezzo è prodotto da Celo.",
+      "img": "uploads/allmusicitalia-c8ca87910b-1794418746-2.jpg"
+    },
+    {
+      "id": "ami-twentyone21-kilo2-ep",
+      "source": "allmusicitalia",
+      "title": "twentyone21 pubblica KILO2: l’EP di cinque brani tra corrido tumbado, narcos e live session",
+      "tag": "LIVE & TOUR",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T17:15:27+01:00",
+      "desc": "twentyone21 ha pubblicato venerdì 6 novembre il suo nuovo EP KILO2, disponibile per Atlantic Records Italy e Warner Music Italy. Il progetto rappresenta il secondo capitolo del suo percorso…",
+      "img": "uploads/allmusicitalia-fad750a840-1794418747-3.jpg"
+    },
+    {
+      "id": "ami-junior-k-ernia-mew-ciao-amore-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Junior K, Ernia e mew: Ciao Amore racconta una relazione che diventa possesso e violenza",
+      "tag": "MUSICA",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T16:26:48+01:00",
+      "desc": "Il producer Junior K pubblica venerdì 13 novembre Ciao Amore, il nuovo singolo con Ernia e mew, distribuito da EMI Records Italy/Universal Music Italia. Il brano racconta una relazione che diventa…",
+      "img": "uploads/allmusicitalia-530bc0edc9-1794418747-4.jpg"
+    },
+    {
+      "id": "ami-madame-lego-holiday-lab",
+      "source": "allmusicitalia",
+      "title": "Madame ambassador del Natale LEGO: apre a Milano il LEGO Holiday Lab il 12 novembre",
+      "tag": "MUSICA",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T16:10:06+01:00",
+      "desc": "Madame è stata scelta da LEGO Italia come ambassador per inaugurare a Milano il LEGO® Holiday Lab, il progetto itinerante di Natale 2026 che secondo l’azienda è il più grande mai realizzato da LEGO…",
+      "img": "uploads/allmusicitalia-79437631e9-1794418748-5.jpg"
+    },
+    {
+      "id": "ami-tonino-carotone-tour-2026-2027-gran-reserva",
+      "source": "allmusicitalia",
+      "title": "Tonino Carotone, Gran Reserva: album, libro e date del tour",
+      "tag": "TOUR",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T16:00:50+01:00",
+      "desc": "Tonino Carotone riparte dal palco con Gran Reserva Live 2026/2027, il tour che segue l’uscita del nuovo album Gran Reserva. La prima data annunciata è il 21 novembre 2026 al Jester Club di Cagliari;…",
+      "img": "uploads/allmusicitalia-6479e26126-1794418749-6.jpg"
+    },
+    {
+      "id": "ami-shaza-rimasti-loro-significato",
+      "source": "allmusicitalia",
+      "title": "SHAZA, Rimasti loro: dalle relazioni tossiche alla solitudine dell’iperconnessione",
+      "tag": "MUSICA",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T15:56:58+01:00",
+      "desc": "SHAZA torna con il nuovo singolo Rimasti loro (il ritrovo dei doppia faccia), disponibile in radio dal 13 novembre.",
+      "img": "uploads/allmusicitalia-670f933aaa-1794418749-7.jpg"
+    },
+    {
+      "id": "ami-achille-lauro-ragazzi-madre-10-anni-vinile",
+      "source": "allmusicitalia",
+      "title": "Achille Lauro, Ragazzi Madre compie dieci anni: il vinile sostiene Casa Ragazzi Madre",
+      "tag": "RISTAMPE",
+      "date": "11 nov",
+      "dateFull": "11 Novembre 2026",
+      "iso": "2026-11-11T15:48:51+01:00",
+      "desc": "Achille Lauro festeggia i dieci anni di Ragazzi Madre con una ristampa in vinile dell’album, in vendita da oggi, mercoledì 11 novembre, con una nuova copertina. Il disco è uscito l’11 novembre 2016,…",
+      "img": "uploads/allmusicitalia-35aa9e93af-1794418750-8.jpg"
+    },
     {
       "id": "ami-antonio-altini-risposte-domande",
       "source": "allmusicitalia",
