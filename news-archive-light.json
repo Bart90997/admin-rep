@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-11T17:39:10.662Z",
-  "count": 156,
+  "updatedAt": "2026-11-12T17:51:28.891Z",
+  "count": 164,
   "news": [
+    {
+      "id": "ami-fares-solo-un-gioco-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Fares, Solo un gioco: il singolo che paragona l’amore all’azzardo anticipa Anche Io Ho Paura",
+      "tag": "NUOVO SINGOLO",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T18:50:29+01:00",
+      "desc": "Fares pubblica venerdì 13 novembre Solo un gioco, una canzone che paragona l’amore all’azzardo: è il quarto estratto dall’album Anche Io Ho Paura, in uscita il 4 dicembre per DOREMI.",
+      "img": "uploads/allmusicitalia-8ba00c5aaf-1794505884-1.jpg"
+    },
+    {
+      "id": "ami-will-cosa-mi-fai-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Will, Cosa mi fai nasce da una sera a Milano e da una ragazza che esiste davvero",
+      "tag": "MUSICA",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T18:07:51+01:00",
+      "desc": "Will pubblica venerdì 13 novembre Cosa mi fai, il nuovo singolo in digitale e in radio per ADA Music Italy: dentro c’è una ragazza che esiste davvero e il suo tentativo, goffo per sua stessa…",
+      "img": "uploads/allmusicitalia-af98cbb272-1794505885-2.jpg"
+    },
+    {
+      "id": "ami-mida-la-forma-dell-acqua-album-blu",
+      "source": "allmusicitalia",
+      "title": "Mida, dal fuoco all’acqua: il 27 novembre esce l’album La forma dell’acqua, anticipato da Blu",
+      "tag": "NUOVO ALBUM",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T16:18:06+01:00",
+      "desc": "Dal fuoco all’acqua: Mida annuncia il nuovo album, si intitola La forma dell’acqua ed esce venerdì 27 novembre in licenza esclusiva M.A.S.T./Believe. Ad anticiparlo, venerdì 13 novembre, arriva il…",
+      "img": "uploads/allmusicitalia-ee586b1a32-1794505885-3.jpg"
+    },
+    {
+      "id": "ami-bresh-tutto-a-puttane-video",
+      "source": "allmusicitalia",
+      "title": "Bresh, Tutto a puttane in Marocco: il videoclip è un road trip in moto tra deserto e medina",
+      "tag": "VIDEO",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T16:02:06+01:00",
+      "desc": "Bresh ha pubblicato mercoledì 11 novembre il videoclip ufficiale del nuovo singolo Tutto a puttane, diretto da Simone Mariano. Il brano è contenuto in Mediterraneo – Dopo il mare, la deluxe edition…",
+      "img": "uploads/allmusicitalia-250bdfa8b1-1794505886-4.jpg"
+    },
+    {
+      "id": "ami-anticipazioni-amici-26-puntata-14-novembre",
+      "source": "allmusicitalia",
+      "title": "Anticipazioni Amici 26, puntata del 14 novembre: Paulo e Moric eliminati entrambi",
+      "tag": "AMICI",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T15:56:45+01:00",
+      "desc": "Secondo le anticipazioni della sesta puntata di Amici 26, registrata giovedì 12 novembre e in onda sabato 14 novembre alle 14 su Canale 5, Rudy Zerbi non sceglie fra Paulo e Moric: li elimina…",
+      "img": "uploads/allmusicitalia-d87875eed0-1794505886-5.jpg"
+    },
+    {
+      "id": "ami-enrico-nigiotti-mina-vagante-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Enrico Nigiotti, Mina vagante nasce nel carcere di Bollate e il video lo girano i detenuti",
+      "tag": "VIDEO",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T15:36:24+01:00",
+      "desc": "È nata da una giornata nel carcere di Bollate la nuova canzone di Enrico Nigiotti. Si intitola Mina vagante, esce venerdì 13 novembre per Columbia Records/Sony Music Italy e nel testo racconta la…",
+      "img": "uploads/allmusicitalia-7d480fc946-1794505887-6.jpg"
+    },
+    {
+      "id": "ami-bluvertigo-tour-2027-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Bluvertigo, otto concerti nei club per i 30 anni di “Metallo non metallo”",
+      "tag": "TOUR",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T13:19:48+01:00",
+      "desc": "Bluvertigo di nuovo in tour nel marzo 2027 per i trent’anni di Metallo non metallo. La band riporterà dal vivo il secondo album in otto club, dal 5 marzo all’Urban di Perugia, data zero, al 25 marzo…",
+      "img": "uploads/allmusicitalia-288b397429-1794505887-7.jpg"
+    },
+    {
+      "id": "ami-subsonica-dodici-concerti-a-teatro-nel-2027-da-genova-a-torino",
+      "source": "allmusicitalia",
+      "title": "Subsonica, dodici concerti a teatro nel 2027 da Genova a Torino",
+      "tag": "TOUR",
+      "date": "12 nov",
+      "dateFull": "12 Novembre 2026",
+      "iso": "2026-11-12T10:00:53+01:00",
+      "desc": "I Subsonica tornano nei teatri a marzo 2027 con Subsonica a Teatro. Il tour, prodotto da Live Nation, parte l’8 marzo dal Politeama Genovese di Genova e si chiude il 31 marzo al Teatro Colosseo di…",
+      "img": "uploads/allmusicitalia-39ab150562-1794505888-8.jpg"
+    },
     {
       "id": "ami-artie-5ive-tour-2027",
       "source": "allmusicitalia",
