@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-12T17:51:28.891Z",
-  "count": 164,
+  "updatedAt": "2026-11-13T17:28:08.495Z",
+  "count": 172,
   "news": [
+    {
+      "id": "ami-classifiche-fimi-settimana-46-2026-album-singoli",
+      "source": "allmusicitalia",
+      "title": "Album più venduti in Italia: Tony Boy primo con Cura solo in vinile, Kid Yugi tiene i singoli",
+      "tag": "CLASSIFICHE DI VENDITA",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T17:47:15+01:00",
+      "desc": "Gli album più venduti in Italia dal 6 al 12 novembre 2026, nelle classifiche FIMI della settimana 46, hanno un nuovo numero uno: Tony Boy debutta alla #1 con Cura, uscito solo in vinile, e guida…",
+      "img": "uploads/allmusicitalia-703dd26b4d-1794590884-1.jpg"
+    },
+    {
+      "id": "ami-soap-sensible-intervista-nuovo-album",
+      "source": "allmusicitalia",
+      "title": "Soap presenta il nuovo album “Sensible”: «Non ci sono scorciatoie, solo strade»",
+      "tag": "INTERVISTE",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T12:00:58+01:00",
+      "desc": "La sensibilità può essere un peso, ma anche una fortuna. È da questa consapevolezza che prende forma Sensible, il nuovo album di Soap: un lavoro intimo e introspettivo, nel quale l’artista mette al…",
+      "img": "uploads/allmusicitalia-d3d554912c-1794590884-2.jpg"
+    },
+    {
+      "id": "ami-nek-laura-non-ce-30th-live",
+      "source": "allmusicitalia",
+      "title": "Nek celebra i 30 anni di Laura non c’è con tre concerti in Europa",
+      "tag": "TOUR",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T11:30:10+01:00",
+      "desc": "Nel 2027 Laura non c’è compie trent’anni e Nek celebra l’anniversario con il tour Laura non c’è 30th – Live. Il cantante ha annunciato tre concerti nei club tra Germania, Spagna e Italia, in…",
+      "img": "uploads/allmusicitalia-528a63bc7b-1794590885-3.jpg"
+    },
+    {
+      "id": "ami-classifica-earone-settimana-46-2026-gaia-vetta",
+      "source": "allmusicitalia",
+      "title": "Classifica radio EarOne settimana 46 2026: GAIA al #1, Pinguini Tattici Nucleari subito al #6",
+      "tag": "RADIO CHARTS",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T06:57:15+01:00",
+      "desc": "GAIA è la nuova numero uno della classifica radio EarOne della settimana 46 del 2026, dal 6 al 12 novembre: Senz’allegria sale dal #7 al #1 alla quarta settimana di presenza e diventa la canzone più…",
+      "img": "uploads/allmusicitalia-28ffe0ef47-1794590885-4.jpg"
+    },
+    {
+      "id": "ami-drast-s-martino-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Drast, s.martino: un amore a distanza che sogna più del posto fisso",
+      "tag": "MUSICA",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T03:34:40+01:00",
+      "desc": "Drast apre una nuova fase da solista con s.martino, il singolo uscito mercoledì 11 novembre, il giorno di San Martino, per Bomba Dischi/Atlantic Records Italy/Warner Music Italy. Il testo di…",
+      "img": "uploads/allmusicitalia-7edc3c52e0-1794590886-5.jpg"
+    },
+    {
+      "id": "ami-chiara-galiazzo-alexander-platz-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Chiara Galiazzo, Alexander Platz: l’inverno di Berlino Est fra archi ed elettronica",
+      "tag": "MUSICA",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T03:10:52+01:00",
+      "desc": "Chiara Galiazzo rilegge Alexander Platz, il brano di Franco Battiato che Milva ha inciso nel 1982: la nuova versione è uscita venerdì 13 novembre per Altafonte Italia, una settimana prima del debutto…",
+      "img": "uploads/allmusicitalia-53c2500845-1794590886-6.jpg"
+    },
+    {
+      "id": "ami-pagelle-nuovi-singoli-13-novembre-2026",
+      "source": "allmusicitalia",
+      "title": "Pagelle nuovi singoli 13 novembre: Sayf Golden Song, Gabbani promosso, Baglioni bocciato",
+      "tag": "PAGELLE NUOVI SINGOLI",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T02:55:37+01:00",
+      "desc": "New Music Friday: le pagelle di All Music Italia ai nuovi singoli italiani del 13 novembre 2026, a cura di Alvise Salerno, conduttore radiofonico e divulgatore musicale sul web che ogni settimana…",
+      "img": "uploads/allmusicitalia-8536c2f834-1794590887-7.jpg"
+    },
+    {
+      "id": "ami-x-factor-2026-pagelle-luca-jurman-alia-teo-bok-quarto-live",
+      "source": "allmusicitalia",
+      "title": "X Factor 2026, pagelle quarto Live: Jurman difende Alìa, applaude Teo Bok, boccia Manu",
+      "tag": "LE PAGELLE DI JURMAN",
+      "date": "13 nov",
+      "dateFull": "13 Novembre 2026",
+      "iso": "2026-11-13T02:06:24+01:00",
+      "desc": "Nelle pagelle del quarto Live Show di X Factor 2026, in onda giovedì 12 novembre su Sky Uno, Luca Jurman difende Alìa, eliminata al primo Tilt dell’edizione, applaude la sicurezza di Teo Bok e boccia…",
+      "img": "uploads/allmusicitalia-41c1b202c1-1794590887-8.jpg"
+    },
     {
       "id": "ami-fares-solo-un-gioco-testo-significato",
       "source": "allmusicitalia",
