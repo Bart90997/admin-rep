@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-14T16:19:49.483Z",
-  "count": 180,
+  "updatedAt": "2026-11-15T16:45:38.196Z",
+  "count": 188,
   "news": [
+    {
+      "id": "ami-laura-bono-giganti-nuovo-singolo",
+      "source": "allmusicitalia",
+      "title": "Giganti, Laura Bono racconta il dolore di un addio non ricambiato",
+      "tag": "MUSICA",
+      "date": "15 nov",
+      "dateFull": "15 Novembre 2026",
+      "iso": "2026-11-15T17:00:40+01:00",
+      "desc": "Laura Bono ha pubblicato il nuovo singolo Giganti per Orangle Records, disponibile su tutte le piattaforme digitali da venerdì 13 novembre.",
+      "img": "uploads/allmusicitalia-d46c2af783-1794761133-1.jpg"
+    },
+    {
+      "id": "ami-annalisa-ogae-song-contest-2026-esibizionista",
+      "source": "allmusicitalia",
+      "title": "Annalisa vince l’OGAE Song Contest 2026 con Esibizionista: prima artista a vincerlo due volte",
+      "tag": "MUSICA",
+      "date": "15 nov",
+      "dateFull": "15 Novembre 2026",
+      "iso": "2026-11-15T15:53:02+01:00",
+      "desc": "Annalisa vince l’OGAE Song Contest 2026 con Esibizionista e diventa la prima artista a conquistarlo due volte. Il brano ha chiuso a 209 punti nella 40ª edizione, dieci in più dei 199 di ROSALÍA con…",
+      "img": "uploads/allmusicitalia-3f5f87b8ca-1794761134-2.jpg"
+    },
+    {
+      "id": "ami-area-sanremo-2026-vincitori",
+      "source": "allmusicitalia",
+      "title": "Area Sanremo 2026, i 15 vincitori: De Martino, tra loro molto probabilmente il 24esimo Campione",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "15 nov",
+      "dateFull": "15 Novembre 2026",
+      "iso": "2026-11-15T14:00:57+01:00",
+      "desc": "Area Sanremo 2026 ha i suoi 15 vincitori, proclamati domenica 15 novembre al Palafiori di Sanremo dalla Commissione Musicale presieduta da Stefano De Martino: passano eroCaddeo, Kimono, Primogenito e…",
+      "img": "uploads/allmusicitalia-eab707e5f6-1794761134-3.jpg"
+    },
+    {
+      "id": "ami-caterina-cropelli-tre-passi-indietro-album",
+      "source": "allmusicitalia",
+      "title": "Caterina Cropelli torna con Tre passi indietro, tra ricordi e crescita personale",
+      "tag": "MUSICA",
+      "date": "15 nov",
+      "dateFull": "15 Novembre 2026",
+      "iso": "2026-11-15T14:00:57+01:00",
+      "desc": "Caterina Cropelli pubblica giovedì 19 novembre Tre passi indietro, il suo terzo album di inediti per Fiabamusic, distribuito da ADA Music Italy. Il disco è stato anticipato dai singoli Il corso di…",
+      "img": "uploads/allmusicitalia-6238132261-1794761135-4.jpg"
+    },
+    {
+      "id": "ami-nadia-von-jacobi-twin-doubt",
+      "source": "allmusicitalia",
+      "title": "Twin Doubt, Nadia von Jacobi racconta i dubbi della genitorialità",
+      "tag": "MUSICA",
+      "date": "15 nov",
+      "dateFull": "15 Novembre 2026",
+      "iso": "2026-11-15T10:00:38+01:00",
+      "desc": "Nadia von Jacobi ha pubblicato venerdì 13 novembre il nuovo singolo Twin Doubt per Ghandi Dischi, distribuito da ADA Music Italy. Il brano arriva dopo l’esordio solista dell’artista con Soleo,…",
+      "img": "uploads/allmusicitalia-e3fabb2434-1794761135-5.jpg"
+    },
+    {
+      "id": "ami-amici-26-pagelle-luca-jurman-sesta-puntata-aura-jed",
+      "source": "allmusicitalia",
+      "title": "Amici 26, pagelle sesta puntata: Jurman non promuove nessun inedito, Aura e Shari 5½, JED 4",
+      "tag": "LE PAGELLE DI JURMAN",
+      "date": "15 nov",
+      "dateFull": "15 Novembre 2026",
+      "iso": "2026-11-15T06:52:00+01:00",
+      "desc": "Nelle pagelle della sesta puntata di Amici 26, andata in onda sabato 14 novembre su Canale 5, Luca Jurman vota gli otto inediti della gara di canto e se la prende con la postproduzione, con le…",
+      "img": "uploads/allmusicitalia-e5a40bce5a-1794761136-6.jpg"
+    },
+    {
+      "id": "ami-storia-di-area-sanremo",
+      "source": "allmusicitalia",
+      "title": "Storia di Area Sanremo: il contest più contestato d’Italia",
+      "tag": "MA QUALE MUSICA LEGGERA?",
+      "date": "14 nov",
+      "dateFull": "14 Novembre 2026",
+      "iso": "2026-11-14T19:47:45+01:00",
+      "desc": "Ottobre 1999, Casinò di Sanremo: è da qui che parte la storia di Area Sanremo. L’Accademia della Canzone ha scelto dodici finalisti fra oltre mille candidati, e la giuria Rai deve decidere quali tre…",
+      "img": "uploads/allmusicitalia-4282150e22-1794761137-7.jpg"
+    },
+    {
+      "id": "ami-chiara-galiazzo-tour-2026-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Chiara Galiazzo, parte da Coriano il tour Nuova Luce: sette concerti fino al 2027",
+      "tag": "TOUR",
+      "date": "14 nov",
+      "dateFull": "14 Novembre 2026",
+      "iso": "2026-11-14T18:30:05+01:00",
+      "desc": "Chiara Galiazzo si prepara a tornare dal vivo con Nuova Luce, il tour teatrale che debutterà il 20 novembre 2026 al Teatro CorTe di Coriano. Sette concerti in programma fino a febbraio 2027, con…",
+      "img": "uploads/allmusicitalia-5f737ac381-1794761137-8.jpg"
+    },
     {
       "id": "ami-andrea-heros-vedrai-testo-significato",
       "source": "allmusicitalia",
