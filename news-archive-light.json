@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-19T18:47:31.246Z",
-  "count": 220,
+  "updatedAt": "2026-11-20T18:14:28.741Z",
+  "count": 228,
   "news": [
+    {
+      "id": "ami-syria-sanremo-2027-mille",
+      "source": "allmusicitalia",
+      "title": "Syria dà una lezione di stile: “Sanremo 2027? Per tornare su quel palco dei meriti bisogna riconquistarseli”",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T18:35:21+01:00",
+      "desc": "Syria non ha presentato nessuna canzone per Sanremo 2027 e fa il tifo per le colleghe. La cantante lo ha scritto nei commenti al nostro post sui rumors del cast, dove ha indicato in Mille l’artista…",
+      "img": "uploads/allmusicitalia-f326e6dcdc-1795198465-1.jpg"
+    },
+    {
+      "id": "ami-dardust-milano-music-week-casa-metraton",
+      "source": "allmusicitalia",
+      "title": "Dardust alla Milano Music Week: dalla Notte della Taranta al nuovo album con oltre 25 brani",
+      "tag": "NUOVO ALBUM",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T18:34:37+01:00",
+      "desc": "Per l’evento Casa Metraton: Dardust – Behind the music della Milano Music Week, Dario Faini, in arte Dardust, si è raccontato durante una conversazione condotta da Marco Danelli al 21 House of…",
+      "img": "uploads/allmusicitalia-9405a3c7a0-1795198465-2.jpg"
+    },
+    {
+      "id": "ami-chiara-galiazzo-sanremo-2027",
+      "source": "allmusicitalia",
+      "title": "Chiara Galiazzo vuole tornare a Sanremo: “Credo di essere pronta per tornarci da solo 3 anni”",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T17:55:59+01:00",
+      "desc": "Chiara Galiazzo vuole tornare a Sanremo e dice di sentirsi pronta, ma soltanto da tre anni. Ospite di Radio Lattemiele, la cantante ha definito il Festival una vetrina da usare con attenzione e ha…",
+      "img": "uploads/allmusicitalia-74d06c9f57-1795198466-3.jpg"
+    },
+    {
+      "id": "ami-classifiche-fimi-settimana-47-2026-album-singoli",
+      "source": "allmusicitalia",
+      "title": "Album più venduti in Italia: gli U2 primi, Ultimo alla #2 col live di Tor Vergata",
+      "tag": "CLASSIFICHE DI VENDITA",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T17:17:52+01:00",
+      "desc": "Gli album più venduti in Italia dal 13 al 19 novembre 2026, nelle classifiche FIMI della settimana 47, hanno in vetta gli U2 con Carnaval de Luz. Ultimo è il primo degli italiani, alla #2 con Ultimo…",
+      "img": "uploads/allmusicitalia-a900fdc9fd-1795198466-4.jpg"
+    },
+    {
+      "id": "ami-kawakami-diamante",
+      "source": "allmusicitalia",
+      "title": "Diamante, KAWAKAMI racconta la fine di un’amicizia",
+      "tag": "AMICI",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T16:00:54+01:00",
+      "desc": "KAWAKAMI pubblica il 20 novembre 2026 Diamante, il nuovo singolo in uscita per K Music Label e OltreSound Label con distribuzione ADA.",
+      "img": "uploads/allmusicitalia-de4ddcb27d-1795198467-5.jpg"
+    },
+    {
+      "id": "ami-classifica-earone-settimana-47-2026-mengoni-vetta",
+      "source": "allmusicitalia",
+      "title": "Classifica radio EarOne settimana 47 2026: Marco Mengoni al #1, cinque new entry tutte italiane",
+      "tag": "RADIO CHARTS",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T15:07:38+01:00",
+      "desc": "Marco Mengoni conquista il #1 della classifica radio EarOne della settimana 47 del 2026, dal 13 al 19 novembre: Giornate perse sale dal #5 alla vetta e diventa la canzone più trasmessa in radio,…",
+      "img": "uploads/allmusicitalia-84fe6c24d4-1795198467-6.jpg"
+    },
+    {
+      "id": "ami-sfera-ebbasta-stadi-2027-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Sfera Ebbasta torna negli stadi nel 2027: due concerti a Napoli e Milano",
+      "tag": "TOUR",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T14:58:20+01:00",
+      "desc": "Sfera Ebbasta torna negli stadi nel 2027 con due concerti: il 17 giugno al Maradona di Napoli e il 16 luglio a San Siro, a Milano. L’annuncio arriva nel giorno di uscita di Purosangue, il nuovo album…",
+      "img": "uploads/allmusicitalia-7d1b5131a1-1795198467-7.jpg"
+    },
+    {
+      "id": "ami-sarah-toscano-tour-2027-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Sarah Toscano, dal Met Gala Tour ai live 2027 al Fabrique e all’Atlantico",
+      "tag": "TOUR",
+      "date": "20 nov",
+      "dateFull": "20 Novembre 2026",
+      "iso": "2026-11-20T14:20:26+01:00",
+      "desc": "Sarah Toscano porterà il suo Live Tour 2027 al Fabrique di Milano e all’Atlantico di Roma: due concerti a novembre, prodotti da Vivo Concerti, dopo le date nei club del Met Gala Tour 2026.",
+      "img": "uploads/allmusicitalia-118295ef8b-1795198468-8.jpg"
+    },
     {
       "id": "ami-freshmula-liberi-o-schiavi-testo-significato",
       "source": "allmusicitalia",
