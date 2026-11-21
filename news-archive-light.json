@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-20T18:14:28.741Z",
-  "count": 228,
+  "updatedAt": "2026-11-21T17:03:41.427Z",
+  "count": 236,
   "news": [
+    {
+      "id": "ami-nada-sanremo-2027-rinuncia",
+      "source": "allmusicitalia",
+      "title": "Nada rinuncia a Sanremo 2027: “Proprio l’altro giorno abbiamo deciso di non andare”",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T17:32:38+01:00",
+      "desc": "Nada non andrà a Sanremo 2027, una rinuncia decisa insieme alla sua nuova squadra, LaRec ex LaTarma. La cantautrice ha raccontato che con un disco pronto il Festival era un’ipotesi concreta, ma che…",
+      "img": "uploads/allmusicitalia-096971acff-1795280617-1.jpg"
+    },
+    {
+      "id": "ami-sal-da-vinci-targa-sanremo-de-martino",
+      "source": "allmusicitalia",
+      "title": "Sal Da Vinci, la targa a Sanremo con De Martino. Ma Pausini, Bocelli e Ultimo non ce l’hanno",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T16:21:49+01:00",
+      "desc": "La targa di Sal Da Vinci a Sanremo è entrata nella walk of fame di via Matteotti. Alla posa, oggi, sabato 21 novembre, c’era Stefano De Martino, in città per scegliere i finalisti di Sanremo Giovani…",
+      "img": "uploads/allmusicitalia-058aa818a4-1795280618-2.jpg"
+    },
+    {
+      "id": "ami-zecchino-doro-2026-giuria-carlo-conti",
+      "source": "allmusicitalia",
+      "title": "Zecchino d’Oro 2026, la giuria con Carlo Conti: Sal Da Vinci, Anna Tatangelo e Cristina D’Avena",
+      "tag": "MUSICA IN TV",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T16:06:51+01:00",
+      "desc": "Sal Da Vinci, Anna Tatangelo e Cristina D’Avena sarebbero fra gli otto vip della giuria dello Zecchino d’Oro 2026, non ancora ufficializzata. La finale, condotta da Carlo Conti, andrà in onda venerdì…",
+      "img": "uploads/allmusicitalia-ed33542b95-1795280618-3.jpg"
+    },
+    {
+      "id": "ami-jack-savoretti-tour-2027-acoustic-night-live",
+      "source": "allmusicitalia",
+      "title": "Jack Savoretti, tre date in Italia nel 2027 con Acoustic Night Live",
+      "tag": "TOUR",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T14:43:48+01:00",
+      "desc": "Jack Savoretti torna in Italia nel 2027 con Acoustic Night Live, tre concerti in teatro tra maggio e giugno. Il cantautore celebra vent’anni di carriera con un set acustico che ripercorre il suo…",
+      "img": "uploads/allmusicitalia-95edd264ac-1795280618-4.jpg"
+    },
+    {
+      "id": "ami-santi-francesi-tour-2027-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Santi Francesi, due concerti nei club nel 2027 tra Roma e Milano",
+      "tag": "TOUR",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T14:43:40+01:00",
+      "desc": "I Santi Francesi tornano dal vivo nei club nel 2027 con I Nostri Muri Le Montagne. Le prime date confermate sono mercoledì 24 marzo al Monk di Roma e giovedì 1° aprile ai Magazzini Generali di Milano.",
+      "img": "uploads/allmusicitalia-65545539e1-1795280619-5.jpg"
+    },
+    {
+      "id": "ami-tancredi-ho-visto-un-uomo-il-male",
+      "source": "allmusicitalia",
+      "title": "Tancredi riflette sulla natura del male nel nuovo singolo HO VISTO UN UOMO (Il male)",
+      "tag": "NUOVO SINGOLO",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T14:19:36+01:00",
+      "desc": "Tancredi ha pubblicato giovedì 19 novembre su tutte le piattaforme digitali il nuovo singolo HO VISTO UN UOMO (il male), scritto con Mario Francese, Simone Sacchi, Adel Al Kassem e Nashley.",
+      "img": "uploads/allmusicitalia-92922dfa1b-1795280620-6.jpg"
+    },
+    {
+      "id": "ami-giusy-ferreri-sanremo-2027",
+      "source": "allmusicitalia",
+      "title": "Giusy Ferreri vuole tornare a Sanremo 2027: “Quest’anno sono loro che chiamano”",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T13:53:43+01:00",
+      "desc": "Giusy Ferreri vuole tornare a Sanremo e le canzoni le ha già. Venerdì 20 novembre, ospite di Caterina Balivo a La Volta Buona su Rai 1, alla domanda se le piacerebbe tornare all’Ariston ha risposto:…",
+      "img": "uploads/allmusicitalia-38963a10f2-1795280620-7.jpg"
+    },
+    {
+      "id": "ami-al-bano-sanremo-2027-anno-sabbatico",
+      "source": "allmusicitalia",
+      "title": "Al Bano, niente Sanremo 2027: “Mi sono preso un anno sabbatico dal festival”",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "21 nov",
+      "dateFull": "21 Novembre 2026",
+      "iso": "2026-11-21T13:06:58+01:00",
+      "desc": "Al Bano non sarà a Sanremo 2027, né in gara né da ospite. Lo ha detto giovedì 19 novembre a Un Giorno da Pecora, su Rai Radio1, intervistato da Giorgio Lauro e Nancy Brilli: “Quest’anno non ho…",
+      "img": "uploads/allmusicitalia-dc4d7f1d69-1795280620-8.jpg"
+    },
     {
       "id": "ami-syria-sanremo-2027-mille",
       "source": "allmusicitalia",
