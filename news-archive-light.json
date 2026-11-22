@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-21T17:03:41.427Z",
-  "count": 236,
+  "updatedAt": "2026-11-22T17:34:08.941Z",
+  "count": 234,
   "news": [
+    {
+      "id": "ami-amici-26-pagelle-luca-jurman-settima-puntata-aura-kashmere",
+      "source": "allmusicitalia",
+      "title": "Amici 26, pagelle settima puntata: Jurman promuove solo Aura, boccia Kashmere e Saitta",
+      "tag": "LE PAGELLE DI JURMAN",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T18:04:07+01:00",
+      "desc": "Nelle pagelle della settima puntata di Amici 26, andata in onda domenica 22 novembre su Canale 5, Luca Jurman promuove solo Aura con 6, boccia Kashmere (4+) e Saitta (4½) e si chiede perché Carlo…",
+      "img": "uploads/allmusicitalia-b503494e55-1795368844-1.jpg"
+    },
+    {
+      "id": "ami-cosmo-sanremo-2027-de-martino",
+      "source": "allmusicitalia",
+      "title": "Cosmo e Sanremo 2027: “Spero che De Martino non tiri fuori dalla naftalina gente vecchia per accontentare tutti”",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T18:00:49+01:00",
+      "desc": "Cosmo non sarà in gara a Sanremo 2027, e al nuovo direttore artistico chiede una visione tosta. Venerdì 20 novembre, al Corriere della Sera, alla domanda su un suo debutto al Festival, ha risposto:…",
+      "img": "uploads/allmusicitalia-e938b79be5-1795368845-2.jpg"
+    },
+    {
+      "id": "ami-margherita-vicario-sanremo-2027",
+      "source": "allmusicitalia",
+      "title": "Niente Sanremo 2027 per Margherita Vicario: “A De Martino sono piaciute le canzoni ma…”",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T16:01:58+01:00",
+      "desc": "Margherita Vicario non sarà a Sanremo 2027, anche se a Stefano De Martino le sue canzoni erano piaciute. Lo ha raccontato a Gabriele Fazio per Open, alla domanda sulla candidatura e su un riscontro…",
+      "img": "uploads/allmusicitalia-3358dbae38-1795368845-3.jpg"
+    },
+    {
+      "id": "ami-anna-million-dollar-babe-tour-2026-date-biglietti",
+      "source": "allmusicitalia",
+      "title": "Anna Million Dollar Babe Tour 2026: undici date nei palazzetti, sei sold out tra Milano, Roma, Firenze e Napoli",
+      "tag": "TOUR",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T15:55:36+01:00",
+      "desc": "Anna apre il Million Dollar Babe Tour 2026 sabato 28 novembre alla Vitrifrigo Arena di Pesaro, con inizio alle 21:00. La tournée nei palazzetti conta undici concerti, da Pesaro alla doppia chiusura…",
+      "img": "uploads/allmusicitalia-17110f3c02-1795368846-4.jpg"
+    },
+    {
+      "id": "ami-massimo-martelli-morto",
+      "source": "allmusicitalia",
+      "title": "Addio a Massimo Martelli, l’autore che ha scelto i Giovani di Sanremo con Baglioni e Amadeus",
+      "tag": "SANREMO",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T14:16:58+01:00",
+      "desc": "È morto Massimo Martelli, l’autore televisivo e regista che dal 2018 al 2023 ha fatto parte della commissione musicale Rai di Sanremo Giovani, prima con Claudio Baglioni e poi con Amadeus. Aveva 69…",
+      "img": "uploads/allmusicitalia-5d8fb6611f-1795368846-5.jpg"
+    },
+    {
+      "id": "ami-amici-26-in-diretta-settima-puntata",
+      "source": "allmusicitalia",
+      "title": "Amici 26 in diretta: la settima puntata del 22 novembre, Shari e Napo primi",
+      "tag": "AMICI",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T10:00:36+01:00",
+      "desc": "Amici 26 in diretta: la settima puntata è andata in onda domenica 22 novembre alle 14 su Canale 5. Shari è prima nel canto e Napo nel ballo, mentre i JED e India vincono le sfide e restano nella…",
+      "img": "uploads/allmusicitalia-3d88fd48d9-1795368847-6.jpg"
+    },
+    {
+      "id": "ami-ludovico-einaudi-dal-verme-2026",
+      "source": "allmusicitalia",
+      "title": "Ludovico Einaudi al Dal Verme: 17 concerti, un coro e l’installazione Your Colours",
+      "tag": "TOUR",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T09:00:21+01:00",
+      "desc": "Ludovico Einaudi torna al Teatro Dal Verme di Milano per 17 concerti dal 26 novembre al 16 dicembre 2026. Accanto al pianoforte e alla band, lo spettacolo introduce per la prima volta un coro di…",
+      "img": "uploads/allmusicitalia-85b29c9496-1795368847-7.jpg"
+    },
+    {
+      "id": "ami-sanremo-giovani-2026-lettera-aperta-rai-de-martino",
+      "source": "allmusicitalia",
+      "title": "Lettera aperta alla Rai e a Stefano De Martino: chi ha votato a Sanremo Giovani 2026?",
+      "tag": "MA QUALE MUSICA LEGGERA?",
+      "date": "22 nov",
+      "dateFull": "22 Novembre 2026",
+      "iso": "2026-11-22T07:00:52+01:00",
+      "desc": "0Sanremo Giovani, 21 novembre 2026. Si svolge l’ultima giornata di audizioni per decretare i sei finalisti che si contenderanno a Sarà Sanremo il 24esimo posto tra i Big del Festival di Sanremo 2027.…",
+      "img": "uploads/allmusicitalia-7676ce6e42-1795368848-8.jpg"
+    },
     {
       "id": "ami-nada-sanremo-2027-rinuncia",
       "source": "allmusicitalia",
@@ -2487,116 +2575,6 @@
       "iso": "2026-10-24T01:51:57+02:00",
       "desc": "Assassinio per Due (Murder for Two), il musical-giallo per due attori e un pianoforte, è in scena al Teatro San Babila di Milano dal 23 ottobre 2026. È la prima volta che la commedia musicale di…",
       "img": "uploads/allmusicitalia-a40d1c41fa-1792834361-6.jpg"
-    },
-    {
-      "id": "ami-cesare-cremonini-amateur-recensione-album",
-      "source": "allmusicitalia",
-      "title": "Come si fa a chiudergli la bocca? Impossibile, e menomale. Amateur di Cesare Cremonini è vera arte",
-      "tag": "RECENSIONI ALBUM",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T19:18:41+02:00",
-      "desc": "La recensione del nuovo album di Cesare Cremonini, AMATEUR, a cura di Alvise Salerno.",
-      "img": "uploads/allmusicitalia-6f94b153f7-1792834361-7.jpg"
-    },
-    {
-      "id": "ami-classifiche-fimi-settimana-43-2026-album-singoli",
-      "source": "allmusicitalia",
-      "title": "Album e singoli più venduti in Italia: Geolier torna primo, otto brani nella Top 10 dei singoli. Giorgia sul podio",
-      "tag": "CLASSIFICHE DI VENDITA",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T18:49:15+02:00",
-      "desc": "Gli album più venduti in Italia dal 16 al 22 ottobre 2026, secondo le classifiche FIMI della settimana 43, tornano a Geolier: Tutto è possibile. Atto II, la nuova edizione uscita il 16 ottobre, lo…",
-      "img": "uploads/allmusicitalia-1afa066480-1792834361-8.jpg"
-    },
-    {
-      "id": "ami-carl-brave-tour-2027",
-      "source": "allmusicitalia",
-      "title": "Carl Brave porta Un’altra stupida Odissea nei teatri: 10 concerti nel 2027",
-      "tag": "TOUR",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T13:59:00+02:00",
-      "desc": "Carl Brave torna in concerto nel 2027 con Un’altra stupida Odissea, il nuovo tour nei teatri italiani. Dieci date tra aprile e maggio, da Montecatini Terme a Padova, con tappe anche a Roma, Milano,…",
-      "img": "uploads/allmusicitalia-5f7aa06c6d-1792849674-1.jpg"
-    },
-    {
-      "id": "ami-soap-sensible",
-      "source": "allmusicitalia",
-      "title": "Sensible: soap trasforma le insicurezze in un diario musicale",
-      "tag": "MUSICA",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T10:00:16+02:00",
-      "desc": "soap torna con Sensible, il suo nuovo album di inediti in uscita venerdì 6 novembre 2026 in digitale e in formato CD per Sugar Music. Il pre-order è disponibile dal 14 ottobre sul sito ufficiale di…",
-      "img": "uploads/allmusicitalia-e6b98e825f-1792849674-2.jpg"
-    },
-    {
-      "id": "ami-luk3-intervista-elettrica",
-      "source": "allmusicitalia",
-      "title": "Luk3 presenta il nuovo singolo Elettrica: “È l’inizio di un nuovo capitolo”",
-      "tag": "INTERVISTE",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T07:07:47+02:00",
-      "desc": "Luk3 pubblica venerdì 23 ottobre il nuovo singolo Elettrica per DMB / TRIGGGER / Atlantic Records Italy (Warner Music Italy). Lo ha presentato in anteprima nel concerto sold-out del 12 ottobre ai…",
-      "img": "uploads/allmusicitalia-0f5f9ee564-1792849675-3.jpg"
-    },
-    {
-      "id": "ami-alberto-fortis-sentimental-city",
-      "source": "allmusicitalia",
-      "title": "Alberto Fortis pubblica “Sentimental City”, il nuovo album d’inediti dopo 12 anni",
-      "tag": "NUOVO ALBUM",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T07:04:37+02:00",
-      "desc": "Alberto Fortis torna con un nuovo album d’inediti a dodici anni da Do l’anima. Dal 23 ottobre 2026 è disponibile in formato fisico e digitale Sentimental City, pubblicato da Azzurra Music e…",
-      "img": "uploads/allmusicitalia-ea46608117-1792849675-4.jpg"
-    },
-    {
-      "id": "ami-classifica-earone-settimana-43-2026-miley-cyrus-vetta",
-      "source": "allmusicitalia",
-      "title": "Classifica radio EarOne settimana 43 2026: Miley Cyrus al #1, GAIA debutta al #14",
-      "tag": "RADIO CHARTS",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T06:26:24+02:00",
-      "desc": "La classifica radio EarOne della settimana 43 del 2026, dal 16 al 22 ottobre, cambia ancora il numero uno tra le canzoni più trasmesse in radio: Bass Persuades di Miley Cyrus sale dal #4 al #1, alla…",
-      "img": "uploads/allmusicitalia-ad2f353f53-1792849676-5.jpg"
-    },
-    {
-      "id": "ami-x-factor-2026-pagelle-luca-jurman-primo-live",
-      "source": "allmusicitalia",
-      "title": "X Factor 2026, le pagelle del primo Live: Jurman applaude Teo Bok e Alìa, boccia Scraffs",
-      "tag": "LE PAGELLE DI JURMAN",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T04:55:58+02:00",
-      "desc": "Nelle pagelle del primo Live Show di X Factor 2026, in onda giovedì 22 ottobre su Sky Uno, Luca Jurman parte dagli Škoda X Pass di Giorgia, per lui un tentativo di recupero dopo le Last Call, e…",
-      "img": "uploads/allmusicitalia-06fe4096ef-1792849676-6.jpg"
-    },
-    {
-      "id": "ami-pagelle-nuovi-singoli-23-ottobre-2026",
-      "source": "allmusicitalia",
-      "title": "Pagelle Nuovi Singoli 23 ottobre: 3D con Nayt e Battista Golden Song, D’Alessio e Luk3 bocciati",
-      "tag": "PAGELLE NUOVI SINGOLI",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T03:10:07+02:00",
-      "desc": "New Music Friday: le pagelle di All Music Italia ai nuovi singoli italiani del 23 ottobre 2026, a cura di Alvise Salerno, conduttore radiofonico e divulgatore musicale sul web che ogni settimana…",
-      "img": "uploads/allmusicitalia-a431ca4cbf-1792849677-7.jpg"
-    },
-    {
-      "id": "ami-tancredi-schegge-le-foglie",
-      "source": "allmusicitalia",
-      "title": "Tancredi fa un disco in nove giorni e lo racconta su YouTube: esce Schegge (Le foglie)",
-      "tag": "MUSICA",
-      "date": "23 ott",
-      "dateFull": "23 Ottobre 2026",
-      "iso": "2026-10-23T02:28:19+02:00",
-      "desc": "Il nuovo singolo di Tancredi, Schegge (Le foglie), esce venerdì 23 ottobre su tutte le piattaforme digitali. Il brano apre Odissea 2001, il progetto con cui il cantautore milanese inaugura una fase…",
-      "img": "uploads/allmusicitalia-ca33b9ca79-1792849677-8.jpg"
     }
   ]
 }
