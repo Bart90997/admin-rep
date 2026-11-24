@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-11-23T21:52:14.193Z",
-  "count": 234,
+  "updatedAt": "2026-11-24T20:28:17.775Z",
+  "count": 237,
   "news": [
+    {
+      "id": "ami-lens-che-scemo-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Lens, Che scemo: l’unico indipendente fra i finalisti di Sarà Sanremo",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T20:22:10+01:00",
+      "desc": "Lens porta Che scemo a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 da cui uscirà il ventiquattresimo Big di Sanremo 2027. Dei sei finalisti è l’unico indipendente, mentre gli altri cinque…",
+      "img": "uploads/allmusicitalia-eea5e9557b-1795552093-1.jpg"
+    },
+    {
+      "id": "ami-primogenito-ho-gia-le-mie-battaglie-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Primogenito, Ho già le mie battaglie: il cantautore romano di EMI in finale a Sarà Sanremo",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T20:21:54+01:00",
+      "desc": "Primogenito porta Ho già le mie battaglie a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 in cui la Commissione Musicale sceglierà il ventiquattresimo Big di Sanremo 2027. Il cantautore…",
+      "img": "uploads/allmusicitalia-c87c73eaa9-1795552094-2.jpg"
+    },
+    {
+      "id": "ami-nausica-e-linganno-ancora-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Nausica e l’inganno, Ancora: l’arpista catanese torna in finale dopo Favole",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T20:21:38+01:00",
+      "desc": "Nausica e l’inganno, il progetto dell’arpista catanese Giordana Petralia, porta Ancora a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 da cui uscirà il ventiquattresimo Big di Sanremo 2027.…",
+      "img": "uploads/allmusicitalia-f5bfbcf67f-1795552094-3.jpg"
+    },
+    {
+      "id": "ami-florinda-senza-e-te-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Florinda, Senza ‘e te: la pianista napoletana in finale a Sarà Sanremo",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T20:21:17+01:00",
+      "desc": "Florinda porta Senza ‘e te a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 in cui un solo artista conquisterà il posto di ventiquattresimo Big di Sanremo 2027. La cantautrice napoletana è…",
+      "img": "uploads/allmusicitalia-ec4dbb6d09-1795552095-4.jpg"
+    },
+    {
+      "id": "ami-santamarea-tutto-questo-mare-dentro-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Santamarea, Tutto questo mare dentro: la band di Stella, cantante transgender, in finale a Sarà Sanremo",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T20:21:03+01:00",
+      "desc": "I Santamarea portano Tutto questo mare dentro a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 da cui uscirà il ventiquattresimo Big di Sanremo 2027. Alla guida della band di Carini, nel…",
+      "img": "uploads/allmusicitalia-64edcac756-1795552095-5.jpg"
+    },
+    {
+      "id": "ami-petit-sei-tu-testo-significato",
+      "source": "allmusicitalia",
+      "title": "Petit, Sei tu: il brano per la madre con cui ci riprova a Sarà Sanremo",
+      "tag": "FESTIVAL DI SANREMO",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T20:20:50+01:00",
+      "desc": "Petit porta Sei tu a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 da cui uscirà il ventiquattresimo Big di Sanremo 2027. Il brano è dedicato alla madre e per il rapper è il secondo…",
+      "img": "uploads/allmusicitalia-c4301d4d5f-1795552096-6.jpg"
+    },
+    {
+      "id": "ami-frah-quintale-mi-ami-2027",
+      "source": "allmusicitalia",
+      "title": "Frah Quintale ritrova il MI AMI per festeggiare i dieci anni di “Regardez Moi”",
+      "tag": "TOUR",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T18:40:16+01:00",
+      "desc": "Frah Quintale sarà in concerto al MI AMI Festival venerdì 28 maggio 2027, all’Idroscalo di Milano, per una data legata ai dieci anni di Regardez Moi.",
+      "img": "uploads/allmusicitalia-731835c2ff-1795552096-7.jpg"
+    },
+    {
+      "id": "ami-black-friday-2026-vinili-cd-musica-italiana-offerte",
+      "source": "allmusicitalia",
+      "title": "Black Friday 2026: vinili, CD e cofanetti di musica italiana in offerta su Amazon",
+      "tag": "MUSICA",
+      "date": "24 nov",
+      "dateFull": "24 Novembre 2026",
+      "iso": "2026-11-24T16:31:22+01:00",
+      "desc": "La Settimana del Black Friday di Amazon va avanti fino a lunedì 30 novembre e mette in offerta anche la musica italiana: controllando il 24 novembre trentuno artisti italiani, fra big di oggi e…",
+      "img": "uploads/allmusicitalia-db8df8bbe2-1795552097-8.jpg"
+    },
     {
       "id": "ami-giorgia-natalanza-testo-canzone-natale-la-pennicanza",
       "source": "allmusicitalia",
@@ -2520,61 +2608,6 @@
       "iso": "2026-10-26T07:30:56+01:00",
       "desc": "Davide Shorty e Koralle pubblicheranno il 4 dicembre 2026 CIRCOLO VIRTUOSO, il nuovo album in uscita per Django Music. Il disco contiene undici tracce ed è il risultato di un lavoro iniziato nel…",
       "img": "uploads/allmusicitalia-dc02f419ce-1793031942-8.png"
-    },
-    {
-      "id": "ami-battista-o-cavallo-e-ritorno-testo-significato",
-      "source": "allmusicitalia",
-      "title": "Battista, ‘O cavallo ‘e ritorno: il furto con riscatto per raccontare il Sud dopo l’Unità",
-      "tag": "MUSICA",
-      "date": "25 ott",
-      "dateFull": "25 Ottobre 2026",
-      "iso": "2026-10-25T11:25:22+01:00",
-      "desc": "Battista ha pubblicato in autoproduzione venerdì 23 ottobre 2026 ‘O cavallo ‘e ritorno, secondo singolo dopo l’esordio virale di settembre. Testo e significato del brano partono dal cavallo di…",
-      "img": "uploads/allmusicitalia-2ee3362dab-1792937037-1.jpg"
-    },
-    {
-      "id": "ami-amici-26-in-diretta-terza-puntata",
-      "source": "allmusicitalia",
-      "title": "Amici 26, le esibizioni e i verdetti della terza puntata",
-      "tag": "AMICI",
-      "date": "25 ott",
-      "dateFull": "25 Ottobre 2026",
-      "iso": "2026-10-25T11:00:42+01:00",
-      "desc": "Amici 26 in diretta: la terza puntata va in onda oggi, domenica 25 ottobre, dalle 14 su Canale 5. Qui trovate, durante la puntata, le esibizioni di canto e di ballo, i sì dei responsabili artistici e…",
-      "img": "uploads/allmusicitalia-3c16de3f35-1792937038-2.jpg"
-    },
-    {
-      "id": "ami-il-pubblico-ha-sempre-ragione-skiantos",
-      "source": "allmusicitalia",
-      "title": "Il pubblico ha sempre ragione? Non decide nulla, e Freak Antoni lo sapeva",
-      "tag": "LA VERSIONE DI MONINA",
-      "date": "25 ott",
-      "dateFull": "25 Ottobre 2026",
-      "iso": "2026-10-25T08:00:41+01:00",
-      "desc": "Il cliente ha sempre ragione. Sì, il pubblico ha sempre ragione, questa la tesi portata avanti. Il pubblico, come il cliente, non decide nulla. Il mercato, perché è da lì che tutto è partito,…",
-      "img": "uploads/allmusicitalia-470380be44-1792937038-3.jpg"
-    },
-    {
-      "id": "ami-dada-viscera-album-mela-wela",
-      "source": "allmusicitalia",
-      "title": "DADA’, VISCERA: dopo CORE IN FABULA l’album più cupo, con MELA WELA e uno spettacolo a Napoli",
-      "tag": "NUOVO ALBUM",
-      "date": "25 ott",
-      "dateFull": "25 Ottobre 2026",
-      "iso": "2026-10-25T07:00:57+01:00",
-      "desc": "Venerdì 30 ottobre esce VISCERA, il nuovo album di DADA’, in digitale e in vinile. Il vinile è in pre-order sul sito dell’artista, con le spedizioni dal 16 novembre, e il disco è anticipato da MELA…",
-      "img": "uploads/allmusicitalia-814c6d0831-1792937039-4.jpg"
-    },
-    {
-      "id": "ami-3d-nayt-senza-armi-significato",
-      "source": "allmusicitalia",
-      "title": "3D e Nayt, Senza Armi: il singolo che fa del disarmarsi un atto di coraggio",
-      "tag": "NUOVO SINGOLO",
-      "date": "25 ott",
-      "dateFull": "25 Ottobre 2026",
-      "iso": "2026-10-25T06:00:31+01:00",
-      "desc": "3D torna con Nayt in Senza Armi. Il singolo, pubblicato dallo stesso 3D, è uscito venerdì 23 ottobre 2026 su tutti i digital store e in radio, dopo l’album Empirìa dell’aprile 2024, in cui Nayt…",
-      "img": "uploads/allmusicitalia-c35dd0d8b6-1792937039-5.jpg"
     }
   ]
 }
