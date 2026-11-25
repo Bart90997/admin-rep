@@ -173,7 +173,34 @@
     "teamop16-desc": "Voce vivace e coinvolgente, sempre pronta a collaborare e a sperimentare. Ogni settimana porta in diretta entusiasmo, spontaneità e una grande curiosità verso nuove esperienze!",
     "teamop17-desc": "Speaker intraprendente e creativa, capace di trasmettere energia e personalità. Affronta ogni diretta con entusiasmo, curiosità e spirito di squadra, senza rinunciare a mettersi alla prova.",
     "teamop18-desc": "Una delle voci di punta di Li.Fe. Radio, speaker esperta e presenza ormai imprescindibile. Con carisma, sicurezza e personalità, contribuisce a rendere ogni diretta un appuntamento speciale.",
-    "teamop19-desc": "Speaker carismatico e creativo, ricopre il ruolo di vice-direttore del Comitato Artistico. Con intraprendenza e spirito d'iniziativa, contribuisce alla crescita editoriale e artistica di Li.Fe. Radio."
+    "teamop19-desc": "Speaker carismatico e creativo, ricopre il ruolo di vice-direttore del Comitato Artistico. Con intraprendenza e spirito d'iniziativa, contribuisce alla crescita editoriale e artistica di Li.Fe. Radio.",
+    "news1-title": "Lens, Che scemo: l’unico indipendente fra i finalisti di Sarà Sanremo",
+    "news1-tag": "FESTIVAL DI SANREMO",
+    "news1-desc": "Lens porta Che scemo a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 da cui uscirà il ventiquattresimo Big di Sanremo 2027. Dei sei finalisti è l’unico indipendente, mentre gli altri cinque…",
+    "news1-date": "24 Novembre 2026",
+    "news1-link": "articolo.html?id=ami-lens-che-scemo-testo-significato",
+    "news2-title": "Petit, Sei tu: il brano per la madre con cui ci riprova a Sarà Sanremo",
+    "news2-tag": "FESTIVAL DI SANREMO",
+    "news2-desc": "Petit porta Sei tu a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 da cui uscirà il ventiquattresimo Big di Sanremo 2027. Il brano è dedicato alla madre e per il rapper è il secondo…",
+    "news2-date": "24 Novembre 2026",
+    "news2-link": "articolo.html?id=ami-petit-sei-tu-testo-significato",
+    "hero1-title": "Black Friday 2026: vinili, CD e cofanetti di musica italiana in offerta su Amazon",
+    "hero1-tag": "MUSICA",
+    "hero1-desc": "La Settimana del Black Friday di Amazon va avanti fino a lunedì 30 novembre e mette in offerta anche la musica italiana: controllando il 24 novembre trentuno artisti italiani, fra big di oggi e…",
+    "hero1-link": "articolo.html?id=ami-black-friday-2026-vinili-cd-musica-italiana-offerte",
+    "hero2-title": "Mina nel nuovo album dei Måneskin? L’indiscrezione sul duetto per il disco di febbraio",
+    "hero2-tag": "NUOVO ALBUM",
+    "hero2-desc": "Mina nel nuovo album dei Måneskin: è l’indiscrezione firmata oggi, lunedì 23 novembre, da Andrea Spinelli sul Quotidiano Nazionale. La band avrebbe mandato a Mina un paio di canzoni, e lei ne avrebbe…",
+    "hero2-link": "articolo.html?id=ami-maneskin-mina-nuovo-album",
+    "hero3-title": "Frah Quintale ritrova il MI AMI per festeggiare i dieci anni di “Regardez Moi”",
+    "hero3-tag": "TOUR",
+    "hero3-desc": "Frah Quintale sarà in concerto al MI AMI Festival venerdì 28 maggio 2027, all’Idroscalo di Milano, per una data legata ai dieci anni di Regardez Moi.",
+    "hero3-link": "articolo.html?id=ami-frah-quintale-mi-ami-2027",
+    "news3-title": "Santamarea, Tutto questo mare dentro: la band di Stella, cantante transgender, in finale a Sarà Sanremo",
+    "news3-tag": "FESTIVAL DI SANREMO",
+    "news3-desc": "I Santamarea portano Tutto questo mare dentro a Sarà Sanremo, la finale di venerdì 11 dicembre su Rai 1 da cui uscirà il ventiquattresimo Big di Sanremo 2027. Alla guida della band di Carini, nel…",
+    "news3-date": "24 Novembre 2026",
+    "news3-link": "articolo.html?id=ami-santamarea-tutto-questo-mare-dentro-testo-significato"
   },
   "images": {
     "rv2-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/rv2-img-1791309683.png",
@@ -222,7 +249,13 @@
     "teamop20-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop20-img-1791316526.png",
     "teamop21-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop21-img-1791316553.png",
     "teamop22-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamop22-img-1791316587.png",
-    "teamfam12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamfam12-img-1791475712.png"
+    "teamfam12-img": "https://raw.githubusercontent.com/Bart90997/admin-rep/main/uploads/teamfam12-img-1791475712.png",
+    "news1-img": "uploads/allmusicitalia-eea5e9557b-1795552093-1.jpg",
+    "news2-img": "uploads/allmusicitalia-c4301d4d5f-1795552096-6.jpg",
+    "hero1-img": "uploads/allmusicitalia-db8df8bbe2-1795552097-8.jpg",
+    "hero2-img": "uploads/allmusicitalia-385f8da203-1795470730-2.jpg",
+    "hero3-img": "uploads/allmusicitalia-731835c2ff-1795552096-7.jpg",
+    "news3-img": "uploads/allmusicitalia-64edcac756-1795552095-5.jpg"
   },
-  "updatedAt": "2026-11-23T21:52:14.203Z"
+  "updatedAt": "2026-11-25T07:36:40.690Z"
 }
